@@ -101,12 +101,12 @@ $$g_k(x) = \mathbf{1}\!\left[\sum_{i=1}^n W_{k,i} x_i \ge t_k\right] \quad (k = 
 Afin d'établir une base technique vérifiée, nous avons implémenté deux piliers classiques de la méthode polynomiale.
 
 ### 2.1 Évaluation globale de $\mathrm{SYM} \circ \mathrm{AND}$ par transformée zêta
-Dans [williams_demo.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/williams_demo.py), chaque porte $\mathrm{AND}$ de largeur $k$ est développée en polynôme multilinéaire puis évaluée simultanément sur les $2^n$ entrées via la transformée zêta rapide sur le treillis des sous-ensembles en temps $O(n \cdot 2^n + s \cdot 2^k)$ au lieu de $O(s \cdot 2^n)$. Pour $n = 18$ ($262\,144$ entrées) et $k = 6$, l'exactitude est vérifiée sur $s \in [100, 20\,000]$, avec une accélération mesurée de **$\times 331{,}4$** ($0{,}204\text{ s}$ contre $67{,}717\text{ s}$ à $s = 20\,000$).
+Dans [williams_demo.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/williams_demo.py), chaque porte $\mathrm{AND}$ de largeur $k$ est développée en polynôme multilinéaire puis évaluée simultanément sur les $2^n$ entrées via la transformée zêta rapide sur le treillis des sous-ensembles en temps $O(n \cdot 2^n + s \cdot 2^k)$ au lieu de $O(s \cdot 2^n)$. Pour $n = 18$ ($262\,144$ entrées) et $k = 6$, l'exactitude est vérifiée sur $s \in [100, 20\,000]$, avec une accélération mesurée de **$\times 331{,}4$** ($0{,}204\text{ s}$ contre $67{,}717\text{ s}$ à $s = 20\,000$).
 
 ![Évaluation globale SYM∘AND par transformée zêta](figures/williams_demo.png)
 
 ### 2.2 Méthode polynomiale complète pour $\mathrm{MQ}$ sur $\mathbb{F}_2$ (LPTWY 2017)
-Dans [polymethod_mq.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/polymethod_mq.py), nous avons implémenté l'algorithme complet de **Lokshtanov, Paturi, Tamaki, Williams et Yu (2017)** pour les systèmes quadratiques $\mathrm{MQ}$ sur $\mathbb{F}_2^n$ : partition $x = (y, z)$ ($|z| = \ell$), polynôme probabiliste de Razborov–Smolensky de degré $\le 2r$, sommation $F(y) = \sum_{z \in \{0,1\}^\ell} R(y, z) \pmod 2$ abaissant le degré à $D \le 2r - \ell$, interpolation par transformée de Möbius sur les poids de Hamming $\le D$, et isolation de Valiant–Vazirani (1986). Sur 60 instances ($n \in [10, 18]$), nous obtenons **60/60 accords exacts** avec la force brute ; à $n = 24$, le ratio d'évaluations chute à **$0{,}14$** ($4{,}61\text{ M}$ contre $33{,}55\text{ M}$, $2{,}39\text{ s}$ contre $7{,}14\text{ s}$) et le coût calibré confirme l'exposant asymptotique **$2^{0{,}901\,n}$**.
+Dans [polymethod_mq.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/polymethod_mq.py), nous avons implémenté l'algorithme complet de **Lokshtanov, Paturi, Tamaki, Williams et Yu (2017)** pour les systèmes quadratiques $\mathrm{MQ}$ sur $\mathbb{F}_2^n$ : partition $x = (y, z)$ ($|z| = \ell$), polynôme probabiliste de Razborov–Smolensky de degré $\le 2r$, sommation $F(y) = \sum_{z \in \{0,1\}^\ell} R(y, z) \pmod 2$ abaissant le degré à $D \le 2r - \ell$, interpolation par transformée de Möbius sur les poids de Hamming $\le D$, et isolation de Valiant–Vazirani (1986). Sur 60 instances ($n \in [10, 18]$), nous obtenons **60/60 accords exacts** avec la force brute ; à $n = 24$, le ratio d'évaluations chute à **$0{,}14$** ($4{,}61\text{ M}$ contre $33{,}55\text{ M}$, $2{,}39\text{ s}$ contre $7{,}14\text{ s}$) et le coût calibré confirme l'exposant asymptotique **$2^{0{,}901\,n}$**.
 
 ![Méthode polynomiale LPTWY sur MQ/F2](figures/polymethod.png)
 
@@ -115,18 +115,18 @@ Dans [polymethod_mq.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-w
 ## 3. Évolution de solveurs $\mathrm{THR} \circ \mathrm{THR}\text{-SAT}$, co-évolution adversariale et hybride A+B
 
 ### 3.1 Solveur exact par intervalles, génome de branchement et co-évolution
-Dans [thr2_lab.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/thr2_lab.py) et [run_lab.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/run_lab.py), nous avons conçu un solveur exact compilé en Numba maintenant un encadrement $[lo_k, hi_k]$ par porte et sélectionnant la variable de branchement par un score linéaire de 7 descripteurs structurels ($f_1, \dots, f_7$) pondérés par un génome $\theta \in \mathbb{R}^7$ optimisé par stratégie évolutionnaire $(\mu + \lambda)$ sur des instances **$\mathrm{UNSAT}$ de justesse** ($T = \max_x \sum_k v_k g_k(x) + 1$).
+Dans [thr2_lab.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/thr2_lab.py) et [run_lab.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/run_lab.py), nous avons conçu un solveur exact compilé en Numba maintenant un encadrement $[lo_k, hi_k]$ par porte et sélectionnant la variable de branchement par un score linéaire de 7 descripteurs structurels ($f_1, \dots, f_7$) pondérés par un génome $\theta \in \mathbb{R}^7$ optimisé par stratégie évolutionnaire $(\mu + \lambda)$ sur des instances **$\mathrm{UNSAT}$ de justesse** ($T = \max_x \sum_k v_k g_k(x) + 1$).
 
 Sur des instances aléatoires indépendantes ($n = 12..26$), le génome évolué $\theta^{(1)} = [-1{,}04,\; -0{,}06,\; +0{,}09,\; +1{,}43,\; -0{,}57,\; +0{,}84,\; +0{,}32]$ (privilégiant $f_4$ et $f_6$, c'est-à-dire les variables proches de décider des portes fortement pondérées au sommet) atteint **$\alpha = 0{,}620$** à $s = n$ (contre $0{,}728$ à ordre fixe et $1{,}000$ en force brute), se dégradant à **$\alpha = 0{,}757$** à $s = 2n$. En co-évolution adversariale ($n = 10..16$, 250 mutations locales par instance), l'adversaire multiplie par $\approx 8$ le nombre de nœuds et stabilise l'exposant à $\alpha \approx 0{,}578$ contre le solveur ré-adapté.
 
 ![Évolution de génomes et co-évolution adversariale](figures/thr2_evolution.png)
 
 ### 3.2 Effondrement sur familles algébriques et solveur hybride exact (Primitives A & B)
-Pour éprouver le pire cas au-delà des instances aléatoires, nous avons encodé dans [adversarial_suite.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/adversarial_suite.py) quatre familles structurées : **F1 ($\mathrm{PARITY}_n$)**, **F2 ($\mathrm{MOD3}_n$)**, **F3 ($\mathrm{WEIGHTED\text{-}PARITY}$)** et **F4 ($\mathrm{LARGE\text{-}WEIGHTS}$, $R=1000$)**. L'élagage par intervalles pur s'effondre complètement sur F1–F3 ($\alpha = 1{,}000$, $1{,}001$, $0{,}964$) car chaque porte indécise est majorée indépendamment.
+Pour éprouver le pire cas au-delà des instances aléatoires, nous avons encodé dans [adversarial_suite.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/adversarial_suite.py) quatre familles structurées : **F1 ($\mathrm{PARITY}_n$)**, **F2 ($\mathrm{MOD3}_n$)**, **F3 ($\mathrm{WEIGHTED\text{-}PARITY}$)** et **F4 ($\mathrm{LARGE\text{-}WEIGHTS}$, $R=1000$)**. L'élagage par intervalles pur s'effondre complètement sur F1–F3 ($\alpha = 1{,}000$, $1{,}001$, $0{,}964$) car chaque porte indécise est majorée indépendamment.
 
 ![Banc d'essai adversarial structuré](figures/adversarial_suite.png)
 
-Dans [hybrid_thr2.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/hybrid_thr2.py) (vérifié exact sur **136/136** instances), nous introduisons deux primitives exactes complémentaires :
+Dans [hybrid_thr2.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/hybrid_thr2.py) (vérifié exact sur **136/136** instances), nous introduisons deux primitives exactes complémentaires :
 1. **Primitive A (Chaînes 1D exactes)** : regroupement des portes partageant le même vecteur de poids sur les variables libres et évaluation exacte du maximum de la fonction en escalier 1D.
 2. **Primitive B (Enveloppe lagrangienne couplée)** : majoration linéaire convexe paramétrée par $\lambda \in [0, 1]^{|\mathcal{U}|}$ couplant toutes les portes via les variables partagées, resserrée par 5 pas de sous-gradient projeté.
 
@@ -145,7 +145,7 @@ Dans [hybrid_thr2.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-wil
 
 ## 4. Théorème 1 (Projection 1D, réseau $\mathrm{PGCD}$ et pics fantômes) et duel industriel (v4)
 
-Une parité *perturbée* (où chaque porte subit une petite perturbation locale distincte) brise la colinéarité exacte exigée par la Primitive A tout en conservant le saut d'intégralité qui piège la Primitive B. Nous avons donc démontré et implémenté ([theorem_a_star.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/theorem_a_star.py), validé exact sur **216/216** tests) la généralisation suivante :
+Une parité *perturbée* (où chaque porte subit une petite perturbation locale distincte) brise la colinéarité exacte exigée par la Primitive A tout en conservant le saut d'intégralité qui piège la Primitive B. Nous avons donc démontré et implémenté ([theorem_a_star.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/theorem_a_star.py), validé exact sur **216/216** tests) la généralisation suivante :
 
 > **Théorème 1 (Majoration par projection 1D, enveloppe de résidu et réseau $\mathrm{PGCD}$).**  
 > *Soit $F \subseteq \{1, \dots, n\}$ l'ensemble des variables libres, $G \subseteq \mathcal{U}$ un cluster de portes indécises, $w \in \mathbb{Z}^n$ un vecteur de référence porté par $F$, $L(x) = \sum_{i \in F} w_i x_i \in [L_{\min}, L_{\max}]$ et $g = \gcd_{i \in F,\, w_i \neq 0}(|w_i|)$. En posant $\delta_h^{\max} = \sum_{i \in F} \max(0, W_{h,i} - w_i)$, $\delta_h^{\min} = \sum_{i \in F} \min(0, W_{h,i} - w_i)$, et le seuil décalé et arrondi au réseau $g\mathbb{Z}$ :*
@@ -169,7 +169,7 @@ Une parité *perturbée* (où chaque porte subit une petite perturbation locale 
 ![Validation du Théorème 1 et élimination des pics fantômes](figures/theorem_astar.png)
 
 ### Duel industriel (Phase 4 — Solveur v4)
-Dans [industrial_and_orthogonal.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/industrial_and_orthogonal.py) (**432/432** tests exacts), nous avons confronté notre **Solveur v4** (propagation Pseudo-Booléenne inverse + coupes surrogées + $A^*$ adaptatif + $B$ + feuilles en code de Gray $u_{\text{leaf}} = 8$) à un énumérateur en code de Gray compilé (`libFES`, $\approx 0{,}5\text{ ns}$/point) et à un solveur Pseudo-Booléen (`CDCL-PB`). Sur les blocs orthogonaux **O1** ($n = 20$), v4 gagne **$48\times$ sur Gray** et **$79\times$ sur PB** ($0{,}001\text{ s}$, $13$ nœuds) ; sur les circuits aléatoires denses $s = 2n$ à $n = 26$, v4 bat le solveur PB (**$3{,}96\text{ s}$ contre $5{,}66\text{ s}$**) et rejoint Gray ($3{,}82\text{ s}$) avec une pente asymptotique bien plus basse ($\alpha \approx 0{,}745$ contre $1{,}000$).
+Dans [industrial_and_orthogonal.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/industrial_and_orthogonal.py) (**432/432** tests exacts), nous avons confronté notre **Solveur v4** (propagation Pseudo-Booléenne inverse + coupes surrogées + $A^*$ adaptatif + $B$ + feuilles en code de Gray $u_{\text{leaf}} = 8$) à un énumérateur en code de Gray compilé (`libFES`, $\approx 0{,}5\text{ ns}$/point) et à un solveur Pseudo-Booléen (`CDCL-PB`). Sur les blocs orthogonaux **O1** ($n = 20$), v4 gagne **$48\times$ sur Gray** et **$79\times$ sur PB** ($0{,}001\text{ s}$, $13$ nœuds) ; sur les circuits aléatoires denses $s = 2n$ à $n = 26$, v4 bat le solveur PB (**$3{,}96\text{ s}$ contre $5{,}66\text{ s}$**) et rejoint Gray ($3{,}82\text{ s}$) avec une pente asymptotique bien plus basse ($\alpha \approx 0{,}745$ contre $1{,}000$).
 
 ![Duel industriel Phase 4 jusqu'à n=26](figures/phase4_duel.png)
 
@@ -177,7 +177,7 @@ Dans [industrial_and_orthogonal.py](file:///C:/Users/Axoul/.gemini/antigravity/s
 
 ## 5. Théorème 2 (Compression bilinéaire à pointeurs glissants en code de Gray) et Solveur v5 Unifié
 
-Pour vaincre la haute densité ($s = 4n$) sans structure de clusters, nous avons développé dans [step2_sliding_gray.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/step2_sliding_gray.py) (vérifié exact sur **216/216** tests) un algorithme *Meet-in-the-Middle* sans arbre partitionnant $x = (x_L, x_R) \in \{0, 1\}^{n-\ell} \times \{0, 1\}^\ell$, où $\{0, 1\}^\ell$ est découpé en $P = 2^{\ell - b}$ paquets $\mathcal{R}_p$ de taille $B = 2^b$ portés par les variables les plus légères.
+Pour vaincre la haute densité ($s = 4n$) sans structure de clusters, nous avons développé dans [step2_sliding_gray.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/step2_sliding_gray.py) (vérifié exact sur **216/216** tests) un algorithme *Meet-in-the-Middle* sans arbre partitionnant $x = (x_L, x_R) \in \{0, 1\}^{n-\ell} \times \{0, 1\}^\ell$, où $\{0, 1\}^\ell$ est découpé en $P = 2^{\ell - b}$ paquets $\mathcal{R}_p$ de taille $B = 2^b$ portés par les variables les plus légères.
 
 > **Théorème 2 (Compression bilinéaire par sous-cubes et pointeurs glissants en code de Gray).**  
 > *En posant $\tau_{k,p} = t_k - \max_{\mathcal{R}_p} B_k$ (si $v_k > 0$) et $\tau_{k,p} = t_k - \min_{\mathcal{R}_p} B_k$ (si $v_k < 0$), on a pour tout $(x_L, x_R) \in \{0,1\}^{n-\ell} \times \mathcal{R}_p$ :*
@@ -188,7 +188,7 @@ Pour vaincre la haute densité ($s = 4n$) sans structure de clusters, nous avons
 
 ![Théorème 2 : Compression bilinéaire à pointeurs glissants sur s=2n et s=4n](figures/step2_sliding_gray.png)
 
-Dans [unified_v5_and_poly_top.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/unified_v5_and_poly_top.py) (**240/240** tests exacts supplémentaires, portant le cumul à $> 1\,100$ instances sans erreur), nous unifions les Théorèmes 1 et 2 en un **Solveur v5 Unifié** :
+Dans [unified_v5_and_poly_top.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/unified_v5_and_poly_top.py) (**240/240** tests exacts supplémentaires, portant le cumul à $> 1\,100$ instances sans erreur), nous unifions les Théorèmes 1 et 2 en un **Solveur v5 Unifié** :
 - Le mode **Zero-Gap ($B = 1$)** vérifie exactement $N_{\text{hot}} = 0{,}0$ (zéro faux positif sur 100 % des instances $\mathrm{UNSAT}$).
 - Avec paquets $B = 8$ ($\ell = 9$, compression $\times 512$), le Solveur v5 résout **6 instances à $n = 28$ ($1{,}61\text{ milliard}$ d'entrées)** en **$0{,}502\text{ s}$** ($0{,}083\text{ s}$/instance), tout en résolvant F1, F2, P2, P3, O1 en $< 0{,}001\text{ s}$.
 
@@ -200,7 +200,7 @@ Dans [unified_v5_and_poly_top.py](file:///C:/Users/Axoul/.gemini/antigravity/scr
 
 ## 6. Atlas exhaustif exact à $n = 4$ et méta-complexité ($\mathrm{MCSP}$ / Preuves Naturelles)
 
-Pour confronter nos solveurs à la géométrie exacte de la classe $\mathrm{THR} \circ \mathrm{THR}$, nous avons classifié exhaustivement les **$65\,536$ fonctions booléennes à $n = 4$ variables** ($222$ classes d'équivalence $\mathrm{NPN}$) par taille minimale exacte $s^*_{\mathrm{THR}\circ\mathrm{THR}}(f)$ ([exact_thr2_atlas.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/exact_thr2_atlas.py), [mcsp_metacomplexity.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/mcsp_metacomplexity.py)) :
+Pour confronter nos solveurs à la géométrie exacte de la classe $\mathrm{THR} \circ \mathrm{THR}$, nous avons classifié exhaustivement les **$65\,536$ fonctions booléennes à $n = 4$ variables** ($222$ classes d'équivalence $\mathrm{NPN}$) par taille minimale exacte $s^*_{\mathrm{THR}\circ\mathrm{THR}}(f)$ ([exact_thr2_atlas.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/exact_thr2_atlas.py), [mcsp_metacomplexity.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/mcsp_metacomplexity.py)) :
 
 | Taille minimale exacte $s^*(f)$ | Fonctions (sur $65\,536$) | Proportion | Classes $\mathrm{NPN}$ (sur $222$) | Walsh $L_1$ moy. (max) | Énergie de Chow $E_1$ moy. (min) | Influence $\mathrm{Inf}(f)$ moy. (max) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -220,7 +220,7 @@ Pour confronter nos solveurs à la géométrie exacte de la classe $\mathrm{THR}
 
 ## 7. Théorème 3 (Factorisation de rang $K \le 2 R \ell s$), `#SAT` sans élagage et barrière $\mathrm{OVC}/\mathrm{SETH}$
 
-Pour attaquer le pire cas sans aucun élagage (y compris le comptage exact $\#\mathrm{SAT}$), nous démontrons dans [rank_k_bilinear_thr2.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/rank_k_bilinear_thr2.py) (vérifié bit-à-bit sur **36/36** circuits complets) la factorisation exacte suivante :
+Pour attaquer le pire cas sans aucun élagage (y compris le comptage exact $\#\mathrm{SAT}$), nous démontrons dans [rank_k_bilinear_thr2.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/rank_k_bilinear_thr2.py) (vérifié bit-à-bit sur **36/36** circuits complets) la factorisation exacte suivante :
 
 > **Théorème 3 (Factorisation bilinéaire exacte de rang polynomial $K \le 2 R \ell s$).**  
 > *Pour tout circuit $\mathrm{THR} \circ \mathrm{THR}$ à poids inférieurs dans $\{-R, \dots, R\}$ et poids du sommet $v_k \in \mathbb{R}$ arbitraires, la matrice complète $M_{x_L, x_R} = \sum_{k=1}^s v_k g_k(x_L, x_R) \in \mathbb{R}^{2^{n-\ell} \times 2^\ell}$ se décompose exactement en :*
@@ -239,17 +239,17 @@ Pour attaquer le pire cas sans aucun élagage (y compris le comptage exact $\#\m
 
 ## 8. Effondrement spectral $\mathrm{SVD}$ et algorithme $\mathrm{CAPP}$ 100 % déterministe ($\mathrm{CUR}$/Nyström)
 
-Pour contourner la barrière $\mathrm{SETH}$ du pire cas exact en visant le problème d'approximation $\mathrm{CAPP}$ (estimer $\Pr_x[M(x) \ge T]$), nous avons analysé le spectre des valeurs singulières de la matrice centrée $M_c$ ([piste_a_svd_capp.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/piste_a_svd_capp.py)). Même lorsque le nombre de portes explose jusqu'à **$s = n^2 = 256$** ($n = 16$, $N = 256$), le rang effectif $K_{95\%}$ **sature à $38{,}3$** et l'erreur $\mathrm{CAPP}$ à rang fixe $r = 8$ chute à **$0{,}84\,\%$** (et $0{,}00\,\%$ sur $\mathrm{PARITY}_n$, qui est de rang exact $1$ sur $(x_L, x_R)$ !).
+Pour contourner la barrière $\mathrm{SETH}$ du pire cas exact en visant le problème d'approximation $\mathrm{CAPP}$ (estimer $\Pr_x[M(x) \ge T]$), nous avons analysé le spectre des valeurs singulières de la matrice centrée $M_c$ ([piste_a_svd_capp.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/piste_a_svd_capp.py)). Même lorsque le nombre de portes explose jusqu'à **$s = n^2 = 256$** ($n = 16$, $N = 256$), le rang effectif $K_{95\%}$ **sature à $38{,}3$** et l'erreur $\mathrm{CAPP}$ à rang fixe $r = 8$ chute à **$0{,}84\,\%$** (et $0{,}00\,\%$ sur $\mathrm{PARITY}_n$, qui est de rang exact $1$ sur $(x_L, x_R)$ !).
 
 ![Effondrement spectral SVD et erreur CAPP](figures/piste_a_svd_capp.png)
 
-Nous en avons déduit dans [det_capp_nystrom.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/det_capp_nystrom.py) un algorithme **$\mathrm{CAPP}$ 100 % déterministe en temps $O^*(2^{n/2})$** par décomposition $\mathrm{CUR}$/Nyström sur $m = 48$ ancres déterministes de Van der Corput : sans jamais former les $2^n$ entrées, il obtient $0{,}04\,\%$ d'erreur sur les circuits aléatoires ($s = 2n$), $0{,}00\,\%$ sur $\mathrm{PARITY}_n$, $0{,}52\,\%$ sur le produit scalaire couplé et $6{,}3\,\%$ sur $\mathrm{MOD3}_n$, tout en évaluant **$n = 26$ ($67{,}1\text{ M}$ d'entrées) en $0{,}311\text{ s}$** en Python/NumPy pur. La limite théorique vers Williams réside dans la construction d'un *hitting set* déterministe garanti contre les matrices de Hadamard ($\mathrm{IP}_n$, barrière du rang de signe de Forster, 2002).
+Nous en avons déduit dans [det_capp_nystrom.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/det_capp_nystrom.py) un algorithme **$\mathrm{CAPP}$ 100 % déterministe en temps $O^*(2^{n/2})$** par décomposition $\mathrm{CUR}$/Nyström sur $m = 48$ ancres déterministes de Van der Corput : sans jamais former les $2^n$ entrées, il obtient $0{,}04\,\%$ d'erreur sur les circuits aléatoires ($s = 2n$), $0{,}00\,\%$ sur $\mathrm{PARITY}_n$, $0{,}52\,\%$ sur le produit scalaire couplé et $6{,}3\,\%$ sur $\mathrm{MOD3}_n$, tout en évaluant **$n = 26$ ($67{,}1\text{ M}$ d'entrées) en $0{,}311\text{ s}$** en Python/NumPy pur. La limite théorique vers Williams réside dans la construction d'un *hitting set* déterministe garanti contre les matrices de Hadamard ($\mathrm{IP}_n$, barrière du rang de signe de Forster, 2002).
 
 ---
 
 ## 9. Topologie de l'hypercube $Q_n$, spectre de Huang et rayon spectral frontière
 
-Dans [piste_b_huang_topology.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/piste_b_huang_topology.py), nous avons testé la matrice d'adjacence signée de Huang (2019) $\lambda_H(f)$ et le **rayon spectral frontière** $\lambda_{\text{bd}}(f)$ du graphe des arêtes de basculement $B(f)_{x,y} = Q_{x,y} \mathbf{1}[f(x) \neq f(y)]$.
+Dans [piste_b_huang_topology.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/01_thr2_williams/piste_b_huang_topology.py), nous avons testé la matrice d'adjacence signée de Huang (2019) $\lambda_H(f)$ et le **rayon spectral frontière** $\lambda_{\text{bd}}(f)$ du graphe des arêtes de basculement $B(f)_{x,y} = Q_{x,y} \mathbf{1}[f(x) \neq f(y)]$.
 - **Résultat négatif sur $\lambda_H(f)$** : par le théorème d'entrelacement de Cauchy, presque toute fonction équilibrée sur $Q_8$ atteint exactement le plancher $\lambda_H = \sqrt{8} = 2{,}828$ (seule $\mathrm{PARITY}_8$ tombe à $0$).
 - **Séparation par $\lambda_{\text{bd}}(f)$ et limite de Perron–Frobenius** : sur $Q_8$, les circuits $\mathrm{THR} \circ \mathrm{THR}$ aléatoires plafonnent à $\lambda_{\text{bd}} \approx 3{,}87$ même à $s = 32$, nettement sous les fonctions aléatoires ($4{,}79$), $\mathrm{IP}_8$ ($5{,}66 = 2\sqrt{8}$) et $\mathrm{PARITY}_8$ ($8{,}00$). Cependant, la sous-additivité de Perron–Frobenius $\lambda_{\text{bd}}(C) \le \sum_{k=1}^s \lambda_{\text{bd}}(g_k)$ ne peut prouver au mieux que $s = \Omega(\sqrt{n})$ car une seule porte $\mathrm{MAJ}_n$ contribue déjà $\Omega(\sqrt{n})$.
 
@@ -271,7 +271,7 @@ $$Z(P_2) \cap Z(P_3) \;=\; \{\mathbf{0}\}.$$
 
 Alors que modulo un nombre premier le degré minimal est linéaire ($\Omega(n)$), Barrington–Beigel–Rudich (1994) ont montré que des polynômes **symétriques** atteignent $d = O(\sqrt{n})$ ($N_{\text{sym}}(d) = \Theta(d^2)$) et ont conjecturé que $d = \Omega(\sqrt{n})$ reste vrai même sans symétrie — la meilleure borne inférieure générale connue restant $d = \Omega(\log n)$ (Tardos–Barrington, 1998).
 
-Par énumération exhaustive de tous les $2^d - 1$ polynômes symétriques sur $\mathbb{F}_2$ et de toutes les $(3^d - 1)/2$ droites projectives de $\mathbb{P}^{d-1}(\mathbb{F}_3)$ (après correction d'un biais de canonisation qui sous-comptait initialement $d = 3$ à $19$), nous avons établi dans [mod6_exact_complete.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/mod6_exact_complete.py) la table symétrique 100 % exacte pour $d = 1, \dots, 10$ :
+Par énumération exhaustive de tous les $2^d - 1$ polynômes symétriques sur $\mathbb{F}_2$ et de toutes les $(3^d - 1)/2$ droites projectives de $\mathbb{P}^{d-1}(\mathbb{F}_3)$ (après correction d'un biais de canonisation qui sous-comptait initialement $d = 3$ à $19$), nous avons établi dans [mod6_exact_complete.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/02_mod6_polynomials/mod6_exact_complete.py) la table symétrique 100 % exacte pour $d = 1, \dots, 10$ :
 
 | Degré $d$ | Période CRT max $p_2 p_3 - 1$ | **Exact $N_{\text{sym}}(d)$** | $\deg(P_2^*)$ | $\deg(P_3^*)$ | Marge $\Delta$ | **Prouvé non symétrique $N_{\text{gen}}(d) \ge$** | Gain vs symétrique |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
@@ -292,7 +292,7 @@ Par énumération exhaustive de tous les $2^d - 1$ polynômes symétriques sur $
 
 ## 11. Théorèmes M1 et M2 : percées non symétriques et optimum de Győri
 
-Nous avons prouvé et vérifié exhaustivement ([verify_mod6_theorems.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/verify_mod6_theorems.py)) que la restriction aux polynômes symétriques est strictement sous-optimale pour une infinité de degrés :
+Nous avons prouvé et vérifié exhaustivement ([verify_mod6_theorems.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/02_mod6_polynomials/verify_mod6_theorems.py)) que la restriction aux polynômes symétriques est strictement sous-optimale pour une infinité de degrés :
 
 > **Théorème M1 (Somme de carrés sur $\mathbb{F}_3$ et doublement récursif).**  
 > *Comme $-1 \notin (\mathbb{F}_3^*)^2$, on a $u^2 + v^2 \equiv 0 \pmod 3 \iff u \equiv v \equiv 0 \pmod 3$. En conséquence :*
@@ -316,7 +316,7 @@ Le théorème de **Gyula Győri (2006)** ayant établi qu'aucun polynôme quadra
 
 ## 12. Chasse au-delà de $d^2$ ($d = 3, 4, 5$) et conjecture de saturation de marge
 
-Pour tester l'existence éventuelle d'une construction non symétrique dépassant $\Theta(d^2)$ lorsque $\Delta = 0$, nous avons lancé dans [hunt_super_quadratic_mod6.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/hunt_super_quadratic_mod6.py) une recherche multi-blocs (élimination de Gauss exacte sur $\mathbb{F}_2$ couplée à un balayage sur $\mathbb{F}_3$) sur 16 cœurs aux degrés $d = 3, 4, 5$ :
+Pour tester l'existence éventuelle d'une construction non symétrique dépassant $\Theta(d^2)$ lorsque $\Delta = 0$, nous avons lancé dans [hunt_super_quadratic_mod6.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/02_mod6_polynomials/hunt_super_quadratic_mod6.py) une recherche multi-blocs (élimination de Gauss exacte sur $\mathbb{F}_2$ couplée à un balayage sur $\mathbb{F}_3$) sur 16 cœurs aux degrés $d = 3, 4, 5$ :
 - **$d = 3$** ($N_{\text{sym}} = 27$) : énumération 2-blocs exhaustive + 3-blocs à $n = 28$ $\Rightarrow$ aucune solution (`defect = 1` sur $(26, 1, 1)$).
 - **$d = 4$** ($N_{\text{sym}} = 36$) : 6 partitions 2-blocs à $n = 37$ $\Rightarrow$ **toutes** bloquent à `defect = 1` (et `defect = 2` à $n = 38$).
 - **$d = 5$** ($N_{\text{sym}} = 53$) : 5 partitions 2-blocs à $n = 54$ $\Rightarrow$ bloquent à `defect = 1`.
@@ -334,7 +334,7 @@ Pour tester l'existence éventuelle d'une construction non symétrique dépassan
 On sait que la complexité déterminantale exacte du permanent $3 \times 3$ vaut $\mathrm{dc}(\mathrm{perm}_3) = 7$ (Grenet, 2011 ; Alper–Bogart–Velasco, 2017), tandis que la **complexité de bord** $\overline{\mathrm{dc}}(\mathrm{perm}_3)$ (fermeture d'orbite $\overline{\mathrm{GL}_{k^2} \cdot \det_k}$) reste un banc test central de GCT (borne inférieure $5$ de Mignon–Ressayre / Landsberg–Manivel–Ressayre).
 
 ### 13.1 Innovation algorithmique : Parseval sur racines de l'unité et jauge SVD diagonale
-Après avoir diagnostiqué l'échec d'Adam/L-BFGS (`err_val = 0,937`) et de Levenberg–Marquardt gaussien (`err_val = 25,3`) par explosion des termes de degré 7 et surapprentissage inter-degrés, nous avons conçu dans [vp_vnp_parseval_lm.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/vp_vnp_parseval_lm.py) le **solveur Levenberg–Marquardt de Parseval** :
+Après avoir diagnostiqué l'échec d'Adam/L-BFGS (`err_val = 0,937`) et de Levenberg–Marquardt gaussien (`err_val = 25,3`) par explosion des termes de degré 7 et surapprentissage inter-degrés, nous avons conçu dans [vp_vnp_parseval_lm.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/vp_vnp_parseval_lm.py) le **solveur Levenberg–Marquardt de Parseval** :
 1. Évaluation de $\det_k(A_0 + t_j L_1(X))$ aux $(k+1)$ racines de l'unité $t_j = e^{2i\pi j/(k+1)}$ : l'identité de Parseval découple orthogonalement chaque degré $P_0, \dots, P_k$.
 2. Échantillonnage sphérique ($\|X\|_F = 2{,}2$) et **fixation de jauge $\mathrm{SL}_k \times \mathrm{SL}_k$** ($A_0$ diagonale par SVD, exacte sur $\mathbb{R}$ comme sur $\mathbb{C}$).
 3. Jacobienne exacte par cofacteurs vectorisés ($G^{(b)} = \det(L^{(b)})(L^{(b)})^{-T}$ avec repli SVD).
@@ -351,7 +351,7 @@ Après avoir diagnostiqué l'échec d'Adam/L-BFGS (`err_val = 0,937`) et de Leve
 ![Calibration k=7 et frontière k=6 sur perm_3 par Parseval-LM](figures/vp_vnp_perm3_border.png)
 
 ### 13.2 Sonde profonde $k = 6$, monômes de degré 3 et diagnostic de l'homotopie $7 \to 6$
-Dans [vp_vnp_k6_deep_probe.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/vp_vnp_k6_deep_probe.py) :
+Dans [vp_vnp_k6_deep_probe.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/vp_vnp_k6_deep_probe.py) :
 - **Calibration `diag_r`** : **4/10** essais réussissent à $k=7$ ($< 0{,}015$, jusqu'à $4{,}1 \times 10^{-4}$ en 140 iters), contre **0/24 sur $\mathbb{R}$** et **0/16 sur $\mathbb{C}$** à $k=6$ (**0/64** au total sous $0{,}566 \approx \sqrt{2/6}$).
 - **Extraction des 165 monômes de degré 3** : le meilleur `R_k6` n'atteint que $(0{,}90;\, 0{,}51;\, 0{,}86;\, 0{,}85;\, 0{,}50;\, 0{,}84)$ sur $\mathrm{perm}_3$ avec une norme $L_2 = 1{,}128$ sur les 159 monômes parasites (contre $7{,}33 \times 10^{-15}$ pour Grenet $7\times 7$).
 - **Piège de jauge $\mathrm{SL}_7$ démonté** : sur l'homotopie pénalisée $V_7(\mathrm{perm}_3) \to \det_6$, $\|\text{bord}\|$ chute de $1{,}73$ à $4{,}7 \times 10^{-3}$ tandis que $\|L_6\|_F$ grimpe à $67{,}4$, mais `err6` reste rigoureusement figée à $0{,}621$ ($\mathbb{R}$) et $0{,}607$ ($\mathbb{C}$) : un simple recalibrage diagonal $\mathrm{SL}_7$ préservant à la fois $\det_7$ et $\det_6$.
@@ -364,7 +364,7 @@ Dans [vp_vnp_k6_deep_probe.py](file:///C:/Users/Axoul/.gemini/antigravity/scratc
 
 Pour $\langle 3, 3, 3 \rangle$, le record exact de Laderman ($R = 23$, 1976) vient d'être prouvé optimal sur $\mathbb{F}_2$ et $\mathbb{Z}$ en 2026 (vérification Lean 4), laissant ouverte l'existence d'un rang exact $22$ sur $\mathbb{Q}/\mathbb{R}/\mathbb{C}$ ($19 \le R \le 23$, Bläser 2003), tandis que le rang de bord vérifie $17 \le \underline{R}(\langle 3,3,3 \rangle) \le 20$ (Conner–Harper–Landsberg 2023 ; Smirnov 2013).
 
-Dans [matmul3_tensor_lab.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/matmul3_tensor_lab.py) et [matmul3_annealed_border_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/matmul3_annealed_border_hunt.py) (8 cœurs), nous exploitons l'holomorphie de $\hat{T}(U, V, W)$ pour résoudre les équations normales exactes en forme hermitienne $P \times P$, avec équilibrage AM-GM (qui transforme la pénalité Ridge en quasi-norme $L_{2/3}$ : $\frac{3\mu}{2}\sum_r \sigma_r^{2/3}$) et projection linéaire $\mathbb{Z}_3$-cyclique.
+Dans [matmul3_tensor_lab.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/matmul3_tensor_lab.py) et [matmul3_annealed_border_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/matmul3_annealed_border_hunt.py) (8 cœurs), nous exploitons l'holomorphie de $\hat{T}(U, V, W)$ pour résoudre les équations normales exactes en forme hermitienne $P \times P$, avec équilibrage AM-GM (qui transforme la pénalité Ridge en quasi-norme $L_{2/3}$ : $\frac{3\mu}{2}\sum_r \sigma_r^{2/3}$) et projection linéaire $\mathbb{Z}_3$-cyclique.
 
 **Découverte quantitative — Loi d'échelle Exact vs Bord** : sous recuit $L_{2/3}$, minimiser $C F^{-2p} + \mu F^2$ lorsque $\text{err} \sim \|F\|^{-p}$ impose :
 $$\text{err}(\mu) \;\propto\; \mu^{\alpha}, \qquad \alpha \;=\; \frac{p}{2(p+1)} \;=\; \begin{cases} 1{,}000 & \text{(rang exact borné, } p = \infty\text{)}, \\ 0{,}375 & \text{(bord d'ordre 1, } p = 3\text{)}, \\ 0{,}300 & \text{(bord d'ordre 2, } p = 3/2\text{)}. \end{cases}$$
@@ -373,7 +373,7 @@ Nos mesures vérifient cette loi à deux chiffres significatifs :
 - **$\langle 2,2,2 \rangle$ ($R = 7$, Strassen)** : 6/6 exacts à $9{,}1 \times 10^{-13}$ en $0{,}04\text{ s}$ (et 4/6 en mode $\mathbb{Z}_3$-cyclique $1+2\times 3$) ; mur $R = 6$ confirmé à $1/\sqrt{8} = 0{,}3536$.
 - **$\langle 3,3,3 \rangle$ ($R = 23$, Laderman)** : **6/6 exacts bornés** à **$5{,}61 \times 10^{-13}$** ($\|F\| = 10{,}5$, $\max|x| = 1{,}25$, $\alpha \approx 1{,}00$).
 - **$\langle 3,3,3 \rangle$ ($R = 22$)** : le recuit $L_{2/3}$ brise le mur discret $1/\sqrt{27} = 0{,}1925$ sur **29 % des essais $\mathbb{R}$** (`5,14e-4`, $\alpha = 0{,}386$), **56 % des essais $\mathbb{C}$** (`5,37e-4`, $\alpha = 0{,}398$) et en **symétrie $\mathbb{Z}_3$-cyclique ($4 + 6\times 3$)** (`6,58e-4`) — tous signés comme **bord d'ordre 1** ($\alpha \approx 0{,}38$, $\text{err} \propto \|F\|^{-3}$), aucun point exact borné ($\alpha \approx 1$).
-- **$\langle 3,3,3 \rangle$ ($R = 21$, Schönhage)** : 1/16 essai franchit le mur et descend en polissage à **$5{,}17 \times 10^{-3}$** ($\|F\| = 93{,}5$, $\alpha = 0{,}311$, exposant mesuré $p = -1{,}58 \approx -3/2$ : **bord d'ordre 2**, [phase2_Anneal_R_libre_R21.npz](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/phase2_Anneal_R_libre_R21.npz)).
+- **$\langle 3,3,3 \rangle$ ($R = 21$, Schönhage)** : 1/16 essai franchit le mur et descend en polissage à **$5{,}17 \times 10^{-3}$** ($\|F\| = 93{,}5$, $\alpha = 0{,}311$, exposant mesuré $p = -1{,}58 \approx -3/2$ : **bord d'ordre 2**, [phase2_Anneal_R_libre_R21.npz](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/witnesses/algebraic_complexity/phase2_Anneal_R_libre_R21.npz)).
 - **$\langle 3,3,3 \rangle$ ($R = 20$ et $R = 19$)** : 0/36 ($R=20$) et 0/188 ($R=19$, $\mathbb{R}/\mathbb{C}$ libre et $\mathbb{Z}_3$-cyclique) restent piégés sur les plateaux discrets $\sqrt{2/27}$ et $\sqrt{3/27}$.
 
 ![Phase 1 : Rang exact vs Rang de bord sur 3x3](figures/matmul3_tensor_hunt.png)
@@ -385,7 +385,7 @@ Nos mesures vérifient cette loi à deux chiffres significatifs :
 ## 15. Formats rectangulaires ouverts sur $\mathbb{C}$ et barrière $L_\infty$ circulaire stricte
 
 ### 15.1 Phase 3 : Chasse rectangulaire sur $\mathbb{C}$
-Dans [matmul_rect_complex_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/matmul_rect_complex_hunt.py) (126 essais, double initialisation gaussienne + cyclotomique $\{0, \pm 1, \pm i, \omega\}$ + warm-start compressé) :
+Dans [matmul_rect_complex_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/matmul_rect_complex_hunt.py) (126 essais, double initialisation gaussienne + cyclotomique $\{0, \pm 1, \pm i, \omega\}$ + warm-start compressé) :
 - **Calibration exacte retrouvée** ($\alpha = 0{,}98$, $\max|x| \approx 1{,}0$–$1{,}1$) sur $\langle 2,3,4 \rangle$ ($R=20$, $8{,}95 \times 10^{-10}$), $\langle 2,3,5 \rangle$ ($R=25$, $1{,}45 \times 10^{-10}$) et $\langle 2,4,4 \rangle$ ($R=26$, $5{,}31 \times 10^{-13}$).
 - **Détection automatique de 3 séparations strictes $\underline{R} < R_{\text{rec}}$** vérifiées par polissage :
   - $\underline{R}(\langle 2,3,5 \rangle) \le 24$ ($3{,}26 \times 10^{-4}$, $\alpha = 0{,}376$, $p = -3{,}01$, cohérent avec Bini $10+14$) ;
@@ -396,7 +396,7 @@ Dans [matmul_rect_complex_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/sc
 ![Phase 3 : Chasse rectangulaire sur C](figures/matmul_rect_complex_hunt.png)
 
 ### 15.2 Phase 4 : Barrière $L_\infty$ circulaire stricte permanente et test tournesol $\langle 3,3,4 \rangle$ ($R=29$)
-Pour fermer les vallées de bord sans biaiser aucune solution exacte intérieure, [matmul_barrier_exact_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/matmul_barrier_exact_hunt.py) impose en permanence $\Phi_M(z) = \frac{\gamma}{2} \sum_q \max(0, |z_q| - M)^2$ ($\gamma = 100$, majorant MM hermitien exact $\gamma\,\mathrm{diag}(\mathbf{1}_{|z_q|>M})$) couplé à l'**équilibrage de jauge $L_\infty$ exact** ($\|u_r\|_\infty = \|v_r\|_\infty = \|w_r\|_\infty$).
+Pour fermer les vallées de bord sans biaiser aucune solution exacte intérieure, [matmul_barrier_exact_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/matmul_barrier_exact_hunt.py) impose en permanence $\Phi_M(z) = \frac{\gamma}{2} \sum_q \max(0, |z_q| - M)^2$ ($\gamma = 100$, majorant MM hermitien exact $\gamma\,\mathrm{diag}(\mathbf{1}_{|z_q|>M})$) couplé à l'**équilibrage de jauge $L_\infty$ exact** ($\|u_r\|_\infty = \|v_r\|_\infty = \|w_r\|_\infty$).
 
 - **Calibration $\langle 3,3,3 \rangle$ ($R=23$)** : 6/6 restent intérieurs ($\max|z_q| = 0{,}80$–$0{,}92 < M$) et convergent à $2{,}04 \times 10^{-11}$.
 - **Test tournesol $\langle 3,3,4 \rangle$ ($R=29$, record exact connu de Smirnov)** et cibles $R_{\text{rec}} - 1$ ($\langle 3,3,3 \rangle$ $22$, $\langle 2,3,5 \rangle$ $24$, $\langle 2,4,4 \rangle$ $25$, $\langle 3,3,4 \rangle$ $28$, 104 essais) : **100 % des trajectoires franchissant le mur discret viennent s'écraser verticalement contre la paroi $|z_q| = M$** (`err = 1,77e-3` à `5,79e-3`, 23/23 à `max|z| = 1,8` ou `2,5` sur $\langle 3,3,3 \rangle$ $R=22$). Cela démontre expérimentalement pourquoi la barrière continue ne suffit pas quand $\underline{R} < R$ : le bassin volumétrique de la vallée de bord se transforme en un minimum local profond collé à la paroi, masquant même les solutions exactes connues comme Smirnov $R = 29$.
@@ -409,9 +409,9 @@ Pour fermer les vallées de bord sans biaiser aucune solution exacte intérieure
 
 Pour supprimer par construction les vallées de bord, nous avons basculé en combinatoire exacte via le **Graphe de Flips** (Kauers–Moosbauer, 2023) augmenté des **transitions PLUS** (Arai et al., 2024 ; Moosbauer–Poole, 2025) sur **$\mathbb{F}_3$** et **$\mathbb{F}_5$** (qui contournent l'obstruction $\mathbb{F}_2$, avec $1/2 \in \mathbb{F}_3, \mathbb{F}_5$ et $i = 2 \in \mathbb{F}_5$).
 
-Dans [flip_graph_fp.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/flip_graph_fp.py) (Phase 5) et [flip_graph_v2_guided.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/flip_graph_v2_guided.py) (Phase 6), compilés en Numba JIT sur **10 cœurs** (~400 millions de flips vérifiés exacts à 100 %, encodage projectif sans perte sur `int64` puisque $5^{20} < 2^{47} < 2^{63}$) :
+Dans [flip_graph_fp.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/flip_graph_fp.py) (Phase 5) et [flip_graph_v2_guided.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/flip_graph_v2_guided.py) (Phase 6), compilés en Numba JIT sur **10 cœurs** (~400 millions de flips vérifiés exacts à 100 %, encodage projectif sans perte sur `int64` puisque $5^{20} < 2^{47} < 2^{63}$) :
 - **Innovation de réduction de tranches** : l'ajout d'une élimination de Gauss exacte mod $p$ sur chaque tranche partageant une direction $u$, $v$ ou $w$ ($m \ge 3$ termes) récolte instantanément toute dépendance linéaire multi-termes, ramenant Strassen $\langle 2,2,2 \rangle$ de $15\,707$ à **385 flips** sur $\mathbb{F}_3$ et débloquant $\mathbb{F}_5$ en $8\,804$ flips.
-- **Redécouverte de Laderman $R = 23$ sur $\mathbb{F}_3$ en 7,8 s** : parti du schéma naïf $R = 27$, 3 workers sur 10 descendent jusqu'à **$R = 23$ exact** à $2{,}6\text{ M flips/s}$ ([flip_3x3x3_F3_R23.npz](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/flip_3x3x3_F3_R23.npz)).
+- **Redécouverte de Laderman $R = 23$ sur $\mathbb{F}_3$ en 7,8 s** : parti du schéma naïf $R = 27$, 3 workers sur 10 descendent jusqu'à **$R = 23$ exact** à $2{,}6\text{ M flips/s}$ ([flip_3x3x3_F3_R23.npz](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/witnesses/algebraic_complexity/flip_3x3x3_F3_R23.npz)).
 - **Double diagnostic sur les grands formats** : (1) la taille projective $|\mathbb{P}^{N-1}(\mathbb{F}_p)|$ explose de $511$ ($\mathbb{F}_2, N=9$) à $9\,841$ ($\mathbb{F}_3, N=9$), $488\,281$ ($\mathbb{F}_5, N=9$) et $6{,}1 \times 10^7$ ($\mathbb{F}_5, N=12$), raréfiant les collisions spontanées ; (2) en Phase 6 (warm-start exact Strassen/Laderman + biais glouton $\Delta\text{nnz} \le 0$ à 75 %), le biais de parcimonie piège la marche à l'intérieur des blocs initiaux sans les mélanger.
 
 ![Phase 5 : Graphe de Flips exact non guidé sur F_3 et F_5](figures/flip_graph_fp_hunt.png)
@@ -472,4 +472,5 @@ Trois prolongements ciblés offrent le meilleur potentiel de résultats publiabl
 * Valiant, L. G., & Vazirani, V. V. (1986). NP is as easy as detecting unique solutions. *Theoretical Computer Science*, 47, 85–93.
 * Williams, R. (2005). A new algorithm for optimal 2-constraint satisfaction and its implications. *Theoretical Computer Science*, 348(2–3), 357–365.
 * Williams, R. (2011). Non-uniform ACC circuit lower bounds. *Proceedings of CCC 2011*, 115–125.
+
 
