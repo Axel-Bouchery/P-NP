@@ -1,0 +1,2743 @@
+{
+  "norm_checks": [
+    {
+      "p": 2,
+      "k": 2,
+      "irred_coeffs_low_to_high": [
+        1,
+        1,
+        1
+      ],
+      "exhaustive_checked": 3
+    },
+    {
+      "p": 2,
+      "k": 3,
+      "irred_coeffs_low_to_high": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "exhaustive_checked": 7
+    },
+    {
+      "p": 2,
+      "k": 4,
+      "irred_coeffs_low_to_high": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 15
+    },
+    {
+      "p": 2,
+      "k": 5,
+      "irred_coeffs_low_to_high": [
+        1,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 31
+    },
+    {
+      "p": 2,
+      "k": 6,
+      "irred_coeffs_low_to_high": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 63
+    },
+    {
+      "p": 3,
+      "k": 2,
+      "irred_coeffs_low_to_high": [
+        1,
+        0,
+        1
+      ],
+      "exhaustive_checked": 8
+    },
+    {
+      "p": 3,
+      "k": 3,
+      "irred_coeffs_low_to_high": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "exhaustive_checked": 26
+    },
+    {
+      "p": 3,
+      "k": 4,
+      "irred_coeffs_low_to_high": [
+        2,
+        1,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 80
+    },
+    {
+      "p": 3,
+      "k": 5,
+      "irred_coeffs_low_to_high": [
+        1,
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 242
+    },
+    {
+      "p": 3,
+      "k": 6,
+      "irred_coeffs_low_to_high": [
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 728
+    },
+    {
+      "p": 5,
+      "k": 2,
+      "irred_coeffs_low_to_high": [
+        2,
+        0,
+        1
+      ],
+      "exhaustive_checked": 24
+    },
+    {
+      "p": 5,
+      "k": 3,
+      "irred_coeffs_low_to_high": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "exhaustive_checked": 124
+    },
+    {
+      "p": 5,
+      "k": 4,
+      "irred_coeffs_low_to_high": [
+        2,
+        0,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 624
+    },
+    {
+      "p": 5,
+      "k": 5,
+      "irred_coeffs_low_to_high": [
+        1,
+        4,
+        0,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 3124
+    },
+    {
+      "p": 7,
+      "k": 2,
+      "irred_coeffs_low_to_high": [
+        1,
+        0,
+        1
+      ],
+      "exhaustive_checked": 48
+    },
+    {
+      "p": 7,
+      "k": 3,
+      "irred_coeffs_low_to_high": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 342
+    },
+    {
+      "p": 7,
+      "k": 4,
+      "irred_coeffs_low_to_high": [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "exhaustive_checked": 2400
+    }
+  ],
+  "mod6_d8_n88_witness": {
+    "c2": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "c3": [
+      2,
+      1,
+      2,
+      1,
+      2,
+      1,
+      2,
+      1
+    ],
+    "image_P3": [
+      0,
+      2
+    ],
+    "omitted_val": 1,
+    "shift_c": 2,
+    "n_verified": 88
+  },
+  "modules": {
+    "mod6": [
+      {
+        "d": 1,
+        "N_sym": 5,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 5,
+        "N_G2": 5,
+        "N_all": 5,
+        "witness_a": 5,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1
+        ],
+        "witness_c2": [
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.047,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 5,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 2,
+        "N_sym": 8,
+        "sym_degs": [
+          2,
+          1
+        ],
+        "N_G1": 9,
+        "N_G2": 10,
+        "N_all": 10,
+        "witness_a": 8,
+        "witness_degs": [
+          2,
+          1
+        ],
+        "witness_c1": [
+          0,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          2
+        ],
+        "g123_summary": "+2 G2(norm)@3",
+        "time_s": 0.0,
+        "N_G4": 10,
+        "G4_desc": "2xN(1)",
+        "N_best": 10,
+        "best_gain": 2,
+        "best_gain_pct": 25.0,
+        "best_mechanism": "+2 G2(norm)@3"
+      },
+      {
+        "d": 3,
+        "N_sym": 27,
+        "sym_degs": [
+          3,
+          3
+        ],
+        "N_G1": 27,
+        "N_G2": 27,
+        "N_all": 27,
+        "witness_a": 27,
+        "witness_degs": [
+          3,
+          3
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          0,
+          2,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.001,
+        "N_G4": 15,
+        "G4_desc": "3xN(1)",
+        "N_best": 27,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 4,
+        "N_sym": 36,
+        "sym_degs": [
+          4,
+          4
+        ],
+        "N_G1": 36,
+        "N_G2": 36,
+        "N_all": 36,
+        "witness_a": 36,
+        "witness_degs": [
+          4,
+          4
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.002,
+        "N_G4": 20,
+        "G4_desc": "2xN(2)",
+        "N_best": 36,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 5,
+        "N_sym": 53,
+        "sym_degs": [
+          5,
+          5
+        ],
+        "N_G1": 53,
+        "N_G2": 53,
+        "N_all": 53,
+        "witness_a": 53,
+        "witness_degs": [
+          5,
+          5
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.002,
+        "N_G4": 25,
+        "G4_desc": "5xN(1)",
+        "N_best": 53,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 6,
+        "N_sym": 62,
+        "sym_degs": [
+          6,
+          5
+        ],
+        "N_G1": 63,
+        "N_G2": 63,
+        "N_all": 63,
+        "witness_a": 62,
+        "witness_degs": [
+          6,
+          5
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "methods": [
+          "none",
+          "G1(margin)"
+        ],
+        "gains": [
+          0,
+          1
+        ],
+        "g123_summary": "+1 G1(margin)@3",
+        "time_s": 0.003,
+        "N_G4": 54,
+        "G4_desc": "2xN(3)",
+        "N_best": 63,
+        "best_gain": 1,
+        "best_gain_pct": 1.61,
+        "best_mechanism": "+1 G1(margin)@3"
+      },
+      {
+        "d": 7,
+        "N_sym": 71,
+        "sym_degs": [
+          7,
+          5
+        ],
+        "N_G1": 73,
+        "N_G2": 73,
+        "N_all": 73,
+        "witness_a": 71,
+        "witness_degs": [
+          7,
+          5
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G1(margin)"
+        ],
+        "gains": [
+          0,
+          2
+        ],
+        "g123_summary": "+2 G1(margin)@3",
+        "time_s": 0.007,
+        "N_G4": 56,
+        "G4_desc": "2xN(3)+2*1",
+        "N_best": 73,
+        "best_gain": 2,
+        "best_gain_pct": 2.82,
+        "best_mechanism": "+2 G1(margin)@3"
+      },
+      {
+        "d": 8,
+        "N_sym": 80,
+        "sym_degs": [
+          8,
+          5
+        ],
+        "N_G1": 83,
+        "N_G2": 83,
+        "N_all": 88,
+        "witness_a": 80,
+        "witness_degs": [
+          8,
+          8
+        ],
+        "witness_c1": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "methods": [
+          "none",
+          "G3(avoid)"
+        ],
+        "gains": [
+          0,
+          8
+        ],
+        "g123_summary": "+8 G3(avoid)@3",
+        "time_s": 0.023,
+        "N_G4": 72,
+        "G4_desc": "2xN(4)",
+        "N_best": 88,
+        "best_gain": 8,
+        "best_gain_pct": 10.0,
+        "best_mechanism": "+8 G3(avoid)@3"
+      },
+      {
+        "d": 9,
+        "N_sym": 151,
+        "sym_degs": [
+          7,
+          9
+        ],
+        "N_G1": 153,
+        "N_G2": 153,
+        "N_all": 153,
+        "witness_a": 151,
+        "witness_degs": [
+          7,
+          9
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        "methods": [
+          "G1(margin)",
+          "none"
+        ],
+        "gains": [
+          2,
+          0
+        ],
+        "g123_summary": "+2 G1(margin)@2",
+        "time_s": 0.105,
+        "N_G4": 81,
+        "G4_desc": "3xN(3)",
+        "N_best": 153,
+        "best_gain": 2,
+        "best_gain_pct": 1.32,
+        "best_mechanism": "+2 G1(margin)@2"
+      },
+      {
+        "d": 10,
+        "N_sym": 184,
+        "sym_degs": [
+          10,
+          10
+        ],
+        "N_G1": 184,
+        "N_G2": 184,
+        "N_all": 184,
+        "witness_a": 184,
+        "witness_degs": [
+          10,
+          10
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          1,
+          2,
+          0,
+          1,
+          2,
+          0,
+          2,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.362,
+        "N_G4": 106,
+        "G4_desc": "2xN(5)",
+        "N_best": 184,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      }
+    ],
+    "mod10": [
+      {
+        "d": 1,
+        "N_sym": 9,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 9,
+        "N_G2": 9,
+        "N_all": 9,
+        "witness_a": 9,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1
+        ],
+        "witness_c2": [
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.001,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 9,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 2,
+        "N_sym": 14,
+        "sym_degs": [
+          2,
+          1
+        ],
+        "N_G1": 15,
+        "N_G2": 18,
+        "N_all": 18,
+        "witness_a": 14,
+        "witness_degs": [
+          2,
+          1
+        ],
+        "witness_c1": [
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          4
+        ],
+        "g123_summary": "+4 G2(norm)@5",
+        "time_s": 0.0,
+        "N_G4": 18,
+        "G4_desc": "2xN(1)",
+        "N_best": 18,
+        "best_gain": 4,
+        "best_gain_pct": 28.57,
+        "best_mechanism": "+4 G2(norm)@5"
+      },
+      {
+        "d": 3,
+        "N_sym": 19,
+        "sym_degs": [
+          3,
+          1
+        ],
+        "N_G1": 21,
+        "N_G2": 27,
+        "N_all": 27,
+        "witness_a": 19,
+        "witness_degs": [
+          3,
+          1
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          8
+        ],
+        "g123_summary": "+8 G2(norm)@5",
+        "time_s": 0.0,
+        "N_G4": 27,
+        "G4_desc": "3xN(1)",
+        "N_best": 27,
+        "best_gain": 8,
+        "best_gain_pct": 42.11,
+        "best_mechanism": "+8 G2(norm)@5"
+      },
+      {
+        "d": 4,
+        "N_sym": 24,
+        "sym_degs": [
+          4,
+          1
+        ],
+        "N_G1": 27,
+        "N_G2": 36,
+        "N_all": 36,
+        "witness_a": 24,
+        "witness_degs": [
+          4,
+          1
+        ],
+        "witness_c1": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          12
+        ],
+        "g123_summary": "+12 G2(norm)@5",
+        "time_s": 0.001,
+        "N_G4": 36,
+        "G4_desc": "2xN(2)",
+        "N_best": 36,
+        "best_gain": 12,
+        "best_gain_pct": 50.0,
+        "best_mechanism": "+12 G2(norm)@5"
+      },
+      {
+        "d": 5,
+        "N_sym": 117,
+        "sym_degs": [
+          5,
+          5
+        ],
+        "N_G1": 117,
+        "N_G2": 117,
+        "N_all": 117,
+        "witness_a": 117,
+        "witness_degs": [
+          5,
+          5
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          0,
+          2,
+          1,
+          3,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.005,
+        "N_G4": 45,
+        "G4_desc": "5xN(1)",
+        "N_best": 117,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 6,
+        "N_sym": 150,
+        "sym_degs": [
+          6,
+          6
+        ],
+        "N_G1": 150,
+        "N_G2": 150,
+        "N_all": 150,
+        "witness_a": 150,
+        "witness_degs": [
+          6,
+          6
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          0,
+          3,
+          4,
+          0,
+          2,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.023,
+        "N_G4": 54,
+        "G4_desc": "2xN(3)",
+        "N_best": 150,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 7,
+        "N_sym": 183,
+        "sym_degs": [
+          7,
+          7
+        ],
+        "N_G1": 183,
+        "N_G2": 183,
+        "N_all": 183,
+        "witness_a": 183,
+        "witness_degs": [
+          7,
+          7
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          2,
+          0,
+          0,
+          4,
+          1,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.122,
+        "N_G4": 63,
+        "G4_desc": "7xN(1)",
+        "N_best": 183,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 8,
+        "N_sym": 208,
+        "sym_degs": [
+          8,
+          8
+        ],
+        "N_G1": 208,
+        "N_G2": 208,
+        "N_all": 208,
+        "witness_a": 208,
+        "witness_degs": [
+          8,
+          8
+        ],
+        "witness_c1": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0,
+          4,
+          1,
+          4,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.562,
+        "N_G4": 72,
+        "G4_desc": "2xN(4)",
+        "N_best": 208,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      }
+    ],
+    "mod12": [
+      {
+        "d": 1,
+        "N_sym": 11,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 11,
+        "N_G2": 11,
+        "N_all": 11,
+        "witness_a": 11,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1
+        ],
+        "witness_c2": [
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.005,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 11,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 2,
+        "N_sym": 20,
+        "sym_degs": [
+          2,
+          1
+        ],
+        "N_G1": 21,
+        "N_G2": 22,
+        "N_all": 22,
+        "witness_a": 20,
+        "witness_degs": [
+          2,
+          1
+        ],
+        "witness_c1": [
+          2,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          2
+        ],
+        "g123_summary": "+2 G2(norm)@3",
+        "time_s": 0.0,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 22,
+        "best_gain": 2,
+        "best_gain_pct": 10.0,
+        "best_mechanism": "+2 G2(norm)@3"
+      },
+      {
+        "d": 3,
+        "N_sym": 55,
+        "sym_degs": [
+          3,
+          3
+        ],
+        "N_G1": 55,
+        "N_G2": 55,
+        "N_all": 55,
+        "witness_a": 55,
+        "witness_degs": [
+          3,
+          3
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          0,
+          0,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.001,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 55,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 4,
+        "N_sym": 100,
+        "sym_degs": [
+          4,
+          4
+        ],
+        "N_G1": 100,
+        "N_G2": 100,
+        "N_all": 100,
+        "witness_a": 100,
+        "witness_degs": [
+          4,
+          4
+        ],
+        "witness_c1": [
+          3,
+          3,
+          3,
+          1
+        ],
+        "witness_c2": [
+          1,
+          1,
+          2,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.003,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 100,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 5,
+        "N_sym": 125,
+        "sym_degs": [
+          5,
+          5
+        ],
+        "N_G1": 125,
+        "N_G2": 125,
+        "N_all": 125,
+        "witness_a": 125,
+        "witness_degs": [
+          5,
+          5
+        ],
+        "witness_c1": [
+          2,
+          3,
+          0,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.007,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 125,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 6,
+        "N_sym": 134,
+        "sym_degs": [
+          6,
+          5
+        ],
+        "N_G1": 135,
+        "N_G2": 135,
+        "N_all": 135,
+        "witness_a": 134,
+        "witness_degs": [
+          6,
+          5
+        ],
+        "witness_c1": [
+          2,
+          3,
+          0,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "methods": [
+          "none",
+          "G1(margin)"
+        ],
+        "gains": [
+          0,
+          1
+        ],
+        "g123_summary": "+1 G1(margin)@3",
+        "time_s": 0.035,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 135,
+        "best_gain": 1,
+        "best_gain_pct": 0.75,
+        "best_mechanism": "+1 G1(margin)@3"
+      },
+      {
+        "d": 7,
+        "N_sym": 143,
+        "sym_degs": [
+          7,
+          5
+        ],
+        "N_G1": 145,
+        "N_G2": 145,
+        "N_all": 145,
+        "witness_a": 143,
+        "witness_degs": [
+          7,
+          5
+        ],
+        "witness_c1": [
+          2,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G1(margin)"
+        ],
+        "gains": [
+          0,
+          2
+        ],
+        "g123_summary": "+2 G1(margin)@3",
+        "time_s": 0.21,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 145,
+        "best_gain": 2,
+        "best_gain_pct": 1.4,
+        "best_mechanism": "+2 G1(margin)@3"
+      },
+      {
+        "d": 8,
+        "N_sym": 224,
+        "sym_degs": [
+          8,
+          5
+        ],
+        "N_G1": 227,
+        "N_G2": 227,
+        "N_all": 232,
+        "witness_a": 224,
+        "witness_degs": [
+          8,
+          8
+        ],
+        "witness_c1": [
+          0,
+          3,
+          1,
+          3,
+          1,
+          1,
+          3,
+          1
+        ],
+        "witness_c2": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "methods": [
+          "none",
+          "G3(avoid)"
+        ],
+        "gains": [
+          0,
+          8
+        ],
+        "g123_summary": "+8 G3(avoid)@3",
+        "time_s": 1.672,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 232,
+        "best_gain": 8,
+        "best_gain_pct": 3.57,
+        "best_mechanism": "+8 G3(avoid)@3"
+      }
+    ],
+    "mod14": [
+      {
+        "d": 1,
+        "N_sym": 13,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 13,
+        "N_G2": 13,
+        "N_all": 13,
+        "witness_a": 13,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1
+        ],
+        "witness_c2": [
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.004,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 13,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 2,
+        "N_sym": 20,
+        "sym_degs": [
+          2,
+          1
+        ],
+        "N_G1": 21,
+        "N_G2": 26,
+        "N_all": 26,
+        "witness_a": 20,
+        "witness_degs": [
+          2,
+          1
+        ],
+        "witness_c1": [
+          0,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          6
+        ],
+        "g123_summary": "+6 G2(norm)@7",
+        "time_s": 0.0,
+        "N_G4": 26,
+        "G4_desc": "2xN(1)",
+        "N_best": 26,
+        "best_gain": 6,
+        "best_gain_pct": 30.0,
+        "best_mechanism": "+6 G2(norm)@7"
+      },
+      {
+        "d": 3,
+        "N_sym": 27,
+        "sym_degs": [
+          3,
+          1
+        ],
+        "N_G1": 29,
+        "N_G2": 39,
+        "N_all": 39,
+        "witness_a": 27,
+        "witness_degs": [
+          3,
+          1
+        ],
+        "witness_c1": [
+          1,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          12
+        ],
+        "g123_summary": "+12 G2(norm)@7",
+        "time_s": 0.001,
+        "N_G4": 39,
+        "G4_desc": "3xN(1)",
+        "N_best": 39,
+        "best_gain": 12,
+        "best_gain_pct": 44.44,
+        "best_mechanism": "+12 G2(norm)@7"
+      },
+      {
+        "d": 4,
+        "N_sym": 34,
+        "sym_degs": [
+          4,
+          1
+        ],
+        "N_G1": 37,
+        "N_G2": 52,
+        "N_all": 52,
+        "witness_a": 34,
+        "witness_degs": [
+          4,
+          1
+        ],
+        "witness_c1": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          18
+        ],
+        "g123_summary": "+18 G2(norm)@7",
+        "time_s": 0.002,
+        "N_G4": 52,
+        "G4_desc": "2xN(2)",
+        "N_best": 52,
+        "best_gain": 18,
+        "best_gain_pct": 52.94,
+        "best_mechanism": "+18 G2(norm)@7"
+      },
+      {
+        "d": 5,
+        "N_sym": 41,
+        "sym_degs": [
+          5,
+          1
+        ],
+        "N_G1": 45,
+        "N_G2": 65,
+        "N_all": 65,
+        "witness_a": 41,
+        "witness_degs": [
+          5,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          24
+        ],
+        "g123_summary": "+24 G2(norm)@7",
+        "time_s": 0.011,
+        "N_G4": 65,
+        "G4_desc": "5xN(1)",
+        "N_best": 65,
+        "best_gain": 24,
+        "best_gain_pct": 58.54,
+        "best_mechanism": "+24 G2(norm)@7"
+      },
+      {
+        "d": 6,
+        "N_sym": 48,
+        "sym_degs": [
+          6,
+          1
+        ],
+        "N_G1": 53,
+        "N_G2": 78,
+        "N_all": 78,
+        "witness_a": 48,
+        "witness_degs": [
+          6,
+          1
+        ],
+        "witness_c1": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          30
+        ],
+        "g123_summary": "+30 G2(norm)@7",
+        "time_s": 0.07,
+        "N_G4": 78,
+        "G4_desc": "2xN(3)",
+        "N_best": 78,
+        "best_gain": 30,
+        "best_gain_pct": 62.5,
+        "best_mechanism": "+30 G2(norm)@7"
+      }
+    ],
+    "mod15": [
+      {
+        "d": 1,
+        "N_sym": 14,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 14,
+        "N_G2": 14,
+        "N_all": 14,
+        "witness_a": 14,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1
+        ],
+        "witness_c2": [
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.001,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 14,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 2,
+        "N_sym": 14,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 16,
+        "N_G2": 20,
+        "N_all": 20,
+        "witness_a": 14,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0
+        ],
+        "witness_c2": [
+          1,
+          0
+        ],
+        "methods": [
+          "G2(norm)",
+          "G2(norm)"
+        ],
+        "gains": [
+          2,
+          4
+        ],
+        "g123_summary": "+2 G2(norm)@3 & +4 G2(norm)@5",
+        "time_s": 0.0,
+        "N_G4": 28,
+        "G4_desc": "2xN(1)",
+        "N_best": 28,
+        "best_gain": 14,
+        "best_gain_pct": 100.0,
+        "best_mechanism": "G4(2xN(1))"
+      },
+      {
+        "d": 3,
+        "N_sym": 34,
+        "sym_degs": [
+          3,
+          1
+        ],
+        "N_G1": 36,
+        "N_G2": 42,
+        "N_all": 42,
+        "witness_a": 34,
+        "witness_degs": [
+          3,
+          1
+        ],
+        "witness_c1": [
+          2,
+          0,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          8
+        ],
+        "g123_summary": "+8 G2(norm)@5",
+        "time_s": 0.001,
+        "N_G4": 42,
+        "G4_desc": "3xN(1)",
+        "N_best": 42,
+        "best_gain": 8,
+        "best_gain_pct": 23.53,
+        "best_mechanism": "+8 G2(norm)@5"
+      },
+      {
+        "d": 4,
+        "N_sym": 39,
+        "sym_degs": [
+          4,
+          1
+        ],
+        "N_G1": 42,
+        "N_G2": 51,
+        "N_all": 51,
+        "witness_a": 39,
+        "witness_degs": [
+          4,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          12
+        ],
+        "g123_summary": "+12 G2(norm)@5",
+        "time_s": 0.002,
+        "N_G4": 56,
+        "G4_desc": "2xN(2)",
+        "N_best": 56,
+        "best_gain": 17,
+        "best_gain_pct": 43.59,
+        "best_mechanism": "G4(2xN(2))"
+      },
+      {
+        "d": 5,
+        "N_sym": 188,
+        "sym_degs": [
+          5,
+          5
+        ],
+        "N_G1": 188,
+        "N_G2": 188,
+        "N_all": 188,
+        "witness_a": 188,
+        "witness_degs": [
+          5,
+          5
+        ],
+        "witness_c1": [
+          1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "witness_c2": [
+          2,
+          0,
+          0,
+          0,
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.013,
+        "N_G4": 70,
+        "G4_desc": "5xN(1)",
+        "N_best": 188,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 6,
+        "N_sym": 197,
+        "sym_degs": [
+          5,
+          6
+        ],
+        "N_G1": 198,
+        "N_G2": 198,
+        "N_all": 198,
+        "witness_a": 197,
+        "witness_degs": [
+          5,
+          6
+        ],
+        "witness_c1": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "witness_c2": [
+          4,
+          4,
+          0,
+          1,
+          1,
+          1
+        ],
+        "methods": [
+          "G1(margin)",
+          "none"
+        ],
+        "gains": [
+          1,
+          0
+        ],
+        "g123_summary": "+1 G1(margin)@3",
+        "time_s": 0.059,
+        "N_G4": 84,
+        "G4_desc": "2xN(3)",
+        "N_best": 198,
+        "best_gain": 1,
+        "best_gain_pct": 0.51,
+        "best_mechanism": "+1 G1(margin)@3"
+      },
+      {
+        "d": 7,
+        "N_sym": 206,
+        "sym_degs": [
+          5,
+          7
+        ],
+        "N_G1": 208,
+        "N_G2": 208,
+        "N_all": 208,
+        "witness_a": 206,
+        "witness_degs": [
+          5,
+          7
+        ],
+        "witness_c1": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          0,
+          0
+        ],
+        "witness_c2": [
+          1,
+          2,
+          0,
+          0,
+          1,
+          2,
+          1
+        ],
+        "methods": [
+          "G1(margin)",
+          "none"
+        ],
+        "gains": [
+          2,
+          0
+        ],
+        "g123_summary": "+2 G1(margin)@3",
+        "time_s": 0.328,
+        "N_G4": 98,
+        "G4_desc": "7xN(1)",
+        "N_best": 208,
+        "best_gain": 2,
+        "best_gain_pct": 0.97,
+        "best_mechanism": "+2 G1(margin)@3"
+      },
+      {
+        "d": 8,
+        "N_sym": 215,
+        "sym_degs": [
+          5,
+          8
+        ],
+        "N_G1": 218,
+        "N_G2": 218,
+        "N_all": 223,
+        "witness_a": 215,
+        "witness_degs": [
+          8,
+          8
+        ],
+        "witness_c1": [
+          2,
+          1,
+          2,
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "witness_c2": [
+          3,
+          0,
+          0,
+          0,
+          1,
+          3,
+          3,
+          1
+        ],
+        "methods": [
+          "G3(avoid)",
+          "none"
+        ],
+        "gains": [
+          8,
+          0
+        ],
+        "g123_summary": "+8 G3(avoid)@3",
+        "time_s": 2.95,
+        "N_G4": 112,
+        "G4_desc": "2xN(4)",
+        "N_best": 223,
+        "best_gain": 8,
+        "best_gain_pct": 3.72,
+        "best_mechanism": "+8 G3(avoid)@3"
+      }
+    ],
+    "mod21": [
+      {
+        "d": 1,
+        "N_sym": 20,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 20,
+        "N_G2": 20,
+        "N_all": 20,
+        "witness_a": 20,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1
+        ],
+        "witness_c2": [
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.002,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 20,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 2,
+        "N_sym": 20,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 22,
+        "N_G2": 28,
+        "N_all": 28,
+        "witness_a": 20,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0
+        ],
+        "witness_c2": [
+          1,
+          0
+        ],
+        "methods": [
+          "G2(norm)",
+          "G2(norm)"
+        ],
+        "gains": [
+          2,
+          6
+        ],
+        "g123_summary": "+2 G2(norm)@3 & +6 G2(norm)@7",
+        "time_s": 0.001,
+        "N_G4": 40,
+        "G4_desc": "2xN(1)",
+        "N_best": 40,
+        "best_gain": 20,
+        "best_gain_pct": 100.0,
+        "best_mechanism": "G4(2xN(1))"
+      },
+      {
+        "d": 3,
+        "N_sym": 48,
+        "sym_degs": [
+          3,
+          1
+        ],
+        "N_G1": 50,
+        "N_G2": 60,
+        "N_all": 60,
+        "witness_a": 48,
+        "witness_degs": [
+          3,
+          1
+        ],
+        "witness_c1": [
+          2,
+          2,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          12
+        ],
+        "g123_summary": "+12 G2(norm)@7",
+        "time_s": 0.001,
+        "N_G4": 60,
+        "G4_desc": "3xN(1)",
+        "N_best": 60,
+        "best_gain": 12,
+        "best_gain_pct": 25.0,
+        "best_mechanism": "+12 G2(norm)@7"
+      },
+      {
+        "d": 4,
+        "N_sym": 55,
+        "sym_degs": [
+          4,
+          1
+        ],
+        "N_G1": 58,
+        "N_G2": 73,
+        "N_all": 73,
+        "witness_a": 55,
+        "witness_degs": [
+          4,
+          1
+        ],
+        "witness_c1": [
+          1,
+          1,
+          2,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          18
+        ],
+        "g123_summary": "+18 G2(norm)@7",
+        "time_s": 0.004,
+        "N_G4": 80,
+        "G4_desc": "2xN(2)",
+        "N_best": 80,
+        "best_gain": 25,
+        "best_gain_pct": 45.45,
+        "best_mechanism": "G4(2xN(2))"
+      },
+      {
+        "d": 5,
+        "N_sym": 62,
+        "sym_degs": [
+          5,
+          1
+        ],
+        "N_G1": 66,
+        "N_G2": 86,
+        "N_all": 86,
+        "witness_a": 62,
+        "witness_degs": [
+          5,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0,
+          1,
+          2,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          24
+        ],
+        "g123_summary": "+24 G2(norm)@7",
+        "time_s": 0.026,
+        "N_G4": 100,
+        "G4_desc": "5xN(1)",
+        "N_best": 100,
+        "best_gain": 38,
+        "best_gain_pct": 61.29,
+        "best_mechanism": "G4(5xN(1))"
+      },
+      {
+        "d": 6,
+        "N_sym": 62,
+        "sym_degs": [
+          5,
+          1
+        ],
+        "N_G1": 68,
+        "N_G2": 93,
+        "N_all": 93,
+        "witness_a": 62,
+        "witness_degs": [
+          5,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "G1(margin)",
+          "G2(norm)"
+        ],
+        "gains": [
+          1,
+          30
+        ],
+        "g123_summary": "+1 G1(margin)@3 & +30 G2(norm)@7",
+        "time_s": 0.164,
+        "N_G4": 120,
+        "G4_desc": "2xN(3)",
+        "N_best": 120,
+        "best_gain": 58,
+        "best_gain_pct": 93.55,
+        "best_mechanism": "G4(2xN(3))"
+      }
+    ],
+    "mod30": [
+      {
+        "d": 1,
+        "N_sym": 29,
+        "sym_degs": [
+          1,
+          1,
+          1
+        ],
+        "N_G1": 29,
+        "N_G2": 29,
+        "N_all": 29,
+        "witness_a": 29,
+        "witness_degs": [
+          1,
+          1,
+          1
+        ],
+        "methods": [
+          "none",
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.056,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 29,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 2,
+        "N_sym": 44,
+        "sym_degs": [
+          2,
+          1,
+          1
+        ],
+        "N_G1": 46,
+        "N_G2": 50,
+        "N_all": 50,
+        "witness_a": 44,
+        "witness_degs": [
+          2,
+          1,
+          1
+        ],
+        "methods": [
+          "none",
+          "G2(norm)",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          2,
+          4
+        ],
+        "g123_summary": "+2 G2(norm)@3 & +4 G2(norm)@5",
+        "time_s": 0.001,
+        "N_G4": 58,
+        "G4_desc": "2xN(1)",
+        "N_best": 58,
+        "best_gain": 14,
+        "best_gain_pct": 31.82,
+        "best_mechanism": "G4(2xN(1))"
+      },
+      {
+        "d": 3,
+        "N_sym": 139,
+        "sym_degs": [
+          3,
+          3,
+          1
+        ],
+        "N_G1": 141,
+        "N_G2": 147,
+        "N_all": 147,
+        "witness_a": 139,
+        "witness_degs": [
+          3,
+          3,
+          1
+        ],
+        "methods": [
+          "none",
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          0,
+          8
+        ],
+        "g123_summary": "+8 G2(norm)@5",
+        "time_s": 0.001,
+        "N_G4": 87,
+        "G4_desc": "3xN(1)",
+        "N_best": 147,
+        "best_gain": 8,
+        "best_gain_pct": 5.76,
+        "best_mechanism": "+8 G2(norm)@5"
+      },
+      {
+        "d": 4,
+        "N_sym": 184,
+        "sym_degs": [
+          4,
+          4,
+          1
+        ],
+        "N_G1": 187,
+        "N_G2": 196,
+        "N_all": 196,
+        "witness_a": 184,
+        "witness_degs": [
+          4,
+          4,
+          1
+        ],
+        "methods": [
+          "none",
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          0,
+          12
+        ],
+        "g123_summary": "+12 G2(norm)@5",
+        "time_s": 0.005,
+        "N_G4": 116,
+        "G4_desc": "2xN(2)",
+        "N_best": 196,
+        "best_gain": 12,
+        "best_gain_pct": 6.52,
+        "best_mechanism": "+12 G2(norm)@5"
+      },
+      {
+        "d": 5,
+        "N_sym": 1061,
+        "sym_degs": [
+          5,
+          5,
+          5
+        ],
+        "N_G1": 1061,
+        "N_G2": 1061,
+        "N_all": 1061,
+        "witness_a": 1061,
+        "witness_degs": [
+          5,
+          5,
+          5
+        ],
+        "methods": [
+          "none",
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.041,
+        "N_G4": 145,
+        "G4_desc": "5xN(1)",
+        "N_best": 1061,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 6,
+        "N_sym": 1358,
+        "sym_degs": [
+          6,
+          5,
+          6
+        ],
+        "N_G1": 1359,
+        "N_G2": 1359,
+        "N_all": 1359,
+        "witness_a": 1358,
+        "witness_degs": [
+          6,
+          5,
+          6
+        ],
+        "methods": [
+          "none",
+          "G1(margin)",
+          "none"
+        ],
+        "gains": [
+          0,
+          1,
+          0
+        ],
+        "g123_summary": "+1 G1(margin)@3",
+        "time_s": 0.416,
+        "N_G4": 294,
+        "G4_desc": "2xN(3)",
+        "N_best": 1359,
+        "best_gain": 1,
+        "best_gain_pct": 0.07,
+        "best_mechanism": "+1 G1(margin)@3"
+      }
+    ],
+    "mod35": [
+      {
+        "d": 1,
+        "N_sym": 34,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 34,
+        "N_G2": 34,
+        "N_all": 34,
+        "witness_a": 34,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1
+        ],
+        "witness_c2": [
+          1
+        ],
+        "methods": [
+          "none",
+          "none"
+        ],
+        "gains": [
+          0,
+          0
+        ],
+        "g123_summary": "sym",
+        "time_s": 0.025,
+        "N_G4": 0,
+        "G4_desc": "none",
+        "N_best": 34,
+        "best_gain": 0,
+        "best_gain_pct": 0.0,
+        "best_mechanism": "sym"
+      },
+      {
+        "d": 2,
+        "N_sym": 34,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 36,
+        "N_G2": 44,
+        "N_all": 44,
+        "witness_a": 34,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0
+        ],
+        "witness_c2": [
+          1,
+          0
+        ],
+        "methods": [
+          "G2(norm)",
+          "G2(norm)"
+        ],
+        "gains": [
+          4,
+          6
+        ],
+        "g123_summary": "+4 G2(norm)@5 & +6 G2(norm)@7",
+        "time_s": 0.0,
+        "N_G4": 68,
+        "G4_desc": "2xN(1)",
+        "N_best": 68,
+        "best_gain": 34,
+        "best_gain_pct": 100.0,
+        "best_mechanism": "G4(2xN(1))"
+      },
+      {
+        "d": 3,
+        "N_sym": 34,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 38,
+        "N_G2": 54,
+        "N_all": 54,
+        "witness_a": 34,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0,
+          0
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0
+        ],
+        "methods": [
+          "G2(norm)",
+          "G2(norm)"
+        ],
+        "gains": [
+          8,
+          12
+        ],
+        "g123_summary": "+8 G2(norm)@5 & +12 G2(norm)@7",
+        "time_s": 0.001,
+        "N_G4": 102,
+        "G4_desc": "3xN(1)",
+        "N_best": 102,
+        "best_gain": 68,
+        "best_gain_pct": 200.0,
+        "best_mechanism": "G4(3xN(1))"
+      },
+      {
+        "d": 4,
+        "N_sym": 34,
+        "sym_degs": [
+          1,
+          1
+        ],
+        "N_G1": 40,
+        "N_G2": 64,
+        "N_all": 64,
+        "witness_a": 34,
+        "witness_degs": [
+          1,
+          1
+        ],
+        "witness_c1": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "G2(norm)",
+          "G2(norm)"
+        ],
+        "gains": [
+          12,
+          18
+        ],
+        "g123_summary": "+12 G2(norm)@5 & +18 G2(norm)@7",
+        "time_s": 0.004,
+        "N_G4": 136,
+        "G4_desc": "2xN(2)",
+        "N_best": 136,
+        "best_gain": 102,
+        "best_gain_pct": 300.0,
+        "best_mechanism": "G4(2xN(2))"
+      },
+      {
+        "d": 5,
+        "N_sym": 146,
+        "sym_degs": [
+          5,
+          1
+        ],
+        "N_G1": 150,
+        "N_G2": 170,
+        "N_all": 170,
+        "witness_a": 146,
+        "witness_degs": [
+          5,
+          1
+        ],
+        "witness_c1": [
+          3,
+          0,
+          3,
+          1,
+          1
+        ],
+        "witness_c2": [
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        "methods": [
+          "none",
+          "G2(norm)"
+        ],
+        "gains": [
+          0,
+          24
+        ],
+        "g123_summary": "+24 G2(norm)@7",
+        "time_s": 0.031,
+        "N_G4": 170,
+        "G4_desc": "5xN(1)",
+        "N_best": 170,
+        "best_gain": 24,
+        "best_gain_pct": 16.44,
+        "best_mechanism": "+24 G2(norm)@7"
+      }
+    ]
+  },
+  "total_time_s": 13.88
+}

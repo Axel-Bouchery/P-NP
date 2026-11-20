@@ -13,12 +13,12 @@ Ce mémoire rassemble et unifie une campagne de recherche menée sur trois front
 
 Notre démarche associe systématiquement preuves formelles, conception de solveurs exacts compilés, calibration stricte sur des théorèmes connus et analyse critique des échecs. Nos principales contributions se répartissent en trois catégories clairement distinguées :
 
-1. **Résultats théoriques constructifs originaux (Partie II, Polynômes mod 6)** : après avoir déterminé par énumération projective exacte le spectre symétrique N<sub>sym</sub>(d) pour d = 1, …, 10 (5, 8, 27, 36, 53, 62, 71, 80, 151, 184), nous démontrons deux théorèmes constructifs (**Théorèmes M1 et M2**) prouvant que les polynômes **non symétriques** dépassent strictement le maximum symétrique dès d = 2 (n = 10 > 8, atteignant l'optimum mondial prouvé par Győri, 2006), puis aux degrés d = 6, 7, 8, 9 (dépassant la période CRT symétrique 71 à d = 7 avec n = 73) et pour une **infinité de degrés** par récolte de marge (*Margin-Harvesting*). À l'inverse, notre chasse multi-blocs à d = 3, 4, 5 (où la marge est nulle) bute systématiquement sur un défaut minimal de 1 à N<sub>sym</sub>(d) + 1, motivant une **conjecture de saturation de marge** compatible avec la conjecture d = Ω(√n) de Barrington–Beigel–Rudich.
+1. **Résultats théoriques constructifs originaux (Partie II, Polynômes modulo m composite)** : après avoir déterminé par énumération projective exacte le spectre symétrique N<sub>sym</sub>(d) modulo 6 pour d = 1, …, 10 (5, 8, 27, 36, 53, 62, 71, 80, 151, 184), nous démontrons les **Théorèmes M1 et M2** (atteignant l'optimum mondial de Győri n = 10 > 8 à d = 2 et dépassant la période CRT 71 à d = 7 avec n = 73), puis nous les **généralisons à tout module composite m** à travers cinq théorèmes constructifs unifiés (**Théorèmes G1 à G5**) vérifiés exhaustivement sur **8 modules composites** (`mod 6, 10, 12, 14, 15, 21, 30, 35`). En particulier : (i) **G3 (*Value-Avoidance*)** porte notre record modulo 6 à d = 8 de 83 à **n = 88 (+10 %)** (et +8 sur `mod 12` et `mod 15`) ; (ii) **G2 (*Norme de corps*)** récolte jusqu'à +62,5 % sur `mod 14` ; et (iii) **G4–G5** démontrent une **séparation non bornée** N<sub>gen</sub><sup>(m)</sup>(p<sub>min</sub> − 1) / N<sub>sym</sub><sup>(m)</sup>(p<sub>min</sub> − 1) ≥ p<sub>min</sub> − 1 → +∞ pour tout composite impair sans facteur carré (vérifiée à **×2 (+100 %)** sur `mod 15` et `mod 21`, et **×4 (+300 %, 34 → 136)** sur `mod 35`). À l'inverse, lorsque la marge Δ = 0 (ex. `mod 6` à d = 3, 4, 5), nos chasses multi-blocs heurtent systématiquement `defect = 1` à N<sub>sym</sub>(d) + 1, confortant la conjecture asymptotique d = Ω(√n) de Barrington–Beigel–Rudich.
 2. **Résultats algorithmiques et structurels sur THR ∘ THR (Partie I)** : nous établissons et vérifions trois théorèmes exacts (**Théorème 1** : projection 1D à enveloppe de résidu et arrondi sur réseau PGCD, éliminant les « pics fantômes hors-réseau » ; **Théorème 2** : compression bilinéaire à pointeurs glissants en code de Gray résolvant n = 28 en 0,502 s ; **Théorème 3** : factorisation matricielle exacte de rang K ≤ 2 R ℓ s réduisant THR ∘ THR-SAT en temps O<sup>∗</sup>(2<sup>n/2</sup>) au problème MIPS et exposant la barrière OVC/SETH). Nous construisons l'**atlas exhaustif exact** des 65 536 fonctions booléennes à n = 4 variables (222 classes NPN), prouvant l'unicité de PARITY₄ au niveau maximal s<sup>∗</sup> = 4 et l'effondrement à 0,0 % des preuves naturelles spectrales L₁ dès s<sup>∗</sup> = 2 (fonctions courbes *Bent* et caméléons de Chow). Nous développons enfin un algorithme CAPP 100 % déterministe en O<sup>∗</sup>(2<sup>n/2</sup>) par décomposition CUR/Nyström (0,311 s à n = 26) et évaluons la topologie spectrale de Huang sur l'hypercube Q<sub>n</sub>.
 3. **Méthodes exactes et cartographie des verrous en complexité algébrique (Partie III)** : sur perm₃, notre **solveur Levenberg–Marquardt de Parseval** (racines de l'unité + jauge SVD diagonale) redécouvre de zéro une représentation déterminantale exacte 7 × 7 à 8,01 × 10⁻¹³ en 33 itérations, tout en mettant en évidence un mur net à k = 6 (0/64 essais) et un piège de jauge SL₇ sur l'homotopie 7 → 6. Sur la multiplication matricielle, notre **solveur Gauss–Newton hermitien exact à recuit L<sub>2/3</sub>** révèle une **loi d'échelle analytique** err(μ) ∝ μ<sup>α</sup> avec α = p / (2p + 2) qui discrimine quantitativement rang exact borné (α = 1,00), bord d'ordre 1 (α = 3/8) et bord d'ordre 2 (α = 3/10), permettant de redécouvrir automatiquement Strassen (R = 7), Laderman (R = 23, 6/6), un bord 22 ℤ₃-cyclique, un bord 21 (Schönhage) et trois séparations strictes <u>R</u> < R<sub>rec</sub> sur ⟨2,3,5⟩, ⟨2,4,4⟩ et ⟨3,3,4⟩. Enfin, nos tests sous **barrière L<sub>∞</sub> stricte** (Phase 4) puis en **Graphe de Flips combinatoire exact** sur 𝔽₃ et 𝔽₅ (Phases 5–6, Numba JIT 10 cœurs, 2,6 M flips/s, redécouvrant Laderman R = 23 sur 𝔽₃ en 7,8 s) isolent précisément les deux verrous complémentaires : la domination volumétrique des vallées de bord en continu et l'explosion projective ∣ℙ<sup>N−1</sup>(𝔽<sub>p</sub>)∣ en discret.
 
 > [!NOTE]
-> **Transparence scientifique :** Ce travail ne résout ni P ≟ NP ni VP ≟ VNP et ne bat aucun record mondial connu de rang exact en multiplication matricielle. Sa valeur réside dans la rigueur de ses preuves constructives (Théorèmes 1, 2, 3, M1, M2), la reproductibilité intégrale de ses expériences (toutes vérifiées contre des références exactes), et la mise en lumière unifiée des cinq grands murs structurels rencontrés dans l'attaque moderne des bornes inférieures.
+> **Transparence scientifique :** Ce travail ne résout ni P ≟ NP ni VP ≟ VNP et ne bat aucun record mondial connu de rang exact en multiplication matricielle. Sa valeur réside dans la rigueur de ses preuves constructives (Théorèmes 1, 2, 3, M1, M2 et G1–G5), la reproductibilité intégrale de ses expériences (toutes vérifiées contre des références exactes), et la mise en lumière unifiée des cinq grands murs structurels rencontrés dans l'attaque moderne des bornes inférieures.
 
 ---
 
@@ -34,10 +34,10 @@ Notre démarche associe systématiquement preuves formelles, conception de solve
    - [7. Théorème 3 (Factorisation de rang K ≤ 2Rℓs), #SAT sans élagage et barrière OVC/SETH](#7-théorème-3-factorisation-de-rang-k--2rℓs-sat-sans-élagage-et-barrière-ovcseth)
    - [8. Effondrement spectral SVD et algorithme CAPP 100 % déterministe (CUR / Nyström)](#8-effondrement-spectral-svd-et-algorithme-capp-100--déterministe-cur--nyström)
    - [9. Topologie de l'hypercube Qₙ, spectre de Huang et rayon spectral frontière](#9-topologie-de-lhypercube-qₙ-spectre-de-huang-et-rayon-spectral-frontière)
-3. **PARTIE II — Représentation faible de ORₙ par polynômes modulo 6**
+3. **PARTIE II — Représentation faible de ORₙ par polynômes modulo m composite**
    - [10. Formulation CRT et spectre symétrique 100 % exact N<sub>sym</sub>(1..10)](#10-formulation-crt-et-spectre-symétrique-100--exact-nsym110)
    - [11. Théorèmes M1 et M2 : percées non symétriques et optimum de Győri](#11-théorèmes-m1-et-m2--percées-non-symétriques-et-optimum-de-győri)
-   - [12. Chasse au-delà de d² (d = 3, 4, 5) et conjecture de saturation de marge](#12-chasse-au-delà-de-d²-d--3-4-5-et-conjecture-de-saturation-de-marge)
+   - [12. Saturation de marge (d = 3, 4, 5) et généralisation aux modules composites (Théorèmes G1–G5)](#12-saturation-de-marge-d--3-4-5-et-généralisation-aux-modules-composites-théorèmes-g1g5)
 4. **PARTIE III — Complexité algébrique (VP vs VNP et Multiplication matricielle)**
    - [13. GCT sur perm₃ : Levenberg–Marquardt de Parseval, sonde k = 6 et homotopie 7 → 6](#13-gct-sur-perm₃--levenbergmarquardt-de-parseval-sonde-k--6-et-homotopie-7--6)
    - [14. Multiplication matricielle ⟨3, 3, 3⟩ : Gauss–Newton hermitien, recuit L<sub>2/3</sub> et loi de pente α](#14-multiplication-matricielle-3-3-3--gaussnewton-hermitien-recuit-l23-et-loi-de-pente-α)
@@ -293,7 +293,7 @@ Dans [piste_b_huang_topology.py](file:///C:/Users/Axoul/.gemini/antigravity/scra
 
 ---
 
-# PARTIE II — Représentation faible de ORₙ par polynômes modulo 6
+# PARTIE II — Représentation faible de ORₙ par polynômes modulo m composite
 
 C'est sur ce second front — issu du célèbre problème ouvert de **Barrington, Beigel et Rudich (1994)** au cœur de ACC⁰ — que nous avons obtenu nos **résultats théoriques originaux les plus aboutis**.
 
@@ -320,7 +320,7 @@ Par énumération exhaustive de tous les 2<sup>d</sup> - 1 polynômes symétriqu
 | 5 | 71 | 53 | 5 | 5 | 0 | 53 | +0 |
 | **6** | 71 | **62** | 6 | **5** | 1 | **63** | **+1** |
 | **7** | 71 | **71** | 7 | **5** | 2 | **73** | **+2 (dépasse la période 71)** |
-| **8** | 143 | **80** | 8 | **5** | 3 | **83** | **+3** |
+| **8** | 143 | **80** | 8 | **5** *(ou 8, I₉)* | 3 | **88** *(83 par M2, 88 par G3)* | **+8 (+10,0 %)** |
 | **9** | 431 | **151** | **7** | 9 | 2 | **153** | **+2 (marge sur** 𝔽₂) |
 | 10 | 431 | 184 | 10 | 10 | 0 | 184 | +0 |
 
@@ -359,14 +359,53 @@ où v(y) = 1 − ∏<sub>j=1</sub><sup>Δ</sup> (1 − y<sub>j</sub>) ∈ {0, 1}
 
 ---
 
-## 12. Chasse au-delà de d² (d = 3, 4, 5) et conjecture de saturation de marge
+## 12. Saturation de marge (d = 3, 4, 5) et généralisation aux modules composites (Théorèmes G1–G5)
+
+### 12.1 Chasse au-delà de d² sur mod 6 (d = 3, 4, 5) et conjecture de saturation de marge
 
 Pour tester l'existence éventuelle d'une construction non symétrique dépassant Θ(d²) lorsque Δ = 0, nous avons lancé dans [hunt_super_quadratic_mod6.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/02_mod6_polynomials/hunt_super_quadratic_mod6.py) une recherche multi-blocs (élimination de Gauss exacte sur 𝔽₂ couplée à un balayage sur 𝔽₃) sur 16 cœurs aux degrés d = 3, 4, 5 :
 - **Degré** d = 3 (N<sub>sym</sub> = 27) : énumération 2-blocs exhaustive + 3-blocs à n = 28 ⇒ aucune solution (`defect = 1` sur (26, 1, 1)).
 - **Degré** d = 4 (N<sub>sym</sub> = 36) : 6 partitions 2-blocs à n = 37 ⇒ **toutes** bloquent à `defect = 1` (et `defect = 2` à n = 38).
 - **Degré** d = 5 (N<sub>sym</sub> = 53) : 5 partitions 2-blocs à n = 54 ⇒ bloquent à `defect = 1`.
 
-**Conjecture empirique de saturation de marge** : dès que Δ > 0 (d = 2, 6, 7, 8, 9), les Théorèmes M1/M2 battent immédiatement N<sub>sym</sub>(d), tandis que dès que Δ = 0 (d = 1, 3, 4, 5), le mur `defect = 1` apparaît dès N<sub>sym</sub>(d) + 1. Cela suggère que N<sub>gen</sub>(d) = N<sub>sym</sub>(d) + O(d) = Θ(d²), confortant la conjecture BBR (d = Ω(√n)).
+**Conjecture empirique de saturation de marge** : dès que Δ > 0 (d = 2, 6, 7, 8, 9), les constructions non symétriques battent immédiatement N<sub>sym</sub>(d), tandis que dès que Δ = 0 (d = 1, 3, 4, 5, 10), le mur `defect = 1` apparaît dès N<sub>sym</sub>(d) + 1. Cela suggère qu'à grand d, N<sub>gen</sub>(d) = N<sub>sym</sub>(d) + O(d) = Θ(d²), confortant la conjecture BBR (d = Ω(√n)).
+
+### 12.2 Généralisation aux modules composites m ∈ {6, 10, 12, 14, 15, 21, 30, 35} : Théorèmes G1–G5
+
+En étendant notre cadre CRT à tout entier composite m = ∏<sub>i=1</sub><sup>r</sup> q<sub>i</sub> (avec q<sub>i</sub> = p<sub>i</sub><sup>e<sub>i</sub></sup>, y compris les modules non sans facteur carré comme `mod 12 = 4 × 3` et les modules à 3 facteurs comme `mod 30 = 2 × 3 × 5`), nous avons établi et vérifié exactement ([composite_mod_m_lab.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/02_mod6_polynomials/composite_mod_m_lab.py), [composite_mod_m_full.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/02_mod6_polynomials/composite_mod_m_full.py), [composite_mod_m_verify_and_plot.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/02_mod6_polynomials/composite_mod_m_verify_and_plot.py)) **cinq théorèmes constructifs unifiés** :
+
+- **Théorème G1 (*Multi-Channel Margin-Harvesting*)** : pour toute représentation CRT (P₁(A), …, P<sub>r</sub>(A)) de OR<sub>a</sub> mod m de degrés d<sub>i</sub> ≤ d, l'ajout de r blocs disjoints y<sup>(i)</sup> de tailles Δ<sub>i</sub> = d − d<sub>i</sub> via P̃<sub>i</sub>(A, y<sup>(i)</sup>) = P<sub>i</sub>(A) + v<sub>i</sub>(y<sup>(i)</sup>) − P<sub>i</sub>(A) v<sub>i</sub>(y<sup>(i)</sup>) (mod q<sub>i</sub>) récolte simultanément la **somme** ∑<sub>i=1</sub><sup>r</sup> Δ<sub>i</sub> sur tous les canaux (valable même pour q<sub>i</sub> = p<sub>i</sub><sup>e<sub>i</sub></sup>, e<sub>i</sub> ≥ 2).
+- **Théorème G2 (*Anisotropic Field-Norm Harvesting*)** : sur tout canal premier simple p<sub>i</sub> | m où k<sub>i</sub> = ⌊d / d<sub>i</sub>⌋ ≥ 2, remplacer P<sub>i</sub>(A) par la **norme d'extension de corps** N<sub>𝔽<sub>p<sup>k</sup></sub>/𝔽<sub>p</sub></sub>(P<sub>i</sub>(A), R₁(B₁), …, R<sub>k−1</sub>(B<sub>k−1</sub>)) (polynôme homogène de degré k<sub>i</sub> sans zéro non trivial sur 𝔽<sub>p<sub>i</sub></sub><sup>k<sub>i</sub></sup>), chaque R<sub>j</sub> de degré d<sub>i</sub> atteignant l'optimum exact (p<sub>i</sub> − 1) d<sub>i</sub> variables sur 𝔽<sub>p<sub>i</sub></sub>, puis récolter le reste d − k<sub>i</sub> d<sub>i</sub> par G1, procure **(k<sub>i</sub> − 1)(p<sub>i</sub> − 1) d<sub>i</sub> + (d − k<sub>i</sub> d<sub>i</sub>)** variables gratuites (unifiant M1 comme cas k = 2, p = 3 et multipliant le rendement par p − 1).
+- **Théorème G3 (*Value-Avoidance Harvesting*)** : si sur un canal q<sub>i</sub> l'image Im(P<sub>i</sub>) sur {0, …, a} **omet au moins une valeur non nulle** −c ∈ (ℤ/q<sub>i</sub>ℤ) ∖ {0}, alors le polynôme **purement additif** P̃<sub>i</sub>(A, y) = P<sub>i</sub>(A) + c · (1 − ∏<sub>j=1</sub><sup>d</sup> (1 − y<sub>j</sub>)) (mod q<sub>i</sub>) conserve le degré max(deg(P<sub>i</sub>), d) = d et récolte **+d variables gratuites** sans produit croisé. En particulier, à d = p<sup>t</sup> − 1, l'indicatrice de Lucas I<sub>p<sup>t</sup></sub>(S) = 𝟏[S ≢ 0 (mod p<sup>t</sup>)] a degré p<sup>t</sup> − 1 et image {0, 1} (mod p), donnant systématiquement **+8 à d = 8** sur tous les multiples de 3 :
+  - **`mod 6`, d = 8** : N<sub>sym</sub> = 80 → 83 (M2) → **88 (+10,0 %, G3)** via c₂ = `[0,1,1,1,1,1,1,1]`, c₃ = `[2,1,2,1,2,1,2,1]` (Im(P₃) = {0, 2}, omet 1 mod 3) ;
+  - **`mod 12`, d = 8** : N<sub>sym</sub> = 224 → 227 (G1) → **232 (+8, G3)** ;
+  - **`mod 15`, d = 8** : N<sub>sym</sub> = 215 → 218 (G1) → **223 (+8, G3)**.
+- **Théorème G4 (*Multi-Block Norm Multiplication*)** : pour tout module **sans facteur carré** m = p₁ · … · p<sub>r</sub> et tous k ≥ 2, d₀ ≥ 1 avec k d₀ ≤ d, composer k copies indépendantes via les normes N<sub>𝔽<sub>p<sub>i</sub><sup>k</sup></sub>/𝔽<sub>p<sub>i</sub></sub></sub> sur chaque canal puis récolter le reste par G1 donne N<sub>gen</sub><sup>(m)</sup>(d) ≥ k · N<sub>gen</sub><sup>(m)</sup>(d₀) + r · (d − k d₀). *Restriction exacte* : nous vérifions que sur ℤ/4ℤ (`mod 12`), aucun polynôme sans constante en (u, v) ne peut éviter (2, 2) tout en évitant (2, 0) et (0, 2) car Q(2, 2) ≡ Q(2, 0) + Q(0, 2) ≡ 0 (mod 4) ; G4 est donc propre aux modules sans facteur carré.
+
+#### Théorème G5 (Séparation non bornée entre polynômes non symétriques et symétriques)
+
+Soit m = p₁ · p₂ · … · p<sub>r</sub> un entier composite sans facteur carré dont le plus petit facteur premier est p<sub>min</sub> = min<sub>i</sub> p<sub>i</sub> ≥ 3. Alors pour tout degré 1 ≤ d ≤ p<sub>min</sub> − 1 :
+
+$$
+N_{\mathrm{sym}}^{(m)}(d) \;=\; m - 1, \qquad N_{\mathrm{gen}}^{(m)}(d) \;\ge\; d \cdot (m - 1), \qquad \frac{N_{\mathrm{gen}}^{(m)}(p_{\min} - 1)}{N_{\mathrm{sym}}^{(m)}(p_{\min} - 1)} \;\ge\; p_{\min} - 1 \;\longrightarrow\; +\infty.
+$$
+
+**Preuve.** (1) Pour tout 1 ≤ k ≤ d < p<sub>min</sub> et tout p<sub>i</sub> | m, p<sub>i</sub> divise m mais ne divise pas k!, donc C(m, k) ≡ 0 (mod p<sub>i</sub>). Tout polynôme symétrique sans constante de degré ≤ d s'annule donc en S = m sur chaque canal p<sub>i</sub>, d'où P(m) ≡ 0 (mod m) et N<sub>sym</sub><sup>(m)</sup>(d) = m − 1 exactement. (2) En appliquant le Théorème G4 à d₀ = 1 (où N<sub>sym</sub><sup>(m)</sup>(1) = m − 1) avec k = d blocs disjoints B₁, …, B<sub>d</sub> de taille m − 1 et les normes anisotropes N<sub>𝔽<sub>p<sub>i</sub><sup>d</sup></sub>/𝔽<sub>p<sub>i</sub></sub></sub>(S₁, …, S<sub>d</sub>) de degré d, l'annulation simultanée mod m impose S<sub>j</sub> ≡ 0 (mod m) pour tout j = 1, …, d, donc x = 𝟎. ■
+
+**Vérification exhaustive et tableau de synthèse sur les 8 modules composites** (17 normes anisotropes vérifiées sur tous les vecteurs non nuls de 𝔽<sub>p</sub><sup>k</sup> ∖ {𝟎}, force brute intégrale sur 2¹⁸ = 262 144 entrées pour `mod 10, d=2, n=18` et 2²⁰ = 1 048 576 entrées pour `mod 15, d=2, n=20`, et vérification CRT exacte de tous les témoins dans [composite_mod_m_full.json](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/results/mod6_polynomials/composite_mod_m_full.json)) :
+
+| Module m (facteurs) | Degrés exacts | Pic de séparation d<sup>∗</sup> | Exact N<sub>sym</sub>(d<sup>∗</sup>) | Prouvé N<sub>gen</sub>(d<sup>∗</sup>) ≥ | Gain (relatif) | Mécanisme vainqueur | Autres records marquants |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- | :--- |
+| **mod 6** (2 × 3) | d = 1..10 | d = 2 / d = 8 | 8 / 80 | **10 / 88** | **+2 (+25 %) / +8 (+10 %)** | G2 (Győri) / **G3 (I₉)** | d=7 : 71→73 ; d=9 : 151→153 |
+| **mod 10** (2 × 5) | d = 1..8 | d = 4 | 24 | **36** | **+12 (+50,0 %)** | **G2 (norme 𝔽₅⁴)** | d=2 : 14→18 ; d=3 : 19→27 |
+| **mod 12** (4 × 3, non sqfree) | d = 1..8 | d = 2 / d = 8 | 20 / 224 | **22 / 232** | **+2 (+10 %) / +8 (+3,6 %)** | G2 / **G3 (I₉@3)** | d=6 : 134→135 ; d=7 : 143→145 |
+| **mod 14** (2 × 7) | d = 1..6 | d = 6 | 48 | **78** | **+30 (+62,5 %)** | **G2 (norme 𝔽₇⁶)** | d=2..5 : +30 % à +58,5 % |
+| **mod 15** (3 × 5) | d = 1..8 | d = 2 | 14 | **28** | **+14 (+100,0 %)** | **G4/G5 (2×14)** | d=4 : 39→56 (+44 %) ; d=8 : 215→223 (**G3**) |
+| **mod 21** (3 × 7) | d = 1..6 | d = 2 / d = 6 | 20 / 62 | **40 / 120** | **+20 (+100 %) / +58 (+93,5 %)** | **G4/G5 (2×20 / 2×60)** | d=4 : 55→80 ; d=5 : 62→100 (+61 %) |
+| **mod 30** (2 × 3 × 5, r=3) | d = 1..6 | d = 2 | 44 | **58** | **+14 (+31,8 %)** | **G4 (2×29)** | d=4 : 184→196 (G2) ; d=6 : 1 358→1 359 (Θ(d³)) |
+| **mod 35** (5 × 7, p<sub>min</sub>=5) | d = 1..5 | d = 4 | 34 | **136** | **+102 (+300,0 %, 4×)** | **G4/G5 (4×34)** | d=2 : 34→68 ; d=3 : 34→102 ; d=5 : 146→170 |
+
+![Généralisation aux 8 modules composites : Théorèmes G1–G5](figures/composite_mod_m_discovery.png)
 
 ---
 
@@ -487,7 +526,7 @@ Au-delà des résultats spécifiques à chaque problème, l'intérêt de cette e
 ## 18. Perspectives de recherche ouvertes et bibliographie unifiée
 
 Trois prolongements ciblés offrent le meilleur potentiel de résultats publiables à partir de notre infrastructure existante :
-1. **Généralisation des Théorèmes M1/M2 aux modules composites mod 10, 12, 15, 30** : le mécanisme de *Margin-Harvesting* et les formes quadratiques sans zéro non trivial sur 𝔽<sub>p</sub> (p = 3, 5, 7) s'étendent directement aux autres modules composites et aux fonctions MOD<sub>m</sub> / MAJ<sub>n</sub>, ouvrant la voie à une famille générale de séparations strictes N<sub>gen</sub><sup>(m)</sup>(d) > N<sub>sym</sub><sup>(m)</sup>(d).
+1. **Optimalité exacte du Théorème G5 et extension aux fonctions MOD<sub>k</sub> / MAJ<sub>n</sub>** : après avoir prouvé N<sub>gen</sub><sup>(m)</sup>(d) ≥ d(m − 1) pour tout d < p<sub>min</sub> (rapport (p<sub>min</sub> − 1)× au-dessus de N<sub>sym</sub>), déterminer si N<sub>gen</sub><sup>(m)</sup>(d) = d(m − 1) est exact (généralisant le théorème de Győri, 2006, à tout composite impair) et transposer les mécanismes G1–G3 aux fonctions symétriques à seuil (MAJ<sub>n</sub>) et modulaires (MOD<sub>k</sub>).
 2. **Séries de Laurent explicites en** ε (L(ε, X) = ∑<sub>j=0</sub><sup>e</sup> ε<sup>j</sup> L<sup>(j)</sup>) : éliminerait l'explosion de norme flottante pour trancher numériquement dc̅(perm₃) ≟ 6 et <u>R</u>(⟨3,3,3⟩) ≟ 19 aux ordres e = 2, 3.
 3. **Graphe de Flips bit-vectoriel (`uint32` XOR) sur** 𝔽₂ **+ relèvement de Hensel** sur les formats rectangulaires moyens (⟨3,4,5⟩, ⟨4,4,5⟩, ⟨4,5,5⟩), régime exact où les collisions sont 1 000× plus fréquentes que sur 𝔽₅.
 
