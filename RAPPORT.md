@@ -1,4 +1,4 @@
-﻿# CONSTATS — Exploration théorique et expérimentale des frontières de la complexité booléenne et algébrique (P vs NP, ACC⁰, THR ∘ THR, VP vs VNP)
+﻿# RAPPORT — Exploration théorique et expérimentale des frontières de la complexité booléenne et algébrique (P vs NP, ACC⁰, THR ∘ THR, VP vs VNP)
 
 **Type de document** : Monographie de recherche expérimentale et théorique (synthèse intégrale)  
 **Date** : Novembre 2026  
@@ -51,9 +51,25 @@ Notre démarche associe systématiquement preuves formelles, conception de solve
 
 ## 1. Introduction générale et architecture des travaux
 
-La question P ≟ NP (Cook, 1971 ; Levin, 1973) et son analogue algébrique VP ≟ VNP (Valiant, 1979) constituent les problèmes centraux de l'informatique théorique. Trois méta-théorèmes — la *relativisation* (Baker–Gill–Solovay, 1975), les *preuves naturelles* (Razborov–Rudich, 1997) et l'*algébrisation* (Aaronson–Wigderson, 2009) — ont démontré qu'aucune méthode classique de diagonalisation ou de propriété combinatoire générique ne peut séparer ces classes.
+### 1.1 Problématique et objectifs : ce que nous cherchons à faire
 
-Les programmes contemporains contournent ces barrières selon trois axes distincts que nous avons explorés de manière systématique :
+La question P ≟ NP (Cook, 1971 ; Levin, 1973) et son analogue algébrique VP ≟ VNP (Valiant, 1979) demandent s'il est fondamentalement plus difficile de *trouver* une solution (ou de calculer le permanent) que de la *vérifier* (ou de calculer le déterminant). Trois méta-théorèmes — la *relativisation* (Baker–Gill–Solovay, 1975), les *preuves naturelles* (Razborov–Rudich, 1997) et l'*algébrisation* (Aaronson–Wigderson, 2009) — ont montré qu'aucune méthode classique de diagonalisation ou de propriété combinatoire générique ne peut séparer ces classes.
+
+**Ce que cette campagne de recherche cherche concrètement à accomplir** est d'attaquer cette frontière là où les méthodes modernes offrent encore une prise calculable, en poursuivant un **double objectif** sur trois fronts complémentaires : *(a)* concevoir des algorithmes exacts et des constructions mathématiques capables de **franchir un verrou connu**, ou *(b)* à défaut, **mesurer et isoler précisément la nature du mur structurel** qui bloque la séparation.
+
+1. **Front I — Casser le temps 2<sup>n</sup> sur THR ∘ THR (Paradigme de Williams)** :
+   - *Ce que l'on cherche* : trouver un algorithme décidant la satisfiabilité des circuits à seuil de profondeur 2 (`THR ∘ THR-SAT`) — ou estimant leur probabilité d'acceptation (`CAPP`) — en temps strictement sous-exponentiel O(2<sup>n</sup> / n<sup>ω(1)</sup>). Par le théorème de Williams (2011), un tel algorithme entraînerait immédiatement une borne inférieure historique : NEXP ⊈ THR ∘ THR.
+   - *Comment on l'attaque* : par compression structurelle et bilinéaire des solveurs exacts (Théorèmes 1, 2, 3), par approximation spectrale déterministe (CUR/Nyström) et par cartographie exhaustive des fonctions booléennes (atlas n = 4, MCSP, topologie de Huang) pour tester si une propriété géométrique ou spectrale permet de distinguer les circuits faibles des fonctions difficiles.
+
+2. **Front II — Tester les limites de la représentation polynomiale modulo 6 (ACC⁰ / BBR)** :
+   - *Ce que l'on cherche* : déterminer le degré minimal d nécessaire pour représenter faiblement la disjonction OR<sub>n</sub> par un polynôme modulo 6. La conjecture célèbre de Barrington–Beigel–Rudich (1994) prédit d = Ω(√n), mais seuls d = Ω(log n) et une borne supérieure symétrique d = O(√n) sont connus. Nous cherchons soit à **casser le régime quadratique Θ(d²)** grâce à des polynômes *non symétriques* (ce qui affaiblirait les bornes d'ACC⁰), soit à **identifier l'obstruction exacte** qui maintient les polynômes non symétriques dans Θ(d²).
+
+3. **Front III — Cartographier la frontière exact / bord en complexité algébrique (GCT et MatMul)** :
+   - *Ce que l'on cherche* : en *Geometric Complexity Theory* (VP vs VNP), la séparation passe par la complexité *de bord* (fermeture d'orbite) du permanent 3 × 3 (`dc̅(perm₃)`) et par le rang tensoriel de la multiplication matricielle `⟨m, p, n⟩`. Nous cherchons à **découvrir numériquement et combinatoirement de nouvelles décompositions exactes** (par ex. k = 6 pour `perm₃`, ou rang exact R < 23 sur `⟨3,3,3⟩` et formats rectangulaires ouverts) et à comprendre pourquoi les méthodes continues et discrètes se heurtent respectivement aux *vallées de bord* et à l'*explosion projective* sur corps finis.
+
+### 1.2 Architecture globale et principes méthodologiques
+
+Les trois fronts convergent vers une cartographie unifiée des frontières actuelles :
 
 ```mermaid
 flowchart TD
