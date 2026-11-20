@@ -1,0 +1,233 @@
+{
+  "exact_omega_g2_le_6": {
+    "k7_clique_solutions": 0,
+    "nodes_explored": 588410,
+    "time_s": 2.151,
+    "proven_omega_le_6": true
+  },
+  "lifted_5block_evals": [
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      "n": 9,
+      "def_15d": 1,
+      "def_free_p2": 1,
+      "nz": 106
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "n": 10,
+      "def_15d": 6,
+      "def_free_p2": 47,
+      "nz": 221
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        1
+      ],
+      "n": 10,
+      "def_15d": 6,
+      "def_free_p2": 75,
+      "nz": 221
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 10,
+      "def_15d": 7,
+      "def_free_p2": 33,
+      "nz": 288
+    }
+  ],
+  "k10_5block_w3_free_p2": [
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "min_defect": 19,
+      "w3_5b": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        2,
+        0,
+        0
+      ],
+      "time_s": 10.67
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2,
+        1
+      ],
+      "min_defect": 23,
+      "w3_5b": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        0,
+        2,
+        0,
+        2,
+        2
+      ],
+      "time_s": 3.53
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2,
+        1,
+        1
+      ],
+      "min_defect": 24,
+      "w3_5b": [
+        0,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        2
+      ],
+      "time_s": 3.2
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "min_defect": 30,
+      "w3_5b": [
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0
+      ],
+      "time_s": 3.59
+    }
+  ],
+  "k10_warmstart_2opt": {
+    "n_seeds": 224,
+    "steps": 25000,
+    "min_defect": 8,
+    "time_s": 38.02
+  },
+  "canonical_exact_k2_to_6": {
+    "2": {
+      "canon_count": 2
+    },
+    "3": {
+      "valid_extensions": 18,
+      "canon_count": 6,
+      "avg_valid_ext": 9.0,
+      "max_valid_ext": 9,
+      "dead_ends": 0,
+      "parent_count": 2,
+      "time_s": 7.69
+    },
+    "4": {
+      "valid_extensions": 147,
+      "canon_count": 31,
+      "avg_valid_ext": 24.5,
+      "max_valid_ext": 27,
+      "dead_ends": 0,
+      "parent_count": 6,
+      "time_s": 0.01
+    },
+    "5": {
+      "valid_extensions": 1842,
+      "canon_count": 266,
+      "avg_valid_ext": 59.419,
+      "max_valid_ext": 81,
+      "dead_ends": 0,
+      "parent_count": 31,
+      "time_s": 0.01
+    },
+    "6": {
+      "valid_extensions": 17501,
+      "canon_count": 2331,
+      "avg_valid_ext": 65.793,
+      "max_valid_ext": 201,
+      "dead_ends": 0,
+      "parent_count": 266,
+      "time_s": 0.5
+    },
+    "probe_6_to_7": {
+      "sample_parents": 256,
+      "valid_extensions": 1131,
+      "avg_valid_ext": 4.418,
+      "max_valid_ext": 39,
+      "dead_ends": 47,
+      "est_total_ext_k7": 10298,
+      "time_s": 0.19
+    }
+  },
+  "total_time_s": 69.68
+}
