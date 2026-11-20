@@ -1,0 +1,353 @@
+{
+  "n_workers": 10,
+  "campaigns": {
+    "2x3x4_F3": {
+      "label": "2x3x4_F3",
+      "shape": [
+        2,
+        3,
+        4
+      ],
+      "p": 3,
+      "target_rank": 19,
+      "best_R": 22,
+      "all_ranks": [
+        22,
+        23,
+        23,
+        23,
+        23,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "total_flips": 11988874,
+      "total_plus": 8905,
+      "flips_per_sec": 1583062.8636191536,
+      "time_s": 7.5732141000335105,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "2x3x4_F5": {
+      "label": "2x3x4_F5",
+      "shape": [
+        2,
+        3,
+        4
+      ],
+      "p": 5,
+      "target_rank": 19,
+      "best_R": 24,
+      "all_ranks": [
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24,
+        24
+      ],
+      "total_flips": 11988673,
+      "total_plus": 9065,
+      "flips_per_sec": 2239241.908606818,
+      "time_s": 5.353898100031074,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "3x3x3_F3": {
+      "label": "3x3x3_F3",
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "p": 3,
+      "target_rank": 22,
+      "best_R": 23,
+      "all_ranks": [
+        23,
+        23,
+        23,
+        24,
+        24,
+        24,
+        24,
+        24,
+        25,
+        25
+      ],
+      "total_flips": 19987268,
+      "total_plus": 10188,
+      "flips_per_sec": 2575649.657587543,
+      "time_s": 7.760087999980897,
+      "verified_100pct": true,
+      "saved_npz": "C:\\Users\\Axoul\\.gemini\\antigravity\\scratch\\pnp-williams\\flip_3x3x3_F3_R23.npz"
+    },
+    "3x3x3_F5": {
+      "label": "3x3x3_F5",
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "p": 5,
+      "target_rank": 22,
+      "best_R": 26,
+      "all_ranks": [
+        26,
+        27,
+        27,
+        27,
+        27,
+        27,
+        27,
+        27,
+        27,
+        27
+      ],
+      "total_flips": 19987528,
+      "total_plus": 9981,
+      "flips_per_sec": 2017942.3419821546,
+      "time_s": 9.9049054000061,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "2x4x4_F3": {
+      "label": "2x4x4_F3",
+      "shape": [
+        2,
+        4,
+        4
+      ],
+      "p": 3,
+      "target_rank": 25,
+      "best_R": 31,
+      "all_ranks": [
+        31,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ],
+      "total_flips": 11990646,
+      "total_plus": 7485,
+      "flips_per_sec": 1554816.9888458706,
+      "time_s": 7.711933999962639,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "2x4x4_F5": {
+      "label": "2x4x4_F5",
+      "shape": [
+        2,
+        4,
+        4
+      ],
+      "p": 5,
+      "target_rank": 25,
+      "best_R": 32,
+      "all_ranks": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ],
+      "total_flips": 11990560,
+      "total_plus": 7558,
+      "flips_per_sec": 1490251.5194751946,
+      "time_s": 8.045997499953955,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "3x3x4_F3": {
+      "label": "3x3x4_F3",
+      "shape": [
+        3,
+        3,
+        4
+      ],
+      "p": 3,
+      "target_rank": 28,
+      "best_R": 34,
+      "all_ranks": [
+        34,
+        34,
+        34,
+        35,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "total_flips": 14990776,
+      "total_plus": 7384,
+      "flips_per_sec": 256481.00537226218,
+      "time_s": 58.447899399965536,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "3x3x4_F5": {
+      "label": "3x3x4_F5",
+      "shape": [
+        3,
+        3,
+        4
+      ],
+      "p": 5,
+      "target_rank": 28,
+      "best_R": 36,
+      "all_ranks": [
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36,
+        36
+      ],
+      "total_flips": 14990538,
+      "total_plus": 7575,
+      "flips_per_sec": 284670.8672944657,
+      "time_s": 52.6591924999957,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "2x4x5_F3": {
+      "label": "2x4x5_F3",
+      "shape": [
+        2,
+        4,
+        5
+      ],
+      "p": 3,
+      "target_rank": 31,
+      "best_R": 40,
+      "all_ranks": [
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40
+      ],
+      "total_flips": 11992964,
+      "total_plus": 5635,
+      "flips_per_sec": 1094587.9722770937,
+      "time_s": 10.956601299985778,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "2x4x5_F5": {
+      "label": "2x4x5_F5",
+      "shape": [
+        2,
+        4,
+        5
+      ],
+      "p": 5,
+      "target_rank": 31,
+      "best_R": 40,
+      "all_ranks": [
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40,
+        40
+      ],
+      "total_flips": 11992807,
+      "total_plus": 5758,
+      "flips_per_sec": 955739.6332051266,
+      "time_s": 12.54819470003713,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "3x4x4_F3": {
+      "label": "3x4x4_F3",
+      "shape": [
+        3,
+        4,
+        4
+      ],
+      "p": 3,
+      "target_rank": 37,
+      "best_R": 48,
+      "all_ranks": [
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "total_flips": 11993851,
+      "total_plus": 4926,
+      "flips_per_sec": 867056.4705249505,
+      "time_s": 13.832837200025097,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "3x4x4_F5": {
+      "label": "3x4x4_F5",
+      "shape": [
+        3,
+        4,
+        4
+      ],
+      "p": 5,
+      "target_rank": 37,
+      "best_R": 48,
+      "all_ranks": [
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48
+      ],
+      "total_flips": 11993648,
+      "total_plus": 5084,
+      "flips_per_sec": 623975.8092988124,
+      "time_s": 19.221334899950307,
+      "verified_100pct": true,
+      "saved_npz": null
+    }
+  }
+}

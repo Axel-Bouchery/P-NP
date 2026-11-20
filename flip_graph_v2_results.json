@@ -1,0 +1,245 @@
+{
+  "n_workers": 10,
+  "campaigns": {
+    "2x3x4_F3": {
+      "label": "2x3x4_F3",
+      "shape": [
+        2,
+        3,
+        4
+      ],
+      "p": 3,
+      "world_rec": 20,
+      "target_rank": 19,
+      "best_R": 22,
+      "best_nnz": 96,
+      "all_ranks": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "total_flips": 19983450,
+      "total_plus": 13798,
+      "time_s": 11.487660799990408,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "2x3x4_F5": {
+      "label": "2x3x4_F5",
+      "shape": [
+        2,
+        3,
+        4
+      ],
+      "p": 5,
+      "world_rec": 20,
+      "target_rank": 19,
+      "best_R": 22,
+      "best_nnz": 96,
+      "all_ranks": [
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22,
+        22
+      ],
+      "total_flips": 19983571,
+      "total_plus": 13697,
+      "time_s": 9.872579899965785,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "3x3x3_F3": {
+      "label": "3x3x3_F3",
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "p": 3,
+      "world_rec": 23,
+      "target_rank": 22,
+      "best_R": 23,
+      "best_nnz": 153,
+      "all_ranks": [
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23
+      ],
+      "total_flips": 39796241,
+      "total_plus": 244281,
+      "time_s": 19.120506299950648,
+      "verified_100pct": true,
+      "saved_npz": "C:\\Users\\Axoul\\.gemini\\antigravity\\scratch\\pnp-williams\\flipv2_3x3x3_F3_R23.npz"
+    },
+    "3x3x3_F5": {
+      "label": "3x3x3_F5",
+      "shape": [
+        3,
+        3,
+        3
+      ],
+      "p": 5,
+      "world_rec": 23,
+      "target_rank": 22,
+      "best_R": 23,
+      "best_nnz": 153,
+      "all_ranks": [
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23,
+        23
+      ],
+      "total_flips": 39770753,
+      "total_plus": 276387,
+      "time_s": 18.448802599974442,
+      "verified_100pct": true,
+      "saved_npz": "C:\\Users\\Axoul\\.gemini\\antigravity\\scratch\\pnp-williams\\flipv2_3x3x3_F5_R23.npz"
+    },
+    "2x4x4_F3": {
+      "label": "2x4x4_F3",
+      "shape": [
+        2,
+        4,
+        4
+      ],
+      "p": 3,
+      "world_rec": 26,
+      "target_rank": 25,
+      "best_R": 28,
+      "best_nnz": 144,
+      "all_ranks": [
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      "total_flips": 24983457,
+      "total_plus": 13793,
+      "time_s": 12.357633999956306,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "2x4x4_F5": {
+      "label": "2x4x4_F5",
+      "shape": [
+        2,
+        4,
+        4
+      ],
+      "p": 5,
+      "world_rec": 26,
+      "target_rank": 25,
+      "best_R": 28,
+      "best_nnz": 144,
+      "all_ranks": [
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28,
+        28
+      ],
+      "total_flips": 24983592,
+      "total_plus": 13680,
+      "time_s": 12.691047900007106,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "3x3x4_F3": {
+      "label": "3x3x4_F3",
+      "shape": [
+        3,
+        3,
+        4
+      ],
+      "p": 3,
+      "world_rec": 29,
+      "target_rank": 28,
+      "best_R": 32,
+      "best_nnz": 180,
+      "all_ranks": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ],
+      "total_flips": 29983406,
+      "total_plus": 13828,
+      "time_s": 62.00976679997984,
+      "verified_100pct": true,
+      "saved_npz": null
+    },
+    "3x3x4_F5": {
+      "label": "3x3x4_F5",
+      "shape": [
+        3,
+        3,
+        4
+      ],
+      "p": 5,
+      "world_rec": 29,
+      "target_rank": 28,
+      "best_R": 32,
+      "best_nnz": 180,
+      "all_ranks": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ],
+      "total_flips": 29983459,
+      "total_plus": 13791,
+      "time_s": 88.08462320000399,
+      "verified_100pct": true,
+      "saved_npz": null
+    }
+  }
+}

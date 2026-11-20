@@ -1,0 +1,315 @@
+{
+  "genome1": [
+    -1.0429933794232296,
+    -0.0623847588087702,
+    0.08834047295699257,
+    1.4338638562636263,
+    -0.5674863288434971,
+    0.8391194680915637,
+    0.3216734523421716
+  ],
+  "genome2": [
+    0.620168976341376,
+    -1.2706004369082418,
+    0.7935672590060143,
+    1.6537081068901207,
+    0.17056707291252482,
+    0.30921877184395063,
+    -0.23507296012111928
+  ],
+  "features": [
+    "f1 somme |W| (portes indecises)",
+    "f2 somme |v|\u00b7|W|",
+    "f3 somme |W|/largeur intervalle",
+    "f4 somme |v|\u00b7|W|/largeur",
+    "f5 nb portes decidables seule",
+    "f6 somme |v| portes decidables seule",
+    "f7 somme |W|/distance au seuil"
+  ],
+  "results": {
+    "aleatoires s = n": {
+      "ns": [
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26
+      ],
+      "m": {
+        "Ordre fixe (elagage seul)": {
+          "alpha": 0.7281053626832971,
+          "log2_nodes": [
+            7.438791852578261,
+            9.287712379549449,
+            10.753913131410407,
+            11.807623255554311,
+            13.830630739432998,
+            14.370085704395104,
+            16.663854558557347,
+            17.805858257281354
+          ]
+        },
+        "Heuristique f2 (a la main)": {
+          "alpha": 0.6541084144921079,
+          "log2_nodes": [
+            5.518325307690866,
+            7.402301511351382,
+            8.840253402578227,
+            9.469980915852169,
+            11.783407542173519,
+            11.881687558870006,
+            13.629508410814758,
+            15.134961027999513
+          ]
+        },
+        "Heuristique f7 (a la main)": {
+          "alpha": 0.620715371976151,
+          "log2_nodes": [
+            5.486499861835468,
+            7.115477217419936,
+            8.739218045897585,
+            9.098032082960527,
+            11.576956664706092,
+            11.494105548061054,
+            13.23419372480832,
+            14.478358842809099
+          ]
+        },
+        "Evolue (genome 1)": {
+          "alpha": 0.6198209555911979,
+          "log2_nodes": [
+            5.291554445843843,
+            6.622051819456376,
+            8.44156094179861,
+            8.69638801425988,
+            11.280964044300747,
+            11.271073899097999,
+            12.933813578740565,
+            14.076982565981158
+          ]
+        }
+      }
+    },
+    "aleatoires s = 2n": {
+      "ns": [
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26
+      ],
+      "m": {
+        "Ordre fixe (elagage seul)": {
+          "alpha": 0.7915586799866299,
+          "log2_nodes": [
+            9.430800986648721,
+            11.013206341123576,
+            12.714782134760235,
+            14.148913455602484,
+            15.261690939959115,
+            17.229278851847766,
+            18.92162595763775,
+            20.685585632300675
+          ]
+        },
+        "Heuristique f2 (a la main)": {
+          "alpha": 0.7620142726562896,
+          "log2_nodes": [
+            8.238404739325079,
+            9.614709844115207,
+            11.08004024336507,
+            12.69931940280148,
+            13.9514516838973,
+            15.560656249868629,
+            17.24534224836312,
+            18.977155522812303
+          ]
+        },
+        "Heuristique f7 (a la main)": {
+          "alpha": 0.7607847169941664,
+          "log2_nodes": [
+            8.25502856981873,
+            9.654337673643047,
+            11.117859511055872,
+            12.76835665477473,
+            13.974280137556391,
+            15.486515574187184,
+            17.274470672733646,
+            19.026353682303203
+          ]
+        },
+        "Evolue (genome 1)": {
+          "alpha": 0.756824929224225,
+          "log2_nodes": [
+            8.018663844265035,
+            9.419257965597039,
+            10.89986039354099,
+            12.518817051730469,
+            13.780044157478805,
+            15.284607245995558,
+            16.98976036079452,
+            18.715607911489364
+          ]
+        }
+      }
+    },
+    "arms_race": {
+      "ns": [
+        10,
+        12,
+        14,
+        16
+      ],
+      "C1": {
+        "Ordre fixe (elagage seul)": {
+          "alpha": 0.6760932511984132,
+          "log2_nodes": [
+            8.385143389891024,
+            9.824958740528523,
+            11.261899026565551,
+            12.413451635868103
+          ]
+        },
+        "Heuristique f2 (a la main)": {
+          "alpha": 0.5955894205247356,
+          "log2_nodes": [
+            7.351675438281415,
+            8.335390354693924,
+            9.831307243802051,
+            10.823632612076945
+          ]
+        },
+        "Heuristique f7 (a la main)": {
+          "alpha": 0.5443784153361564,
+          "log2_nodes": [
+            7.554588851677638,
+            8.624490864907793,
+            9.815383295813538,
+            10.786814143616768
+          ]
+        },
+        "Evolue (genome 1)": {
+          "alpha": 0.5362343428387095,
+          "log2_nodes": [
+            7.779172154286895,
+            8.67595703294175,
+            9.98679014278239,
+            10.917123403264748
+          ]
+        }
+      },
+      "C2": {
+        "alpha": 0.47827648062959605,
+        "log2_nodes": [
+          7.494522283105659,
+          8.426264754702098,
+          9.542387040337962,
+          10.310991392091012
+        ]
+      },
+      "C3": {
+        "Genome 1 sur H2": {
+          "alpha": 0.5746276143195289,
+          "log2_nodes": [
+            7.377933504616104,
+            8.38945208908437,
+            9.715390059607063,
+            10.766804943238736
+          ]
+        },
+        "Genome 2 sur H2": {
+          "alpha": 0.5778220148928256,
+          "log2_nodes": [
+            7.403722186051009,
+            8.49452228310566,
+            9.699861599503466,
+            10.854089179870574
+          ]
+        },
+        "Ordre fixe sur H2": {
+          "alpha": 0.6063782088944356,
+          "log2_nodes": [
+            8.193114628814202,
+            10.060245582053527,
+            11.056637715113201,
+            11.90350531042388
+          ]
+        }
+      },
+      "random": {
+        "alpha": 0.499272234473257,
+        "log2_nodes": [
+          4.604862058158861,
+          5.94251450533924,
+          6.202940058670276,
+          7.846535103536895
+        ]
+      }
+    }
+  },
+  "log": [
+    "== A. Evolution sur instances aleatoires (UNSAT de justesse, s = n) ==",
+    "   generation  1 : meilleur alpha = 0.6061",
+    "   generation  2 : meilleur alpha = 0.6061",
+    "   generation  3 : meilleur alpha = 0.5967",
+    "   generation  4 : meilleur alpha = 0.5950",
+    "   generation  5 : meilleur alpha = 0.5906",
+    "   generation  6 : meilleur alpha = 0.5906",
+    "   generation  7 : meilleur alpha = 0.5906",
+    "   generation  8 : meilleur alpha = 0.5906",
+    "   generation  9 : meilleur alpha = 0.5906",
+    "   generation 10 : meilleur alpha = 0.5906",
+    "   generation 11 : meilleur alpha = 0.5859",
+    "   generation 12 : meilleur alpha = 0.5859",
+    "   generation 13 : meilleur alpha = 0.5859",
+    "   generation 14 : meilleur alpha = 0.5859",
+    "   generation 15 : meilleur alpha = 0.5859",
+    "   genome 1 : [-1.04, -0.06, 0.09, 1.43, -0.57, 0.84, 0.32]   (3 s)\n",
+    "== B. Validation, instances NOUVELLES aleatoires s = n ==",
+    "   Ordre fixe (elagage seul)          alpha = 0.728   log2(noeuds) =   7.4   9.3  10.8  11.8  13.8  14.4  16.7  17.8",
+    "   Heuristique f2 (a la main)         alpha = 0.654   log2(noeuds) =   5.5   7.4   8.8   9.5  11.8  11.9  13.6  15.1",
+    "   Heuristique f7 (a la main)         alpha = 0.621   log2(noeuds) =   5.5   7.1   8.7   9.1  11.6  11.5  13.2  14.5",
+    "   Evolue (genome 1)                  alpha = 0.620   log2(noeuds) =   5.3   6.6   8.4   8.7  11.3  11.3  12.9  14.1",
+    "   (8 s)\n",
+    "== B. Validation, instances NOUVELLES aleatoires s = 2n ==",
+    "   Ordre fixe (elagage seul)          alpha = 0.792   log2(noeuds) =   9.4  11.0  12.7  14.1  15.3  17.2  18.9  20.7",
+    "   Heuristique f2 (a la main)         alpha = 0.762   log2(noeuds) =   8.2   9.6  11.1  12.7  14.0  15.6  17.2  19.0",
+    "   Heuristique f7 (a la main)         alpha = 0.761   log2(noeuds) =   8.3   9.7  11.1  12.8  14.0  15.5  17.3  19.0",
+    "   Evolue (genome 1)                  alpha = 0.757   log2(noeuds) =   8.0   9.4  10.9  12.5  13.8  15.3  17.0  18.7",
+    "   (37 s)\n",
+    "== C1. L'adversaire fabrique les pires instances contre le genome 1 ==",
+    "   Ordre fixe (elagage seul)          alpha = 0.676   log2(noeuds) =   8.4   9.8  11.3  12.4",
+    "   Heuristique f2 (a la main)         alpha = 0.596   log2(noeuds) =   7.4   8.3   9.8  10.8",
+    "   Heuristique f7 (a la main)         alpha = 0.544   log2(noeuds) =   7.6   8.6   9.8  10.8",
+    "   Evolue (genome 1)                  alpha = 0.536   log2(noeuds) =   7.8   8.7  10.0  10.9",
+    "   (41 s)\n",
+    "== C2. Le solveur re-evolue sur ces instances difficiles ==",
+    "   generation  1 : meilleur alpha = 0.5048",
+    "   generation  2 : meilleur alpha = 0.4891",
+    "   generation  3 : meilleur alpha = 0.4891",
+    "   generation  4 : meilleur alpha = 0.4891",
+    "   generation  5 : meilleur alpha = 0.4850",
+    "   generation  6 : meilleur alpha = 0.4850",
+    "   generation  7 : meilleur alpha = 0.4850",
+    "   generation  8 : meilleur alpha = 0.4850",
+    "   generation  9 : meilleur alpha = 0.4818",
+    "   generation 10 : meilleur alpha = 0.4807",
+    "   generation 11 : meilleur alpha = 0.4783",
+    "   generation 12 : meilleur alpha = 0.4783",
+    "   genome 2 : [0.62, -1.27, 0.79, 1.65, 0.17, 0.31, -0.24]",
+    "   Genome 2 sur instances H1          alpha = 0.478   log2(noeuds) =   7.5   8.4   9.5  10.3",
+    "",
+    "== C3. L'adversaire contre-attaque contre le genome 2 ==",
+    "   Genome 1 sur H2                    alpha = 0.575   log2(noeuds) =   7.4   8.4   9.7  10.8",
+    "   Genome 2 sur H2                    alpha = 0.578   log2(noeuds) =   7.4   8.5   9.7  10.9",
+    "   Ordre fixe sur H2                  alpha = 0.606   log2(noeuds) =   8.2  10.1  11.1  11.9",
+    "   Genome 1 sur aleatoires (memes n)  alpha = 0.499   log2(noeuds) =   4.6   5.9   6.2   7.8",
+    "\nTemps total : 46 s"
+  ]
+}

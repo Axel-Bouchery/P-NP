@@ -1,0 +1,19 @@
+{
+  "dist_functions": {
+    "1": 1882,
+    "2": 39732,
+    "3": 23920,
+    "4": 2
+  },
+  "dist_npn_classes": {
+    "1": 15,
+    "2": 128,
+    "3": 78,
+    "4": 1
+  },
+  "parity4_s_star": 4,
+  "max_s_star": 4,
+  "hardest_npn_reps_hex": [
+    "0x6996"
+  ]
+}

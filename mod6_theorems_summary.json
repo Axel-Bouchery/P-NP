@@ -1,0 +1,102 @@
+[
+  {
+    "d": 1,
+    "n_sym": 5,
+    "d2": 1,
+    "d3": 1,
+    "n_nonsym": 5,
+    "gain": 0,
+    "note": "symetrique optimal",
+    "period_bound": 5
+  },
+  {
+    "d": 2,
+    "n_sym": 8,
+    "d2": 2,
+    "d3": 1,
+    "n_nonsym": 10,
+    "gain": 2,
+    "note": "Theoreme M1 (A^2+B^2 mod 3 : 8+2 et 5+5)",
+    "period_bound": 11
+  },
+  {
+    "d": 3,
+    "n_sym": 27,
+    "d2": 3,
+    "d3": 3,
+    "n_nonsym": 27,
+    "gain": 0,
+    "note": "symetrique optimal",
+    "period_bound": 35
+  },
+  {
+    "d": 4,
+    "n_sym": 36,
+    "d2": 4,
+    "d3": 4,
+    "n_nonsym": 36,
+    "gain": 0,
+    "note": "symetrique optimal",
+    "period_bound": 71
+  },
+  {
+    "d": 5,
+    "n_sym": 53,
+    "d2": 5,
+    "d3": 5,
+    "n_nonsym": 53,
+    "gain": 0,
+    "note": "symetrique optimal",
+    "period_bound": 71
+  },
+  {
+    "d": 6,
+    "n_sym": 62,
+    "d2": 6,
+    "d3": 5,
+    "n_nonsym": 63,
+    "gain": 1,
+    "note": "Theoreme M2 (marge F_3 = +1)",
+    "period_bound": 71
+  },
+  {
+    "d": 7,
+    "n_sym": 71,
+    "d2": 7,
+    "d3": 5,
+    "n_nonsym": 73,
+    "gain": 2,
+    "note": "Theoreme M2 (marge F_3 = +2)",
+    "period_bound": 71
+  },
+  {
+    "d": 8,
+    "n_sym": 80,
+    "d2": 8,
+    "d3": 5,
+    "n_nonsym": 83,
+    "gain": 3,
+    "note": "Theoreme M2 (marge F_3 = +3)",
+    "period_bound": 143
+  },
+  {
+    "d": 9,
+    "n_sym": 151,
+    "d2": 7,
+    "d3": 9,
+    "n_nonsym": 153,
+    "gain": 2,
+    "note": "Theoreme M2 (marge F_2 = +2)",
+    "period_bound": 431
+  },
+  {
+    "d": 10,
+    "n_sym": 184,
+    "d2": 10,
+    "d3": 10,
+    "n_nonsym": 184,
+    "gain": 0,
+    "note": "symetrique optimal",
+    "period_bound": 431
+  }
+]
