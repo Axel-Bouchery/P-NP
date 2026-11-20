@@ -1,10 +1,10 @@
 ﻿# Exploration théorique et expérimentale des frontières de la complexité (P vs NP, ACC⁰, THR ∘ THR, VP vs VNP)
 
-Ce dépôt rassemble l'ensemble des **40 scripts** Python/Numba/PyTorch, des **31 fichiers de résultats JSON**, des **22 témoins algébriques (`.npz`)** et des **25 figures** produits au cours de la campagne de recherche sur trois axes complémentaires.
+Ce dépôt rassemble l'ensemble des **42 scripts** Python/Numba/PyTorch, des **33 fichiers de résultats JSON**, des **22 témoins algébriques (`.npz`)** et des **27 figures** produits au cours de la campagne de recherche sur trois axes complémentaires.
 
 ## Monographie de recherche unifiée
 
-- **[RAPPORT.md](RAPPORT.md)** — Rapport complet de recherche (problématique, définitions formelles, protocoles, démonstrations des Théorèmes 1–3, M1–M2, G1–G5 et T1–T2, tableaux, 25 figures, bilan des cinq murs structurels et bibliographie unifiée).
+- **[RAPPORT.md](RAPPORT.md)** — Rapport complet de recherche (problématique, définitions formelles, protocoles, démonstrations des Théorèmes 1–3, M1–M2, G1–G5, G3++, T1–T2, Q1 et P1, tableaux, 27 figures, bilan des cinq murs structurels et bibliographie unifiée).
 
 ---
 
@@ -29,6 +29,8 @@ Ce dépôt rassemble l'ensemble des **40 scripts** Python/Numba/PyTorch, des **3
 | [composite_mod_m_lab.py](02_mod6_polynomials/composite_mod_m_lab.py), [composite_mod_m_full.py](02_mod6_polynomials/composite_mod_m_full.py), [composite_mod_m_verify_and_plot.py](02_mod6_polynomials/composite_mod_m_verify_and_plot.py) | Théorèmes G1–G5 sur 8 modules composites (`mod 6, 10, 12, 14, 15, 21, 30, 35`), record `mod 6 d = 8 → 88`, séparation non bornée `(p_min − 1)×` | [composite_mod_m_full.json](results/mod6_polynomials/composite_mod_m_full.json), [composite_mod_m_discovery.png](figures/composite_mod_m_discovery.png) |
 | [option_a_deep_probe.py](02_mod6_polynomials/option_a_deep_probe.py), [option_a_thr2_breakthrough.py](02_mod6_polynomials/option_a_thr2_breakthrough.py) | Optimalité 2b/3b N<sub>gen</sub><sup>(m)</sup>(2) = 2(m − 1), Théorème T1, percée THR<sub>n, 2</sub>, MAJₙ & MOD<sub>k</sub> | [option_a_deep_probe.json](results/mod6_polynomials/option_a_deep_probe.json), [option_a_thr2_breakthrough.json](results/mod6_polynomials/option_a_thr2_breakthrough.json), [option_a_discovery.png](figures/option_a_discovery.png) |
 | [piste_2a_thr2_graphs.py](02_mod6_polynomials/piste_2a_thr2_graphs.py), [piste_2a_k10_and_theorem_t2.py](02_mod6_polynomials/piste_2a_k10_and_theorem_t2.py) | Piste 2A — Percée THR<sub>9, 2</sub> mod 6 (K₉ vérifié sur 2⁹ = 512, 3× le symétrique), Théorème T2, records 3-blocs `mod 10, 12, 14, 15` | [piste_2a_thr2_graphs.json](results/mod6_polynomials/piste_2a_thr2_graphs.json), [piste_2a_phase2.json](results/mod6_polynomials/piste_2a_phase2.json), [piste_2a_thr2_breakthrough.png](figures/piste_2a_thr2_breakthrough.png) |
+| [piste_2c_2d_mva_and_prob.py](02_mod6_polynomials/piste_2c_2d_mva_and_prob.py) | Pistes 2C & 2D — Théorème G3++ (A<sub>p</sub>(d) = (p − 2)·d exact sur 𝔽₅/𝔽₇) et Théorème P1 (effondrement probabiliste symétrique ε = 100 % vs m<sup>−d</sup>) | [piste_2c_2d_results.json](results/mod6_polynomials/piste_2c_2d_results.json), [piste_2c_2d_mva_prob.png](figures/piste_2c_2d_mva_prob.png) |
+| [piste_2b_and_k10_exact.py](02_mod6_polynomials/piste_2b_and_k10_exact.py) | Piste 2B & Front 3 — Théorème Q1 (Ramsey `α(G₂) ≤ 4`), résistance 4b/5b OR₁₉ mod 10, clique `ω(G₂)` et 236k extensions K₉ → K₁₀ | [piste_2b_k10_results.json](results/mod6_polynomials/piste_2b_k10_results.json), [piste_2b_k10_analysis.png](figures/piste_2b_k10_analysis.png) |
 
 ### Axe III : Complexité algébrique (GCT sur perm₃ & Multiplication matricielle)
 | Script | Rôle | Données & Témoins `.npz` |

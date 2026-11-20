@@ -1,0 +1,102 @@
+{
+  "gyori_general_calibration": {
+    "OR10_min_defect": 31,
+    "OR11_min_defect": 93
+  },
+  "mod10_or19_kblock_probe": [
+    {
+      "partition": [
+        14,
+        2,
+        2,
+        1
+      ],
+      "n": 19,
+      "grid_pts": 269,
+      "min_defect": 2,
+      "time_s": 5.27
+    },
+    {
+      "partition": [
+        9,
+        5,
+        3,
+        2
+      ],
+      "n": 19,
+      "grid_pts": 719,
+      "min_defect": 1,
+      "time_s": 0.09
+    },
+    {
+      "partition": [
+        7,
+        5,
+        4,
+        3
+      ],
+      "n": 19,
+      "grid_pts": 959,
+      "min_defect": 12,
+      "time_s": 0.14
+    },
+    {
+      "partition": [
+        5,
+        5,
+        5,
+        4
+      ],
+      "n": 19,
+      "grid_pts": 1079,
+      "min_defect": 10,
+      "time_s": 0.16
+    },
+    {
+      "partition": [
+        9,
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 19,
+      "grid_pts": 1199,
+      "min_defect": 25,
+      "time_s": 0.18
+    }
+  ],
+  "thr2_mod6_clique_omega": [
+    {
+      "n": 6,
+      "bad_masks": 21,
+      "min_defect": 0,
+      "time_s": 3.69
+    },
+    {
+      "n": 7,
+      "bad_masks": 56,
+      "min_defect": 2,
+      "time_s": 0.01
+    },
+    {
+      "n": 8,
+      "bad_masks": 127,
+      "min_defect": 12,
+      "time_s": 0.02
+    },
+    {
+      "n": 9,
+      "bad_masks": 262,
+      "min_defect": 28,
+      "time_s": 0.03
+    }
+  ],
+  "k9_pool_to_k10_massive": {
+    "n_k9_pool": 7,
+    "total_extensions": 137781,
+    "min_f2_defect": 8,
+    "time_s": 5.45
+  },
+  "total_time_s": 100.52
+}
