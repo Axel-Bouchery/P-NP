@@ -1,0 +1,459 @@
+{
+  "mod6_4block_exact": [
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "n": 8,
+      "solutions": 24,
+      "min_defect": 0,
+      "time_s": 6.27
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2,
+        3
+      ],
+      "n": 9,
+      "solutions": 0,
+      "min_defect": 2,
+      "time_s": 0.01
+    },
+    {
+      "partition": [
+        3,
+        2,
+        2,
+        2
+      ],
+      "n": 9,
+      "solutions": 0,
+      "min_defect": 2,
+      "time_s": 0.0
+    },
+    {
+      "partition": [
+        3,
+        3,
+        2,
+        1
+      ],
+      "n": 9,
+      "solutions": 0,
+      "min_defect": 4,
+      "time_s": 0.01
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        0
+      ],
+      "n": 9,
+      "solutions": 0,
+      "min_defect": 7,
+      "time_s": 0.01
+    }
+  ],
+  "mod6_k8_to_k9_exhaustive": {
+    "n_k8_witnesses": 13,
+    "total_extensions_tested": 85293,
+    "min_f2_defect": 0,
+    "time_s": 4.59
+  },
+  "mod6_k9_deep_sa": {
+    "restarts": 256,
+    "steps": 25000,
+    "min_f2_defect": 0,
+    "time_s": 9.84,
+    "verified_2_to_9": true,
+    "w2": [
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "w3": [
+      1,
+      1,
+      0,
+      0,
+      2,
+      1,
+      1,
+      1,
+      2,
+      0,
+      1,
+      1,
+      0,
+      0,
+      2,
+      0,
+      1,
+      1,
+      0,
+      2,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      0
+    ]
+  },
+  "all_mods_sym_and_2block": {
+    "mod6": {
+      "N_sym_thr2": 3,
+      "max_2block": 5,
+      "partition_2b": [
+        2,
+        3
+      ],
+      "c1_2b": [
+        1,
+        1,
+        0
+      ],
+      "c2_2b": [
+        1,
+        0,
+        1
+      ]
+    },
+    "mod10": {
+      "N_sym_thr2": 4,
+      "max_2block": 8,
+      "partition_2b": [
+        4,
+        4
+      ],
+      "c1_2b": [
+        0,
+        0,
+        1
+      ],
+      "c2_2b": [
+        1,
+        1,
+        0
+      ]
+    },
+    "mod12": {
+      "N_sym_thr2": 8,
+      "max_2block": 12,
+      "partition_2b": [
+        6,
+        6
+      ],
+      "c1_2b": [
+        1,
+        1,
+        0
+      ],
+      "c2_2b": [
+        2,
+        2,
+        1
+      ]
+    },
+    "mod14": {
+      "N_sym_thr2": 7,
+      "max_2block": 13,
+      "partition_2b": [
+        6,
+        7
+      ],
+      "c1_2b": [
+        1,
+        1,
+        0
+      ],
+      "c2_2b": [
+        6,
+        1,
+        1
+      ]
+    },
+    "mod15": {
+      "N_sym_thr2": 5,
+      "max_2block": 10,
+      "partition_2b": [
+        5,
+        5
+      ],
+      "c1_2b": [
+        2,
+        2,
+        1
+      ],
+      "c2_2b": [
+        1,
+        1,
+        0
+      ]
+    },
+    "mod21": {
+      "N_sym_thr2": 6,
+      "max_2block": 12,
+      "partition_2b": [
+        6,
+        6
+      ],
+      "c1_2b": [
+        1,
+        1,
+        0
+      ],
+      "c2_2b": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  "mods_3block_exact": {
+    "mod10": {
+      "max_3block": 11,
+      "partition_3b": [
+        3,
+        4,
+        4
+      ],
+      "c1_3b": [
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "c2_3b": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "time_s": 7.63
+    },
+    "mod12": {
+      "max_3block": 13,
+      "partition_3b": [
+        5,
+        2,
+        6
+      ],
+      "c1_3b": [
+        1,
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "c2_3b": [
+        2,
+        2,
+        2,
+        1,
+        1,
+        0
+      ],
+      "time_s": 0.51
+    },
+    "mod15": {
+      "max_3block": 15,
+      "partition_3b": [
+        5,
+        5,
+        5
+      ],
+      "c1_3b": [
+        2,
+        2,
+        2,
+        1,
+        0,
+        1
+      ],
+      "c2_3b": [
+        2,
+        3,
+        3,
+        1,
+        1,
+        0
+      ],
+      "time_s": 0.36
+    }
+  },
+  "general_graphs_mod10_mod14": {
+    "mod10": [
+      {
+        "n": 9,
+        "min_f2_defect": 1,
+        "time_s": 0.7,
+        "verified_2_to_n": false
+      },
+      {
+        "n": 10,
+        "min_f2_defect": 2,
+        "time_s": 1.98,
+        "verified_2_to_n": false
+      },
+      {
+        "n": 11,
+        "min_f2_defect": 93,
+        "time_s": 4.99,
+        "verified_2_to_n": false
+      }
+    ],
+    "mod14": [
+      {
+        "n": 9,
+        "min_f2_defect": 0,
+        "time_s": 0.23,
+        "verified_2_to_n": true,
+        "w2": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        "wp": [
+          5,
+          2,
+          4,
+          1,
+          1,
+          2,
+          2,
+          6,
+          5,
+          2,
+          3,
+          3,
+          4,
+          5,
+          2,
+          3,
+          6,
+          6,
+          4,
+          5,
+          2,
+          4,
+          5,
+          5,
+          4,
+          5,
+          5,
+          1,
+          2,
+          6,
+          5,
+          0,
+          6,
+          6,
+          4,
+          1
+        ]
+      },
+      {
+        "n": 10,
+        "min_f2_defect": 10,
+        "time_s": 1.33,
+        "verified_2_to_n": false
+      },
+      {
+        "n": 11,
+        "min_f2_defect": 51,
+        "time_s": 3.43,
+        "verified_2_to_n": false
+      }
+    ]
+  },
+  "total_time_s": 53.08
+}

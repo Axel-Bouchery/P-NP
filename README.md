@@ -1,10 +1,10 @@
 ﻿# Exploration théorique et expérimentale des frontières de la complexité (P vs NP, ACC⁰, THR ∘ THR, VP vs VNP)
 
-Ce dépôt rassemble l'ensemble des **38 scripts** Python/Numba/PyTorch, des **29 fichiers de résultats JSON**, des **22 témoins algébriques (`.npz`)** et des **24 figures** produits au cours de la campagne de recherche sur trois axes complémentaires.
+Ce dépôt rassemble l'ensemble des **40 scripts** Python/Numba/PyTorch, des **31 fichiers de résultats JSON**, des **22 témoins algébriques (`.npz`)** et des **25 figures** produits au cours de la campagne de recherche sur trois axes complémentaires.
 
 ## Monographie de recherche unifiée
 
-- **[RAPPORT.md](RAPPORT.md)** — Rapport complet de recherche (problématique, définitions formelles, protocoles, démonstrations des Théorèmes 1–3, M1–M2, G1–G5 et T1, tableaux, 24 figures, bilan des cinq murs structurels et bibliographie unifiée).
+- **[RAPPORT.md](RAPPORT.md)** — Rapport complet de recherche (problématique, définitions formelles, protocoles, démonstrations des Théorèmes 1–3, M1–M2, G1–G5 et T1–T2, tableaux, 25 figures, bilan des cinq murs structurels et bibliographie unifiée).
 
 ---
 
@@ -27,7 +27,8 @@ Ce dépôt rassemble l'ensemble des **38 scripts** Python/Numba/PyTorch, des **2
 | [verify_mod6_theorems.py](02_mod6_polynomials/verify_mod6_theorems.py) | Preuve & vérification exhaustive des Théorèmes M1 (N<sub>gen</sub>(2) = 10) et M2 (*Margin-Harvesting* d = 6..9) | [mod6_theorems_summary.json](results/mod6_polynomials/mod6_theorems_summary.json), [mod6_discovery.png](figures/mod6_discovery.png) |
 | [hunt_super_quadratic_mod6.py](02_mod6_polynomials/hunt_super_quadratic_mod6.py) | Chasse multi-blocs à d = 3, 4, 5 (mur `defect = 1` à N<sub>sym</sub>(d) + 1) | [super_quad_mod6_results.json](results/mod6_polynomials/super_quad_mod6_results.json) |
 | [composite_mod_m_lab.py](02_mod6_polynomials/composite_mod_m_lab.py), [composite_mod_m_full.py](02_mod6_polynomials/composite_mod_m_full.py), [composite_mod_m_verify_and_plot.py](02_mod6_polynomials/composite_mod_m_verify_and_plot.py) | Théorèmes G1–G5 sur 8 modules composites (`mod 6, 10, 12, 14, 15, 21, 30, 35`), record `mod 6 d = 8 → 88`, séparation non bornée `(p_min − 1)×` | [composite_mod_m_full.json](results/mod6_polynomials/composite_mod_m_full.json), [composite_mod_m_discovery.png](figures/composite_mod_m_discovery.png) |
-| [option_a_deep_probe.py](02_mod6_polynomials/option_a_deep_probe.py), [option_a_thr2_breakthrough.py](02_mod6_polynomials/option_a_thr2_breakthrough.py) | Optimalité 2b/3b N<sub>gen</sub><sup>(m)</sup>(2) = 2(m − 1), Théorème T1, percée THR<sub>n, 2</sub> (`mod 6` : 3 → 8 vérifié sur 2⁸ entrées), MAJₙ & MOD<sub>k</sub> | [option_a_deep_probe.json](results/mod6_polynomials/option_a_deep_probe.json), [option_a_thr2_breakthrough.json](results/mod6_polynomials/option_a_thr2_breakthrough.json), [option_a_discovery.png](figures/option_a_discovery.png) |
+| [option_a_deep_probe.py](02_mod6_polynomials/option_a_deep_probe.py), [option_a_thr2_breakthrough.py](02_mod6_polynomials/option_a_thr2_breakthrough.py) | Optimalité 2b/3b N<sub>gen</sub><sup>(m)</sup>(2) = 2(m − 1), Théorème T1, percée THR<sub>n, 2</sub>, MAJₙ & MOD<sub>k</sub> | [option_a_deep_probe.json](results/mod6_polynomials/option_a_deep_probe.json), [option_a_thr2_breakthrough.json](results/mod6_polynomials/option_a_thr2_breakthrough.json), [option_a_discovery.png](figures/option_a_discovery.png) |
+| [piste_2a_thr2_graphs.py](02_mod6_polynomials/piste_2a_thr2_graphs.py), [piste_2a_k10_and_theorem_t2.py](02_mod6_polynomials/piste_2a_k10_and_theorem_t2.py) | Piste 2A — Percée THR<sub>9, 2</sub> mod 6 (K₉ vérifié sur 2⁹ = 512, 3× le symétrique), Théorème T2, records 3-blocs `mod 10, 12, 14, 15` | [piste_2a_thr2_graphs.json](results/mod6_polynomials/piste_2a_thr2_graphs.json), [piste_2a_phase2.json](results/mod6_polynomials/piste_2a_phase2.json), [piste_2a_thr2_breakthrough.png](figures/piste_2a_thr2_breakthrough.png) |
 
 ### Axe III : Complexité algébrique (GCT sur perm₃ & Multiplication matricielle)
 | Script | Rôle | Données & Témoins `.npz` |
