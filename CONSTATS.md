@@ -2,7 +2,7 @@
 
 **Type de document** : Monographie de recherche expérimentale et théorique (synthèse intégrale)  
 **Date** : Novembre 2026  
-**Dépôt de reproductibilité** : [README.md](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/README.md) (`C:\Users\Axoul\.gemini\antigravity\scratch\pnp-williams`)  
+**Dépôt de reproductibilité** : [README.md](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/README.md)
 **Environnement matériel et logiciel** : Station Windows 16 cœurs CPU, Python 3.14, NumPy 2.3, Numba 0.66 (JIT), PyTorch 2.14 (`float64` / `complex128`), Matplotlib 3.11.
 
 ---
