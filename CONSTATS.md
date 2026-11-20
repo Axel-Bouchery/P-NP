@@ -41,7 +41,7 @@ Notre démarche associe systématiquement preuves formelles, conception de solve
 4. **PARTIE III — Complexité algébrique (VP vs VNP et Multiplication matricielle)**
    - [13. GCT sur perm₃ : Levenberg–Marquardt de Parseval, sonde k = 6 et homotopie 7 → 6](#13-gct-sur-perm₃--levenbergmarquardt-de-parseval-sonde-k--6-et-homotopie-7--6)
    - [14. Multiplication matricielle ⟨3, 3, 3⟩ : Gauss–Newton hermitien, recuit L<sub>2/3</sub> et loi de pente α](#14-multiplication-matricielle-3-3-3--gaussnewton-hermitien-recuit-l23-et-loi-de-pente-α)
-   - [15. Formats rectangulaires ouverts sur ℂ et barrière L∞ circulaire stricte](#15-formats-rectangulaires-ouverts-sur-ℂ-et-barrière-l∞-circulaire-stricte)
+   - [15. Formats rectangulaires ouverts sur ℂ et barrière L∞ circulaire stricte](#15-formats-rectangulaires-ouverts-sur-ℂ-et-barrière-l-circulaire-stricte)
    - [16. Combinatoire exacte : Graphe de Flips et réduction de tranches sur 𝔽₃ et 𝔽₅](#16-combinatoire-exacte--graphe-de-flips-et-réduction-de-tranches-sur-𝔽₃-et-𝔽₅)
 5. **SYNTHÈSE TRANSVERSALE**
    - [17. Les cinq murs de la complexité rencontrés en pratique](#17-les-cinq-murs-de-la-complexité-rencontrés-en-pratique)
@@ -167,7 +167,7 @@ $$
 
 **Corollaire 1 (Garantie pire cas).** Si les perturbations ne touchent qu'au plus K variables, le branchement prioritaire sur le descripteur de discordance f₈(i) = ∑<sub>r</sub> ∑<sub>h ∈ G<sub>r</sub></sub> ∣v<sub>h</sub>∣ · ∣W<sub>h,i</sub> − w<sub>i</sub><sup>(r)</sup>∣ garantit dans le pire cas au plus 2<sup>K+1</sup> − 1 nœuds indépendamment de n.
 
-**Phénomène des « pics fantômes hors-réseau »** : sans l'arrondi au réseau gℤ, la famille **P2** (parité de poids w<sub>i</sub> = 2 perturbée de ± 1 sur k = n/3 variables) créait des seuils décalés impairs τ<sub>h</sub><sup>∗</sup> sur une somme libre toujours paire (2ℤ), générant des maxima inatteignables et 2<sup>12,5</sup> nœuds à n = 18. L'arrondi exact par g = gcd = 2 fait chuter l'exploration à 2<sup>0,3</sup> nœuds (α = 0,001) :
+**Phénomène des « pics fantômes hors-réseau »** : sans l'arrondi au réseau gℤ, la famille **P2** (parité de poids w<sub>i</sub> = 2 perturbée de ±1 sur k = n/3 variables) créait des seuils décalés impairs τ<sub>h</sub><sup>∗</sup> sur une somme libre toujours paire (2ℤ), générant des maxima inatteignables et 2<sup>12,5</sup> nœuds à n = 18. L'arrondi exact par g = gcd = 2 fait chuter l'exploration à 2<sup>0,3</sup> nœuds (α = 0,001) :
 
 | Famille adversariale (n = 10..18) | Base (G1) | Hybride A+B | Th. 1 sans f₈ | Th. 1 + Corollaire (A<sup>∗</sup> + B + f₈) |
 | :--- | :---: | :---: | :---: | :---: |
@@ -242,7 +242,7 @@ Pour attaquer le pire cas sans aucun élagage (y compris le comptage exact `#SAT
 Pour tout circuit THR ∘ THR à poids inférieurs dans {-R, …, R} et poids du sommet v<sub>k</sub> ∈ ℝ arbitraires, la matrice complète M<sub>x<sub>L</sub>, x<sub>R</sub></sub> = ∑<sub>k=1</sub><sup>s</sup> v<sub>k</sub> g<sub>k</sub>(x<sub>L</sub>, x<sub>R</sub>) ∈ ℝ<sup>2<sup>n−ℓ</sup> × 2<sup>ℓ</sup></sup> se décompose exactement en :
 
 $$
-M_{x_L, x_R} \;=\; \mathrm{base}(x_L) \;+\; (U \cdot V)_{x_L, x_R}, \qquad \operatorname{rank}_{\mathbb{R}}(M - \mathrm{base}\cdot\mathbf{1}^T) \;\le\; K = \sum_{k=1}^s (D_k - 1) \;\le\; 2 R \ell s \;\ll\; 2^\ell,
+M_{x_L, x_R} \;=\; \mathrm{base}(x_L) \;+\; (U \cdot V)_{x_L, x_R}, \qquad \mathrm{rank}_{\mathbb{R}}(M - \mathrm{base}\cdot\mathbf{1}^T) \;\le\; K = \sum_{k=1}^s (D_k - 1) \;\le\; 2 R \ell s \;\ll\; 2^\ell,
 $$
 
 où U ∈ {0, 1}<sup>2<sup>n−ℓ</sup> × K</sup> est creuse (≤ s uns par ligne) et V ∈ ℝ<sup>K × 2<sup>ℓ</sup></sup> est la matrice de marches suffixes des valeurs distinctes ℬ<sub>k</sub> = {b<sub>k,0</sub> < … < b<sub>k, D<sub>k</sub>−1</sub>} de B<sub>k</sub>(x<sub>R</sub>).
@@ -382,7 +382,7 @@ Après avoir diagnostiqué l'échec d'Adam/L-BFGS (`err_val = 0,937`) et de Leve
 ### 13.2 Sonde profonde k = 6, monômes de degré 3 et diagnostic de l'homotopie 7 → 6
 Dans [vp_vnp_k6_deep_probe.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/vp_vnp_k6_deep_probe.py) :
 - **Calibration `diag_r`** : **4/10** essais réussissent à k = 7 (< 0,015, jusqu'à 4,1 × 10⁻⁴ en 140 iters), contre **0/24 sur** ℝ et **0/16 sur** ℂ à k = 6 (**0/64** au total sous 0,566 ≈ √(2/6)).
-- **Extraction des 165 monômes de degré 3** : le meilleur `R_k6` n'atteint que (0,90 ; 0,51 ; 0,86 ; 0,85 ; 0,50 ; 0,84) sur perm₃ avec une norme L₂ = 1,128 sur les 159 monômes parasites (contre 7,33 × 10⁻¹⁵ pour Grenet 7× 7).
+- **Extraction des 165 monômes de degré 3** : le meilleur `R_k6` n'atteint que (0,90 ; 0,51 ; 0,86 ; 0,85 ; 0,50 ; 0,84) sur perm₃ avec une norme L₂ = 1,128 sur les 159 monômes parasites (contre 7,33 × 10⁻¹⁵ pour Grenet 7 × 7).
 - **Piège de jauge** SL₇ **démonté** : sur l'homotopie pénalisée V₇(perm₃) → det₆, ‖bord‖ chute de 1,73 à 4,7 × 10⁻³ tandis que ‖L₆‖<sub>F</sub> grimpe à 67,4, mais `err6` reste rigoureusement figée à 0,621 (ℝ) et 0,607 (ℂ) : un simple recalibrage diagonal SL₇ préservant à la fois det₇ et det₆.
 
 ![Homotopie 7 vers 6 et calibration statistique k=7 vs k=6](figures/vp_vnp_k6_homotopy.png)
@@ -402,10 +402,10 @@ $$
 $$
 
 Nos mesures vérifient cette loi à deux chiffres significatifs :
-- **Strassen** ⟨2,2,2⟩ (R = 7) : 6/6 exacts à 9,1 × 10⁻¹³ en 0,04 s (et 4/6 en mode ℤ₃-cyclique 1+2× 3) ; mur R = 6 confirmé à 1/√8 = 0,3536.
-- **Laderman** ⟨3,3,3⟩ (R = 23) : **6/6 exacts bornés** à 5,61 × 10⁻¹³ (‖F‖ = 10,5, max∣x∣= 1,25, α ≈ 1,00).
-- **Frontière exacte/bord** ⟨3,3,3⟩ (R = 22) : le recuit L<sub>2/3</sub> brise le mur discret 1/√27 = 0,1925 sur **29 % des essais** ℝ (`5,14e-4`, α = 0,386), **56 % des essais** ℂ (`5,37e-4`, α = 0,398) et en **symétrie cyclique** ℤ₃ (4 + 6× 3, `6,58e-4`) — tous signés comme **bord d'ordre 1** (α ≈ 0,38, err ∝ ‖F‖<sup>−3</sup>), aucun point exact borné (α ≈ 1).
-- **Schönhage** ⟨3,3,3⟩ (R = 21) : 1/16 essai franchit le mur et descend en polissage à 5,17 × 10⁻³ (‖F‖ = 93,5, α = 0,311, exposant mesuré p = -1,58 ≈ -3/2 : **bord d'ordre 2**, [phase2_Anneal_R_libre_R21.npz](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/witnesses/algebraic_complexity/phase2_Anneal_R_libre_R21.npz)).
+- **Strassen** ⟨2,2,2⟩ (R = 7) : 6/6 exacts à 9,1 × 10⁻¹³ en 0,04 s (et 4/6 en mode ℤ₃-cyclique 1 + 2 × 3) ; mur R = 6 confirmé à 1/√8 = 0,3536.
+- **Laderman** ⟨3,3,3⟩ (R = 23) : **6/6 exacts bornés** à 5,61 × 10⁻¹³ (‖F‖ = 10,5, max∣x∣ = 1,25, α ≈ 1,00).
+- **Frontière exacte/bord** ⟨3,3,3⟩ (R = 22) : le recuit L<sub>2/3</sub> brise le mur discret 1/√27 = 0,1925 sur **29 % des essais** ℝ (`5,14e-4`, α = 0,386), **56 % des essais** ℂ (`5,37e-4`, α = 0,398) et en **symétrie cyclique** ℤ₃ (4 + 6 × 3, `6,58e-4`) — tous signés comme **bord d'ordre 1** (α ≈ 0,38, err ∝ ‖F‖<sup>−3</sup>), aucun point exact borné (α ≈ 1).
+- **Schönhage** ⟨3,3,3⟩ (R = 21) : 1 essai sur 16 franchit le mur et descend en polissage à 5,17 × 10⁻³ (‖F‖ = 93,5, α = 0,311, exposant mesuré p = -1,58 ≈ -3/2 : **bord d'ordre 2**, [phase2_Anneal_R_libre_R21.npz](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/witnesses/algebraic_complexity/phase2_Anneal_R_libre_R21.npz)).
 - **Murs profonds** ⟨3,3,3⟩ (R = 20 et R = 19) : 0/36 (R=20) et 0/188 (R=19, ℝ/ℂ libre et ℤ₃-cyclique) restent piégés sur les plateaux discrets √(2/27) et √(3/27).
 
 ![Phase 1 : Rang exact vs Rang de bord sur 3x3](figures/matmul3_tensor_hunt.png)
@@ -417,8 +417,8 @@ Nos mesures vérifient cette loi à deux chiffres significatifs :
 ## 15. Formats rectangulaires ouverts sur ℂ et barrière L∞ circulaire stricte
 
 ### 15.1 Phase 3 : Chasse rectangulaire sur ℂ
-Dans [matmul_rect_complex_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/matmul_rect_complex_hunt.py) (126 essais, double initialisation gaussienne + cyclotomique {0, ± 1, ± i, ω} + warm-start compressé) :
-- **Calibration exacte retrouvée** (α = 0,98, max∣x∣≈ 1,0 à 1,1) sur ⟨2,3,4⟩ (R=20, 8,95 × 10⁻¹⁰), ⟨2,3,5⟩ (R=25, 1,45 × 10⁻¹⁰) et ⟨2,4,4⟩ (R=26, 5,31 × 10⁻¹³).
+Dans [matmul_rect_complex_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/matmul_rect_complex_hunt.py) (126 essais, double initialisation gaussienne + cyclotomique {0, ±1, ±i, ω} + warm-start compressé) :
+- **Calibration exacte retrouvée** (α = 0,98, max∣x∣ ≈ 1,0 à 1,1) sur ⟨2,3,4⟩ (R=20, 8,95 × 10⁻¹⁰), ⟨2,3,5⟩ (R=25, 1,45 × 10⁻¹⁰) et ⟨2,4,4⟩ (R=26, 5,31 × 10⁻¹³).
 - **Détection automatique de 3 séparations strictes** <u>R</u> < R<sub>rec</sub> vérifiées par polissage :
   - <u>R</u>(⟨2,3,5⟩) ≤ 24 (3,26 × 10⁻⁴, α = 0,376, p = -3,01, cohérent avec Bini 10+14) ;
   - <u>R</u>(⟨2,4,4⟩) ≤ 25 (6,26 × 10⁻³, α = 0,314, p = -1,64, bord ordre 2 découvert par initialisation cyclotomique) ;
@@ -430,8 +430,8 @@ Dans [matmul_rect_complex_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/sc
 ### 15.2 Phase 4 : Barrière L∞ circulaire stricte permanente et test tournesol ⟨3,3,4⟩ (R = 29)
 Pour fermer les vallées de bord sans biaiser aucune solution exacte intérieure, [matmul_barrier_exact_hunt.py](file:///C:/Users/Axoul/.gemini/antigravity/scratch/pnp-williams/03_algebraic_complexity/matmul_barrier_exact_hunt.py) impose en permanence Φ<sub>M</sub>(z) = (γ/2) ∑<sub>q</sub> max(0, ∣z<sub>q</sub>∣ − M)² (γ = 100, majorant MM hermitien exact γ · diag(𝟏<sub>∣z<sub>q</sub>∣ > M</sub>)) couplé à l'**équilibrage de jauge** L<sub>∞</sub> **exact** (‖u<sub>r</sub>‖<sub>∞</sub> = ‖v<sub>r</sub>‖<sub>∞</sub> = ‖w<sub>r</sub>‖<sub>∞</sub>).
 
-- **Calibration** ⟨3,3,3⟩ (R = 23) : 6/6 restent intérieurs (max∣z<sub>q</sub>∣= 0,80 à 0,92 < M) et convergent à 2,04 × 10⁻¹¹.
-- **Test tournesol** ⟨3,3,4⟩ (R = 29, record exact connu de Smirnov) et cibles R<sub>rec</sub> − 1 (⟨3,3,3⟩ 22, ⟨2,3,5⟩ 24, ⟨2,4,4⟩ 25, ⟨3,3,4⟩ 28, 104 essais) : **100 % des trajectoires franchissant le mur discret viennent s'écraser verticalement contre la paroi** ∣z<sub>q</sub>∣= M (`err = 1,77e-3` à `5,79e-3`, 23/23 à `max|z| = 1,8` ou `2,5` sur ⟨3,3,3⟩ R=22). Cela démontre expérimentalement pourquoi la barrière continue ne suffit pas quand <u>R</u> < R : le bassin volumétrique de la vallée de bord se transforme en un minimum local profond collé à la paroi, masquant même les solutions exactes connues comme Smirnov R = 29.
+- **Calibration** ⟨3,3,3⟩ (R = 23) : 6/6 restent intérieurs (max∣z<sub>q</sub>∣ = 0,80 à 0,92 < M) et convergent à 2,04 × 10⁻¹¹.
+- **Test tournesol** ⟨3,3,4⟩ (R = 29, record exact connu de Smirnov) et cibles R<sub>rec</sub> − 1 (⟨3,3,3⟩ 22, ⟨2,3,5⟩ 24, ⟨2,4,4⟩ 25, ⟨3,3,4⟩ 28, 104 essais) : **100 % des trajectoires franchissant le mur discret viennent s'écraser verticalement contre la paroi** ∣z<sub>q</sub>∣ = M (`err = 1,77e-3` à `5,79e-3`, 23/23 à `max|z| = 1,8` ou `2,5` sur ⟨3,3,3⟩ R=22). Cela démontre expérimentalement pourquoi la barrière continue ne suffit pas quand <u>R</u> < R : le bassin volumétrique de la vallée de bord se transforme en un minimum local profond collé à la paroi, masquant même les solutions exactes connues comme Smirnov R = 29.
 
 ![Phase 4 : Barrière L_inf stricte et verrouillage sur la paroi](figures/matmul_barrier_exact_hunt.png)
 
@@ -463,7 +463,7 @@ Au-delà des résultats spécifiques à chaque problème, l'intérêt de cette e
 | **1** | **Barrière OVC / SETH** | THR ∘ THR-SAT (Th. 3) | Le rang bilinéaire K ≤ 2Rℓ s compresse la couche cachée en O<sup>∗</sup>(2<sup>n/2</sup>), mais résoudre MIPS générique en dimension K = ω(n) réfuterait SETH. |
 | **2** | **Barrière des Preuves Naturelles** | Atlas n = 4 / MCSP | Dès s<sup>∗</sup> = 2 portes, les fonctions *Bent* (L₁ = 4,0) et les caméléons de Chow (E₁ = 0) imitent les signatures spectrales des fonctions aléatoires (0,0 % de certification L₁ pour s<sup>∗</sup> ≥ 3). |
 | **3** | **Saturation de marge (BBR)** | Polynômes modulo 6 | Nos Théorèmes M1/M2 battent le symétrique dès que Δ > 0, mais dès que Δ = 0 (d = 3, 4, 5), toutes les recherches multi-blocs heurtent `defect = 1` à N<sub>sym</sub>(d)+1. |
-| **4** | **Domination des vallées de bord** | GCT perm₃ et MatMul continu | Dès que <u>R</u> < R, les vallées de bord occupent presque tout l'espace continu : sans barrière elles divergent (α ≈ 0,31 à 0,40) ; avec barrière L<sub>∞</sub> elles se plaquent contre la paroi ∣z<sub>q</sub>∣= M, masquant même Smirnov R = 29. |
+| **4** | **Domination des vallées de bord** | GCT perm₃ et MatMul continu | Dès que <u>R</u> < R, les vallées de bord occupent presque tout l'espace continu : sans barrière elles divergent (α ≈ 0,31 à 0,40) ; avec barrière L<sub>∞</sub> elles se plaquent contre la paroi ∣z<sub>q</sub>∣ = M, masquant même Smirnov R = 29. |
 | **5** | **Explosion projective en corps fini** | Graphe de Flips 𝔽₃ / 𝔽₅ | Supprimer les vallées de bord par 𝔽<sub>p</sub> (p ≥ 3) multiplie ∣ℙ<sup>N−1</sup>(𝔽<sub>p</sub>)∣ par 20× à 15 000× par rapport à 𝔽₂, raréfiant les collisions créatrices de réductions. |
 
 ---
