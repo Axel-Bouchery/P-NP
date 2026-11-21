@@ -326,17 +326,38 @@ def canonical_key_exact_single(A, k):
         if len(uniq) == k:
             break
 
-    # Regrouper par couleur croissante
-    groups = defaultdict(list)
-    for v, c in enumerate(colors):
-        groups[c].append(v)
-    blocks = [groups[c] for c in sorted(groups.keys())]
+    # Regrouper en classes de vrais jumeaux (u ~ v ssi A[u][w] == A[v][w] pour tout w != u, v)
+    # Toute permutation interne a une classe de vrais jumeaux est un automorphisme exact de A !
+    twin_classes = []
+    assigned = [False] * k
+    for u in range(k):
+        if assigned[u]:
+            continue
+        tc = [u]
+        assigned[u] = True
+        for v in range(u + 1, k):
+            if (not assigned[v]) and colors[v] == colors[u]:
+                is_twin = True
+                for w in range(k):
+                    if w != u and w != v and A[u][w] != A[v][w]:
+                        is_twin = False
+                        break
+                if is_twin:
+                    tc.append(v)
+                    assigned[v] = True
+        c_int = A[tc[0]][tc[1]] if len(tc) >= 2 else -1
+        twin_classes.append(((colors[u], len(tc), c_int), tc))
 
-    # Produit cartesien des permutations intra-blocs
+    # Regrouper les classes de jumeaux par signature equivariante (couleur_1WL, taille_classe, arete_interne)
+    groups = defaultdict(list)
+    for sig, tc in twin_classes:
+        groups[sig].append(tc)
+    blocks = [groups[sig] for sig in sorted(groups.keys())]
+
+    # Produit cartesien des permutations des classes de jumeaux (s! au lieu de (s*|T|)!)
     best = None
     for prod in itertools.product(*(itertools.permutations(b) for b in blocks)):
-        perm = [v for tup in prod for v in tup]
-        # Encoder le triangle superieur
+        perm = [v for tup_of_tcs in prod for tc in tup_of_tcs for v in tc]
         seq = []
         for i in range(k):
             pi = perm[i]

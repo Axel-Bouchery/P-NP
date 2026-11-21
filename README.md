@@ -1,10 +1,10 @@
 ﻿# Exploration théorique et expérimentale des frontières de la complexité (P vs NP, ACC⁰, THR ∘ THR, VP vs VNP)
 
-Ce dépôt rassemble l'ensemble des **46 scripts** Python/Numba/PyTorch, des **37 fichiers de résultats JSON**, des **22 témoins algébriques (`.npz`)** et des **28 figures** produits au cours de la campagne de recherche sur trois axes complémentaires.
+Ce dépôt rassemble l'ensemble des **51 scripts** Python/Numba/PyTorch, des **42 fichiers de résultats JSON**, des **22 témoins algébriques (`.npz`)** et des **29 figures** produits au cours de la campagne de recherche sur trois axes complémentaires.
 
 ## Monographie de recherche unifiée
 
-- **[RAPPORT.md](RAPPORT.md)** — Rapport complet de recherche (problématique, définitions formelles, protocoles, démonstrations des Théorèmes 1–3, M1–M2, G1–G5, G3++, T1–T2, Q1, P1 et U1, tableaux, 28 figures, bilan des cinq murs structurels et bibliographie unifiée).
+- **[RAPPORT.md](RAPPORT.md)** — Rapport complet de recherche (problématique, définitions formelles, protocoles, démonstrations des Théorèmes 1–3, M1–M2, G1–G5, G3++, T1–T2, Q1, P1, U1, U2 et D1, tableaux, 29 figures, bilan des cinq murs structurels et bibliographie unifiée).
 
 ---
 
@@ -32,6 +32,7 @@ Ce dépôt rassemble l'ensemble des **46 scripts** Python/Numba/PyTorch, des **3
 | [piste_2c_2d_mva_and_prob.py](02_mod6_polynomials/piste_2c_2d_mva_and_prob.py) | Pistes 2C & 2D — Théorème G3++ (A<sub>p</sub>(d) = (p − 2)·d exact sur 𝔽₅/𝔽₇) et Théorème P1 (effondrement probabiliste symétrique ε = 100 % vs m<sup>−d</sup>) | [piste_2c_2d_results.json](results/mod6_polynomials/piste_2c_2d_results.json), [piste_2c_2d_mva_prob.png](figures/piste_2c_2d_mva_prob.png) |
 | [piste_2b_and_k10_exact.py](02_mod6_polynomials/piste_2b_and_k10_exact.py) | Piste 2B & Front 3 — Théorème Q1 (Ramsey `α(G₂) ≤ 4`), résistance 4b/5b OR₁₉ mod 10, clique `ω(G₂)` et 236k extensions K₉ → K₁₀ | [piste_2b_k10_results.json](results/mod6_polynomials/piste_2b_k10_results.json), [piste_2b_k10_analysis.png](figures/piste_2b_k10_analysis.png) |
 | [thr2_mod6_exact_closure.py](02_mod6_polynomials/thr2_mod6_exact_closure.py), [thr2_mod6_audit_and_plot.py](02_mod6_polynomials/thr2_mod6_audit_and_plot.py), [thr2_mod6_n10_probe2.py](02_mod6_polynomials/thr2_mod6_n10_probe2.py), [thr2_mod6_n10_attack.py](02_mod6_polynomials/thr2_mod6_n10_attack.py) | **Théorème U1** — Fermeture exhaustive exacte **N<sub>gen</sub><sup>(6)</sup>(2, THR₂) = 9** (unique à S₉ × {±1} près, `V = {u} ⊔ {v} ⊔ K₂ ⊔ C₅`, `∣Aut∣ = 20`, `ω(G₂) ≤ 6`, 0 sol. à n = 10 auditée bit-à-bit sur 4,78 M tests) | [thr2_mod6_exact_closure.json](results/mod6_polynomials/thr2_mod6_exact_closure.json), [thr2_mod6_audit.json](results/mod6_polynomials/thr2_mod6_audit.json), [thr2_mod6_exact_closure.png](figures/thr2_mod6_exact_closure.png) |
+| [gyori_generalization_probe1.py](02_mod6_polynomials/gyori_generalization_probe1.py), [or_mod6_types_and_k13_deep.py](02_mod6_polynomials/or_mod6_types_and_k13_deep.py), [thr2_mod10_and_theorem_d1.py](02_mod6_polynomials/thr2_mod10_and_theorem_d1.py), [thr2_mod10_128bit_and_multi_mod.py](02_mod6_polynomials/thr2_mod10_128bit_and_multi_mod.py), [gyori_and_d1_verify_plot.py](02_mod6_polynomials/gyori_and_d1_verify_plot.py) | **Théorèmes U2 & D1** — Classification canonique exacte des 3 familles homogènes de OR<sub>n</sub> mod 6 (extinction à n = 9 pour V₀ et n = 10 pour W<sub>0,1</sub>/W<sub>1,1</sub>, 5 classes à P₂ homogène, 0/51,4 M à n = 11), borne polynomiale O<sub>d</sub>(p<sup>d</sup>) (2p² + p − 2 à d = 2), et records THR<sub>12, 2</sub> mod 10 et THR<sub>18, 2</sub> mod 21 (3,00×) | [or_mod6_types_and_k13_deep.json](results/mod6_polynomials/or_mod6_types_and_k13_deep.json), [thr2_mod10_128bit_and_multi_mod.json](results/mod6_polynomials/thr2_mod10_128bit_and_multi_mod.json), [gyori_and_d1_summary.json](results/mod6_polynomials/gyori_and_d1_summary.json), [gyori_types_and_d1_discovery.png](figures/gyori_types_and_d1_discovery.png) |
 
 ### Axe III : Complexité algébrique (GCT sur perm₃ & Multiplication matricielle)
 | Script | Rôle | Données & Témoins `.npz` |

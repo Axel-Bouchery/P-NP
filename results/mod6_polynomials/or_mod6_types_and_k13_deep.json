@@ -1,0 +1,264 @@
+{
+  "type_B_a0_b1": {
+    "2": {
+      "canon_count": 3
+    },
+    "3": {
+      "parents": 3,
+      "valid_extensions": 27,
+      "canon_count": 10,
+      "dead_ends": 0,
+      "time_ext_s": 15.76,
+      "time_can_s": 0.0
+    },
+    "4": {
+      "parents": 10,
+      "valid_extensions": 270,
+      "canon_count": 66,
+      "dead_ends": 0,
+      "time_ext_s": 0.0,
+      "time_can_s": 0.01
+    },
+    "5": {
+      "parents": 66,
+      "valid_extensions": 4710,
+      "canon_count": 688,
+      "dead_ends": 0,
+      "time_ext_s": 0.0,
+      "time_can_s": 0.22
+    },
+    "6": {
+      "parents": 688,
+      "valid_extensions": 53716,
+      "canon_count": 7068,
+      "dead_ends": 0,
+      "time_ext_s": 0.06,
+      "time_can_s": 3.25
+    },
+    "7": {
+      "parents": 7068,
+      "valid_extensions": 32764,
+      "canon_count": 4217,
+      "dead_ends": 1635,
+      "time_ext_s": 1.2,
+      "time_can_s": 2.67
+    },
+    "8": {
+      "parents": 4217,
+      "valid_extensions": 970,
+      "canon_count": 148,
+      "dead_ends": 3839,
+      "time_ext_s": 1.82,
+      "time_can_s": 0.33
+    },
+    "9": {
+      "parents": 148,
+      "valid_extensions": 97,
+      "canon_count": 20,
+      "dead_ends": 121,
+      "time_ext_s": 0.56,
+      "time_can_s": 0.01
+    },
+    "10": {
+      "parents": 20,
+      "valid_extensions": 30,
+      "canon_count": 5,
+      "dead_ends": 12,
+      "time_ext_s": 0.38,
+      "time_can_s": 0.01
+    },
+    "11": {
+      "parents": 5,
+      "valid_extensions": 0,
+      "canon_count": 0,
+      "dead_ends": 5,
+      "time_ext_s": 0.53,
+      "time_can_s": 0.0
+    }
+  },
+  "type_C_a1_b1": {
+    "2": {
+      "canon_count": 3
+    },
+    "3": {
+      "parents": 3,
+      "valid_extensions": 26,
+      "canon_count": 9,
+      "dead_ends": 0,
+      "time_ext_s": 0.0,
+      "time_can_s": 0.0
+    },
+    "4": {
+      "parents": 9,
+      "valid_extensions": 224,
+      "canon_count": 56,
+      "dead_ends": 0,
+      "time_ext_s": 0.0,
+      "time_can_s": 0.01
+    },
+    "5": {
+      "parents": 56,
+      "valid_extensions": 3653,
+      "canon_count": 536,
+      "dead_ends": 0,
+      "time_ext_s": 0.0,
+      "time_can_s": 0.19
+    },
+    "6": {
+      "parents": 536,
+      "valid_extensions": 49443,
+      "canon_count": 6631,
+      "dead_ends": 0,
+      "time_ext_s": 0.03,
+      "time_can_s": 3.04
+    },
+    "7": {
+      "parents": 6631,
+      "valid_extensions": 108481,
+      "canon_count": 13389,
+      "dead_ends": 349,
+      "time_ext_s": 1.24,
+      "time_can_s": 9.26
+    },
+    "8": {
+      "parents": 13389,
+      "valid_extensions": 77057,
+      "canon_count": 8439,
+      "dead_ends": 7164,
+      "time_ext_s": 8.79,
+      "time_can_s": 10.83
+    },
+    "9": {
+      "parents": 8439,
+      "valid_extensions": 50458,
+      "canon_count": 4718,
+      "dead_ends": 2573,
+      "time_ext_s": 25.07,
+      "time_can_s": 6.4
+    },
+    "10": {
+      "parents": 4718,
+      "valid_extensions": 10623,
+      "canon_count": 866,
+      "dead_ends": 2600,
+      "time_ext_s": 57.79,
+      "time_can_s": 2.9
+    },
+    "11": {
+      "parents": 866,
+      "valid_extensions": 0,
+      "canon_count": 0,
+      "dead_ends": 866,
+      "time_ext_s": 26.88,
+      "time_can_s": 0.0
+    }
+  },
+  "thr2_mod21_n19_probe": [
+    {
+      "partition": [
+        6,
+        6,
+        6,
+        1
+      ],
+      "n": 19,
+      "min_defect": 2,
+      "w3": [
+        0,
+        0,
+        0,
+        2,
+        1,
+        2,
+        2,
+        1,
+        1,
+        0
+      ],
+      "w7": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        3,
+        3,
+        2,
+        2,
+        1
+      ],
+      "time_s": 3.54
+    },
+    {
+      "partition": [
+        6,
+        6,
+        4,
+        3
+      ],
+      "n": 19,
+      "min_defect": 8,
+      "w3": [
+        2,
+        1,
+        0,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1
+      ],
+      "w7": [
+        2,
+        2,
+        5,
+        4,
+        2,
+        5,
+        1,
+        5,
+        1,
+        1
+      ],
+      "time_s": 2.7
+    },
+    {
+      "partition": [
+        5,
+        5,
+        5,
+        4
+      ],
+      "n": 19,
+      "min_defect": 6,
+      "w3": [
+        2,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        2,
+        0,
+        0
+      ],
+      "w7": [
+        1,
+        4,
+        1,
+        1,
+        0,
+        1,
+        5,
+        0,
+        1,
+        5
+      ],
+      "time_s": 3.64
+    }
+  ],
+  "total_time_s": 189.13
+}

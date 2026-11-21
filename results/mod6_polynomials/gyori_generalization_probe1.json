@@ -1,0 +1,410 @@
+{
+  "exact_max_V0_mod6": 9,
+  "v0_levels_mod6": {
+    "2": {
+      "canon_count": 2
+    },
+    "3": {
+      "parents": 2,
+      "valid_extensions": 17,
+      "canon_count": 5,
+      "time_s": 7.88
+    },
+    "4": {
+      "parents": 5,
+      "valid_extensions": 121,
+      "canon_count": 28,
+      "time_s": 0.01
+    },
+    "5": {
+      "parents": 28,
+      "valid_extensions": 1677,
+      "canon_count": 234,
+      "time_s": 0.11
+    },
+    "6": {
+      "parents": 234,
+      "valid_extensions": 18492,
+      "canon_count": 2501,
+      "time_s": 1.23
+    },
+    "7": {
+      "parents": 2501,
+      "valid_extensions": 27022,
+      "canon_count": 3614,
+      "time_s": 2.99
+    },
+    "8": {
+      "parents": 3614,
+      "valid_extensions": 1627,
+      "canon_count": 274,
+      "time_s": 2.4
+    },
+    "9": {
+      "parents": 274,
+      "valid_extensions": 15,
+      "canon_count": 4,
+      "time_s": 1.49
+    },
+    "10": {
+      "parents": 4,
+      "valid_extensions": 0,
+      "canon_count": 0,
+      "time_s": 0.19
+    }
+  },
+  "v1_levels_mod6": {
+    "2": {
+      "canon_count": 3
+    },
+    "3": {
+      "parents": 3,
+      "valid_extensions": 27,
+      "canon_count": 10,
+      "time_s": 4.87
+    },
+    "4": {
+      "parents": 10,
+      "valid_extensions": 270,
+      "canon_count": 66,
+      "time_s": 0.01
+    },
+    "5": {
+      "parents": 66,
+      "valid_extensions": 5236,
+      "canon_count": 773,
+      "time_s": 0.17
+    },
+    "6": {
+      "parents": 773,
+      "valid_extensions": 145122,
+      "canon_count": 19221,
+      "time_s": 4.41
+    }
+  },
+  "thr2_mod10_4block": [
+    {
+      "partition": [
+        4,
+        4,
+        2,
+        2
+      ],
+      "n": 12,
+      "min_defect": 1,
+      "w5_4b": [
+        1,
+        1,
+        1,
+        1,
+        4,
+        4,
+        4,
+        4,
+        4,
+        1
+      ],
+      "time_s": 4.91
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        2
+      ],
+      "n": 12,
+      "min_defect": 0,
+      "w5_4b": [
+        2,
+        3,
+        3,
+        2,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3
+      ],
+      "time_s": 0.55,
+      "verified_2_to_n": true,
+      "w2": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "partition": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "n": 12,
+      "min_defect": 0,
+      "w5_4b": [
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "time_s": 0.48,
+      "verified_2_to_n": true,
+      "w2": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "partition": [
+        4,
+        4,
+        3,
+        2
+      ],
+      "n": 13,
+      "min_defect": 4,
+      "w5_4b": [
+        1,
+        1,
+        4,
+        1,
+        4,
+        4,
+        1,
+        4,
+        4,
+        4
+      ],
+      "time_s": 0.63
+    },
+    {
+      "partition": [
+        4,
+        3,
+        3,
+        3
+      ],
+      "n": 13,
+      "min_defect": 1,
+      "w5_4b": [
+        1,
+        4,
+        1,
+        4,
+        4,
+        4,
+        4,
+        4,
+        2,
+        4
+      ],
+      "time_s": 0.68
+    },
+    {
+      "partition": [
+        4,
+        4,
+        4,
+        2
+      ],
+      "n": 14,
+      "min_defect": 6,
+      "w5_4b": [
+        4,
+        4,
+        3,
+        4,
+        4,
+        2,
+        2,
+        2,
+        2,
+        4
+      ],
+      "time_s": 0.78
+    },
+    {
+      "partition": [
+        4,
+        4,
+        3,
+        3
+      ],
+      "n": 14,
+      "min_defect": 5,
+      "w5_4b": [
+        4,
+        4,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "time_s": 0.9
+    },
+    {
+      "partition": [
+        4,
+        4,
+        4,
+        3
+      ],
+      "n": 15,
+      "min_defect": 14,
+      "w5_4b": [
+        2,
+        2,
+        2,
+        1,
+        3,
+        3,
+        1,
+        2,
+        3,
+        3
+      ],
+      "time_s": 1.13
+    }
+  ],
+  "total_time_s": 36.01
+}
