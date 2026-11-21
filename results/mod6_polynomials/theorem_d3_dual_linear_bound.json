@@ -1,0 +1,279 @@
+{
+  "theorem_d3": {
+    "d2_mod_2p": "4p - 2 <= N_gen^{(2p)}(2, OR) <= 9p - 9 (p >= 5; 19 for p = 3); asymptotic ratio <= 9/4 = 2.25x",
+    "d2_mod_2p_thr_t": "N_gen^{(2p)}(2, THR_t) <= 9p - 10 + t (p >= 5)",
+    "general_d_mod_2p": "N_gen^{(2p)}(d, OR) <= (d + 1)(2^d - 1)(p - 1) + d = O_d(p) (exact 2p - 1 at d = 1)",
+    "semiprimes_pq_d2": "N_gen^{(pq)}(2, OR) <= (2p - 1)(p + 1)(q - 1) + 2p - 2 = O(p^2 q) <= O(m^{3/2})",
+    "f2_first_barrier": "Any F_2-only disjoint-support contraction requires n >= R^2 / (2 log_2 R) = Omega(p^2 / log p)",
+    "lemma_d3a_mobius_verified_cases": 29
+  },
+  "table_2p": [
+    {
+      "p": 3,
+      "modulus_2p": 6,
+      "lower_4p_minus_2": 10,
+      "d1_upper": 19,
+      "d2_upper": 20,
+      "d3_upper_or": 19,
+      "d3_upper_thr2": 19,
+      "ratio_d3_over_lower": 1.9,
+      "gain_vs_d1_pct": 0.0,
+      "d3_deg1_exact": 5,
+      "d3_deg3": 59,
+      "d3_deg4": 154
+    },
+    {
+      "p": 5,
+      "modulus_2p": 10,
+      "lower_4p_minus_2": 18,
+      "d1_upper": 53,
+      "d2_upper": 49,
+      "d3_upper_or": 36,
+      "d3_upper_thr2": 37,
+      "ratio_d3_over_lower": 2.0,
+      "gain_vs_d1_pct": 32.08,
+      "d3_deg1_exact": 9,
+      "d3_deg3": 114,
+      "d3_deg4": 303
+    },
+    {
+      "p": 7,
+      "modulus_2p": 14,
+      "lower_4p_minus_2": 26,
+      "d1_upper": 103,
+      "d2_upper": 88,
+      "d3_upper_or": 54,
+      "d3_upper_thr2": 55,
+      "ratio_d3_over_lower": 2.0769,
+      "gain_vs_d1_pct": 47.57,
+      "d3_deg1_exact": 13,
+      "d3_deg3": 169,
+      "d3_deg4": 453
+    },
+    {
+      "p": 11,
+      "modulus_2p": 22,
+      "lower_4p_minus_2": 42,
+      "d1_upper": 251,
+      "d2_upper": 192,
+      "d3_upper_or": 90,
+      "d3_upper_thr2": 91,
+      "ratio_d3_over_lower": 2.1429,
+      "gain_vs_d1_pct": 64.14,
+      "d3_deg1_exact": 21,
+      "d3_deg3": 280,
+      "d3_deg4": 752
+    },
+    {
+      "p": 13,
+      "modulus_2p": 26,
+      "lower_4p_minus_2": 50,
+      "d1_upper": 349,
+      "d2_upper": 258,
+      "d3_upper_or": 108,
+      "d3_upper_thr2": 109,
+      "ratio_d3_over_lower": 2.16,
+      "gain_vs_d1_pct": 69.05,
+      "d3_deg1_exact": 25,
+      "d3_deg3": 336,
+      "d3_deg4": 901
+    },
+    {
+      "p": 17,
+      "modulus_2p": 34,
+      "lower_4p_minus_2": 66,
+      "d1_upper": 593,
+      "d2_upper": 414,
+      "d3_upper_or": 144,
+      "d3_upper_thr2": 145,
+      "ratio_d3_over_lower": 2.1818,
+      "gain_vs_d1_pct": 75.72,
+      "d3_deg1_exact": 33,
+      "d3_deg3": 448,
+      "d3_deg4": 1201
+    },
+    {
+      "p": 19,
+      "modulus_2p": 38,
+      "lower_4p_minus_2": 74,
+      "d1_upper": 739,
+      "d2_upper": 506,
+      "d3_upper_or": 162,
+      "d3_upper_thr2": 163,
+      "ratio_d3_over_lower": 2.1892,
+      "gain_vs_d1_pct": 78.08,
+      "d3_deg1_exact": 37,
+      "d3_deg3": 504,
+      "d3_deg4": 1351
+    },
+    {
+      "p": 23,
+      "modulus_2p": 46,
+      "lower_4p_minus_2": 90,
+      "d1_upper": 1079,
+      "d2_upper": 714,
+      "d3_upper_or": 198,
+      "d3_upper_thr2": 199,
+      "ratio_d3_over_lower": 2.2,
+      "gain_vs_d1_pct": 81.65,
+      "d3_deg1_exact": 45,
+      "d3_deg3": 616,
+      "d3_deg4": 1650
+    },
+    {
+      "p": 29,
+      "modulus_2p": 58,
+      "lower_4p_minus_2": 114,
+      "d1_upper": 1709,
+      "d2_upper": 1089,
+      "d3_upper_or": 252,
+      "d3_upper_thr2": 253,
+      "ratio_d3_over_lower": 2.2105,
+      "gain_vs_d1_pct": 85.25,
+      "d3_deg1_exact": 57,
+      "d3_deg3": 784,
+      "d3_deg4": 2100
+    },
+    {
+      "p": 31,
+      "modulus_2p": 62,
+      "lower_4p_minus_2": 122,
+      "d1_upper": 1951,
+      "d2_upper": 1231,
+      "d3_upper_or": 270,
+      "d3_upper_thr2": 271,
+      "ratio_d3_over_lower": 2.2131,
+      "gain_vs_d1_pct": 86.16,
+      "d3_deg1_exact": 61,
+      "d3_deg3": 840,
+      "d3_deg4": 2250
+    },
+    {
+      "p": 41,
+      "modulus_2p": 82,
+      "lower_4p_minus_2": 162,
+      "d1_upper": 3401,
+      "d2_upper": 2062,
+      "d3_upper_or": 360,
+      "d3_upper_thr2": 361,
+      "ratio_d3_over_lower": 2.2222,
+      "gain_vs_d1_pct": 89.41,
+      "d3_deg1_exact": 81,
+      "d3_deg3": 1120,
+      "d3_deg4": 3000
+    },
+    {
+      "p": 53,
+      "modulus_2p": 106,
+      "lower_4p_minus_2": 210,
+      "d1_upper": 5669,
+      "d2_upper": 3334,
+      "d3_upper_or": 468,
+      "d3_upper_thr2": 469,
+      "ratio_d3_over_lower": 2.2286,
+      "gain_vs_d1_pct": 91.74,
+      "d3_deg1_exact": 105,
+      "d3_deg3": 1456,
+      "d3_deg4": 3900
+    },
+    {
+      "p": 101,
+      "modulus_2p": 202,
+      "lower_4p_minus_2": 402,
+      "d1_upper": 20501,
+      "d2_upper": 11360,
+      "d3_upper_or": 900,
+      "d3_upper_thr2": 901,
+      "ratio_d3_over_lower": 2.2388,
+      "gain_vs_d1_pct": 95.61,
+      "d3_deg1_exact": 201,
+      "d3_deg3": 2800,
+      "d3_deg4": 7500
+    }
+  ],
+  "semiprimes_d2": [
+    {
+      "modulus": 15,
+      "factors": "3x5",
+      "p": 3,
+      "q": 5,
+      "lower_2m_2": 28,
+      "d3_upper": 81
+    },
+    {
+      "modulus": 21,
+      "factors": "3x7",
+      "p": 3,
+      "q": 7,
+      "lower_2m_2": 40,
+      "d3_upper": 120
+    },
+    {
+      "modulus": 33,
+      "factors": "3x11",
+      "p": 3,
+      "q": 11,
+      "lower_2m_2": 64,
+      "d3_upper": 200
+    },
+    {
+      "modulus": 35,
+      "factors": "5x7",
+      "p": 5,
+      "q": 7,
+      "lower_2m_2": 68,
+      "d3_upper": 327
+    },
+    {
+      "modulus": 55,
+      "factors": "5x11",
+      "p": 5,
+      "q": 11,
+      "lower_2m_2": 108,
+      "d3_upper": 540
+    },
+    {
+      "modulus": 77,
+      "factors": "7x11",
+      "p": 7,
+      "q": 11,
+      "lower_2m_2": 152,
+      "d3_upper": 1043
+    }
+  ],
+  "three_primes_d2": [
+    {
+      "modulus": 30,
+      "factors": "2x3x5",
+      "lower_2m_2": 58,
+      "R_inner": 11,
+      "d3_upper": 315,
+      "note": "via Gyori exact N^{(6)}(2) = 10 => R=11"
+    },
+    {
+      "modulus": 42,
+      "factors": "2x3x7",
+      "lower_2m_2": 82,
+      "R_inner": 11,
+      "d3_upper": 467,
+      "note": "via Gyori exact N^{(6)}(2) = 10 => R=11"
+    },
+    {
+      "modulus": 66,
+      "factors": "2x3x11",
+      "lower_2m_2": 130,
+      "R_inner": 11,
+      "d3_upper": 771,
+      "note": "via Gyori exact N^{(6)}(2) = 10 => R=11"
+    },
+    {
+      "modulus": 70,
+      "factors": "2x5x7",
+      "lower_2m_2": 138,
+      "R_inner": 37,
+      "d3_upper": 4471,
+      "note": "via D3 N^{(10)}(2) <= 36 => R=37"
+    }
+  ],
+  "elapsed_s": 0.041
+}
