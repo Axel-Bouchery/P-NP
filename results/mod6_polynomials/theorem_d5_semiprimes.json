@@ -1,0 +1,195 @@
+{
+  "theorem_d5": {
+    "d5_1_exact_2block": "N_{2-block}^{(pq)}(2, OR) = 2(pq - 1) = 2(m - 1) EXACT for ALL primes 2 <= p < q",
+    "d5_1_kblock_general_d": "N_{k-block}^{(pq)}(d, OR) <= d*m + (k - d)*q - k for ALL 2 <= p < q and 1 <= d < q",
+    "d5_2_mixed_degrees": "N_gen^{(pq)}((1, d), OR) <= d*p*(q - 1) + p - 1 < d*m; N_gen^{(pq)}((d, 1), OR) <= d*q*(p - 1) + q - 1 < d*m",
+    "d5_2_bounded_rank": "N_gen^{(pq)}(2, OR) <= O(min(rank_{F_p}(A_p), rank_{F_q}(A_q), p) * m) (strictly O(m) at bounded rank)",
+    "d5_3_high_rank_barrier": "For high simultaneous rank r_p, r_q = Omega(p) on balanced m = pq (p ~ q), sequential F_q contraction hits min_wt >= j*q/2 => Omega(m^{3/2}), while Boolean exponential sums suffer |cos(pi/m)| ~ 1 - O(1/m^2).",
+    "complementation_verified_polys": 180
+  },
+  "semiprimes_table": [
+    {
+      "m": 15,
+      "p": 3,
+      "q": 5,
+      "exact_2block": 28,
+      "mixed_1_2_upper": 26,
+      "mixed_2_1_upper": 24,
+      "upper_3block": 32,
+      "upper_rank_le_2": 68,
+      "upper_rank_le_4": 81,
+      "upper_unbounded_d3": 81
+    },
+    {
+      "m": 21,
+      "p": 3,
+      "q": 7,
+      "exact_2block": 40,
+      "mixed_1_2_upper": 38,
+      "mixed_2_1_upper": 34,
+      "upper_3block": 46,
+      "upper_rank_le_2": 102,
+      "upper_rank_le_4": 120,
+      "upper_unbounded_d3": 120
+    },
+    {
+      "m": 33,
+      "p": 3,
+      "q": 11,
+      "exact_2block": 64,
+      "mixed_1_2_upper": 62,
+      "mixed_2_1_upper": 54,
+      "upper_3block": 74,
+      "upper_rank_le_2": 170,
+      "upper_rank_le_4": 200,
+      "upper_unbounded_d3": 200
+    },
+    {
+      "m": 35,
+      "p": 5,
+      "q": 7,
+      "exact_2block": 68,
+      "mixed_1_2_upper": 64,
+      "mixed_2_1_upper": 62,
+      "upper_3block": 74,
+      "upper_rank_le_2": 196,
+      "upper_rank_le_4": 264,
+      "upper_unbounded_d3": 327
+    },
+    {
+      "m": 55,
+      "p": 5,
+      "q": 11,
+      "exact_2block": 108,
+      "mixed_1_2_upper": 104,
+      "mixed_2_1_upper": 98,
+      "upper_3block": 118,
+      "upper_rank_le_2": 324,
+      "upper_rank_le_4": 440,
+      "upper_unbounded_d3": 540
+    },
+    {
+      "m": 77,
+      "p": 7,
+      "q": 11,
+      "exact_2block": 152,
+      "mixed_1_2_upper": 146,
+      "mixed_2_1_upper": 142,
+      "upper_3block": 162,
+      "upper_rank_le_2": 486,
+      "upper_rank_le_4": 680,
+      "upper_unbounded_d3": 1043
+    },
+    {
+      "m": 143,
+      "p": 11,
+      "q": 13,
+      "exact_2block": 284,
+      "mixed_1_2_upper": 274,
+      "mixed_2_1_upper": 272,
+      "upper_3block": 296,
+      "upper_rank_le_2": 970,
+      "upper_rank_le_4": 1392,
+      "upper_unbounded_d3": 3033
+    },
+    {
+      "m": 323,
+      "p": 17,
+      "q": 19,
+      "exact_2block": 644,
+      "mixed_1_2_upper": 628,
+      "mixed_2_1_upper": 626,
+      "upper_3block": 662,
+      "upper_rank_le_2": 2320,
+      "upper_rank_le_4": 3384,
+      "upper_unbounded_d3": 10707
+    }
+  ],
+  "adversary_linear_system_checks": [
+    {
+      "q": 3,
+      "j": 2,
+      "m": 6,
+      "min_nonzero_wt": 4,
+      "ratio_wt_over_jq": 0.6667
+    },
+    {
+      "q": 3,
+      "j": 4,
+      "m": 10,
+      "min_nonzero_wt": 7,
+      "ratio_wt_over_jq": 0.5833
+    },
+    {
+      "q": 3,
+      "j": 6,
+      "m": 14,
+      "min_nonzero_wt": 10,
+      "ratio_wt_over_jq": 0.5556
+    },
+    {
+      "q": 5,
+      "j": 4,
+      "m": 20,
+      "min_nonzero_wt": 11,
+      "ratio_wt_over_jq": 0.55
+    },
+    {
+      "q": 5,
+      "j": 8,
+      "m": 36,
+      "min_nonzero_wt": 21,
+      "ratio_wt_over_jq": 0.525
+    },
+    {
+      "q": 5,
+      "j": 12,
+      "m": 52,
+      "min_nonzero_wt": 31,
+      "ratio_wt_over_jq": 0.5167
+    },
+    {
+      "q": 7,
+      "j": 6,
+      "m": 42,
+      "min_nonzero_wt": 22,
+      "ratio_wt_over_jq": 0.5238
+    },
+    {
+      "q": 7,
+      "j": 12,
+      "m": 78,
+      "min_nonzero_wt": 43,
+      "ratio_wt_over_jq": 0.5119
+    },
+    {
+      "q": 7,
+      "j": 18,
+      "m": 114,
+      "min_nonzero_wt": 64,
+      "ratio_wt_over_jq": 0.5079
+    },
+    {
+      "q": 11,
+      "j": 10,
+      "m": 110,
+      "min_nonzero_wt": 56,
+      "ratio_wt_over_jq": 0.5091
+    },
+    {
+      "q": 11,
+      "j": 20,
+      "m": 210,
+      "min_nonzero_wt": 111,
+      "ratio_wt_over_jq": 0.5045
+    },
+    {
+      "q": 11,
+      "j": 30,
+      "m": 310,
+      "min_nonzero_wt": 166,
+      "ratio_wt_over_jq": 0.503
+    }
+  ],
+  "elapsed_s": 0.309
+}
