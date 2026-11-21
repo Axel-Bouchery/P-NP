@@ -108,11 +108,12 @@ flowchart TD
     Arc2 --> A2a["Spectres symetriques exacts sur 8 modules composites (mod 6 a 35)"]
     Arc2 --> A2b["Th. M1, M2, G1-G5 : record mod 6 d=8 (88), separation non bornee (p_min-1)x"]
     Arc2 --> A2c["Option A & U1 : loi 2(m-1), fermeture exacte THR_{n,2} mod 6 (N=9 unique), MAJ/MOD_k"]
+    Arc2 --> A2d["Th. U2 & D1-D5 : OR_10 mod 6, borne lineaire 8p-7 (<2x), exactitude 2-blocs 2(m-1)"]
     A2a -.-> M3["Mur 3 : Saturation de marge BBR (d = Omega(sqrt(n)))"]
 
     Arc3 --> A3a["GCT perm_3 : Parseval-LM (k=7 exact, k=6 mur, piege SL_7)"]
     Arc3 --> A3b["MatMul continu : Recuit L2/3, loi alpha, barriere Linf stricte"]
-    Arc3 --> A3c["MatMul discret : Graphe de Flips F3/F5 + reduction de tranches"]
+    Arc3 --> A3c["MatMul discret : Graphe de Flips F2/F3/F5 (uint64 16.7M/s) + Gauss non destructif"]
     A3b -.-> M4["Mur 4 : Domination volumetrique des vallees de bord"]
     A3c -.-> M5["Mur 5 : Explosion projective |P^(N-1)(F_p)|"]
 ```
@@ -585,7 +586,7 @@ Le solveur minimax primal-dual exact (Mirror Prox sur le simplexe joint CRT) con
 | **11** | 0 | 0 | **0** *(0 / 295 245)* | **0** *(0 / 51 136 434)* |
 
 - **Nouveaux records et universalité du triplement 3,00× sur THR<sub>n, 2</sub>** :
-  - Sur **`mod 10` (2 × 5, N<sub>sym</sub> = 4)** : l'exploration 4-blocs résout **THR<sub>12, 2</sub> mod 10 (n = 12, 3,00× le symétrique)** sur les deux partitions `(4, 3, 3, 2)` et `(3, 3, 3, 3)` (vérifiées en force brute intégrale sur 2¹² = 4 096 entrées). À n = 13, les recherches 4-blocs `(4,3,3,3)` et 5-blocs `(3,3,3,3,1)` atteignent `min_defect = 1` en base blocs et `min_defect = 3` sur les 78 arêtes libres de K₁₃ via le solveur de Gauss 𝔽₂ 128-bits (`uint64 × 2`), resserrant l'encadrement à **12 ≤ N<sub>gen</sub><sup>(10)</sup>(2, THR₂) ≤ 19**.
+  - Sur **`mod 10` (2 × 5, N<sub>sym</sub> = 4)** : l'exploration 4-blocs résout **THR<sub>12, 2</sub> mod 10 (n = 12, 3,00× le symétrique)** sur les deux partitions `(4, 3, 3, 2)` et `(3, 3, 3, 3)` (vérifiées en force brute intégrale sur 2¹² = 4 096 entrées). À n = 13, les recherches 4-blocs `(4,3,3,3)` et 5-blocs `(3,3,3,3,1)` atteignent `min_defect = 1` en base blocs et `min_defect = 3` sur les 78 arêtes libres de K₁₃ via le solveur de Gauss 𝔽₂ 128-bits (`uint64 × 2`), donnant l'encadrement inconditionnel **12 ≤ N<sub>gen</sub><sup>(10)</sup>(2, THR₂) ≤ 34** (prouvé par le Théorème D4 ; **≤ 27** si G₅ ≠ K<sub>n</sub>, et ≤ 19 conditionnellement à la conjecture N<sub>gen</sub><sup>(10)</sup>(2, OR) = 18).
   - Sur **`mod 21` (3 × 7, N<sub>sym</sub> = 6)** : la recherche 3-blocs découvre une solution exacte sur `(6, 6, 3)` (n = 15), `(6, 6, 5)` (n = 17) puis **(6, 6, 6) à n = 18 (3,00× le symétrique, +50 % vs le maximum 2-blocs n = 12)**, vérifiée en force brute intégrale sur les **2¹⁸ = 262 144 entrées** via P₃(A, B, C) = AB + AC + 2BC (mod 3) (ensembles indépendants intra-blocs) et P₇(A, B, C) = C(A, 2) + C(B, 2) + C(C, 2) + 2AB + 2AC + 3BC (mod 7). Quatre modules composites atteignent ainsi exactement le **facteur de triplement 3,00×** par rapport au polynôme symétrique : **`mod 6` (`3 → 9`)**, **`mod 10` (`4 → 12`)**, **`mod 15` (`5 → 15`)** et **`mod 21` (`6 → 18`)**.
 
 ![Généralisation de Győri : Classification canonique OR_{10} mod 6, Théorème D1 et Triplement THR_{n, 2}](figures/gyori_types_and_d1_discovery.png)
