@@ -1,4 +1,4 @@
-﻿# RAPPORT DE RECHERCHE — Exploration théorique et expérimentale des frontières de la complexité booléenne et algébrique (P vs NP, ACC⁰, THR ∘ THR, VP vs VNP)
+﻿# RAPPORT DE RECHERCHE — Polynômes modulo un entier composite, solveurs exacts THR ∘ THR et exploration tensorielle
 
 **Nature du document** : Monographie de recherche théorique et expérimentale  
 **Date** : Novembre 2026  
@@ -165,7 +165,7 @@ Le tableau ci-dessous recense les résultats effectivement obtenus et prouvés a
 
 En toute transparence scientifique, les expériences n'ont abouti à aucune percée sur les grands problèmes ouverts asymptotiques suivants :
 - Aucune preuve de P ≠ NP, de VP ≠ VNP ou de NEXP ⊈ THR ∘ THR n'a été obtenue : les accélérations pratiques jusqu'à n = 28 ne brisent pas le pire cas asymptotique pour des circuits denses génériques de taille polynomiale s = n<sup>c</sup>.
-- La conjecture asymptotique d = Ω(√n) de Barrington–Beigel–Rudich (1994) pour OR<sub>n</sub> modulo 6 (et plus généralement Θ(d<sup>r</sup>) pour r facteurs premiers à m fixé et d → ∞) n'a pas été réfutée : les gains spectaculaires de l'Axe II (+100 % à +300 %) interviennent dans le **régime pré-asymptotique** (d < p<sub>min</sub> ou d = 2) et restent additifs en O(d) à grand degré.
+- La conjecture asymptotique d = Ω(√n) de Barrington–Beigel–Rudich (1994) pour OR<sub>n</sub> modulo 6 (et plus généralement Θ(d<sup>r</sup>) pour r facteurs premiers à m fixé et d → ∞) n'a pas été réfutée : les gains importants de l'Axe II (+100 % à +300 %) interviennent dans le **régime pré-asymptotique** (d < p<sub>min</sub> ou d = 2) et restent additifs en O(d) à grand degré.
 - Aucune représentation de bord de perm₃ à k = 6 (dc̅(perm₃) ≟ 6) n'a été trouvée, et aucun record mondial connu de rang exact en multiplication matricielle (en particulier R(⟨3, 3, 3⟩) < 23 sur ℝ/ℂ) n'a été battu.
 
 Ces limites ne résultent pas d'un manque de puissance de calcul brute, mais de **cinq murs structurels précisément mesurés** tout au long de l'étude :
@@ -371,7 +371,7 @@ Cet axe concentre les **contributions théoriques originales les plus avancées*
 
 ---
 
-#### Expérience E12 — Théorèmes M1 et M2 : percées non symétriques modulo 6 et saturation de marge
+#### Expérience E12 — Théorèmes M1 et M2 : séparations non symétriques modulo 6 et saturation de marge
 - **But** : déterminer si les polynômes non symétriques dépassent strictement N<sub>sym</sub>(d) modulo 6 au-delà du cas quadratique d = 2 (Győri, 2006) et tester l'existence éventuelle d'une percée lorsque la marge de degré Δ est nulle (d = 3, 4, 5).
 - **Statut** : `[CONTRIBUTION ORIGINALE — NON RECENSÉE DANS LA LITTÉRATURE CONSULTÉE]` (Théorème M2 de *Margin-Harvesting* infini dépassant la période CRT 71 à d = 7, et chasse multi-blocs exacte sur d = 3, 4, 5).
 - **Formalisme mathématique** ([verify_mod6_theorems.py](02_mod6_polynomials/verify_mod6_theorems.py)) :
@@ -390,7 +390,7 @@ $$
 
 - **Chasse au-delà de d² à marge nulle (d = 3, 4, 5)** : dans [hunt_super_quadratic_mod6.py](02_mod6_polynomials/hunt_super_quadratic_mod6.py) (élimination de Gauss exacte sur 𝔽₂ couplée au balayage sur 𝔽₃ sur 16 cœurs), toutes les recherches butent sur un mur `defect = 1` dès N<sub>sym</sub>(d) + 1 : aucune solution à n = 28 (d = 3, 2-blocs exhaustif + 3-blocs `(26,1,1)`), `defect = 1` sur 6 partitions 2-blocs à n = 37 (d = 4) et `defect = 1` sur 5 partitions à n = 54 (d = 5), motivant la conjecture de saturation de marge (Mur n° 3).
 
-![Spectre symétrique exact vs percées non symétriques modulo 6](figures/mod6_discovery.png)
+![Spectre symétrique exact vs séparations non symétriques modulo 6](figures/mod6_discovery.png)
 
 ---
 
@@ -441,9 +441,9 @@ $$
 
 ---
 
-#### Expérience E15 — Extension aux seuils THR<sub>n, t</sub>, MAJ<sub>n</sub> et MOD<sub>k</sub> : Théorèmes T1–T2 et percée à n = 9 sur THR<sub>n, 2</sub> (Piste 2A)
+#### Expérience E15 — Extension aux seuils THR<sub>n, t</sub>, MAJ<sub>n</sub> et MOD<sub>k</sub> : Théorèmes T1–T2 et construction à n = 9 sur THR<sub>n, 2</sub> (Piste 2A)
 - **But** : étendre l'étude des représentations faibles modulo m composite aux fonctions seuils (THR<sub>n, t</sub>, MAJ<sub>n</sub>) et aux fonctions modulaires copremières (MOD<sub>k</sub>, gcd(k, m) = 1), resserrer l'intervalle exact de THR<sub>n, 2</sub> modulo 6 en degré 2 et cartographier les graphes pondérés optimaux sur 6 modules composites (`mod 6, 10, 12, 14, 15, 21`).
-- **Statut** : `[CONTRIBUTION ORIGINALE — NON RECENSÉE DANS LA LITTÉRATURE CONSULTÉE]` (Théorèmes T1–T2, percée non symétrique par graphes pondérés portant THR<sub>n, 2</sub> mod 6 de n = 3 à n = 9 et mod 15 de n = 5 à n = 15, et loi exacte 2d − 1 pour PARITY mod 15).
+- **Statut** : `[CONTRIBUTION ORIGINALE — NON RECENSÉE DANS LA LITTÉRATURE CONSULTÉE]` (Théorèmes T1–T2, séparation non symétrique par graphes pondérés portant THR<sub>n, 2</sub> mod 6 de n = 3 à n = 9 et mod 15 de n = 5 à n = 15, et loi exacte 2d − 1 pour PARITY mod 15).
 - **Formalisme mathématique et résultats** ([option_a_deep_probe.py](02_mod6_polynomials/option_a_deep_probe.py), [option_a_thr2_breakthrough.py](02_mod6_polynomials/option_a_thr2_breakthrough.py), [piste_2a_thr2_graphs.py](02_mod6_polynomials/piste_2a_thr2_graphs.py), [piste_2a_k10_and_theorem_t2.py](02_mod6_polynomials/piste_2a_k10_and_theorem_t2.py), données dans [piste_2a_thr2_graphs.json](results/mod6_polynomials/piste_2a_thr2_graphs.json) et [piste_2a_phase2.json](results/mod6_polynomials/piste_2a_phase2.json)) :
   - *Borne inférieure linéaire sur MAJ<sub>n</sub>* : par annulation récursive des coefficients multilinéaires c<sub>I</sub> sur ∣I∣ < t, aucun polynôme (même non symétrique) ne représente faiblement THR<sub>n, t</sub> mod m en degré < t, d'où **deg<sub>gen</sub><sup>(m)</sup>(MAJ<sub>n</sub>) ≥ ⌈n/2⌉**.
   - **Théorème T1 (Réduction exacte THR<sub>n, t</sub> → OR<sub>n − t + 1</sub>)** : en fixant t − 1 variables à 1 dans une représentation faible de THR<sub>n, t</sub> mod m de degré d, il vient une représentation de OR<sub>n − t + 1</sub> mod m de degré ≤ d, d'où pour tout m, d, t : **N<sub>gen</sub><sup>(m)</sup>(d, THR<sub>t</sub>) ≤ N<sub>gen</sub><sup>(m)</sup>(d, OR) + t − 1** (et donc N<sub>gen</sub><sup>(6)</sup>(2, THR₂) ≤ 10 + 1 = 11 par Győri, 2006).
@@ -451,7 +451,7 @@ $$
   - *Escalade non symétrique sur THR<sub>n, 2</sub> modulo 6 en degré d = 2* :
     - **Symétrique exact** : N<sub>sym</sub> = 3.
     - **2-blocs / 3-blocs / 4-blocs 100 % exhaustifs** : **n = 5** (`2+3`), **n = 7** (`2+2+3`), **n = 8** (`2+2+2+2`, 24 solutions exactes ; 0 solution en 4 blocs à n = 9, `min_defect = 2`).
-    - **Graphes pondérés généraux (≥ 5 blocs) : percée à n = 9 (+200 %, 3,00× le symétrique)** — obtenue indépendamment par extension exhaustive 3⁸ = 6 561 sur 13 témoins K₈ (85 293 tests) et par recuit géométrique profond (256 × 25 000 pas), fournissant **5 témoins K₉ distincts** tous vérifiés en force brute intégrale sur les **2⁹ = 512 entrées**. Le premier témoin K₉ réalise une partition exacte des 36 arêtes de K₉ en **13 arêtes P₂ et 23 arêtes P₃** (0 chevauchement). À **n = 10**, les **98 415 extensions exhaustives K₉ → K₁₀** (3⁹ = 19 683 par témoin) s'arrêtent à `min_defect = 8` (et 6,4 M pas de recuit direct à `min_defect = 24`), resserrant l'encadrement à **9 ≤ N<sub>gen</sub><sup>(6)</sup>(2, THR₂) ≤ 11**.
+    - **Graphes pondérés généraux (≥ 5 blocs) : construction à n = 9 (+200 %, 3,00× le symétrique)** — obtenue indépendamment par extension exhaustive 3⁸ = 6 561 sur 13 témoins K₈ (85 293 tests) et par recuit géométrique profond (256 × 25 000 pas), fournissant **5 témoins K₉ distincts** tous vérifiés en force brute intégrale sur les **2⁹ = 512 entrées**. Le premier témoin K₉ réalise une partition exacte des 36 arêtes de K₉ en **13 arêtes P₂ et 23 arêtes P₃** (0 chevauchement). À **n = 10**, les **98 415 extensions exhaustives K₉ → K₁₀** (3⁹ = 19 683 par témoin) s'arrêtent à `min_defect = 8` (et 6,4 M pas de recuit direct à `min_defect = 24`), resserrant l'encadrement à **9 ≤ N<sub>gen</sub><sup>(6)</sup>(2, THR₂) ≤ 11**.
   - *Tableau comparatif multi-modules pour THR<sub>n, 2</sub> en degré d = 2 (tous les records vérifiés en force brute 2<sup>n</sup>)* :
 
 | Module m (facteurs) | Exact N<sub>sym</sub> | 2-blocs exhaustif | 3-blocs / 4-blocs | Meilleur prouvé (vérifié 2<sup>n</sup>) | Facteur vs symétrique |
@@ -465,7 +465,7 @@ $$
 
   - *Rigidité de MOD<sub>k</sub> (gcd(k, m) = 1)* : l'énumération symétrique exacte établit la loi linéaire **N<sub>sym</sub><sup>(15)</sup>(d, MOD₂) = 2d − 1** (`1, 3, 5, 7, 9, 11` pour d = 1..6), tandis que MOD₅ mod 6 plafonne à 17 de d = 4 à d = 8 et MOD₃ mod 10 atteint 17 à d = 6.
 
-![Option A : Loi quadratique 2(m-1), percée THR_{n,2} et rigidité MOD_k](figures/option_a_discovery.png)
+![Option A : Régularité quadratique 2(m-1), séparation THR_{n,2} et rigidité MOD_k](figures/option_a_discovery.png)
 
 ![Piste 2A : Escalade exacte jusqu'à K₉ (n=9, 3× le symétrique) et 6 modules sur THR_{n,2}](figures/piste_2a_thr2_breakthrough.png)
 
@@ -851,7 +851,7 @@ Les mesures confirment cette loi à deux chiffres significatifs :
 - **Strassen ⟨2,2,2⟩ (R = 7)** : 6/6 exacts à **9,1 × 10⁻¹³** en 0,04 s (4/6 en mode ℤ₃-cyclique 1 + 2 × 3) ; mur R = 6 confirmé à 1/√8 = 0,3536.
 - **Laderman ⟨3,3,3⟩ (R = 23)** : **6/6 exacts bornés** à **5,61 × 10⁻¹³** (‖F‖ = 10,5, max∣x∣ = 1,25, α ≈ 1,00).
 - **Frontière ⟨3,3,3⟩ (R = 22)** : le recuit L<sub>2/3</sub> franchit le plateau discret 1/√27 = 0,1925 sur **29 % des essais ℝ** (`5,14e-4`, α = 0,386), **56 % des essais ℂ** (`5,37e-4`, α = 0,398) et en symétrie cyclique ℤ₃ (`4 + 6 × 3`, `6,58e-4`) — tous signés comme **bord d'ordre 1** (α ≈ 0,38, err ∝ ‖F‖<sup>−3</sup>), sans aucun point exact borné.
-- **Schönhage ⟨3,3,3⟩ (R = 21)** : 1 essai sur 16 franchit le mur et atteint **5,17 × 10⁻³** en polissage (‖F‖ = 93,5, α = 0,311, p = −1,58 ≈ −3/2 : **bord d'ordre 2**, [phase2_Anneal_R_libre_R21.npz](witnesses/algebraic_complexity/phase2_Anneal_R_libre_R21.npz)).
+- **Schönhage ⟨3,3,3⟩ (R = 21)** : 1 essai sur 16 converge et atteint **5,17 × 10⁻³** en polissage (‖F‖ = 93,5, α = 0,311, p = −1,58 ≈ −3/2 : **bord d'ordre 2**, [phase2_Anneal_R_libre_R21.npz](witnesses/algebraic_complexity/phase2_Anneal_R_libre_R21.npz)).
 - **Murs profonds (R = 20 et R = 19)** : 0/36 (R = 20) et 0/188 (R = 19) restent bloqués sur les plateaux discrets √(2/27) et √(3/27).
 
 ![Phase 1 : Rang exact vs Rang de bord sur 3x3](figures/matmul3_tensor_hunt.png)
