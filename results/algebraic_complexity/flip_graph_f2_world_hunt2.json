@@ -1,0 +1,35 @@
+{
+  "summary": [
+    {
+      "format": [
+        3,
+        5,
+        5
+      ],
+      "best_R": 60,
+      "known_record": 58,
+      "beat_record": false
+    },
+    {
+      "format": [
+        4,
+        4,
+        5
+      ],
+      "best_R": 61,
+      "known_record": 56,
+      "beat_record": false
+    },
+    {
+      "format": [
+        4,
+        5,
+        5
+      ],
+      "best_R": 75,
+      "known_record": 73,
+      "beat_record": false
+    }
+  ],
+  "total_time_s": 175.74
+}

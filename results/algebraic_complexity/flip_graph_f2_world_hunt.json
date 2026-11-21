@@ -1,0 +1,41 @@
+{
+  "targets": [
+    {
+      "format": [
+        3,
+        4,
+        5
+      ],
+      "best_R": 50,
+      "known_record": 47,
+      "beat_record": false,
+      "matched_record": false,
+      "witness_npz": "f2_best_3x4x5_R50.npz"
+    },
+    {
+      "format": [
+        3,
+        5,
+        5
+      ],
+      "best_R": 69,
+      "known_record": 58,
+      "beat_record": false,
+      "matched_record": false,
+      "witness_npz": "f2_best_3x5x5_R69.npz"
+    },
+    {
+      "format": [
+        4,
+        4,
+        5
+      ],
+      "best_R": 69,
+      "known_record": 56,
+      "beat_record": false,
+      "matched_record": false,
+      "witness_npz": "f2_best_4x4x5_R69.npz"
+    }
+  ],
+  "total_time_s": 213.69
+}

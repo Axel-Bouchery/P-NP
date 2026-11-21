@@ -1,0 +1,69 @@
+{
+  "warning_exhaustive": {
+    "3": {
+      "n_polys": 64,
+      "min_nonzero_zeros": 1,
+      "max_min_weight": 3
+    },
+    "4": {
+      "n_polys": 1024,
+      "min_nonzero_zeros": 3,
+      "max_min_weight": 3
+    },
+    "5": {
+      "n_polys": 32768,
+      "min_nonzero_zeros": 7,
+      "max_min_weight": 3
+    }
+  },
+  "exact_nu2_2": 7,
+  "nu2_2_search": {
+    "4": {
+      "total_counterexamples": 77,
+      "by_weight_of_a": [
+        1,
+        3,
+        9,
+        19,
+        45
+      ]
+    },
+    "5": {
+      "total_counterexamples": 96,
+      "by_weight_of_a": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        96
+      ]
+    },
+    "6": {
+      "total_counterexamples": 1,
+      "by_weight_of_a": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    "7": {
+      "total_counterexamples": 0,
+      "by_weight_of_a": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "total_time_s": 10.05
+}
