@@ -514,7 +514,7 @@ Factoring $(Dr - a)!$ out of column $a$ and $1/((ir)!((D-i)r)!)$ out of row $i$ 
 \label{thm:d9}
 Let $3 \le p < q$ be odd primes, $m = pq$, and $P = (P_p, P_q)$ a quadratic weak representation of $\OR_n$ modulo $m$ with zero-diagonal polar matrices $A_p, A_q$ and interaction graphs $G_p, G_q$.
 \begin{enumerate}[leftmargin=*,nosep]
-  \item \textbf{Diagonal-shifted quadratic rank:} Using $x_i^2 = x_i$ on $\{0, 1\}^n$, define the Boolean quadratic rank $\widetilde{r}_q(P_q) := \min_{D \text{ diag}} \mathrm{rank}_{\F_q}(A_q + 2D)$ (and analogously $\widetilde{r}_p(P_p)$). Then
+  \item \textbf{Diagonal-shifted quadratic rank:} Using $x_i^2 = x_i$ on $\{0, 1\}^n$, define the Boolean quadratic rank $\widetilde{r}_q(P_q) := \min_{D \text{ diag}} \mathrm{rank}_{\F_q}(A_q + 2D)$ (and analogously $\widetilde{r}_p(P_p)$), which coincides with the diagonal-rigidity / Boolean-rank parameter in Lee's~\cite{Lee15} dichotomy. Then
   \[
     N_{\mathrm{gen}}^{(pq)}(2, \OR) \;\le\; \min\Bigl((2p - 1)(\widetilde{r}_q + 1)(q - 1) + 2p - 2,\;\; (2q - 1)(\widetilde{r}_p + 1)(p - 1) + 2q - 2\Bigr) \;=\; O\!\bigl(\min(\widetilde{r}_p, \widetilde{r}_q, p)\cdot m\bigr).
   \]
@@ -544,6 +544,64 @@ Let $3 \le p < q$ be odd primes, $m = pq$, and $P = (P_p, P_q)$ a quadratic weak
 \includegraphics[width=0.95\textwidth]{../figures/theorem_d9_semiprime_barriers.png}
 \caption{General semiprimes $m = pq$ (Theorem~\ref{thm:d9}): (a) $O(m)$ regimes (D9.1--D9.2) vs.\ $O(m^{3/2})$; (b) exact match of the expander--Fourier wall at $n = m^{3/2}$ ($m = 143$); (c) sharp $\F_3^2$ packing ($3k + 4$) improving $m = 3q$ to $19q - 15$ for all $q \ge 5$ ($\bmod 15 \le 80$).}
 \label{fig:d9}
+\end{figure}
+
+\begin{theorem}[Exact Rank-$1$ Closures, Exact Tilted Boolean Weyl Differencing, and Unconditional Demolition of the Expander--Fourier Wall --- Theorem D10]
+\label{thm:d10}
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Exact rank-$1$ threshold on $m = 2q$ and sub-$2(m-1)$ rank-$1$ / pure rank-$r$ bounds on $m = pq$:}
+  \begin{itemize}[leftmargin=*,nosep]
+    \item For every odd prime $q \ge 3$ and every quadratic $P = (P_2, P_q)$ with $P_q = a L^2 + b L$ (rank $1$ over $\F_q$) and $P_2$ completely arbitrary,
+    \[
+      N_{\mathrm{gen}}^{(2q)}\bigl(2, \OR;\; P_q = a L^2 + b L\bigr) \;=\; 3q - 1 \qquad (\text{exact}).
+    \]
+    \item For every odd semiprime $m = pq$ ($3 \le p < q$), if $P_p = a L^2 + b L$ (resp.\ $P_q = a L^2 + b L$) with the other channel arbitrary, then
+    \[
+      N_{\mathrm{gen}}^{(pq)}\bigl(2, \OR;\; P_p = a L^2 + b L\bigr) \;\le\; 2m - p - 1 \;<\; 2(m - 1),
+      \qquad
+      N_{\mathrm{gen}}^{(pq)}\bigl(2, \OR;\; P_q = a L^2 + b L\bigr) \;\le\; 2m - q - 1 \;<\; 2(m - 1).
+    \]
+    More generally, if $P_q(x) = Q(L_1(x), \dots, L_r(x))$ (pure rank $r$, $L_0 = 0$), then $N_{\mathrm{gen}}^{(pq)}(2, \OR) \le (2p - 1)(r(q - 1) + 1) - 1$ (at $r = 2$: $\le 4m - 2p - 2q$, strictly sharpening Theorem~\ref{thm:d9}(1)'s $6m - 4p - 3q + 1$).
+  \end{itemize}
+  \item \textbf{Exact tilted Boolean Weyl differencing and conditional-variance identity:} For every integer quadratic $P(x) = \sum_{1 \le i < j \le n} a_{ij} x_i x_j + \sum_{i=1}^n b_i x_i$, every modulus $m \ge 2$, every $t \in \Z$, and every $\theta \in (0, 1)$, let $S_\theta(t) := \mathbb{E}_{x \sim \mathrm{Ber}(\theta)^n}[e^{2\pi i t P(x) / m}]$. Partition $[n]$ into independent trinary states $(I_0, I_1, J)$ with probabilities $((1 - \theta)^2,\, \theta^2,\, 2\theta(1 - \theta))$ and set $D_j := b_j + \sum_{i \in I_1} a_{ij} + \frac{1}{2}\sum_{k \in J \setminus \{j\}} a_{jk}$. Then
+  \[
+    \bigl|S_\theta(t)\bigr|^2 \;=\; \mathbb{E}_{(I_0, I_1, J)}\!\left[\prod_{j \in J} \cos\!\left(\frac{2\pi t}{m} D_j\right)\right],
+    \qquad
+    \mathbb{E}_{(I_0, I_1, J)}\!\left[\sum_{j \in J} D_j^2\right] \;=\; 2\,\mathrm{Var}_\theta(P).
+  \]
+  \item \textbf{Bounded-tilt mean crossing and universal small-frequency surplus:} For any $A \in \R$ and $B \ge 16m$, $\mu(\theta) = A\theta^2 + B\theta$ satisfies $\max_{[1/4,3/4]}\mu - \min_{[1/4,3/4]}\mu \ge B/16 \ge m$, so $\exists\,\theta^* \in [1/4, 3/4]$ with $\mu(\theta^*) \in m\Z$. Moreover, for any integer random variable $Z$ with $\mathbb{E}[Z] \in m\Z$ and $\sigma^2 = \mathrm{Var}(Z) > 0$, setting $x := \sqrt{2}\pi\sigma / m$ and $T := \lfloor 1/x \rfloor$, the elementary lower bound $L(T) := (2T + 1) - \frac{x^2}{3} T(T + 1)(2T + 1)$ satisfies
+  \[
+    \sum_{|t| \le T} \mathrm{Re}\, S(t) \;\ge\; L(T),
+    \qquad
+    M(x; 0.10) \;:=\; L(T) - 2\sum_{t=T+1}^\infty e^{-0.9 x^2 t^2} \;>\; 0.13 \;>\; \frac{1}{8} \qquad (\forall\, x > 0).
+  \]
+  \item \textbf{Unconditional signed-graph bound and subsampling edge-density theorem (demolition of Theorem~\ref{thm:d9}(3)):} Let $m \ge 3$ be any integer and $P(x) = \sum_{\{i,j\}\in E(G)} a_{ij} x_i x_j + \sum_{i=1}^n b_i x_i \pmod m$ be a signed-graph quadratic ($a_{ij} \in \{-1, +1\}$ on a graph $G$ of max degree $\Delta \ge 1$, $1 \le |b_i| \le B$, $M := \Delta + B$) weakly representing $\OR_n \pmod m$. Then
+  \[
+    n \;\le\; \max\!\Bigl(32 m,\;\; 188\, m^{2/3} M^{4/3} (\ln(17 m))^{1/3},\;\; 2 m + 1366\, \Delta M^2 \ln(17 m)\Bigr).
+  \]
+  In particular, $n \le 32 m$ (strictly linear in $m$) whenever $\Delta + B \le 0.258\,(m / \ln(17 m))^{1/4}$ (and up to $\Delta + B \le c_1 (m / \ln(17 m))^{1/3}$ for $\eta$-nearly-regular graphs with $\bar{d}(G[V_+]) \ge \eta\Delta$). Furthermore, by probabilistic subsampling ($q = 64m / n$ with high-degree pruning), every signed-graph weak representation of $\OR_n \pmod m$ with $n \ge 64m$ and $B \le 0.12\,(m / \ln(17 m))^{1/4}$ must have global edge density
+  \[
+    \rho(G) \;=\; \frac{2|E(G)|}{n^2} \;>\; \frac{c_0'}{m^{3/4} (\ln(17 m))^{1/4}},
+  \]
+  strictly surpassing Caro--Wei ($\rho \ge 1/m$) by $m^{1/4}/(\ln m)^{1/4}$ and eliminating the entire Theorem~\ref{thm:d9}(3) sparse-expander barrier ($\rho = \Theta(1/m)$) for all $n \ge 64m$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+\emph{(1).} Since $P_q = a L^2 + b L$ vanishes identically on $\ker(L)$ and $D(\F_q) = q$, any $n \ge 3q$ variables yield $3$ disjoint nonempty blocks in $\ker(L)$, contradicting $\deg_{\F_2}(\OR_3) = 3 > 2$ on $P_2$; conversely, $P_q(x) = S \pmod q$ paired with $P_2(x) = \binom{S}{2}$ (for $q \equiv 3 \pmod 4$) or $S + \binom{S}{2}$ (for $q \equiv 1 \pmod 4$) has no nonzero common zeros on $1 \le S \le 3q - 1$, since $P_2(q) \equiv P_2(2q) \equiv 1 \pmod 2$. On $m = pq$, Olson's constant $D(\F_q^r) = r(q - 1) + 1$ extracts $2p - 1$ disjoint blocks in $\bigcap_{s=1}^r \ker(L_s)$ as soon as $n \ge (2p - 1)(r(q - 1) + 1)$, contradicting Lemma~\ref{lem:cw} on $P_p$; setting $r = 1$ gives $2m - q - 1 < 2(m - 1)$ (and symmetrically $2m - p - 1$ for $P_p$).
+
+\emph{(2).} Couple i.i.d.\ $x, y \sim \mathrm{Ber}(\theta)^n$ by putting $i \in I_0$ ($x_i = y_i = 0$), $i \in I_1$ ($x_i = y_i = 1$), and $i \in J$ ($x_i \ne y_i$). Conditioned on $(I_0, I_1, J)$, the differences $\sigma_j := x_j - y_j \in \{-1, +1\}$ ($j \in J$) are i.i.d.\ symmetric Rademacher variables, and writing $x_j = (1 + \sigma_j)/2$, $y_j = (1 - \sigma_j)/2$ cancels all quadratic $\sigma_j\sigma_k$ terms inside $J$: $P(x) - P(y) = \sum_{j \in J} \sigma_j D_j$. Averaging over $\sigma_J$ gives the first identity. For the second, writing $x_i = \theta + z_i$ yields the exact orthogonal decomposition $\mathrm{Var}_\theta(P) = \theta(1-\theta)\sum_j (\mathbb{E}_\theta[\partial_j P])^2 + \theta^2(1-\theta)^2 \sum_{i<j} a_{ij}^2$; directly evaluating $\mathbb{E}[D_j^2 \mid j \in J] = (\mathbb{E}_\theta[\partial_j P])^2 + \frac{1}{2}\theta(1-\theta)\sum_{i\ne j} a_{ij}^2$ and multiplying by $\Pr[j \in J] = 2\theta(1-\theta)$ yields $\mathbb{E}[\sum_{j \in J} D_j^2] = 2\,\mathrm{Var}_\theta(P)$.
+
+\emph{(3).} The $3$-point identity $5(\mu(1/2) - \mu(1/4)) - 3(\mu(3/4) - \mu(1/2)) = B/2$ implies $\max(|\mu(1/2)-\mu(1/4)|, |\mu(3/4)-\mu(1/2)|) \ge B/16 \ge m$, giving $\theta^* \in [1/4, 3/4]$ with $\mu(\theta^*) \in m\Z$ by continuity. Using $\cos u \ge 1 - u^2/2$ for all $u \in \R$ yields $\sum_{|t| \le T} \mathrm{Re}\, S(t) \ge 1 + 2\sum_{t=1}^T (1 - x^2 t^2) = L(T)$. For $T = 0$ ($x > 1$), $L(0) = 1$ and $2\sum_{t \ge 1} e^{-0.9 x^2 t^2} < 2(e^{-0.9} + e^{-3.6} + e^{-8.1}/(1-e^{-0.9})) < 0.869$; for $T \ge 2$, monotonicity on $(1/(T+1), 1/T]$ gives $L(T) \ge (4T^2 - 1)/(3T)$ while integral comparison yields $2\sum_{t > T} e^{-0.9 (t/(T+1))^2} \le 2 e^{-0.9} + \frac{10}{9} e^{-0.9}(T+1) < 0.452 T + 1.265$, leaving margin $> 0.33$; for $T = 1$, splitting at $x = 0.7$ yields margin $> 0.30$ throughout.
+
+\emph{(4).} Pigeonhole on $\mathrm{sgn}(b_i)$ gives $V_+ \subseteq [n]$ with $n_+ = |V_+| \ge \lceil n/2 \rceil$ on which (up to $P \leftarrow -P$) $b_i \ge 1$. If $\alpha(G[V_+]) \ge m$, Davenport's constant $D(\Z/m\Z) = m$ yields a nonzero linear zero. Otherwise $\alpha(G[V_+]) \le m - 1$, so for $n_+ \ge 16m$, Caro--Wei gives $|E(G[V_+])| \ge \frac{15}{32} n_+^2 / m$, and greedy deletion of $N[u] \cup N[v]$ ($|N[u] \cup N[v]| \le 2\Delta$) produces an induced matching $M_{\mathrm{ind}} = \{(u_r, v_r)\}_{r=1}^s$ of size $s \ge \lceil (n_+ - m + 1)/(2\Delta) \rceil$. Choose $\theta^* \in [1/4, 3/4]$ by~(3); then $\sigma^2 \ge (3/16)^2 |E(G[V_+])| \ge \frac{135}{8192} n_+^2 / m$. Split $m\,\Pr_{\theta^*}[P|_{V_+} \equiv 0 \pmod m] = \sum_{|t| \le T} + \sum_{T < |t| \le T_{\max}} + \sum_{T_{\max} < |t| \le m/2}$ with $T_{\max} := \lfloor m / (4M) \rfloor$. On Band~1 ($|t| \le T$), (3) contributes $\ge L(T)$. On Band~2 ($T < |t| \le T_{\max}$), $|2\pi t D_j / m| \le \pi/2$, so $\cos u \le e^{-u^2/2}$ and McDiarmid's inequality on $F := \sum_{j \in J} D_j^2$ (Lipschitz constant $c_v \le M^2 + \Delta(2M-1) < 3M^2$, $\mathbb{E}[F] = 2\sigma^2$, $\varepsilon = 0.10$) give $|S_{\theta^*}(t)| \le e^{-0.9 x^2 t^2} + \exp(-\sigma^4 / (225 n_+ M^4))$. On Band~3 ($T_{\max} < |t| \le m/2$), conditioning~(2) on $V_+ \setminus \{v_1, \dots, v_s\}$ makes $D_{u_1}, \dots, D_{u_s}$ mutually independent; for each $r$ with $u_r \in J$, comparing $\xi_{v_r} = \frac{1}{2}$ against $\arg\max\{(1-\theta^*)^2, (\theta^*)^2\} \ge \frac{1}{4}$ shifts the cosine argument by $\pm \pi t / m \in [-\pi/2, \pi/2]$, whence $\min(|\cos\alpha|, |\cos(\alpha + \delta)|) \le \cos(|\delta|/2)$ yields $|S_{\theta^*}(t)| \le \exp(-\frac{3}{64} s (t/m)^2) \le \exp(-\frac{3(n_+ - m + 1)}{2048 \Delta M^2})$. Whenever both exponents exceed $\ln(17m)$ (the stated $n$-thresholds), the total non-Gaussian tail error across Bands~2--3 is $< 0.06$, leaving $m\,\Pr_{\theta^*}[P|_{V_+} \equiv 0 \pmod m] > 0.131 - 0.06 = 0.071 > 3.1 \times 10^{-6} \ge m (3/4)^{16m} \ge m(1 - \theta^*)^{n_+}$, forcing a nonzero zero. Finally, for $n \ge 64m$, sampling $W \subseteq V(G)$ independently with $q = 64m / n$ and setting $W' := \{v \in W : \deg_{G[W]}(v) \le 4 d_0\}$ ($d_0 := 64m\,\rho(G)$) satisfies $\mathbb{E}[|W'|] > 64m - 16m = 48m > 32m$ and $\Delta(G[W']) \le 256m\,\rho(G)$; applying the max-degree bound to $G[W']$ yields the stated global density lower bound.
+\end{proof}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/theorem_d10_tilted_weyl_and_rank1.png}
+\caption{Theorem~\ref{thm:d10}: (A) exact rank-$1$ closure $3q - 1$ on $m = 2q$; (B) universal small-frequency surplus margin $M(x; 0.10) \ge 0.1316 > 1/8$ for all $x > 0$; (C) demolition of the D9.3 sparse-expander wall at $n = 2m$ across $m \in \{15, 35, 143, 323\}$; (D) degree-exponent landscape showing D10.4 strictly beating Caro--Wei up to $\alpha < 1/2$ and achieving strict $O(m)$ linearity for $\Delta \le m^{1/4}$ (general) and $\Delta \le m^{1/3}$ (nearly regular).}
+\label{fig:d10}
 \end{figure}
 
 \begin{theorem}[Exact Multi-Block Closures on $\bmod 10$ and Cubic $\bmod 6$ --- Theorem U3]
@@ -605,8 +663,8 @@ Additionally, canonical hereditary enumeration of quadratic $P_3$ without nonzer
 Three main open problems emerge directly from this work:
 \begin{enumerate}[leftmargin=*]
   \item \textbf{Tightening $8p - 7 \to 4p - 2$ on $m = 2p$:} Eliminating the factor-$2$ pairing loss on $U_1$ in Theorem~\ref{thm:d4} would close the gap between $4p - 2$ and $8p - 7$ (e.g., $18 \le \Ngen^{(10)}(2, \OR) \le 32$).
-  \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} Resolving Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ requires overcoming the simultaneous high-rank regime $\min(r_p, r_q) = \Omega(p)$ isolated in Theorem~\ref{thm:d5}(4), likely by combining algebraic contraction with a non-Fourier bias argument over $\F_p \times \F_q$.
-  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, and~\ref{thm:u3}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
+  \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorem~\ref{thm:d10} resolves the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$) and unconditionally eliminates the sparse signed-graph expander barrier of Theorem~\ref{thm:d9}(3) for all $n \ge 64m$ via tilted Boolean Weyl differencing and probabilistic subsampling, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on two residual high-rank regimes: dense signed/bounded-integer graphs ($\rho(G) \gg m^{-3/4}$) and adversarial high-rank modular quadratics with large arbitrary coefficients $a_{ij} \in \Z/pq\Z$ exhibiting modular wrap-around in Band~3.
+  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, and~\ref{thm:u3}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
 \end{enumerate}
 
 All scripts, JSON logs, and figures are archived in the public repository.

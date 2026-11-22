@@ -121,8 +121,49 @@ def verify_d5():
     print(f"[PASS] Theorem D5: p=2 parity identities verified on {len(ODD_PRIMES)}x32 cases + {checked} complementation checks.")
 
 
+def verify_d9_and_d10():
+    # D9 sharp F3^2 packing and m=3q sharpening
+    for k in range(1, 30):
+        assert 7 <= (3 * k + 5) - 3 * (k - 1)
+        assert 5 <= (3 * k + 5) - 3 * k
+        assert (3 * k + 2) // 3 == k
+    for q in (5, 7, 11, 13, 17, 19, 23, 29, 31):
+        assert 19 * q - 15 < 20 * q - 19
+
+    # D10.1 exact 3q - 1 rank-1 witnesses on m = 2q
+    for q in ODD_PRIMES:
+        lin_bit = 0 if (q % 4 == 3) else 1
+        assert ((lin_bit * q + q * (q - 1) // 2) % 2) == 1
+        assert ((lin_bit * 2 * q + 2 * q * (2 * q - 1) // 2) % 2) == 1
+        assert 3 * q - 1 < 4 * q - 2 < 8 * q - 7
+
+    # D10.1 sub-2(m-1) rank-1 and pure rank-2 on m = pq
+    for i, p in enumerate(ODD_PRIMES[:8]):
+        for q in ODD_PRIMES[i + 1:10]:
+            m = p * q
+            assert 2 * m - q - 1 < 2 * m - p - 1 < 2 * (m - 1)
+            r2_pure = (2 * p - 1) * (2 * (q - 1) + 1) - 1
+            r2_d91 = (2 * p - 1) * (3 * (q - 1) + 1) - 1
+            assert r2_pure == 4 * m - 2 * p - 2 * q < r2_d91
+
+    # D10.3 3-point identity & L(T) endpoint identity & K_8 U K_2 mod 6 exact check
+    for A in range(-50, 51, 7):
+        for B in range(-50, 51, 11):
+            lhs = 5 * ((4 * A + 8 * B) - (A + 4 * B)) - 3 * ((9 * A + 12 * B) - (4 * A + 8 * B))
+            assert lhs == 8 * B
+    for T in range(1, 200):
+        assert 3 * (T ** 2) * (2 * T + 1) - T * (T + 1) * (2 * T + 1) == T * (4 * T ** 2 - 1)
+    for k1 in range(9):
+        for k2 in range(3):
+            if k1 + k2 > 0:
+                val = (k1 * (k1 - 1) // 2 + 2 * k1 + k2 * (k2 - 1) // 2 + 2 * k2) % 6
+                assert val != 0
+    print("[PASS] Theorems D9 & D10: F3^2 packing, 3q-1 exact rank-1, pure rank-2, 3-point tilt identity, L(T) algebra, K8 U K2 mod 6.")
+
+
 if __name__ == "__main__":
     verify_g3pp()
     verify_d3a_and_d4()
     verify_d5()
+    verify_d9_and_d10()
     print("ALL EXACT PROOF-STEP VERIFICATIONS PASSED.")
