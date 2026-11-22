@@ -1,6 +1,6 @@
 ﻿# Polynômes modulo un entier composite, solveurs exacts THR ∘ THR et exploration tensorielle
 
-Ce dépôt rassemble **71 scripts** Python/Numba/PyTorch, **55 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)** et **33 figures** issus d'une étude théorique et expérimentale sur trois axes. Les questions P ≟ NP et VP ≟ VNP servent uniquement de cadre motivant : aucun résultat présenté ici ne les résout.
+Ce dépôt rassemble **72 scripts** Python/Numba/PyTorch (71 scripts de recherche + 1 vérificateur exact), **55 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)**, **33 figures**, un manuscrit LaTeX autonome (`paper/`) et un projet Lean 4 (`lean/`) issus d'une étude théorique et expérimentale sur trois axes. Les questions P ≟ NP et VP ≟ VNP servent uniquement de cadre motivant : aucun résultat présenté ici ne les résout.
 
 ## Documents et formalisation
 
