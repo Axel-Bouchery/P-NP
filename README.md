@@ -12,6 +12,41 @@ Ce dépôt est organisé en **trois axes de recherche entièrement autonomes** r
 
 ---
 
+## Arborescence du projet
+
+```text
+.
+├── README.md                              # Index général et commandes d'extraction Git
+├── .gitignore
+│
+├── axe1_thr2_williams/                    # Axe I — Paradigme de Williams & THR ∘ THR
+│   ├── README.md                          # Carte et commandes d'exécution de l'Axe I
+│   ├── RAPPORT.md                         # Monographie autonome (Expériences E1–E10)
+│   ├── src/                               # 17 scripts Python/Numba
+│   ├── results/                           # 13 fichiers de résultats JSON
+│   ├── witnesses/                         # 1 témoin exact (.npz : atlas_n4.npz)
+│   └── figures/                           # 13 figures (.png)
+│
+├── axe2_mod_composite_polynomials/        # Axe II — Polynômes faibles modulo m composite
+│   ├── README.md                          # Carte et commandes d'exécution de l'Axe II
+│   ├── RAPPORT.md                         # Monographie autonome (Expériences E11–E15o)
+│   ├── src/                               # 40 scripts Python/Numba
+│   ├── results/                           # 33 fichiers de résultats JSON
+│   ├── figures/                           # 18 figures (.png)
+│   ├── paper/                             # Manuscrit LaTeX autonome (weak_poly_composite.tex, references.bib)
+│   └── lean/                              # Formalisation Lean 4 (12 .lean + verify_proof_steps_exact.py)
+│
+└── axe3_algebraic_complexity/             # Axe III — GCT sur perm₃ & Multiplication matricielle
+    ├── README.md                          # Carte et commandes d'exécution de l'Axe III
+    ├── RAPPORT.md                         # Monographie autonome (Expériences E16–E23)
+    ├── src/                               # 20 scripts Python/Numba/PyTorch
+    ├── results/                           # 15 fichiers de résultats JSON
+    ├── witnesses/                         # 31 témoins algébriques (.npz)
+    └── figures/                           # 8 figures (.png)
+```
+
+---
+
 ## Extraire chaque axe en dépôt Git indépendant (`git filter-repo`)
 
 Chaque dossier d'axe étant désormais autonome (`src/`, `results/`, `figures/`, `witnesses/`, `RAPPORT.md`, `README.md`, et `paper/` + `lean/` pour l'Axe II), il peut être extrait en un dépôt Git indépendant tout en préservant l'historique des commits via [`git-filter-repo`](https://github.com/newren/git-filter-repo) :
