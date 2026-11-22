@@ -452,6 +452,29 @@ Let $2 \le p < q$ be distinct primes and $m = pq$.
 \end{enumerate}
 \end{theorem}
 
+\begin{theorem}[Universal $2$-Class Lucas Bi-Slice Theorem and Walsh--Hadamard Rank --- Theorem D7]
+\label{thm:d7}
+Let $p \ge 5$ be a prime, $P_p \in \F_p[x_1,\dots,x_m]$ quadratic with $P_p(\mathbf{0}) = 0$, and $L(x) = r_1 S_A + r_2 S_B \pmod p$ any $2$-class linear form ($r_1, r_2 \in \F_p^\times$, $|A| = a$, $|B| = b$).
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Analytical $(3p - 1, 2p - 1)$ and $(4p - 1, p - 1)$ Bi-Slice Theorems ($a + b = 5p - 2$):} Whenever $(a, b) = (3p - 1, 2p - 1)$ or $(a, b) = (4p - 1, p - 1)$, the system $\{P_p(x) = 0,\, L(x) = 0 \pmod p\}$ \emph{always} admits a nonzero even-weight Boolean root.
+  \item \textbf{Exhaustive $p = 5$ multi-class verification:} Across all $1\,861$ remaining canonical $5$-class partitions of $M = 24$ ($T_2 \le 8$) over $\F_5$, $1\,859$ are killed by multi-class Lucas slices (leaving only the two $2$-class exceptions $(c_0, c_1) \in \{(3, 21), (8, 16)\}$), and $100\%$ of $M = 25$ is killed.
+  \item \textbf{Walsh--Hadamard / Croot--Lev--Pach rank on $m = pq$:} Writing $(x \oplus y)_i = (1 - \sigma_i \tau_i)/2 \pmod p$ with $\sigma_i = 1 - 2x_i$, $\tau_i = 1 - 2y_i$ gives $\mathrm{rank}_{\F_p}(G_p(x \oplus y)) \le \sum_{k=0}^{2(p-1)} \binom{n}{k}$, and bounded-rank contraction yields explicit linear constants $\Ngen^{(pq)}(2, \OR) \le (6p - 4)(q - 1)$ for $r_q = 1$ and $(8p - 7)(q - 1)$ for $r_q = 2$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+For $(a, b) = (3p - 1, 2p - 1)$, let $G(x) = 1 - P_p(x)^{p-1}$ ($\deg G \le 2(p-1)$) and write $k_1 = a_1 p + b_1$, $k_2 = a_2 p + b_2$ (so $a_1 + a_2 \le 1$, and $b_1 + b_2 \le p - 2$ whenever $a_1 + a_2 = 1$). For each of the $p$ solutions $(u_1, u_2) \in \{0,\dots,p-1\}^2$ of $r_1 u_1 + r_2 u_2 \equiv 0 \pmod p$, form the slice combination $\Phi(u_1, u_2) := \Sigma(u_1, u_2) - \frac{1}{2}\Sigma(p + u_1, p + u_2)$ if $u_1 + u_2$ is even, and $\Phi(u_1, u_2) := \Sigma(2p + u_1, p + u_2) - \frac{1}{2}\Sigma(p + u_1, u_2)$ if $u_1 + u_2$ is odd. By Lucas's theorem, the $(a_1, a_2) = (0, 0)$ bracket vanishes identically ($1 - \frac{1}{2}\cdot 2 = 0$), while the $(1, 0)$ and $(0, 1)$ brackets take exact opposite signs ($-\frac{1}{2}, -1$ for even vs.\ $+\frac{1}{2}, +1$ for odd). Since $\binom{p-1-b}{u-b} \equiv (-1)^{u-b}\binom{u}{b} \pmod p$, the factor $(-1)^{u_1+u_2}$ aligns the signs across all $p$ points of the line $u_2 = c u_1 \pmod p$. Summing $\Phi(u_1, c u_1)$ over all $u_1 \in \F_p$ annihilates every surviving term (as $\sum_{u_1 \in \F_p} \binom{u_1}{b_1}\binom{c u_1}{b_2} \equiv 0 \pmod p$ for $b_1 + b_2 \le p - 2 < p - 1$), leaving $G(\mathbf{0}) \equiv 0 \pmod p$, contradiction. The proof for $(4p - 1, p - 1)$ is identical with combinations $\Sigma(u_1, u_2) - \frac{1}{3}\Sigma(2p+u_1, u_2)$ (even) and $\Sigma(3p+u_1, u_2) - \frac{1}{3}\Sigma(p+u_1, u_2)$ (odd), using $3 \not\equiv 0 \pmod p$.
+\end{proof}
+
+\begin{theorem}[Exact Multi-Block Closures on $\bmod 10$ and Cubic $\bmod 6$ --- Theorem U3]
+\label{thm:u3}
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Single-block ceiling for $\THR_{n,2}$ modulo $2p$ ($p \equiv 1 \pmod 4$):} For every prime $p \equiv 1 \pmod 4$, $\binom{p}{2} = p(p-1)/2 \equiv 0 \pmod{2p}$, so every block of a $k$-block quadratic weak representation of $\THR_{n,2}$ modulo $2p$ has size $\le p - 1$, giving $N_{k\text{-bloc}}^{(2p)}(2, \THR_2) \le k(p - 1)$ (hence exact values $4, 8, 12$ for $k = 1, 2, 3$ modulo $10$).
+  \item \textbf{Exact $4$-block closure of $\THR_{n,2}$ modulo $10$:} Exhaustive verification of all three admissible $4$-block partitions of $n = 13$ ($(4,4,4,1)$, $(4,4,3,2)$, $(4,3,3,3)$) yields $0$ solutions, proving $N_{4\text{-bloc}}^{(10)}(2, \THR_2) = 12$.
+  \item \textbf{Exact $2$-block cubic closure modulo $6$:} Exhaustive verification across all $14$ splits of $n = 28$ ($70.4 \times 10^6$ canonical pairs) yields $0$ solutions, proving $\Ntwobloc^{(6)}(3, \OR) = 27 = \Nsym^{(6)}(3, \OR)$, while Theorem~\ref{thm:d4} combined with Lemma~\ref{lem:d3a}(2) yields $27 \le \Ngen^{(6)}(3, \OR) \le 50$ (ratio $1.852\times$).
+\end{enumerate}
+\end{theorem}
+
 %======================================================================
 \section{Exact Exhaustive Classifications Modulo $6$}
 \label{sec:exact6}

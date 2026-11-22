@@ -1,0 +1,181 @@
+{
+  "Theorem_D7_Lucas_BiSlice": {
+    "primes_verified": 14,
+    "max_prime": 53,
+    "bislices": [
+      "(3p-1, 2p-1) = 5p-2",
+      "(4p-1, p-1) = 5p-2",
+      "(5p-1, 0) = 5p-1"
+    ],
+    "mod10_M24_killed": 1859,
+    "mod10_M24_total": 1861,
+    "mod10_M24_exceptions": [
+      [
+        3,
+        21,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        16,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "Theorem_U3_THR2_mod10_4block": {
+    "p_1mod4_primes_verified": 44,
+    "n_1block": 4,
+    "n_2block": 8,
+    "n_3block": 12,
+    "n_4block_exact": 12,
+    "total_pairs_n13": 3804160000,
+    "partitions_n13": [
+      {
+        "partition": [
+          4,
+          4,
+          4,
+          1
+        ],
+        "npts": 245,
+        "pairs_tested": 524160000,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          4,
+          4,
+          3,
+          2
+        ],
+        "npts": 295,
+        "pairs_tested": 1280000000,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          4,
+          3,
+          3,
+          3
+        ],
+        "npts": 315,
+        "pairs_tested": 2000000000,
+        "solutions": 0
+      }
+    ]
+  },
+  "Theorem_U3_Cubic_mod6_2block": {
+    "n_2block_exact": 27,
+    "n_sym_exact": 27,
+    "d4_upper_bound": 50,
+    "ratio_upper_lower": 1.8519,
+    "canonical_pairs_per_split": 5028751,
+    "total_canonical_pairs_n28": 70402514,
+    "splits_n28": [
+      {
+        "split": [
+          27,
+          1
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          26,
+          2
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          25,
+          3
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          24,
+          4
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          23,
+          5
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          22,
+          6
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          21,
+          7
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          20,
+          8
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          19,
+          9
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          18,
+          10
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          17,
+          11
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          16,
+          12
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          15,
+          13
+        ],
+        "min_common_zeros": 1
+      },
+      {
+        "split": [
+          14,
+          14
+        ],
+        "min_common_zeros": 1
+      }
+    ]
+  },
+  "runtime_s": 18.96
+}
