@@ -466,6 +466,50 @@ Let $p \ge 5$ be a prime, $P_p \in \F_p[x_1,\dots,x_m]$ quadratic with $P_p(\mat
 For $(a, b) = (3p - 1, 2p - 1)$, let $G(x) = 1 - P_p(x)^{p-1}$ ($\deg G \le 2(p-1)$) and write $k_1 = a_1 p + b_1$, $k_2 = a_2 p + b_2$ (so $a_1 + a_2 \le 1$, and $b_1 + b_2 \le p - 2$ whenever $a_1 + a_2 = 1$). For each of the $p$ solutions $(u_1, u_2) \in \{0,\dots,p-1\}^2$ of $r_1 u_1 + r_2 u_2 \equiv 0 \pmod p$, form the slice combination $\Phi(u_1, u_2) := \Sigma(u_1, u_2) - \frac{1}{2}\Sigma(p + u_1, p + u_2)$ if $u_1 + u_2$ is even, and $\Phi(u_1, u_2) := \Sigma(2p + u_1, p + u_2) - \frac{1}{2}\Sigma(p + u_1, u_2)$ if $u_1 + u_2$ is odd. By Lucas's theorem, the $(a_1, a_2) = (0, 0)$ bracket vanishes identically ($1 - \frac{1}{2}\cdot 2 = 0$), while the $(1, 0)$ and $(0, 1)$ brackets take exact opposite signs ($-\frac{1}{2}, -1$ for even vs.\ $+\frac{1}{2}, +1$ for odd). Since $\binom{p-1-b}{u-b} \equiv (-1)^{u-b}\binom{u}{b} \pmod p$, the factor $(-1)^{u_1+u_2}$ aligns the signs across all $p$ points of the line $u_2 = c u_1 \pmod p$. Summing $\Phi(u_1, c u_1)$ over all $u_1 \in \F_p$ annihilates every surviving term (as $\sum_{u_1 \in \F_p} \binom{u_1}{b_1}\binom{c u_1}{b_2} \equiv 0 \pmod p$ for $b_1 + b_2 \le p - 2 < p - 1$), leaving $G(\mathbf{0}) \equiv 0 \pmod p$, contradiction. The proof for $(4p - 1, p - 1)$ is identical with combinations $\Sigma(u_1, u_2) - \frac{1}{3}\Sigma(2p+u_1, u_2)$ (even) and $\Sigma(3p+u_1, u_2) - \frac{1}{3}\Sigma(p+u_1, u_2)$ (odd), using $3 \not\equiv 0 \pmod p$.
 \end{proof}
 
+\begin{theorem}[Lucas--Vandermonde Weight-Constrained Chevalley--Warning Theorem --- Theorem D8]
+\label{thm:d8}
+Let $D \ge 1$ and $r \ge 1$ be integers, and let $A(D, r) = \bigl(\binom{Dr - a}{ir}\bigr)_{0 \le i, a \le D - 1} \in \Z^{D \times D}$ be the Lucas slice matrix.
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Closed-form Vandermonde determinant:}
+  \[
+    |\det A(D, r)|
+    \;=\; r^{\binom{D}{2}} \left(\prod_{k=1}^{D-1} k!\right)
+          \frac{\prod_{a=1}^{D-1} (Dr - a)!}{\left(\prod_{j=1}^{D-1} (jr)!\right)^2}.
+  \]
+  In particular, $|\det A(1, r)| = 1$, $|\det A(2, r)| = \binom{2r - 1}{r}$, and every prime divisor of $\det A(D, r)$ is strictly smaller than $Dr$.
+  \item \textbf{Weight-constrained Chevalley--Warning bound:} For every prime $p \nmid \det A(D, r)$ (in particular, every prime $p \ge Dr$, every prime $p$ when $D = 1$, and every prime power $r = p^k$ when $D = 2$), every polynomial system $F_1(x) = \dots = F_s(x) = 0 \pmod p$ with $F_t(\mathbf{0}) = 0$ and $\sum_{t=1}^s \deg F_t \le D$ on
+  \[
+    M \;=\; (Dr + 1)p - 1
+  \]
+  Boolean variables admits a nonzero Boolean root $x \in \{0, 1\}^M \setminus \{\mathbf{0}\}$ with Hamming weight $|x|_H \in \{rp, 2rp, \dots, Drp\}$ (hence $|x|_H \equiv 0 \pmod{rp}$).
+\end{enumerate}
+Compared to rigid $r$-tupling Chevalley--Warning on $(D+1)r(p-1) + r \approx (D+1)rp$ variables, Theorem~\ref{thm:d8} saves $(r - 1)p - Dr + 1 \sim (r - 1)p$ variables (approaching a $50\%$ reduction at $D = 1$ and a $33\%$ reduction at $D = 2$).
+\end{theorem}
+
+\begin{proof}
+Let $G(x) := \prod_{t=1}^s (1 - F_t(x)^{p-1}) \in \F_p[x_1, \dots, x_M]$, so $\deg G \le D(p - 1)$ and $G(\mathbf{0}) = 1$. Suppose for contradiction that $G(x) = 0$ on every slice $|x|_H = jrp$ ($1 \le j \le D$). For each $j \in \{1, \dots, D\}$, expand $G$ into multilinear monomials $x^S$ of degree $k = |S| \le D(p-1)$:
+\[
+  0 \;\equiv\; \sum_{|x|_H = jrp} G(x)
+  \;=\; \sum_{k=0}^{D(p-1)} \binom{M - k}{jrp - k} S_k \pmod p,
+  \qquad S_k := \sum_{|S|=k} c_S.
+\]
+Writing $M = Dr \cdot p + (p - 1)$ and $k = ap + b$ ($0 \le a \le D - 1$, $0 \le b \le p - 1$), we have $M - k = (Dr - a)p + (p - 1 - b)$ and $jrp - k = (jr - a)p - b$. Whenever $b > 0$, the base-$p$ unit digit of $jrp - k$ is $p - b > p - 1 - b$, so Lucas's theorem yields $\binom{M - k}{jrp - k} \equiv 0 \pmod p$. For $b = 0$ ($k = ap$), Lucas's theorem gives $\binom{M - ap}{jrp - ap} \equiv \binom{Dr - a}{jr - a} = \binom{Dr - a}{(D - j)r} \pmod p$. Setting $i = D - j \in \{0, \dots, D-1\}$, the $D$ slices form the homogeneous linear system $A(D, r)\,(S_0, S_p, \dots, S_{(D-1)p})^\top \equiv \mathbf{0} \pmod p$.
+
+To evaluate $\det A(D, r)$, rewrite entry $(i, a)$ as
+\[
+  \binom{Dr - a}{ir}
+  \;=\; \frac{(Dr - a)!}{(ir)!\,((D - i)r)!} \cdot \prod_{t=0}^{a-1}\bigl((D - i)r - t\bigr).
+\]
+Factoring $(Dr - a)!$ out of column $a$ and $1/((ir)!((D-i)r)!)$ out of row $i$ leaves the matrix of falling factorials $\bigl(((D-i)r)_a\bigr)_{0 \le i, a \le D-1}$, whose column span coincides (by unitriangular change of basis from falling factorials to monomials) with the Vandermonde matrix $\bigl(((D-i)r)^a\bigr)_{0 \le i, a \le D-1}$. Its absolute determinant is $\prod_{0 \le u < v \le D-1} (v - u)r = r^{\binom{D}{2}} \prod_{k=1}^{D-1} k!$, yielding the exact formula in~(1). Since every integer factor in the numerator is strictly less than $Dr$ (as $r \le Dr - 1$ for $D \ge 2$, $k \le D - 1 < Dr$, and $Dr - a \le Dr - 1$), no prime $p \ge Dr$ divides $\det A(D, r)$. At $D = 2$, $|\det A(2, r)| = \binom{2r-1}{r}$, and for any prime power $r = p^k$, Lucas's theorem in base $p$ gives $\binom{2p^k - 1}{p^k} = \binom{p^k + (p^k - 1)}{p^k} \equiv \binom{1}{1}\binom{p^k - 1}{0} = 1 \not\equiv 0 \pmod p$. Whenever $p \nmid \det A(D, r)$, the matrix $A(D, r)$ is invertible over $\F_p$, forcing $S_0 = G(\mathbf{0}) \equiv 0 \pmod p$, a contradiction.
+\end{proof}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/theorem_d8_lucas_vandermonde_cw.png}
+\caption{Lucas--Vandermonde weight-constrained Chevalley--Warning theorem (Theorem~\ref{thm:d8}): variable threshold $(Dr+1)p - 1$ vs.\ rigid $r$-tupling $(D+1)rp$ at $D = 2$ and $D = 1$, and exact verification that $\max p \mid \det A(D, r) < Dr$.}
+\label{fig:d8}
+\end{figure}
+
 \begin{theorem}[Exact Multi-Block Closures on $\bmod 10$ and Cubic $\bmod 6$ --- Theorem U3]
 \label{thm:u3}
 \begin{enumerate}[leftmargin=*,nosep]
@@ -524,9 +568,9 @@ Additionally, canonical hereditary enumeration of quadratic $P_3$ without nonzer
 
 Three main open problems emerge directly from this work:
 \begin{enumerate}[leftmargin=*]
-  \item \textbf{Tightening $8p - 7 \to 4p - 2$ on $m = 2p$:} Eliminating the factor-$2$ pairing loss on $U_1$ in Theorem~\ref{thm:d4} would close the gap between $4p - 2$ and $8p - 7$ (e.g., $18 \le \Ngen^{(10)}(2, \OR) \le 33$).
+  \item \textbf{Tightening $8p - 7 \to 4p - 2$ on $m = 2p$:} Eliminating the factor-$2$ pairing loss on $U_1$ in Theorem~\ref{thm:d4} would close the gap between $4p - 2$ and $8p - 7$ (e.g., $18 \le \Ngen^{(10)}(2, \OR) \le 32$).
   \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} Resolving Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ requires overcoming the simultaneous high-rank regime $\min(r_p, r_q) = \Omega(p)$ isolated in Theorem~\ref{thm:d5}(4), likely by combining algebraic contraction with a non-Fourier bias argument over $\F_p \times \F_q$.
-  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, and~\ref{thm:d5}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
+  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, and~\ref{thm:u3}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
 \end{enumerate}
 
 All scripts, JSON logs, and figures are archived in the public repository.

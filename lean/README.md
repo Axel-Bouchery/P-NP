@@ -9,6 +9,7 @@ Ce dossier contient un projet Lean 4 (`v4.16.0` + Mathlib 4) formalisant les bri
 - `WeakPolyComposite/TheoremD5.lean` : identité de parité `p = 2` et borne exacte 2-blocs **`2(m − 1)`** du **Théorème D5**.
 - `WeakPolyComposite/TheoremD6.lean` : contradiction 3-racines à `n = 33` sur `mod 10` (`N_gen^{(10)}(2, OR) ≤ 32`), élimination de Lucas `(3 : ZMod p) ≠ 0` (`p ≥ 5`) et amélioration `19q − 13 < 20q − 19` sur `m = 3q` (`q ≥ 7`).
 - `WeakPolyComposite/TheoremD7.lean` : annulations exactes de Lucas des bi-tranches `(3p − 1, 2p − 1)` et `(4p − 1, p − 1)` (**Théorème D7**) et divisibilité `2p ∣ C(p, 2)` pour `p ≡ 1 (mod 4)` (**Théorème U3**).
+- `WeakPolyComposite/TheoremD8.lean` : identités binomiales `det A(1, r) = 1`, `det A(2, r) = C(2r − 1, r)`, gain strict `(Dr + 1)p − 1 < (D + 1)r(p − 1) + r` et corollaire puissance première (**Théorème D8**).
 - `verify_proof_steps_exact.py` : vérificateur arithmétique exact exécutable sous Python vérifiant toutes ces identités et lemmes sur des familles de nombres premiers.
 
 ## Statut de compilation

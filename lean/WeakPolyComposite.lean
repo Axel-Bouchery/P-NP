@@ -5,3 +5,4 @@ import WeakPolyComposite.TheoremD4
 import WeakPolyComposite.TheoremD5
 import WeakPolyComposite.TheoremD6
 import WeakPolyComposite.TheoremD7
+import WeakPolyComposite.TheoremD8
