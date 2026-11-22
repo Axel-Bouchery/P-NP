@@ -28,9 +28,10 @@
   },
   "Theorem_U3_THR2_mod10_4block": {
     "p_1mod4_primes_verified": 44,
-    "n_1block": 4,
-    "n_2block": 8,
-    "n_3block": 12,
+    "n_1block_exact": 4,
+    "n_2block_exact": 8,
+    "n_3block_exact": 11,
+    "n_3block_444_solutions": 0,
     "n_4block_exact": 12,
     "total_pairs_n13": 3804160000,
     "partitions_n13": [
@@ -177,5 +178,5 @@
       }
     ]
   },
-  "runtime_s": 18.96
+  "runtime_s": 19.37
 }

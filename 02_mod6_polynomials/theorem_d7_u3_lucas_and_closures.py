@@ -239,16 +239,16 @@ def make_figure(res_u3_4b, res_u3_cub):
     # Panel (b): Exact k-block progression for THR_{n,2} mod 10 (k = 1..4)
     ax = axes[1]
     ks = [1, 2, 3, 4]
-    vals = [4, 8, 12, 12]
+    vals = [4, 8, 11, 12]
     colors = ["#1f77b4", "#1f77b4", "#2ca02c", "#d62728"]
     bars = ax.bar(ks, vals, color=colors, width=0.55, edgecolor="black", alpha=0.88)
     ax.plot([1, 2, 3, 4], [4, 8, 12, 16], "k--", lw=1.4, label="Single-block ceiling $k(p-1) = 4k$")
     for b, v in zip(bars, vals):
         ax.text(b.get_x() + b.get_width() / 2, v + 0.4, f"{v} (exact)", ha="center", fontweight="bold", fontsize=9)
     ax.set_xticks(ks)
-    ax.set_xticklabels(["1-bloc\n(sym)", "2-blocs", "3-blocs\n(4,4,4)", "4-blocs\n(0 sol at 13)"])
+    ax.set_xticklabels(["1-bloc\n(sym)", "2-blocs\n(4,4)", "3-blocs\n(3,4,4)", "4-blocs\n(0 sol at 13)"])
     ax.set_ylabel("Exact maximum $N_{k\\text{-bloc}}^{(10)}(2, \\mathrm{THR}_2)$")
-    ax.set_title("(b) Th. U3: Exact 4-Block Closure on $\\mathrm{THR}_{n,2}$ mod 10")
+    ax.set_title("(b) Th. U3: Exact 3- & 4-Block Closure on $\\mathrm{THR}_{n,2}$ mod 10")
     ax.set_ylim(0, 17.5)
     ax.grid(axis="y", alpha=0.25)
     ax.legend(fontsize=8.2, loc="upper left")
@@ -278,6 +278,34 @@ def main():
     for p in p1mod4:
         assert (p * (p - 1) // 2) % (2 * p) == 0
 
+    # Exhaustive 3-block closure of THR_{12,2} mod 10 on the unique admissible partition (4, 4, 4)
+    import itertools
+    pts3 = [(a, b, c) for a in range(5) for b in range(5) for c in range(5) if a + b + c >= 2]
+    p2_masks3 = []
+    for c0, c1, c2, c3, c4, c5 in itertools.product((0, 1), repeat=6):
+        mask = 0
+        for idx_p, (a, b, c) in enumerate(pts3):
+            if (c0 * (a * (a - 1) // 2) + c1 * (b * (b - 1) // 2) + c2 * (c * (c - 1) // 2)
+                    + c3 * a * b + c4 * a * c + c5 * b * c) & 1 == 0:
+                mask |= (1 << idx_p)
+        p2_masks3.append(mask)
+    p5_terms3 = [((a * (a - 1) // 2) % 5, (b * (b - 1) // 2) % 5, (c * (c - 1) // 2) % 5,
+                  (a * b) % 5, (a * c) % 5, (b * c) % 5) for a, b, c in pts3]
+    sols_3b_444 = 0
+    for coeffs in itertools.product(range(5), repeat=6):
+        if coeffs == (0, 0, 0, 0, 0, 0):
+            continue
+        z5 = 0
+        for idx_p, (v0, v1, v2, v3, v4, v5) in enumerate(p5_terms3):
+            if (coeffs[0] * v0 + coeffs[1] * v1 + coeffs[2] * v2
+                    + coeffs[3] * v3 + coeffs[4] * v4 + coeffs[5] * v5) % 5 == 0:
+                z5 |= (1 << idx_p)
+        for z2 in p2_masks3:
+            if (z2 & z5) == 0:
+                sols_3b_444 += 1
+                break
+    assert sols_3b_444 == 0
+
     # Exhaustive 4-block closure of THR_{13,2} mod 10
     r_4b = []
     tot_pairs = 0
@@ -294,9 +322,10 @@ def main():
         "Theorem_D7_Lucas_BiSlice": r_d7,
         "Theorem_U3_THR2_mod10_4block": {
             "p_1mod4_primes_verified": len(p1mod4),
-            "n_1block": 4,
-            "n_2block": 8,
-            "n_3block": 12,
+            "n_1block_exact": 4,
+            "n_2block_exact": 8,
+            "n_3block_exact": 11,
+            "n_3block_444_solutions": sols_3b_444,
             "n_4block_exact": 12,
             "total_pairs_n13": tot_pairs,
             "partitions_n13": r_4b,
