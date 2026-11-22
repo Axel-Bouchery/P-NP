@@ -613,6 +613,28 @@ Let $3 \le p < q$ be odd primes, $m = pq$, and $P = (P_p, P_q)$ a quadratic weak
 \end{enumerate}
 \end{theorem}
 
+\begin{theorem}[Exact $3$-Block Closures $2(m - 1)$ on $m \in \{10, 12, 15\}$, Anisotropic $3$-Block Obstruction, and Full-$2^{19}$ $\Z_{19}$ Circulant Closure --- Theorem U4]
+\label{thm:u4}
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Analytical anisotropic $3$-block obstruction on all odd semiprimes $m = pq$ ($3 \le p < q$):} No $3$-block partition $(a, b, c)$ with $a \ge (p - 1)q$, $b \ge (p - 1)q$, and $c \ge q$ admits a quadratic weak representation of $\OR_n$ modulo $pq$. Indeed, the multiple-of-$q$ grid points $(qi, qj, qk)$ surject onto $\F_p^2 \times \{0, 1\} \setminus \{0\}$ while vanishing under $P_q$; any quadratic $P_p(x, y, z)$ with $P_p(0, 0, 0) = 0$ either vanishes at a nonzero point of $\F_p^2 \times \{0\}$ or restricts at $z = 0$ to an anisotropic rank-$2$ norm form $Q(x, y)$ over $\F_p$, whose every affine shift $Q(x, y) + \alpha x + \beta y + \gamma$ at $z = 1$ is surjective onto $\F_p$, forcing a common zero.
+  \item \textbf{Exact $3$-block closures on $m = 10, 12, 15$:} Exhaustive verification across all admissible $3$-block partitions yields
+  \[
+    N_{3\text{-bloc}}^{(10)}(2, \OR) \;=\; 18, \qquad
+    N_{3\text{-bloc}}^{(12)}(2, \OR) \;=\; 22, \qquad
+    N_{3\text{-bloc}}^{(15)}(2, \OR) \;=\; 28
+  \]
+  (strictly closing Theorem~\ref{thm:d5}(1)'s $3$-block ceiling $2m + q - 3$: $22 \to 18$ on $\bmod 10$ across all $26$ partitions / $12.7 \times 10^6$ projective $P_5$ with exact $\F_2$ Gauss; $32 \to 28$ on $\bmod 15$ across all $21$ partitions / $100.9 \times 10^9$ projective pairs via $125$-bit CRT bitsets, with $9/21$ killed analytically by~(1); and non-squarefree $\bmod 12 = 4 \times 3$ across all $44$ partitions / $56.6 \times 10^9$ pairs via $512$-bit CRT bitsets).
+  \item \textbf{Exact full-$2^{19}$ circulant closure on $\Z_{19} \pmod{10}$ and $C_{19}/P_{19}$ rigidity:} Exhaustive verification over all $2\,441\,406 \times 1\,024 = 2.50 \times 10^9$ circulant quadratic pairs on $\Z_{19}$ across all $27\,595$ exact shift-orbits ($= 2^{19} - 1$ inputs) yields $0$ solutions. Remarkably, the only $9$ projective circulants avoiding all $2^{19} - 2$ proper nonempty subsets are the $9$ isomorphic copies of the $19$-cycle $C_{19}$ ($P_5(S) = |S| - e(C_{19}[S]) \pmod 5$), which fail solely on the all-ones vector $\mathbf{1}_{19}$ (while the $19$-path $P_{19}$ fails solely on the unique $10$-vertex alternating independent set $S^*$); neither $C_{19}$, nor $P_{19}$, nor any of the $760$ single-entry perturbations of $P_{19}$ can be rescued even by an arbitrary $190$-variable quadratic $P_2$ ($\mathrm{bad} \ge 1$).
+\end{enumerate}
+\end{theorem}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/theorem_u4_3block_and_circulant_closures.png}
+\caption{Theorem~\ref{thm:u4}: exact $3$-block closures $N_{3\text{-bloc}}^{(m)}(2, \OR) = 2(m - 1)$ on $m \in \{10, 12, 15\}$ ($> 160$ billion exact pairs eliminated), analytical elimination of $9/21$ partitions on $\bmod 15$ via the anisotropic $3$-block obstruction lemma, and exact $\Z_{19}$ circulant funnel.}
+\label{fig:u4}
+\end{figure}
+
 %======================================================================
 \section{Exact Exhaustive Classifications Modulo $6$}
 \label{sec:exact6}
@@ -664,7 +686,7 @@ Three main open problems emerge directly from this work:
 \begin{enumerate}[leftmargin=*]
   \item \textbf{Tightening $8p - 7 \to 4p - 2$ on $m = 2p$:} Eliminating the factor-$2$ pairing loss on $U_1$ in Theorem~\ref{thm:d4} would close the gap between $4p - 2$ and $8p - 7$ (e.g., $18 \le \Ngen^{(10)}(2, \OR) \le 32$).
   \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorem~\ref{thm:d10} resolves the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$) and unconditionally eliminates the sparse signed-graph expander barrier of Theorem~\ref{thm:d9}(3) for all $n \ge 64m$ via tilted Boolean Weyl differencing and probabilistic subsampling, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on two residual high-rank regimes: dense signed/bounded-integer graphs ($\rho(G) \gg m^{-3/4}$) and adversarial high-rank modular quadratics with large arbitrary coefficients $a_{ij} \in \Z/pq\Z$ exhibiting modular wrap-around in Band~3.
-  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, and~\ref{thm:u3}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
+  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
 \end{enumerate}
 
 All scripts, JSON logs, and figures are archived in the public repository.

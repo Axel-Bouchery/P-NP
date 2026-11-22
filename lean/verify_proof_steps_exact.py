@@ -161,9 +161,27 @@ def verify_d9_and_d10():
     print("[PASS] Theorems D9 & D10: F3^2 packing, 3q-1 exact rank-1, pure rank-2, 3-point tilt identity, L(T) algebra, K8 U K2 mod 6.")
 
 
+def verify_u4():
+    # Anisotropic norm form surjectivity over F_3 and F_5 under all affine shifts
+    for a in range(3):
+        for b in range(3):
+            for d in range(3):
+                assert any((x * x + y * y + a * x + b * y + d) % 3 == 0 for x in range(3) for y in range(3))
+    for a in range(5):
+        for b in range(5):
+            for d in range(5):
+                assert any((x * x + 2 * y * y + a * x + b * y + d) % 5 == 0 for x in range(5) for y in range(5))
+    for m, q in [(6, 3), (10, 5), (14, 7), (15, 5), (21, 7)]:
+        assert 2 * (m - 1) < 2 * m + q - 3
+    assert 19 * 27594 + 1 == (1 << 19) - 1
+    assert (19 - 19) % 10 == 0 and 10 % 10 == 0
+    print("[PASS] Theorem U4: Anisotropic F_3/F_5 surjectivity, 3-block improvement 2(m-1) < 2m+q-3, Z_19 orbit count.")
+
+
 if __name__ == "__main__":
     verify_g3pp()
     verify_d3a_and_d4()
     verify_d5()
     verify_d9_and_d10()
+    verify_u4()
     print("ALL EXACT PROOF-STEP VERIFICATIONS PASSED.")

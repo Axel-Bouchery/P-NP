@@ -12,6 +12,7 @@ Ce dossier contient un projet Lean 4 (`v4.16.0` + Mathlib 4) formalisant les bri
 - `WeakPolyComposite/TheoremD8.lean` : identités binomiales `det A(1, r) = 1`, `det A(2, r) = C(2r − 1, r)`, gain strict `(Dr + 1)p − 1 < (D + 1)r(p − 1) + r` et corollaire puissance première (**Théorème D8**).
 - `WeakPolyComposite/TheoremD9.lean` : empilement sharp `𝔽₃²` (`3k + 4`), amélioration inconditionnelle `19q − 15 < 20q − 19` pour tout `q ≥ 5` (y compris `mod 15 : 80 < 81`), borne Caro–Wei sur couplage et resserrement D3a sur semi-premiers (**Théorème D9**).
 - `WeakPolyComposite/TheoremD10.lean` : parités exactes du témoin rang-1 `3q − 1` sur `m = 2q`, bornes sous-`2(m − 1)` et rang-2 pur `4m − 2p − 2q` sur `m = pq`, identité 3-points du lemme de franchissement de moyenne à biais borné (`θ* ∈ [1/4, 3/4]`), identité polynomiale `L(T) ≥ (4T² − 1)/(3T)`, survie sous-échantillonnée et témoin exact `K_8 ⊔ K_2` (`n = 10` mod `6`, `decide`) (**Théorème D10**).
+- `WeakPolyComposite/TheoremU4.lean` : surjectivité exacte (`decide`) des décalages affines des formes normiques anisotropes sur `𝔽₃²` et `𝔽₅²` (lemme d'obstruction 3-blocs anisotrope), amélioration stricte `2(m − 1) < 2m + q − 3` (`18, 22, 28`), dénombrement exact des orbites `ℤ₁₉` (`19 × 27 594 + 1 = 2¹⁹ − 1`) et obstructions ponctuelles `C₁₉` / `P₁₉` (**Théorème U4**).
 - `verify_proof_steps_exact.py` : vérificateur arithmétique exact exécutable sous Python vérifiant toutes ces identités et lemmes sur des familles de nombres premiers.
 
 ## Statut de compilation

@@ -1,0 +1,907 @@
+{
+  "theorem": "U4",
+  "title": "Exact 3-Block Closures N_{3-bloc}^{(m)}(2, OR) = 2(m - 1) on m = 10, 12, 15, Analytical Anisotropic 3-Block Obstruction Lemma, and Full-2^19 Z_19 Circulant Closure",
+  "runtime_s": 86.571,
+  "anisotropic_3block_obstruction_lemma": [
+    {
+      "p": 3,
+      "tested": 19682,
+      "avoiding_Fp2x01": 0,
+      "mode": "exhaustive_all_quadratics"
+    },
+    {
+      "p": 5,
+      "tested": 125,
+      "avoiding_Fp2x01": 0,
+      "mode": "exhaustive_anisotropic_affine_shifts"
+    }
+  ],
+  "U4_1_mod10_3block_exact": {
+    "m": 10,
+    "n_tested": 19,
+    "exact_3block_max": 18,
+    "calibration_n18_14_3_1_solutions": 250,
+    "num_admissible_partitions": 26,
+    "total_projective_p5_tested": 12695306,
+    "total_solutions_n19": 0,
+    "partitions": [
+      {
+        "partition": [
+          14,
+          4,
+          1
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          14,
+          3,
+          2
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          13,
+          5,
+          1
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          13,
+          4,
+          2
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          13,
+          3,
+          3
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          12,
+          6,
+          1
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          12,
+          5,
+          2
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          12,
+          4,
+          3
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          11,
+          7,
+          1
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          11,
+          6,
+          2
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          11,
+          5,
+          3
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          11,
+          4,
+          4
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          10,
+          8,
+          1
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          10,
+          7,
+          2
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          10,
+          6,
+          3
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          10,
+          5,
+          4
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          9,
+          9,
+          1
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          9,
+          8,
+          2
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          9,
+          7,
+          3
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          9,
+          6,
+          4
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          9,
+          5,
+          5
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          8,
+          8,
+          3
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          8,
+          7,
+          4
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          8,
+          6,
+          5
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          7,
+          7,
+          5
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      },
+      {
+        "partition": [
+          7,
+          6,
+          6
+        ],
+        "min_defect": 1,
+        "solutions": 0
+      }
+    ]
+  },
+  "U4_2_mod15_3block_exact": {
+    "m": 15,
+    "n_tested": 29,
+    "exact_3block_max": 28,
+    "calibration_n28_14_13_1_solutions": 6750,
+    "num_admissible_partitions": 21,
+    "partitions_killed_by_anisotropic_lemma": 9,
+    "total_pairs_tested": 100908639741,
+    "total_solutions_n29": 0,
+    "partitions": [
+      {
+        "partition": [
+          14,
+          14,
+          1
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 243
+      },
+      {
+        "partition": [
+          14,
+          13,
+          2
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 243
+      },
+      {
+        "partition": [
+          14,
+          12,
+          3
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 243
+      },
+      {
+        "partition": [
+          14,
+          11,
+          4
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 243
+      },
+      {
+        "partition": [
+          14,
+          10,
+          5
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      },
+      {
+        "partition": [
+          14,
+          9,
+          6
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 81
+      },
+      {
+        "partition": [
+          14,
+          8,
+          7
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 81
+      },
+      {
+        "partition": [
+          13,
+          13,
+          3
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 243
+      },
+      {
+        "partition": [
+          13,
+          12,
+          4
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 243
+      },
+      {
+        "partition": [
+          13,
+          11,
+          5
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      },
+      {
+        "partition": [
+          13,
+          10,
+          6
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      },
+      {
+        "partition": [
+          13,
+          9,
+          7
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 81
+      },
+      {
+        "partition": [
+          13,
+          8,
+          8
+        ],
+        "min_defect": 1,
+        "solutions": 0,
+        "surviving_P3": 81
+      },
+      {
+        "partition": [
+          12,
+          12,
+          5
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      },
+      {
+        "partition": [
+          12,
+          11,
+          6
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      },
+      {
+        "partition": [
+          12,
+          10,
+          7
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      },
+      {
+        "partition": [
+          12,
+          9,
+          8
+        ],
+        "min_defect": 2,
+        "solutions": 0,
+        "surviving_P3": 81
+      },
+      {
+        "partition": [
+          11,
+          11,
+          7
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      },
+      {
+        "partition": [
+          11,
+          10,
+          8
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      },
+      {
+        "partition": [
+          11,
+          9,
+          9
+        ],
+        "min_defect": 2,
+        "solutions": 0,
+        "surviving_P3": 81
+      },
+      {
+        "partition": [
+          10,
+          10,
+          9
+        ],
+        "min_defect": -1,
+        "solutions": 0,
+        "surviving_P3": 0
+      }
+    ]
+  },
+  "U4_3_mod12_3block_exact": {
+    "m": 12,
+    "n_tested": 23,
+    "exact_3block_max": 22,
+    "calibration_n22_20_1_1_solutions": 1327104,
+    "num_admissible_partitions": 44,
+    "total_pairs_tested": 56643851264,
+    "total_solutions_n23": 0,
+    "partitions": [
+      {
+        "partition": [
+          21,
+          1,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          20,
+          2,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          19,
+          3,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          19,
+          2,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          18,
+          4,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          18,
+          3,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          17,
+          5,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          17,
+          4,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          17,
+          3,
+          3
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          16,
+          6,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          16,
+          5,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          16,
+          4,
+          3
+        ],
+        "solutions": 0,
+        "surviving_P3": 4374
+      },
+      {
+        "partition": [
+          15,
+          7,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          15,
+          6,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          15,
+          5,
+          3
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          15,
+          4,
+          4
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          14,
+          8,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          14,
+          7,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          14,
+          6,
+          3
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          14,
+          5,
+          4
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          13,
+          9,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          13,
+          8,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          13,
+          7,
+          3
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          13,
+          6,
+          4
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          13,
+          5,
+          5
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          12,
+          10,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          12,
+          9,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          12,
+          8,
+          3
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          12,
+          7,
+          4
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          12,
+          6,
+          5
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          11,
+          11,
+          1
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          11,
+          10,
+          2
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          11,
+          9,
+          3
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          11,
+          8,
+          4
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          11,
+          7,
+          5
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          11,
+          6,
+          6
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          10,
+          10,
+          3
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          10,
+          9,
+          4
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          10,
+          8,
+          5
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          10,
+          7,
+          6
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          9,
+          9,
+          5
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          9,
+          8,
+          6
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      },
+      {
+        "partition": [
+          9,
+          7,
+          7
+        ],
+        "solutions": 0,
+        "surviving_P3": 6561
+      },
+      {
+        "partition": [
+          8,
+          8,
+          7
+        ],
+        "solutions": 0,
+        "surviving_P3": 2916
+      }
+    ]
+  },
+  "U4_4_z19_circulant_and_C19_P19_rigidity": {
+    "total_orbits_full_2_19": 27595,
+    "total_projective_p5_tested": 2441406,
+    "total_circulant_pairs_tested": 2499999744,
+    "proper_subset_solutions": 9,
+    "full_2_19_solutions": 0,
+    "min_full_defect": 1,
+    "C19_arb190_P2_bad": 1,
+    "C19_z5_count": 184757,
+    "P19_arb190_P2_bad": 1,
+    "P19_z5_count": 184757,
+    "P19_all_760_1entry_perturbations_min_bad": 1,
+    "P19_all_760_1entry_perturbations_solutions": 0
+  }
+}
