@@ -2,9 +2,11 @@
 
 Ce dépôt rassemble **71 scripts** Python/Numba/PyTorch, **55 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)** et **33 figures** issus d'une étude théorique et expérimentale sur trois axes. Les questions P ≟ NP et VP ≟ VNP servent uniquement de cadre motivant : aucun résultat présenté ici ne les résout.
 
-## Rapport de recherche unifié
+## Documents et formalisation
 
-- **[RAPPORT.md](RAPPORT.md)** — Rapport complet (problématique, définitions formelles, protocoles, preuves analytiques, classifications par énumération exhaustive, reproductions/outillage, 33 figures, bilan des cinq verrous structurels et bibliographie unifiée).
+- **[RAPPORT.md](RAPPORT.md)** — Rapport complet sur les trois axes (problématique, définitions formelles, protocoles, preuves analytiques, classifications par énumération exhaustive, reproductions/outillage, 33 figures, bilan des cinq verrous structurels et bibliographie unifiée).
+- **[paper/weak_poly_composite.tex](paper/weak_poly_composite.tex)** (avec [paper/references.bib](paper/references.bib)) — Manuscrit LaTeX autonome (anglais, format arXiv) dédié uniquement à l'**Axe II** (`G3++`, `G5`, `P1`, `D3–D5`, `U1–U2`), intégrant la bibliographie 2015–2026 (Lee 2015, Bhowmick–Lovett 2015, Sun et al. ICALP 2020).
+- **[lean/README.md](lean/README.md)** — Projet Lean 4 (`v4.16.0` + Mathlib 4) formalisant les briques clés (`G3++`, `G5`, `Lemme D3a`, `D4`, `D5`), accompagné du vérificateur arithmétique exact exécutable [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py).
 
 ---
 
