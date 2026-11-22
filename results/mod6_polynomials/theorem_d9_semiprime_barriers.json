@@ -1,0 +1,222 @@
+{
+  "D9_1_diagonal_shifted_rank": {
+    "examples": [
+      {
+        "family": "symmetric_C(S,2)",
+        "q": 5,
+        "n": 12,
+        "rank_zero_diag": 12,
+        "rank_diag_shifted": 1
+      },
+      {
+        "family": "symmetric_C(S,2)",
+        "q": 7,
+        "n": 12,
+        "rank_zero_diag": 12,
+        "rank_diag_shifted": 1
+      },
+      {
+        "family": "symmetric_C(S,2)",
+        "q": 11,
+        "n": 12,
+        "rank_zero_diag": 11,
+        "rank_diag_shifted": 1
+      },
+      {
+        "family": "weighted_2block",
+        "q": 5,
+        "n": 14,
+        "rank_zero_diag": 14,
+        "rank_diag_shifted": 2
+      },
+      {
+        "family": "weighted_2block",
+        "q": 7,
+        "n": 14,
+        "rank_zero_diag": 14,
+        "rank_diag_shifted": 2
+      },
+      {
+        "family": "weighted_2block",
+        "q": 11,
+        "n": 14,
+        "rank_zero_diag": 14,
+        "rank_diag_shifted": 2
+      }
+    ],
+    "algebraic_subcube_checks": 100
+  },
+  "D9_2_and_D9_3_sparsity_and_expander_barrier": {
+    "semiprime_table": [
+      {
+        "p": 3,
+        "q": 5,
+        "m": 15,
+        "lower_2m_minus_2": 28,
+        "d3_original": 84,
+        "d9_4_d3_sharpened": 82,
+        "d9_4_3q_bound": 80,
+        "d9_1_rtilde2_bound": 64,
+        "d9_2_matching_bound": 48
+      },
+      {
+        "p": 3,
+        "q": 7,
+        "m": 21,
+        "lower_2m_minus_2": 40,
+        "d3_original": 124,
+        "d9_4_d3_sharpened": 120,
+        "d9_4_3q_bound": 118,
+        "d9_1_rtilde2_bound": 94,
+        "d9_2_matching_bound": 68
+      },
+      {
+        "p": 5,
+        "q": 7,
+        "m": 35,
+        "lower_2m_minus_2": 68,
+        "d3_original": 332,
+        "d9_4_d3_sharpened": 326,
+        "d9_4_3q_bound": null,
+        "d9_1_rtilde2_bound": 170,
+        "d9_2_matching_bound": 124
+      },
+      {
+        "p": 5,
+        "q": 11,
+        "m": 55,
+        "lower_2m_minus_2": 108,
+        "d3_original": 548,
+        "d9_4_d3_sharpened": 540,
+        "d9_4_3q_bound": null,
+        "d9_1_rtilde2_bound": 278,
+        "d9_2_matching_bound": 196
+      },
+      {
+        "p": 7,
+        "q": 11,
+        "m": 77,
+        "lower_2m_minus_2": 152,
+        "d3_original": 1052,
+        "d9_4_d3_sharpened": 1042,
+        "d9_4_3q_bound": null,
+        "d9_1_rtilde2_bound": 402,
+        "d9_2_matching_bound": 284
+      },
+      {
+        "p": 11,
+        "q": 13,
+        "m": 143,
+        "lower_2m_minus_2": 284,
+        "d3_original": 3044,
+        "d9_4_d3_sharpened": 3026,
+        "d9_4_3q_bound": null,
+        "d9_1_rtilde2_bound": 776,
+        "d9_2_matching_bound": 544
+      },
+      {
+        "p": 17,
+        "q": 19,
+        "m": 323,
+        "lower_2m_minus_2": 644,
+        "d3_original": 10724,
+        "d9_4_d3_sharpened": 10694,
+        "d9_4_3q_bound": null,
+        "d9_1_rtilde2_bound": 1814,
+        "d9_2_matching_bound": 1252
+      }
+    ],
+    "expander_fourier_barrier": [
+      {
+        "alpha": 1.05,
+        "m": 143,
+        "n": 183,
+        "Delta": 2,
+        "num_edges": 361,
+        "theo_var": 361.0,
+        "emp_var": 354.4,
+        "sigma_over_m": 0.1329,
+        "phi_emp": 0.7108,
+        "phi_gauss_pred": 0.7058
+      },
+      {
+        "alpha": 1.15,
+        "m": 143,
+        "n": 301,
+        "Delta": 2,
+        "num_edges": 598,
+        "theo_var": 598.0,
+        "emp_var": 595.9,
+        "sigma_over_m": 0.171,
+        "phi_emp": 0.5622,
+        "phi_gauss_pred": 0.5614
+      },
+      {
+        "alpha": 1.25,
+        "m": 143,
+        "n": 495,
+        "Delta": 2,
+        "num_edges": 981,
+        "theo_var": 981.0,
+        "emp_var": 976.0,
+        "sigma_over_m": 0.219,
+        "phi_emp": 0.3875,
+        "phi_gauss_pred": 0.3879
+      },
+      {
+        "alpha": 1.35,
+        "m": 143,
+        "n": 812,
+        "Delta": 3,
+        "num_edges": 2427,
+        "theo_var": 2427.0,
+        "emp_var": 2424.1,
+        "sigma_over_m": 0.3445,
+        "phi_emp": 0.0907,
+        "phi_gauss_pred": 0.0961
+      },
+      {
+        "alpha": 1.45,
+        "m": 143,
+        "n": 1334,
+        "Delta": 5,
+        "num_edges": 6639,
+        "theo_var": 6639.0,
+        "emp_var": 6755.1,
+        "sigma_over_m": 0.5698,
+        "phi_emp": 0.0069,
+        "phi_gauss_pred": 0.0016
+      },
+      {
+        "alpha": 1.55,
+        "m": 143,
+        "n": 2192,
+        "Delta": 8,
+        "num_edges": 17469,
+        "theo_var": 17469.0,
+        "emp_var": 17343.2,
+        "sigma_over_m": 0.9243,
+        "phi_emp": 0.0118,
+        "phi_gauss_pred": 0.0
+      }
+    ],
+    "expander_rank_check": {
+      "n": 60,
+      "rank_mod3": 52,
+      "rank_mod5": 54,
+      "min_diag_shifted_rank_mod5": 59
+    }
+  },
+  "D9_4_sharp_f3sq_and_mu3": {
+    "f3sq_sharp_packing": "3k + 4",
+    "m3q_new_bound": "19q - 15 (< 20q - 19 for ALL q >= 5)",
+    "mod15_bound": 80,
+    "mod15_d3_old": 81,
+    "mu3_2_avoider_n7_zeros": 10,
+    "mu3_2_avoider_n7_disjoint_pairs": 0,
+    "mu3_2_bracket": [
+      8,
+      10
+    ]
+  }
+}
