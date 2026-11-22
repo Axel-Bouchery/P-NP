@@ -56,10 +56,10 @@ This paper presents four groups of results:
   \item \textbf{Linear upper bounds on $m = 2p$ (resolving Lee's conjecture for even semiprimes).} After identifying an $\Omega(p^2 / \log p)$ information-theoretic barrier for $\F_2$-first isotropic contractions, we invert the contraction order ($\F_p \to \F_2$) via a M{\"o}bius-inversion block-weight lemma and couple the polar bilinear forms $(B_2, B_p)$. For every odd prime $p \ge 3$, this yields
   \[
     4p - 2 \;\le\; \Ngen^{(2p)}(2, \OR) \;\le\; 8p - 7 \;=\; 4m - 7
-    \qquad \bigl(\text{ratio } < 2.00;\; \le 16 \text{ at } p=3\bigr),
+    \qquad \bigl(\text{ratio } < 2.00;\; \le 16 \text{ at } p=3,\; \le 32 \text{ at } p=5\bigr),
   \]
-  tightened to $\le 6p - 4$ (ratio $< 1.50$) whenever some variable satisfies $P_p(e_i) \equiv 0 \pmod p$, and to $\Ngen^{(2p)}(d, \OR) \le \bigl((3d+5)2^{d-2} - (d+1)\bigr)(p-1) + 1 = O_d(p)$ at every degree $d \ge 2$.
-  \item \textbf{General semiprimes $m = pq$ ($2 \le p < q$).} We prove exact optimality among all $2$-block constructions, $\Ntwobloc^{(pq)}(2, \OR) = 2(m - 1)$, establish linear $O(m)$ upper bounds for $k$-block polynomials, mixed degrees $(1,d)/(d,1)$, and bounded bilinear rank $\min(r_p, r_q) = O(1)$, and isolate the high-rank algebraic barrier maintaining $O(p^2 q) \le O(m^{3/2})$ in full generality.
+  tightened to $\le 7p - 4$ (ratio $< 1.75$) whenever $B_p(w_1, \cdot)$ is constant on $U_1$ via a Lucas even-multiple slice theorem, to $\le 6p - 4$ (ratio $< 1.50$) whenever some variable satisfies $P_p(e_i) \equiv 0 \pmod p$, and to $\Ngen^{(2p)}(d, \OR) \le \bigl((3d+5)2^{d-2} - (d+1)\bigr)(p-1) + 1 = O_d(p)$ at every degree $d \ge 2$.
+  \item \textbf{General semiprimes $m = pq$ ($2 \le p < q$).} We prove exact optimality among all $2$-block constructions, $\Ntwobloc^{(pq)}(2, \OR) = 2(m - 1)$, establish linear $O(m)$ upper bounds for $k$-block polynomials, mixed degrees $(1,d)/(d,1)$, and bounded bilinear rank $\min(r_p, r_q) = O(1)$, tighten $m = 3q$ unconditionally to $\Ngen^{(3q)}(2, \OR) \le 19q - 13$ via $(B_3, B_q)$ coupling and $\F_3^2$ weight-$\le 3$ packing, and characterize four exact barriers on $m = pq$ (showing in particular that no information-theoretic $m^{3/2}$ barrier exists, as $p^2 \ln q / \ln p < pq = m$ for all $3 \le p < q$).
   \item \textbf{Constructive non-symmetric separations.} We prove an exact multi-value avoidance capacity $A_p(d) = (p-2)d$ matching the Chevalley--Wilson bound (yielding $n = 88$ at $d = 8$ modulo $6$, vs.\ $80$ symmetric), an unbounded pre-asymptotic separation $\Ngen^{(m)}(p_{\min}-1) / \Nsym^{(m)}(p_{\min}-1) \ge p_{\min} - 1$ (verified at $4\times$: $34 \to 136$ modulo $35$), and a probabilistic collapse showing that symmetric polynomials suffer $100\%$ worst-case error as soon as $n \ge m$ ($d < p_{\min}$) while non-symmetric norm constructions maintain error $m^{-d}$ for all $n$.
   \item \textbf{Exact exhaustive classifications modulo $6$.} We prove $\Ngen^{(6)}(2, \THR_2) = 9$ (tripling the symmetric maximum $3$) with uniqueness up to $S_9 \times \{\pm 1\}$ ($V = \{u\} \sqcup \{v\} \sqcup K_2 \sqcup C_5$, $|\Aut| = 20$), classify all three homogeneous families of $\OR_n$ modulo $6$ up to exact extinction at $n=9$ and $n=10$, and close the mixed degree $\Ngen^{(6)}((1,2), \OR) = 7$.
 \end{enumerate}
@@ -433,6 +433,24 @@ Let $2 \le p < q$ be distinct primes and $m = pq$.
 \caption{General semiprimes $m = pq$ (Theorem~\ref{thm:d5}): exact $2$-block optimality $2(m-1)$, $O(m)$ regimes, and the high-rank adversary forcing $|x|_H \ge jq/2 + 1$.}
 \label{fig:d5}
 \end{figure}
+
+\begin{theorem}[3-Root $B_2$-Symmetry, Lucas Even-Multiple Slices, $m = 3q$ Coupling, and Semiprime Barriers --- Theorem D6]
+\label{thm:d6}
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Unconditional break of $8p - 7$ on $\bmod 10$ ($p = 5$):} Applying Theorem~\ref{thm:d4} simultaneously to $w_1$, a $B_p$-orthogonal root $w_2 \subseteq U_1$, and $w_1 + w_2$, and evaluating $B_2(w_1, w_2) \equiv |w_2|_H \equiv y_1 \pmod 2$ in two ways eliminates all configurations at $n = 33$, yielding
+  \[
+    18 \;\le\; \Ngen^{(10)}(2, \OR) \;\le\; 32,
+    \qquad 12 \;\le\; \Ngen^{(10)}(2, \THR_2) \;\le\; 33.
+  \]
+  \item \textbf{Lucas Even-Multiple Slice Theorem ($p \ge 5$):} For every prime $p \ge 5$ and every quadratic polynomial $P_p \in \F_p[x_1,\dots,x_m]$ with $P_p(\mathbf{0}) = 0$ on $m \ge 5p - 1$ variables, summing $G(x) = 1 - P_p(x)^{p-1}$ ($\deg G \le 2(p-1)$) over the even slices $|x|_H = 2p$ and $|x|_H = 4p$ gives $6 G(\mathbf{0}) + 3 S_p \equiv 0$ and $G(\mathbf{0}) + S_p \equiv 0 \pmod p$, hence $3 G(\mathbf{0}) \equiv 0 \pmod p$, contradiction. Thus $P_p$ vanishes on some Boolean vector of weight $2p$ or $4p$, yielding $\Ngen^{(2p)}(2, \OR) \le 7p - 4$ (ratio $< 1.75$) whenever $B_p(w_1, \cdot)$ is constant on $U_1$.
+  \item \textbf{Unconditional sharpening on $m = 3q$ ($q \ge 5$):} Using $(B_3, B_q)$ coupling, exact $\F_3^2$ weight-$\le 3$ zero-sum packing (every multiset of size $\ge 7$ in $\F_3^2$ contains a zero-sum of weight $\le 3$, hence $|U| \le 3k + 6$), and support recycling,
+  \[
+    \Ngen^{(3q)}(2, \OR) \;\le\; 19q - 13 \quad (\text{strictly } < 20q - 19 \text{ for all } q \ge 7),
+  \]
+  sharpened to $\le 17q - 11$ in Case~1 and $\le 15q - 6$ for Type~A on $\F_q$.
+  \item \textbf{Four exact barriers on $m = pq$ ($3 \le p < q$):} (i) the full-rank matching $P(x) = \sum_{i=1}^k x_{2i-1}x_{2i} \pmod{pq}$ yields $|\Phi(a,b)| = (1 - \Theta(1/m^2))^k$ (Fourier barrier $\Omega(m^2 \log m)$); (ii) $Q(\lambda) = \sum_{t=1}^r (\lambda_{2t-1} + \lambda_{2t} + \lambda_{2t-1}\lambda_{2t}) \pmod p$ represents $\OR_{2r}$ at full rank $2r = 2\lfloor(p-1)/3\rfloor = \Theta(p)$ ($\F_p$-rank barrier); (iii) $L_t(x) = \sum_{i \in B_t} x_i + z \equiv 0 \pmod q$ ($|B_t| = q-1$) on $N = j(q-1)+1$ variables has unique nonzero Boolean root $\mathbf{1}_N$ (100\% sharpness of Chevalley--Warning weight); yet (iv) the information-theoretic threshold for $2p - 1$ mutually $B_q$-orthogonal blocks satisfies $p^2 \ln q / \ln p < pq = m$ for all $3 \le p < q$, proving that no information-theoretic $m^{3/2}$ barrier exists.
+\end{enumerate}
+\end{theorem}
 
 %======================================================================
 \section{Exact Exhaustive Classifications Modulo $6$}

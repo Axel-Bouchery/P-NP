@@ -1,0 +1,193 @@
+{
+  "D6_1_mod10_3root": {
+    "mod10_n33_configs": 0,
+    "mod10_n32_configs": 12,
+    "bound_or": 32,
+    "bound_thr2": 33
+  },
+  "D6_2_lucas_even_slices": {
+    "primes_verified": 24,
+    "max_prime": 101,
+    "slice_M": "5p - 1",
+    "bound_const_Bp": "7p - 4"
+  },
+  "D6_3_m3q_coupling": {
+    "f3_2_max_no_wt3": 6,
+    "table_m3q": [
+      {
+        "q": 5,
+        "m": 15,
+        "lb_2block": 28,
+        "d3": 81,
+        "d6_uncond": 82,
+        "d6_case1": 74,
+        "d6_typeA": 69
+      },
+      {
+        "q": 7,
+        "m": 21,
+        "lb_2block": 40,
+        "d3": 121,
+        "d6_uncond": 120,
+        "d6_case1": 108,
+        "d6_typeA": 99
+      },
+      {
+        "q": 11,
+        "m": 33,
+        "lb_2block": 64,
+        "d3": 201,
+        "d6_uncond": 196,
+        "d6_case1": 176,
+        "d6_typeA": 159
+      },
+      {
+        "q": 13,
+        "m": 39,
+        "lb_2block": 76,
+        "d3": 241,
+        "d6_uncond": 234,
+        "d6_case1": 210,
+        "d6_typeA": 189
+      },
+      {
+        "q": 17,
+        "m": 51,
+        "lb_2block": 100,
+        "d3": 321,
+        "d6_uncond": 310,
+        "d6_case1": 278,
+        "d6_typeA": 249
+      },
+      {
+        "q": 19,
+        "m": 57,
+        "lb_2block": 112,
+        "d3": 361,
+        "d6_uncond": 348,
+        "d6_case1": 312,
+        "d6_typeA": 279
+      },
+      {
+        "q": 23,
+        "m": 69,
+        "lb_2block": 136,
+        "d3": 441,
+        "d6_uncond": 424,
+        "d6_case1": 380,
+        "d6_typeA": 339
+      },
+      {
+        "q": 29,
+        "m": 87,
+        "lb_2block": 172,
+        "d3": 561,
+        "d6_uncond": 538,
+        "d6_case1": 482,
+        "d6_typeA": 429
+      },
+      {
+        "q": 31,
+        "m": 93,
+        "lb_2block": 184,
+        "d3": 601,
+        "d6_uncond": 576,
+        "d6_case1": 516,
+        "d6_typeA": 459
+      },
+      {
+        "q": 53,
+        "m": 159,
+        "lb_2block": 316,
+        "d3": 1041,
+        "d6_uncond": 994,
+        "d6_case1": 890,
+        "d6_typeA": 789
+      },
+      {
+        "q": 101,
+        "m": 303,
+        "lb_2block": 604,
+        "d3": 2001,
+        "d6_uncond": 1906,
+        "d6_case1": 1706,
+        "d6_typeA": 1509
+      }
+    ]
+  },
+  "D6_4_semiprime_barriers": {
+    "fourier_barrier": [
+      {
+        "m": 15,
+        "k_m32": 58,
+        "abs_Phi": 0.384515
+      },
+      {
+        "m": 35,
+        "k_m32": 207,
+        "abs_Phi": 0.53493
+      },
+      {
+        "m": 77,
+        "k_m32": 675,
+        "abs_Phi": 0.656135
+      },
+      {
+        "m": 143,
+        "k_m32": 1710,
+        "abs_Phi": 0.733812
+      },
+      {
+        "m": 323,
+        "k_m32": 5805,
+        "abs_Phi": 0.813886
+      }
+    ],
+    "fp_rank_barrier": [
+      {
+        "p": 5,
+        "full_rank_2r": 2
+      },
+      {
+        "p": 7,
+        "full_rank_2r": 4
+      },
+      {
+        "p": 11,
+        "full_rank_2r": 6
+      },
+      {
+        "p": 13,
+        "full_rank_2r": 8
+      }
+    ],
+    "cw_sharp_adversary": [
+      {
+        "q": 3,
+        "j": 1,
+        "N": 3,
+        "unique_root_weight": 3
+      },
+      {
+        "q": 3,
+        "j": 2,
+        "N": 5,
+        "unique_root_weight": 5
+      },
+      {
+        "q": 5,
+        "j": 1,
+        "N": 5,
+        "unique_root_weight": 5
+      },
+      {
+        "q": 5,
+        "j": 2,
+        "N": 9,
+        "unique_root_weight": 9
+      }
+    ],
+    "info_pairs_verified": 300,
+    "max_info_ratio_over_m": 0.978941
+  }
+}

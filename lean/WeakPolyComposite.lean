@@ -3,3 +3,4 @@ import WeakPolyComposite.TheoremG3pp
 import WeakPolyComposite.TheoremG5
 import WeakPolyComposite.TheoremD4
 import WeakPolyComposite.TheoremD5
+import WeakPolyComposite.TheoremD6
