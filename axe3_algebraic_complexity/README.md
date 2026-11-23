@@ -2,6 +2,18 @@
 
 Ce dossier autonome rassemble **20 scripts** Python/Numba/PyTorch (`src/`), **15 fichiers de résultats JSON** (`results/`), **31 témoins algébriques `.npz`** (`witnesses/`), **8 figures** (`figures/`) et le rapport complet **[RAPPORT.md](RAPPORT.md)** dédiés à la complexité déterminantale de `perm₃` et au rang exact / de bord des tenseurs de multiplication matricielle `⟨m, p, n⟩`.
 
+## Arborescence du dossier
+
+```text
+axe3_algebraic_complexity/
+├── README.md          # Carte et commandes d'exécution de l'Axe III
+├── RAPPORT.md         # Monographie autonome (Expériences E16–E23)
+├── src/               # 20 scripts Python/Numba/PyTorch (Parseval-LM, Recuit L2/3, Graphe de Flips)
+├── results/           # 15 fichiers de résultats JSON
+├── witnesses/         # 31 témoins algébriques (.npz)
+└── figures/           # 8 figures (.png)
+```
+
 ## Carte du dossier
 
 | Script (`src/`) | Rôle | Données & Témoins `.npz` / Figures |

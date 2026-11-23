@@ -2,6 +2,18 @@
 
 Ce dossier autonome rassemble **17 scripts** Python/Numba (`src/`), **13 fichiers de résultats JSON** (`results/`), **1 témoin exact `.npz`** (`witnesses/atlas_n4.npz`), **13 figures** (`figures/`) et le rapport complet **[RAPPORT.md](RAPPORT.md)** dédiés aux circuits à seuil de profondeur 2 (`THR ∘ THR`) dans le paradigme algorithmique de Williams.
 
+## Arborescence du dossier
+
+```text
+axe1_thr2_williams/
+├── README.md          # Carte et commandes d'exécution de l'Axe I
+├── RAPPORT.md         # Monographie autonome (Expériences E1–E10)
+├── src/               # 17 scripts Python/Numba (solveurs v1–v5, Atlas n=4, MCSP, CAPP, Huang)
+├── results/           # 13 fichiers de résultats JSON
+├── witnesses/         # 1 témoin exact (.npz : atlas_n4.npz)
+└── figures/           # 13 figures (.png)
+```
+
 ## Carte du dossier
 
 | Script (`src/`) | Rôle | Données / Figures |

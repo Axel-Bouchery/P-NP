@@ -8,6 +8,27 @@ Ce dossier autonome rassemble **41 scripts** Python/Numba (40 scripts de recherc
 - **[paper/weak_poly_composite.tex](paper/weak_poly_composite.tex)** (avec [paper/references.bib](paper/references.bib)) — Manuscrit LaTeX autonome (anglais, format arXiv) synthétisant `G3++`, `G5`, `P1`, `D3–D10` et `U1–U4`.
 - **[lean/README.md](lean/README.md)** — Projet Lean 4 (`v4.16.0` + Mathlib 4) formalisant les briques clés (`G3++`, `G5`, `Lemme D3a`, `D4`, `D5`, `D6`, `D7`, `D8`, `D9`, `D10`, `U3`, `U4`), accompagné du vérificateur arithmétique exact exécutable [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py).
 
+## Arborescence du dossier
+
+```text
+axe2_mod_composite_polynomials/
+├── README.md                          # Carte et commandes d'exécution de l'Axe II
+├── RAPPORT.md                         # Monographie autonome (Expériences E11–E15o)
+├── src/                               # 40 scripts Python/Numba
+├── results/                           # 33 fichiers de résultats JSON
+├── figures/                           # 18 figures (.png)
+├── paper/                             # Manuscrit LaTeX autonome
+│   ├── weak_poly_composite.tex
+│   └── references.bib
+└── lean/                              # Formalisation Lean 4 & vérificateur exact
+    ├── README.md
+    ├── lean-toolchain
+    ├── lakefile.toml
+    ├── WeakPolyComposite.lean
+    ├── WeakPolyComposite/             # 11 modules .lean (Basic, G3pp, G5, D4–D10, U4)
+    └── verify_proof_steps_exact.py
+```
+
 ## Carte du dossier
 
 | Script (`src/`) | Rôle | Données / Figures |
