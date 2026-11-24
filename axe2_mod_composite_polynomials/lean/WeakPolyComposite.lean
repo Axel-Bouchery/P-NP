@@ -8,4 +8,6 @@ import WeakPolyComposite.TheoremD7
 import WeakPolyComposite.TheoremD8
 import WeakPolyComposite.TheoremD9
 import WeakPolyComposite.TheoremD10
+import WeakPolyComposite.TheoremD11
+import WeakPolyComposite.TheoremD12
 import WeakPolyComposite.TheoremU4

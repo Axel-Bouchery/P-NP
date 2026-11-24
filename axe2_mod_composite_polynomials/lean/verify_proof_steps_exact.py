@@ -178,10 +178,44 @@ def verify_u4():
     print("[PASS] Theorem U4: Anisotropic F_3/F_5 surjectivity, 3-block improvement 2(m-1) < 2m+q-3, Z_19 orbit count.")
 
 
+def verify_d11_and_d12():
+    # D11.1 core contraction & D11.2 rational exact identity check
+    assert 72 * 3 < 121 * 2
+    for num_a in range(4, 9):  # alpha/P = num_a / 16 in [1/4, 1/2]
+        a = num_a / 16.0
+        lhs = (a - 0.25) ** 2 - 0.25 * (-0.25) ** 2 - ((0.5 - a) / 2.0) * (-0.25)
+        rhs = (a - 5.0 / 16.0) ** 2 + 3.0 / 256.0
+        assert abs(lhs - rhs) < 1e-15 and rhs >= 3.0 / 256.0 - 1e-15
+
+    # D12 exact Lucas slice certificates (matching TheoremD12.lean!)
+    for k in range(4):
+        s_opt = (
+            (math.comb(28 - k, 1 - k) if 1 >= k else 0)
+            + math.comb(28 - k, 10 - k)
+            + math.comb(28 - k, 19 - k)
+            + math.comb(28 - k, 28 - k)
+        ) % 2
+        assert s_opt == (1 if k == 0 else 0)
+        assert (math.comb(28 - k, 8 - k) % 2) == (1 if k == 0 else 0)
+        assert (math.comb(28 - k, 16 - k) % 2) == (1 if k == 0 else 0)
+    for k in range(7):
+        s_i4 = (
+            2 * (math.comb(40 - k, 4 - k) if 4 >= k else 0)
+            + 2 * math.comb(40 - k, 8 - k)
+            + math.comb(40 - k, 36 - k)
+            + math.comb(40 - k, 40 - k)
+        ) % 3
+        assert s_i4 == (1 if k == 0 else 0)
+        s_i9 = sum(math.comb(63 - k, 9 * j - k) for j in range(1, 8)) % 2
+        assert s_i9 == (1 if k == 0 else 0)
+    print("[PASS] Theorems D11 & D12: phase-shifted cosine exact algebra, core contraction 72/121 < 2/3, and mod 6 d=3/d=6 Lucas slice certificates.")
+
+
 if __name__ == "__main__":
     verify_g3pp()
     verify_d3a_and_d4()
     verify_d5()
     verify_d9_and_d10()
     verify_u4()
+    verify_d11_and_d12()
     print("ALL EXACT PROOF-STEP VERIFICATIONS PASSED.")

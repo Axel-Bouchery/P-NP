@@ -103,6 +103,8 @@ Proposition~\ref{prop:d30} & $\F_2$-first contractions & $\Omega(p^2 / \log p)$ 
 Theorem~\ref{thm:d3} (D3) & $m = 2p$ / $m = pq$ & $\Ngen^{(2p)}(2) \le 9p-9$; $\Ngen^{(pq)}(2) \le O(m^{3/2})$ & Analytical (dual contraction) \\
 Theorem~\ref{thm:d4} (D4) & $m = 2p$, all $d \ge 2$ & $\Ngen^{(2p)}(2) \le 8p-7$ ($< 2\times$); Type A $\le 6p-4$ & Analytical (bilinear coupling) \\
 Theorem~\ref{thm:d5} (D5) & All semiprimes $m = pq$ & $\Ntwobloc^{(pq)}(2) = 2(m-1)$; $O(m)$ at bd.\ rank & Analytical \\
+Theorem~\ref{thm:d11} (D11) & Dense signed & CRT rank & $n \le 64m$ ($\Delta \lesssim m^{1/2}$); $\rho > \tilde{\Omega}(m^{-1/2})$ & Analytical (core + Band 2.5) \\
+Theorem~\ref{thm:d12} (D12) & BBR $k$-block & semi-sym. & $O_{k,m}(d^r)$; $\Ngen^{(6)}(3; P_3\text{ sym}) = 27$, $d=6: 62$ & Analytical (Lucas slices) \\
 Theorem~\ref{thm:u1} (U1) & $\THR_{n,2}$ mod $6$, $d=2$ & $\Ngen^{(6)}(2, \THR_2) = 9$ (unique, $|\Aut|=20$) & Analytical + exhaustive enum. \\
 Theorem~\ref{thm:u2} (U2) & $\OR_n$ mod $6$, $d=2$ & Exact extinction of $V_0, W_{0,1}, W_{1,1}$ & Exhaustive enum.\ ($51.4\text{M}$) \\
 \bottomrule
@@ -636,6 +638,64 @@ Let $3 \le p < q$ be odd primes, $m = pq$, and $P = (P_p, P_q)$ a quadratic weak
 \end{figure}
 
 %======================================================================
+\section{Dense Signed Graphs, CRT Rank Decoupling, and the BBR Margin-Saturation Barrier (Theorems D11--D12)}
+\label{sec:d11d12}
+%======================================================================
+
+We next advance the two deepest structural frontiers isolated by Theorems~\ref{thm:d9}--\ref{thm:d10} and the Barrington--Beigel--Rudich~\cite{BBR94} asymptotic conjecture: (i) pushing the unconditional signed-graph degree and density barriers from $\Delta \lesssim m^{1/4}$ / $\rho > \tilde{\Omega}(m^{-3/4})$ all the way to $\Delta \lesssim m^{1/2}$ / $\rho > \tilde{\Omega}(m^{-1/2})$ while characterizing Regime~(ii) modular aliasing via off-diagonal rank equivalence and unit-invariance; and (ii) proving the BBR conjecture $O(d^r)$ unconditionally for all $k$-block and semi-symmetric representations, together with exact semi-symmetric Lucas slice-sum closures at margin $\Delta = 0$.
+
+\begin{theorem}[Log-Quasi-Regular Core, Phase-Shifted Tilted Weyl Bound up to $\Delta \lesssim m^{1/2}/(\ln m)^{3/2}$, and CRT Rank Decoupling --- Theorem D11]
+\label{thm:d11}
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Log-Quasi-Regular Induced Core (Lemma D11.1):} Every graph $G = (V, E)$ on $n \ge 2m$ vertices ($m \ge 4$) with independence number $\alpha(G) < m$ contains an induced subgraph $H \subseteq G$ with $|V(H)| \ge n/2$, maximum degree $\Delta(H) \le 2K\,\bar{\Delta}(H)$ where $K := \lceil 4\log_2(2m) \rceil$, and density $\rho(H) \le 2\rho(G)$.
+  \item \textbf{Universal Phase-Shifted Cosine Bound (Lemma D11.2):} For every $\alpha \in [-\pi/2, \pi/2]$ and $\delta \in [-\pi/4, \pi/4]$,
+  \[
+    \mathrm{dist}(\alpha + \delta, \pi\Z)^2 \;\ge\; \frac{1}{4}\,\delta^2 + c(\alpha)\,\delta, \qquad
+    c(\alpha) := \begin{cases} 2\alpha & \text{if } |\alpha| \le \pi/4, \\ \operatorname{sgn}(\alpha)\frac{\pi/2 - |\alpha|}{2} & \text{if } |\alpha| \in (\pi/4, \pi/2], \end{cases}
+  \]
+  with exact outer minimum $\frac{3}{256}\pi^2 \approx 0.11566$ at $(|\alpha|, \delta) = (5\pi/16, -\pi/4)$. Hence $\mathbb{E}[\mathrm{dist}(\alpha + \delta, \pi\Z)^2] \ge \frac{1}{4}\mathrm{Var}(\delta)$ for every zero-mean random variable $\delta \in [-\pi/4, \pi/4]$.
+  \item \textbf{Unconditional Four-Band Bound ($\Delta \lesssim m^{1/2}/(\ln m)^{3/2}$) and Global Density $\rho(G) > c_1' / (m^{1/2}(\ln m)^{5/2})$:} Combining Lemma~D11.1, kept-variance Band~2 ($\sigma^2 \ge \frac{9}{512} n^*\bar{\Delta}$), a new global-Lipschitz \emph{Band~2.5} ($T_1 = \lfloor m/(4M)\rfloor < |t| \le T_2 = \lfloor m/(8\sqrt{4\Delta \ln(40 n^* m)})\rfloor$) applied to $F_t := \sum_{j\in J} \mathrm{dist}(2\pi t D_j/m, \pi\Z)^2$ via Lemma~D11.2, and upgraded Band~3 ($|t| > T_2$), every signed-graph representation $P(x) = \sum_{\{i,j\}\in E(G)} a_{ij} x_i x_j + \sum_i b_i x_i \pmod m$ ($a_{ij} \in \{-1, +1\}$, $1 \le |b_i| \le B$) satisfies $n \le 64m$ unconditionally (with no quasi-regularity hypothesis) whenever $\Delta \le c_1 m^{1/2}/(\ln m)^{3/2}$ and $B \le c_2 \min(\Delta, m^{1/2}/(\ln m)^{3/2})$ (or $B \le c_0 m^{1/4}/(\ln m)^{1/4}$ for sparse $\Delta$). Moreover, probabilistic subsampling on the core $H$ forces every signed-graph representation with $n \ge 256m$ to satisfy
+  \[
+    \rho(G) \;>\; \frac{c_1'}{m^{1/2}(\ln m)^{5/2}}
+  \]
+  (improving Theorem~\ref{thm:d10}(4)'s $m^{-3/4}(\ln m)^{-1/4}$ by a polynomial factor $m^{1/4}/(\ln m)^{9/4}$).
+  \item \textbf{Regime~(ii) Off-Diagonal Rank Equivalence, Pivot-Codimension Decoupling, and Unit-Invariance Reduction:} For every symmetric zero-diagonal matrix $A$ over any field $\F$, $\widetilde{r}(A) \le 3\max_{U \sqcup W} \mathrm{rank}(A[U, W])$. Consequently, for every quadratic $P = (P_p, P_q)$ modulo $m = pq$ with \emph{arbitrary} coefficients $a_{ij}, b_i \in \Z/pq\Z$, every frequency $t$ with $\gcd(t, m) = q$ satisfies $|S_{1/2}(t)|^2 \le 2^{-\widetilde{r}_p/6} + \exp(-\frac{\pi^2 \widetilde{r}_p}{12 p^2 \log_2(2n)})$ (and symmetrically for $\gcd(t, m) = p$ with $q, \widetilde{r}_q$). Finally, by unit-invariance ($P$ represents $\OR_n \iff uP$ represents $\OR_n$ for all $u \in (\Z/m\Z)^\times$), Theorem~\ref{thm:d11}(3) kills every arbitrary-coefficient quadratic having any unit multiple $uP \pmod m$ in the signed-graph regime, and reduces any residual unit-frequency aliasing $\gcd(t^*, m) = 1$ without loss of generality to $t = 1$.
+\end{enumerate}
+\end{theorem}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/theorem_d11_dense_signed_and_crt_rank.png}
+\caption{Theorem~\ref{thm:d11}: universal phase-shifted cosine margin (Lemma~D11.2), linear-in-$m$ degree exponent doubling ($\Delta \lesssim m^{1/4} \to m^{1/2}$), global edge density jump ($\Omega(m^{-3/4}) \to \Omega(m^{-1/2})$), and empirical dense $\Delta \approx \sqrt{m}$ benchmark.}
+\label{fig:d11}
+\end{figure}
+
+\begin{theorem}[BBR Margin-Saturation Barrier: Universal $k$-Block and Semi-Symmetric $O(d^r)$ Bounds and Exact Lucas Slice Closures --- Theorem D12]
+\label{thm:d12}
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Universal $k$-Block BBR Asymptotic Bound:} For every composite modulus $m = \prod_{i=1}^r p_i^{e_i}$, every degree $d \ge 1$, and every $k$-block weak representation of $\OR_n$ modulo $m$, setting $L_i := p_i^{\lfloor \log_{p_i} d\rfloor + e_i}$ and $L := \prod_{i=1}^r L_i \le m d^r$ yields $s_j \le L - 1$ for every block; if $e_r = 1$ and $L' := L / p_r$, then $\sum_{j=1}^k \lfloor s_j / L' \rfloor \le \lfloor d / p_r^{\lfloor \log_{p_r} d\rfloor}\rfloor (p_r - 1)$, proving $N_{k\text{-bloc}}^{(m)}(d, \OR) = \Theta_{k,m}(d^r)$. On $m = 6$ ($2^{a-1} \le d < 2^a$, $3^b \le d < 3^{b+1}$), every $k$-block representation satisfies the dual exact bounds $\sum_j \lfloor s_j / (2^a 3^b)\rfloor \le 2\lfloor d / 3^b\rfloor \in \{2, 4\}$ and $\sum_j \lfloor s_j / (2^{a-1} 3^{b+1})\rfloor \le 1$.
+  \item \textbf{Universal Semi-Symmetric BBR Bound:} Whenever $r - 1$ channels $P_1, \dots, P_{r-1}$ are symmetric and the remaining prime channel $P_r$ ($e_r = 1$) is \emph{completely arbitrary}, block contraction by $R := \prod_{i=1}^{r-1} p_i^{\lfloor \log_{p_i} d\rfloor + e_i}$ and Chevalley--Warning on $\F_{p_r}$ yield
+  \[
+    N_{\mathrm{gen}}^{(m)}\bigl(d, \OR;\; P_1,\dots,P_{r-1}\text{ sym},\; P_r\text{ arb}\bigr) \;\le\; \bigl(d(p_r - 1) + 1\bigr)\,R - 1 \;=\; O_m(d^r).
+  \]
+  \item \textbf{Exact Semi-Symmetric Lucas Slice-Sum Closures:} Testing $e_0 \in \mathrm{rowspan}_{\F_p}\bigl(\binom{n-k}{w-k} \bmod p\bigr)_{w \in Z(P_q),\, 0 \le k \le (p-1)d}$ across all canonical symmetric $P_q$ yields exact unconditional closures for \emph{completely arbitrary} non-symmetric $P_2$ (resp.\ $P_3$):
+  \[
+    \Ngen^{(6)}(3, \OR;\; P_3\text{ sym}) \;=\; 27 \;=\; \Nsym^{(6)}(3), \qquad
+    \Ngen^{(6)}(6, \OR;\; P_3\text{ sym}) \;=\; 62 \;=\; \Nsym^{(6)}(6),
+  \]
+  together with $53 \le \Ngen^{(6)}(5, \OR; P_3\text{ sym}) \le 54$, $\Ngen^{(6)}(8, \OR; P_3\text{ sym}) \le 93$, dual $\Ngen^{(6)}(3, \OR; P_2\text{ sym}) \le 39$ (improving Theorem~\ref{thm:d4}'s $50$ via the $4$-term identity $2\Sigma_4 + 2\Sigma_8 + \Sigma_{36} + \Sigma_{40} \equiv G(0) \pmod 3$), $\Ngen^{(10)}(2, \OR; P_5\text{ sym}) = 14$, $\Ngen^{(10)}(3; P_5\text{ sym}) \le 22 < 27$, $\Ngen^{(10)}(4; P_5\text{ sym}) \le 29 < 36$, and $\Ngen^{(15)}(2; P_5\text{ sym}) \le 25 < 28$. In particular, breaking $\Nsym^{(6)}(6) = 62$ (via M2) or $\Nsym^{(10)}(d)$ ($d=2,3,4$ via G2) \emph{provably requires} breaking symmetry on $P_3$ (resp.\ $P_5$).
+  \item \textbf{Resistance at $d = 3, n = 28$ ($\bmod 6$):} Warm-started exact $1/2/3$-opt exploration around the optimal symmetric cubic $P_3^*$ across $12$ critical $3$-block partitions ($101\,688$ exact perturbations, calibrated to defect~$0$ on $n = 27$, $(9,9,9)$) remains locked at $\mathrm{min\_defect} = 1$ everywhere ($0$ solutions).
+\end{enumerate}
+\end{theorem}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/theorem_d12_bbr_semisym_and_kblock.png}
+\caption{Theorem~\ref{thm:d12}: exact semi-symmetric Lucas slice-sum closures on $\bmod 6$ ($d = 3 \to 27$, $d = 6 \to 62$), $\F_2/\F_3$ asymmetry, necessity of breaking $P_5$-symmetry on $\bmod 10$ and $\bmod 15$, and sparsity of the $13/13$ certificates at $d = 3, n = 28$.}
+\label{fig:d12}
+\end{figure}
+
+%======================================================================
 \section{Exact Exhaustive Classifications Modulo $6$}
 \label{sec:exact6}
 %======================================================================
@@ -685,8 +745,9 @@ Additionally, canonical hereditary enumeration of quadratic $P_3$ without nonzer
 Three main open problems emerge directly from this work:
 \begin{enumerate}[leftmargin=*]
   \item \textbf{Tightening $8p - 7 \to 4p - 2$ on $m = 2p$:} Eliminating the factor-$2$ pairing loss on $U_1$ in Theorem~\ref{thm:d4} would close the gap between $4p - 2$ and $8p - 7$ (e.g., $18 \le \Ngen^{(10)}(2, \OR) \le 32$).
-  \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorem~\ref{thm:d10} resolves the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$) and unconditionally eliminates the sparse signed-graph expander barrier of Theorem~\ref{thm:d9}(3) for all $n \ge 64m$ via tilted Boolean Weyl differencing and probabilistic subsampling, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on two residual high-rank regimes: dense signed/bounded-integer graphs ($\rho(G) \gg m^{-3/4}$) and adversarial high-rank modular quadratics with large arbitrary coefficients $a_{ij} \in \Z/pq\Z$ exhibiting modular wrap-around in Band~3.
-  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
+  \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorems~\ref{thm:d10} and~\ref{thm:d11} resolve the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$), unconditionally push signed-graph linearity $n \le 64m$ up to $\Delta \lesssim m^{1/2}/(\ln m)^{3/2}$ and global density up to $\rho(G) > c_1'/(m^{1/2}(\ln m)^{5/2})$, kill prime-factor CRT frequencies via pivot-codimension decoupling, and reduce unit-frequency aliasing to $t = 1$, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on very dense signed graphs ($\rho(G) \gg m^{-1/2}$) and adversarial high-rank modular quadratics with large coefficients at $t = 1$.
+  \item \textbf{BBR asymptotics beyond semi-symmetric and $k$-block regimes:} Theorem~\ref{thm:d12} establishes $O(d^r)$ unconditionally for all $k$-block and semi-symmetric representations and closes $\Ngen^{(6)}(3; P_3\text{ sym}) = 27$ and $\Ngen^{(6)}(6; P_3\text{ sym}) = 62$ exactly; removing the symmetry hypothesis on \emph{both} channels simultaneously at $d \ge 3$ remains the central open problem of~\cite{BBR94}.
+  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:d11}, \ref{thm:d12}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
 \end{enumerate}
 
 All scripts, JSON logs, and figures are archived in the public repository.
