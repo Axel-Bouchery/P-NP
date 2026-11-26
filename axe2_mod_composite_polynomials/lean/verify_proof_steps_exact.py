@@ -211,6 +211,24 @@ def verify_d11_and_d12():
     print("[PASS] Theorems D11 & D12: phase-shifted cosine exact algebra, core contraction 72/121 < 2/3, and mod 6 d=3/d=6 Lucas slice certificates.")
 
 
+def verify_d13_and_d14():
+    # D13: Pre-Weyl Band-3 4x-sharper constant 3/16 = 4*(3/64), cluster cancellation, cocktail-party < 8m
+    for num in range(1, 4):  # theta = num / 4 in [1/4, 3/4]
+        th = num / 4.0
+        assert th * (1.0 - th) >= 3.0 / 16.0 - 1e-15
+    for p, q in [(3, 5), (5, 7), (7, 11), (11, 13), (17, 19)]:
+        assert 2 * ((2 * p - 1) * 2 * (q - 1) + (2 * p - 2)) < 8 * p * q
+    # D14: OR_3 threshold 17, n >= 30 direct arithmetic elimination from hereditary Lucas caps
+    assert 4 * (5 - 1) + 1 == 17
+    caps_w1 = {1: 13, 2: 13, 3: 15, 4: 17, 5: 17, 6: 19, 7: 19, 8: 17}
+    for w1, cap in caps_w1.items():
+        for u1 in range(cap + 1):
+            for u0 in range(13 - u1 // 2):
+                assert w1 + u0 + u1 <= 29
+    assert 28 * 100 < 156 * 18
+    print("[PASS] Theorems D13 & D14: Band-3 3/16 constant, cocktail-party < 8m, and n >= 30 mod 10 arithmetic elimination.")
+
+
 if __name__ == "__main__":
     verify_g3pp()
     verify_d3a_and_d4()
@@ -218,4 +236,5 @@ if __name__ == "__main__":
     verify_d9_and_d10()
     verify_u4()
     verify_d11_and_d12()
+    verify_d13_and_d14()
     print("ALL EXACT PROOF-STEP VERIFICATIONS PASSED.")

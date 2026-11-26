@@ -1,0 +1,194 @@
+{
+  "Referee_Audit_Band3_PreWeyl_4x_Sharper": {
+    "all_passed": true,
+    "max_mod_over_bound": 0.999975,
+    "samples": [
+      {
+        "m": 15,
+        "t": 1,
+        "max_exact_mod": 0.9969244,
+        "bound_exp_neg_3_16": 0.99916701,
+        "safety_margin": 0.00224262
+      },
+      {
+        "m": 15,
+        "t": 2,
+        "max_exact_mod": 0.98780206,
+        "bound_exp_neg_3_16": 0.99667222,
+        "safety_margin": 0.00887016
+      },
+      {
+        "m": 15,
+        "t": 5,
+        "max_exact_mod": 0.92911199,
+        "bound_exp_neg_3_16": 0.97938218,
+        "safety_margin": 0.05027019
+      },
+      {
+        "m": 15,
+        "t": 7,
+        "max_exact_mod": 0.88007828,
+        "bound_exp_neg_3_16": 0.95998911,
+        "safety_margin": 0.07991083
+      },
+      {
+        "m": 35,
+        "t": 1,
+        "max_exact_mod": 0.9994315,
+        "bound_exp_neg_3_16": 0.99984695,
+        "safety_margin": 0.00041545
+      },
+      {
+        "m": 35,
+        "t": 5,
+        "max_exact_mod": 0.98602303,
+        "bound_exp_neg_3_16": 0.99618078,
+        "safety_margin": 0.01015775
+      },
+      {
+        "m": 35,
+        "t": 11,
+        "max_exact_mod": 0.93627122,
+        "bound_exp_neg_3_16": 0.98165004,
+        "safety_margin": 0.04537882
+      },
+      {
+        "m": 35,
+        "t": 17,
+        "max_exact_mod": 0.87607669,
+        "bound_exp_neg_3_16": 0.95672939,
+        "safety_margin": 0.0806527
+      },
+      {
+        "m": 143,
+        "t": 1,
+        "max_exact_mod": 0.99996571,
+        "bound_exp_neg_3_16": 0.99999083,
+        "safety_margin": 2.512e-05
+      },
+      {
+        "m": 143,
+        "t": 23,
+        "max_exact_mod": 0.98234829,
+        "bound_exp_neg_3_16": 0.99516126,
+        "safety_margin": 0.01281298
+      },
+      {
+        "m": 143,
+        "t": 47,
+        "max_exact_mod": 0.93088317,
+        "bound_exp_neg_3_16": 0.97994909,
+        "safety_margin": 0.04906592
+      },
+      {
+        "m": 143,
+        "t": 71,
+        "max_exact_mod": 0.87506723,
+        "bound_exp_neg_3_16": 0.95483025,
+        "safety_margin": 0.07976303
+      }
+    ]
+  },
+  "Theorem_D13_1_Valiant_Rigidity": [
+    {
+      "p": 3,
+      "q": 5,
+      "m": 15,
+      "Nq_r1": 44,
+      "cocktail_party_linear_ub": 88,
+      "ratio_cocktail_over_m": 5.867,
+      "rigidity_lb_at_10m_r1": 361.4
+    },
+    {
+      "p": 5,
+      "q": 7,
+      "m": 35,
+      "Nq_r1": 116,
+      "cocktail_party_linear_ub": 232,
+      "ratio_cocktail_over_m": 6.629,
+      "rigidity_lb_at_10m_r1": 706.0
+    },
+    {
+      "p": 7,
+      "q": 11,
+      "m": 77,
+      "Nq_r1": 272,
+      "cocktail_party_linear_ub": 544,
+      "ratio_cocktail_over_m": 7.065,
+      "rigidity_lb_at_10m_r1": 1409.8
+    },
+    {
+      "p": 11,
+      "q": 13,
+      "m": 143,
+      "Nq_r1": 524,
+      "cocktail_party_linear_ub": 1048,
+      "ratio_cocktail_over_m": 7.329,
+      "rigidity_lb_at_10m_r1": 2472.5
+    },
+    {
+      "p": 17,
+      "q": 19,
+      "m": 323,
+      "Nq_r1": 1220,
+      "cocktail_party_linear_ub": 2440,
+      "ratio_cocktail_over_m": 7.554,
+      "rigidity_lb_at_10m_r1": 5321.6
+    }
+  ],
+  "Theorem_D13_2_Pair_Folding_Dense_Expanders": [
+    {
+      "m": 35,
+      "n": 140,
+      "orig_max_deg": 139,
+      "orig_density": 1.0,
+      "folded_dim_h0": 39,
+      "folded_max_deg": 9,
+      "deg_reduction_factor": 15.4,
+      "sum_abs_bQ": 104,
+      "pr0_folded_subcube": 0.00184,
+      "baseline_1_over_m": 0.02857,
+      "exact_identity_verified": true
+    },
+    {
+      "m": 143,
+      "n": 572,
+      "orig_max_deg": 571,
+      "orig_density": 1.0,
+      "folded_dim_h0": 158,
+      "folded_max_deg": 11,
+      "deg_reduction_factor": 51.9,
+      "sum_abs_bQ": 442,
+      "pr0_folded_subcube": 0.0,
+      "baseline_1_over_m": 0.00699,
+      "exact_identity_verified": true
+    },
+    {
+      "m": 323,
+      "n": 1292,
+      "orig_max_deg": 1291,
+      "orig_density": 1.0,
+      "folded_dim_h0": 360,
+      "folded_max_deg": 11,
+      "deg_reduction_factor": 117.4,
+      "sum_abs_bQ": 1058,
+      "pr0_folded_subcube": 0.0,
+      "baseline_1_over_m": 0.0031,
+      "exact_identity_verified": true
+    }
+  ],
+  "Theorem_D13_3_OR4_F3_Exhaustive_Census": {
+    "total_space_3_pow_10": 59049,
+    "valid_or4_over_F3": 114,
+    "bilinear_rank_hist": {
+      "4": 90,
+      "3": 24
+    },
+    "boolean_rank_rtilde_hist": {
+      "2": 90,
+      "3": 24
+    },
+    "pure_norm_rank2_count": 90
+  },
+  "runtime_s": 5.83
+}

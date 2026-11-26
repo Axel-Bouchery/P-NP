@@ -1,0 +1,162 @@
+{
+  "Theorem_D14_1_Hereditary_Lucas_Staircase": {
+    "0": 24,
+    "1": 23,
+    "3": 22,
+    "5": 19,
+    "7": 17,
+    "9": 15,
+    "11": 13
+  },
+  "Theorem_D14_2_Unconditional_Mod10_Bound": {
+    "upper_bound_OR_mod10": 28,
+    "lower_bound_OR_mod10": 18,
+    "ratio": 1.5556,
+    "upper_bound_THR2_mod10": 29,
+    "surviving_w1_u0_u1_after_staircase": {
+      "32": [],
+      "31": [],
+      "30": [],
+      "29": [
+        [
+          7,
+          3,
+          19
+        ],
+        [
+          8,
+          4,
+          17
+        ]
+      ],
+      "28": [
+        [
+          6,
+          3,
+          19
+        ],
+        [
+          7,
+          2,
+          19
+        ],
+        [
+          7,
+          3,
+          18
+        ],
+        [
+          7,
+          4,
+          17
+        ],
+        [
+          8,
+          3,
+          17
+        ],
+        [
+          8,
+          4,
+          16
+        ],
+        [
+          8,
+          5,
+          15
+        ]
+      ]
+    },
+    "joint_u0_u1_n29_closure": [
+      {
+        "tuple_w1_u0_u1": [
+          7,
+          3,
+          19
+        ],
+        "u1_hereditary_survivors": 31,
+        "u0_partitions": 35,
+        "total_joint_pairs_tested": 1085,
+        "joint_survivors": 0
+      },
+      {
+        "tuple_w1_u0_u1": [
+          8,
+          4,
+          17
+        ],
+        "u1_hereditary_survivors": 102,
+        "u0_partitions": 70,
+        "total_joint_pairs_tested": 7140,
+        "joint_survivors": 0
+      }
+    ]
+  },
+  "Theorem_D14_3_4Block_Cubic_CEGAR_mod6": {
+    "calibration_n27_conflicts": 0,
+    "total_exact_checks": 74028,
+    "partitions_n28": [
+      {
+        "partition": [
+          7,
+          7,
+          7,
+          7
+        ],
+        "checks_exact_2pow34": 12338,
+        "min_conflicts": 1
+      },
+      {
+        "partition": [
+          9,
+          9,
+          9,
+          1
+        ],
+        "checks_exact_2pow34": 12338,
+        "min_conflicts": 1
+      },
+      {
+        "partition": [
+          9,
+          9,
+          5,
+          5
+        ],
+        "checks_exact_2pow34": 12338,
+        "min_conflicts": 1
+      },
+      {
+        "partition": [
+          8,
+          8,
+          6,
+          6
+        ],
+        "checks_exact_2pow34": 12338,
+        "min_conflicts": 1
+      },
+      {
+        "partition": [
+          10,
+          8,
+          5,
+          5
+        ],
+        "checks_exact_2pow34": 12338,
+        "min_conflicts": 1
+      },
+      {
+        "partition": [
+          9,
+          7,
+          7,
+          5
+        ],
+        "checks_exact_2pow34": 12338,
+        "min_conflicts": 1
+      }
+    ]
+  },
+  "runtime_s": 39.97
+}
