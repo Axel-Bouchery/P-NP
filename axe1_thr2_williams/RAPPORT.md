@@ -23,9 +23,9 @@ En parallèle, la classification exhaustive exacte des **$65\,536$ fonctions boo
    - [1.1 Le paradigme de Williams et les méta-barrières des circuits](#11-le-paradigme-de-williams-et-les-méta-barrières-des-circuits)
    - [1.2 Définition formelle des circuits à seuil de profondeur 2 (THR ∘ THR)](#12-définition-formelle-des-circuits-à-seuil-de-profondeur-2-thr--thr)
 2. [Méthodologie, architecture et protocoles de validation](#2-méthodologie-architecture-et-protocoles-de-validation)
-3. [Bilan synthétique : aboutissements et murs structurels](#3-bilan-synthétique--aboutissements-et-murs-structurels)
-   - [3.1 Ce à quoi les expériences ont abouti](#31-ce-à-quoi-les-expériences-ont-abouti)
-   - [3.2 Ce à quoi les expériences n'ont pas abouti : les deux murs structurels](#32-ce-à-quoi-les-expériences-nont-pas-abouti--les-deux-murs-structurels)
+3. [Bilan synthétique : résultats établis et obstructions structurelles](#3-bilan-synthétique--résultats-établis-et-obstructions-structurelles)
+   - [3.1 Synthèse des résultats établis](#31-synthèse-des-résultats-établis)
+   - [3.2 Limites et obstructions structurelles](#32-limites-et-obstructions-structurelles)
 4. [Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E1 à E10)](#4-présentation-détaillée-des-expériences-buts-résultats-et-graphiques-expériences-e1-à-e10)
 5. [Conclusion générale et perspectives de recherche](#5-conclusion-générale-et-perspectives-de-recherche)
 6. [Mentions, reproductibilité et bibliographie](#6-mentions-reproductibilité-et-bibliographie)
@@ -67,21 +67,21 @@ flowchart TD
 
 Les **10 expériences (E1 à E10, 13 figures)** s'enchaînent comme une progression raisonnée : on commence par implémenter et calibrer le socle polynomial classique ($\mathrm{SYM} \circ \mathrm{AND}$, $\mathrm{MQ}$ sur $\mathbb{F}_2$), puis on construit de manière itérative cinq générations de solveurs exacts $\mathrm{THR} \circ \mathrm{THR}\text{-SAT}$ (v1 à v5) en répondant à chaque fois à l'échec précis de la génération précédente. Une fois atteintes les limites de l'élagage, l'étude change d'angle à trois reprises : classification exhaustive de l'espace booléen à $n = 4$ variables, factorisation bilinéaire exacte pour `#SAT`, puis approximation déterministe (`CAPP` par CUR/Nyström) et analyse spectrale sur l'hypercube $Q_n$.
 
-Chaque solveur booléen (plus de $1\,100$ instances $\mathrm{THR} \circ \mathrm{THR}$, $60$ instances $\mathrm{MQ}$) est validé exactement contre la force brute, sans aucune approximation, en distinguant systématiquement les expériences de calibration (socle de référence) des méthodes et diagnostics originaux.
+Chaque solveur booléen (plus de $1\,100$ instances $\mathrm{THR} \circ \mathrm{THR}$, $60$ instances $\mathrm{MQ}$) est validé exactement contre la force brute, sans aucune approximation, en distinguant les étapes de calibration sur des algorithmes de référence des méthodes et analyses développées dans cette étude.
 
 ---
 
-## 3. Bilan synthétique : aboutissements et murs structurels
+## 3. Bilan synthétique : résultats établis et obstructions structurelles
 
-### 3.1 Ce à quoi les expériences ont abouti
+### 3.1 Synthèse des résultats établis
 
-| Résultat obtenu | Statut scientifique | Valeur clé / Preuve |
+| Résultat | Nature | Énoncé clé / Vérification |
 | :--- | :--- | :--- |
-| **Théorèmes 1 et 2** (réseau PGCD + Gray glissant) et Solveur v5 | **Méthode originale** | Élimination des pics fantômes ($\alpha$ : $0{,}94 \to 0{,}001$) ; **$n = 28$ (6 instances, $1{,}61\text{ Md}$ entrées) en $0{,}502\text{ s}$** (structure bilinéaire, sans modifier le pire cas asymptotique) |
-| **Atlas exact $n = 4$** ($65\,536$ fonctions) et caméléons de Chow | **Diagnostic original** | Unicité de $\mathrm{PARITY}_4$ à $s^* = 4$ ; certification $L_1 = \mathbf{0{,}0\,\%}$ pour $s^* \ge 3$ (fonctions *Bent* à $s^* = 2$) |
-| **Théorème 3** (rang $K \le 2 R \ell s$) et **CAPP déterministe CUR** | **Méthode / diagnostic original** | `#SAT` accéléré $\times 3{,}51$–$6{,}60$ ; CAPP déterministe $n = 26$ en **$0{,}311\text{ s}$** (erreur **empirique** $0{,}04\,\%$ sur instances testées, sans garantie en pire cas) |
+| **Théorèmes 1 et 2** (réseau PGCD + Gray glissant) et Solveur v5 | **Théorèmes et algorithme exact** | Élimination des pics fantômes ($\alpha$ : $0{,}94 \to 0{,}001$) ; **$n = 28$ (6 instances, $1{,}61\text{ Md}$ entrées) en $0{,}502\text{ s}$** (structure bilinéaire, sans modifier le pire cas asymptotique) |
+| **Atlas exact $n = 4$** ($65\,536$ fonctions) et caméléons de Chow | **Classification exhaustive** | Unicité de $\mathrm{PARITY}_4$ à $s^* = 4$ ; certification $L_1 = \mathbf{0{,}0\,\%}$ pour $s^* \ge 3$ (fonctions *Bent* à $s^* = 2$) |
+| **Théorème 3** (rang $K \le 2 R \ell s$) et **CAPP déterministe CUR** | **Théorème et algorithme déterministe** | `#SAT` accéléré $\times 3{,}51$–$6{,}60$ ; CAPP déterministe $n = 26$ en **$0{,}311\text{ s}$** (erreur **empirique** $0{,}04\,\%$ sur instances testées, sans garantie en pire cas) |
 
-### 3.2 Ce à quoi les expériences n'ont pas abouti : les deux murs structurels
+### 3.2 Limites et obstructions structurelles
 
 Aucune séparation $\mathsf{NEXP} \not\subseteq \mathrm{THR} \circ \mathrm{THR}$ n'est obtenue : les accélérations pratiques jusqu'à $n = 28$ exploitent des structures spécifiques sans briser le pire cas asymptotique pour des circuits denses génériques de taille polynomiale $s = n^c$. Deux murs structurels précisément mesurés expliquent cette frontière :
 
@@ -112,7 +112,7 @@ La transformée zêta de l'Expérience E1 accélère le facteur $s$, mais laisse
 
 #### Expérience E3 — Solveur exact par intervalles, génome de branchement et co-évolution adversariale
 
-Contrairement à $\mathrm{SYM} \circ \mathrm{AND}$ ou $\mathrm{MQ}$ sur $\mathbb{F}_2$, les portes à seuil $\mathrm{THR}$ ne possèdent pas de représentation polynomiale exacte de bas degré sur un corps fini. Pour attaquer $\mathrm{THR} \circ \mathrm{THR}\text{-SAT}$ sans renoncer à l'exactitude, nous changeons donc d'approche et construisons dans cette première contribution originale ([thr2_lab.py](src/thr2_lab.py), [run_lab.py](src/run_lab.py), banc unitaire [test_thr2.py](src/test_thr2.py)) un solveur *Branch-and-Bound* compilé en Numba qui maintient un encadrement exact $[\mathrm{lo}_k, \mathrm{hi}_k]$ pour chaque porte cachée. L'enjeu est de mesurer l'exposant empirique $\alpha$ (coût $\propto 2^{\alpha n}$) lorsque la variable de branchement est sélectionnée par un score linéaire combinant $7$ descripteurs structurels $(f_1, \dots, f_7)$, pondérés par un vecteur $\theta \in \mathbb{R}^7$ optimisé par stratégie évolutionnaire $(\mu + \lambda)$ sur des instances **UNSAT de justesse** ($T = \max_x \sum_k v_k g_k(x) + 1$).
+Contrairement à $\mathrm{SYM} \circ \mathrm{AND}$ ou $\mathrm{MQ}$ sur $\mathbb{F}_2$, les portes à seuil $\mathrm{THR}$ ne possèdent pas de représentation polynomiale exacte de bas degré sur un corps fini. Pour attaquer $\mathrm{THR} \circ \mathrm{THR}\text{-SAT}$ sans renoncer à l'exactitude, nous changeons donc d'approche et construisons ([thr2_lab.py](src/thr2_lab.py), [run_lab.py](src/run_lab.py), banc unitaire [test_thr2.py](src/test_thr2.py)) un solveur *Branch-and-Bound* compilé en Numba qui maintient un encadrement exact $[\mathrm{lo}_k, \mathrm{hi}_k]$ pour chaque porte cachée. L'enjeu est de mesurer l'exposant empirique $\alpha$ (coût $\propto 2^{\alpha n}$) lorsque la variable de branchement est sélectionnée par un score linéaire combinant $7$ descripteurs structurels $(f_1, \dots, f_7)$, pondérés par un vecteur $\theta \in \mathbb{R}^7$ optimisé par stratégie évolutionnaire $(\mu + \lambda)$ sur des instances **UNSAT de justesse** ($T = \max_x \sum_k v_k g_k(x) + 1$).
 
 Sur des instances aléatoires ($n = 12..26$), le génome évolué $\theta^{(1)} = [-1{,}04;\; -0{,}06;\; +0{,}09;\; +1{,}43;\; -0{,}57;\; +0{,}84;\; +0{,}32]$ (privilégiant $f_4$ et $f_6$) abaisse l'exposant à **$\alpha = 0{,}620$** pour $s = n$ (contre $0{,}728$ à ordre fixe et $1{,}000$ en force brute), avant de remonter à **$\alpha = 0{,}757$** lorsque la densité double à $s = 2n$. Soumis à une co-évolution adversariale ($n = 10..16$, $250$ mutations locales par instance), l'adversaire multiplie par un facteur $\sim 8$ le nombre de nœuds tout en laissant l'exposant se stabiliser autour de $\alpha \approx 0{,}578$.
 

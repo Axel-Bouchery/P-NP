@@ -21,7 +21,7 @@ Ce dossier contient un projet Lean 4 (`v4.16.0` + Mathlib 4) formalisant les bri
 
 ## Statut de compilation
 
-> **Note de transparence** : `elan` / `lean` n'étant pas installé sur la machine de développement au moment de la rédaction, ces fichiers Lean 4 sont structurés et prêts pour une compilation locale via :
+> **Compilation** : `elan` / `lean` n'étant pas installé dans l'environnement d'exécution initial, ces fichiers Lean 4 sont prêts pour une compilation locale via :
 > ```bash
 > cd lean
 > lake exe cache get

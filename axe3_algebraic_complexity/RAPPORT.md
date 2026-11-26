@@ -23,9 +23,9 @@ Pour s'affranchir par construction de ces vallées de bord, la fin de l'étude b
    - [1.1 Complexité déterminantale, GCT et rang tensoriel](#11-complexité-déterminantale-gct-et-rang-tensoriel)
    - [1.2 Définitions formelles : complexité déterminantale, rang tensoriel et Graphe de Flips](#12-définitions-formelles--complexité-déterminantale-rang-tensoriel-et-graphe-de-flips)
 2. [Méthodologie, architecture et protocoles de validation](#2-méthodologie-architecture-et-protocoles-de-validation)
-3. [Bilan synthétique : aboutissements et murs structurels](#3-bilan-synthétique--aboutissements-et-murs-structurels)
-   - [3.1 Ce à quoi les expériences ont abouti](#31-ce-à-quoi-les-expériences-ont-abouti)
-   - [3.2 Ce à quoi les expériences n'ont pas abouti : les deux murs structurels](#32-ce-à-quoi-les-expériences-nont-pas-abouti--les-deux-murs-structurels)
+3. [Bilan synthétique : résultats établis et obstructions structurelles](#3-bilan-synthétique--résultats-établis-et-obstructions-structurelles)
+   - [3.1 Synthèse des résultats établis](#31-synthèse-des-résultats-établis)
+   - [3.2 Limites et obstructions structurelles](#32-limites-et-obstructions-structurelles)
 4. [Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E16 à E23)](#4-présentation-détaillée-des-expériences-buts-résultats-et-graphiques-expériences-e16-à-e23)
 5. [Conclusion générale et perspectives de recherche](#5-conclusion-générale-et-perspectives-de-recherche)
 6. [Mentions, reproductibilité et bibliographie](#6-mentions-reproductibilité-et-bibliographie)
@@ -64,17 +64,17 @@ Les **8 expériences (E16 à E23, 8 figures)** appliquent deux règles de valida
 
 ---
 
-## 3. Bilan synthétique : aboutissements et murs structurels
+## 3. Bilan synthétique : résultats établis et obstructions structurelles
 
-### 3.1 Ce à quoi les expériences ont abouti
+### 3.1 Synthèse des résultats établis
 
-| Résultat obtenu | Statut scientifique | Valeur clé / Preuve |
+| Résultat | Nature | Énoncé clé / Vérification |
 | :--- | :--- | :--- |
-| **Parseval-LM à jauge SVD** et diagnostic du piège $\mathrm{SL}_7$ sur $\mathrm{perm}_3$ | **Méthode / diagnostic original** | Redécouverte exacte $k = 7$ à **$8{,}01 \times 10^{-13}$** (33 iters) ; mur numérique $k = 6$ ($0/64$ essais, limite du solveur et non preuve d'inexistence) |
-| **Loi d'échelle empirique $\alpha = p / (2p + 2)$** sous recuit $L_{2/3}$ + barrière $L_\infty$ | **Méthode / diagnostic original** | Comportement numérique du solveur continu ($\alpha = 1{,}00 / 0{,}375 / 0{,}300$) ; verrouillage de paroi observé sur Smirnov $R = 29$ |
-| **Réduction exacte de tranches mod $p$ et Graphe de Flips `uint64` $\mathbb{F}_2$** | **Méthode originale** | Strassen sur $\mathbb{F}_3$ en **$385$ flips** ; Laderman $R = 23$ sur $\mathbb{F}_3$ en **$7{,}8\text{ s}$** ($2{,}6\text{ M flips/s}$) et sur $\mathbb{F}_2$ en **$0{,}28\text{ s}$** (**$16{,}7\text{ M flips/s}$**, état de l'art reproduit sur **16 formats** jusqu'à $\langle 4, 4, 8 \rangle = 94$) |
+| **Parseval-LM à jauge SVD** et diagnostic du piège $\mathrm{SL}_7$ sur $\mathrm{perm}_3$ | **Solveur numérique et diagnostic** | Redécouverte exacte $k = 7$ à **$8{,}01 \times 10^{-13}$** (33 iters) ; mur numérique $k = 6$ ($0/64$ essais, limite du solveur et non preuve d'inexistence) |
+| **Loi d'échelle empirique $\alpha = p / (2p + 2)$** sous recuit $L_{2/3}$ + barrière $L_\infty$ | **Analyse numérique** | Comportement numérique du solveur continu ($\alpha = 1{,}00 / 0{,}375 / 0{,}300$) ; verrouillage de paroi observé sur Smirnov $R = 29$ |
+| **Réduction exacte de tranches mod $p$ et Graphe de Flips `uint64` $\mathbb{F}_2$** | **Algorithme combinatoire exact** | Strassen sur $\mathbb{F}_3$ en **$385$ flips** ; Laderman $R = 23$ sur $\mathbb{F}_3$ en **$7{,}8\text{ s}$** ($2{,}6\text{ M flips/s}$) et sur $\mathbb{F}_2$ en **$0{,}28\text{ s}$** (**$16{,}7\text{ M flips/s}$**, état de l'art reproduit sur **16 formats** jusqu'à $\langle 4, 4, 8 \rangle = 94$) |
 
-### 3.2 Ce à quoi les expériences n'ont pas abouti : les deux murs structurels
+### 3.2 Limites et obstructions structurelles
 
 Aucune représentation de bord de $\mathrm{perm}_3$ à $k = 6$ ($\overline{\mathrm{dc}}(\mathrm{perm}_3) \stackrel{?}{=} 6$) ni amélioration des bornes de rang exact en multiplication matricielle (en particulier $R(\langle 3, 3, 3 \rangle) < 23$ sur $\mathbb{R}/\mathbb{C}$) n'a été obtenue. Deux murs structurels complémentaires expliquent cette frontière :
 
@@ -193,7 +193,7 @@ Deux prolongements directs découlent de ce bilan. Le premier consiste à concev
 ## 6. Mentions, reproductibilité et bibliographie
 
 ### 6.1 Mentions scientifiques et reproductibilité
-Ce travail n'améliore aucun record mondial de rang exact en multiplication matricielle ; il fournit des solveurs calibrés, des témoins exacts vérifiés bit-à-bit et une caractérisation quantitative des obstructions numériques et combinatoires. L'ensemble des **20 scripts** (`src/`), des **15 fichiers JSON** (`results/`), des **31 témoins algébriques `.npz`** (`witnesses/`) et des **8 figures** (`figures/`) est archivé dans ce dossier et indexé dans [README.md](README.md). Tous les calculs des Phases 5–7 ont été exécutés en précision exacte (`int64` / `uint64` / arithmétique modulaire entière), et les solveurs continus des Phases 1–4 en double précision (`float64` / `complex128`).
+Cette étude fournit des solveurs calibrés, des témoins exacts vérifiés bit-à-bit sur 16 formats (reproduisant les meilleures bornes connues sur $\mathbb{F}_2$ jusqu'à $\langle 4, 4, 8 \rangle = 94$) et une caractérisation quantitative des obstructions numériques et combinatoires. L'ensemble des **20 scripts** (`src/`), des **15 fichiers JSON** (`results/`), des **31 témoins algébriques `.npz`** (`witnesses/`) et des **8 figures** (`figures/`) est archivé dans ce dossier et indexé dans [README.md](README.md). Tous les calculs des Phases 5–7 ont été exécutés en précision exacte (`int64` / `uint64` / arithmétique modulaire entière), et les solveurs continus des Phases 1–4 en double précision (`float64` / `complex128`).
 
 ### 6.2 Bibliographie
 
