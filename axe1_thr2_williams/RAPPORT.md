@@ -9,7 +9,7 @@
 
 ## Résumé (*Abstract*)
 
-Ce rapport présente les résultats d'une campagne de recherche théorique et computationnelle dédiée à l'algorithmique exponentielle et aux bornes inférieures pour les circuits à seuil de profondeur 2 (**THR ∘ THR**) dans le paradigme de Williams, autour de la question **P ≟ NP**.
+Ce rapport présente les résultats d'une campagne de recherche théorique et computationnelle dédiée à l'algorithmique exponentielle (`THR ∘ THR-SAT`, `#SAT`, `CAPP`) et à l'analyse des barrières structurelles pour les circuits à seuil de profondeur 2 (**THR ∘ THR**) dans le programme de Williams.
 
 La méthodologie associe démonstrations formelles, conception de solveurs exacts compilés, calibration préalable sur des algorithmes établis (SYM ∘ AND, MQ sur 𝔽₂) et analyse quantitative des barrières de complexité rencontrées :
 
@@ -22,7 +22,7 @@ La méthodologie associe démonstrations formelles, conception de solveurs exact
 ## Table des matières
 
 1. [Problème d'origine, contexte théorique et définitions formelles](#1-problème-dorigine-contexte-théorique-et-définitions-formelles)
-   - [1.1 La question fondatrice P ≟ NP, le paradigme de Williams et les méta-barrières](#11-la-question-fondatrice-p--np-le-paradigme-de-williams-et-les-méta-barrières)
+   - [1.1 Le paradigme de Williams et les méta-barrières des circuits](#11-le-paradigme-de-williams-et-les-méta-barrières-des-circuits)
    - [1.2 Définition formelle des circuits à seuil de profondeur 2 (THR ∘ THR)](#12-définition-formelle-des-circuits-à-seuil-de-profondeur-2-thr--thr)
 2. [Méthodologie, architecture et protocoles de validation](#2-méthodologie-architecture-et-protocoles-de-validation)
 3. [Bilan synthétique : aboutissements et murs structurels](#3-bilan-synthétique--aboutissements-et-murs-structurels)
@@ -36,12 +36,12 @@ La méthodologie associe démonstrations formelles, conception de solveurs exact
 
 ## 1. Problème d'origine, contexte théorique et définitions formelles
 
-### 1.1 La question fondatrice P ≟ NP, le paradigme de Williams et les méta-barrières
+### 1.1 Le paradigme de Williams et les méta-barrières des circuits
 
-La question **P ≟ NP** (Cook, 1971 ; Levin, 1973) demande si tout problème de décision dont une solution peut être vérifiée en temps polynomial peut également être résolu en temps polynomial. L'attaque directe des séparations de classes de circuits s'est heurtée à trois résultats de méta-complexité qui disqualifient les techniques classiques :
-1. **La barrière de relativisation** (Baker, Gill et Solovay, 1975) : il existe des oracles A et B tels que P<sup>A</sup> = NP<sup>A</sup> et P<sup>B</sup> ≠ NP<sup>B</sup>, excluant toute preuve par diagonalisation pure.
+La démonstration de bornes inférieures non uniformes pour des classes de circuits booléens s'est historiquement heurtée à trois résultats de méta-complexité :
+1. **La barrière de relativisation** (Baker, Gill et Solovay, 1975) : l'existence d'oracles séparateurs ou égalisateurs exclut toute preuve par diagonalisation pure.
 2. **La barrière des preuves naturelles** (Razborov et Rudich, 1997) : sous l'hypothèse d'existence de fonctions pseudo-aléatoires cryptographiques, aucune propriété combinatoire à la fois *constructive* et *large* ne peut séparer des classes riches de circuits.
-3. **La barrière d'algébrisation** (Aaronson et Wigderson, 2009) : même l'extension algébrique des techniques interactives ne suffit pas à séparer P de NP ou NEXP de circuits de petite taille.
+3. **La barrière d'algébrisation** (Aaronson et Wigderson, 2009) : même l'extension algébrique des techniques interactives ne suffit pas à séparer les grandes classes de complexité de circuits de petite taille.
 
 Pour contourner ces trois obstacles, le **programme algorithmique de Williams (2011)** prouve des bornes inférieures de circuits non uniformes en concevant des algorithmes de satisfiabilité (𝒞-SAT) ou d'approximation de probabilité d'acceptation (CAPP) légèrement plus rapides que la force brute 2<sup>n</sup>. La classe ACC⁰ a ainsi été séparée de NEXP (Williams, 2011) puis de NQP (Murray et Williams, 2018) ; la frontière ouverte immédiatement supérieure est précisément **THR ∘ THR**.
 
@@ -61,7 +61,7 @@ Le problème **THR ∘ THR-SAT** consiste à décider s'il existe x ∈ {0, 1}<s
 
 ```mermaid
 flowchart TD
-    Root["Question fondatrice : P =? NP et paradigme de Williams"]
+    Root["Paradigme de Williams : NEXP vs THR o THR"]
     Root --> A1a["Solveurs exacts : Th. 1 (PGCD), Th. 2 (Gray glissant), v5 (n=28)"]
     Root --> A1b["Atlas exhaustif n=4 (65 536 fonctions) et MCSP (echec L1)"]
     Root --> A1c["Th. 3 (Rang K vers MIPS) et CAPP deterministe CUR (n=26)"]
@@ -88,7 +88,7 @@ Chaque solveur booléen (plus de 1 100 instances THR ∘ THR, 60 instances MQ) e
 
 ### 3.2 Ce à quoi les expériences n'ont pas abouti : les deux murs structurels
 
-En toute transparence scientifique, aucune preuve de P ≠ NP ni de NEXP ⊈ THR ∘ THR n'a été obtenue : les accélérations pratiques jusqu'à n = 28 ne brisent pas le pire cas asymptotique pour des circuits denses génériques de taille polynomiale s = n<sup>c</sup>. Deux murs structurels précisément mesurés expliquent cette frontière :
+Aucune séparation NEXP ⊈ THR ∘ THR n'est obtenue : les accélérations pratiques jusqu'à n = 28 exploitent des structures spécifiques sans briser le pire cas asymptotique pour des circuits denses génériques de taille polynomiale s = n<sup>c</sup>. Deux murs structurels précisément mesurés expliquent cette frontière :
 
 | # | Mur structurel | Contexte | Manifestation quantitative mesurée |
 | :---: | :--- | :--- | :--- |
@@ -272,7 +272,7 @@ Les perspectives ouvertes ciblent : (1) l'évaluation algébrique groupée de la
 ## 6. Mentions, reproductibilité et bibliographie
 
 ### 6.1 Mentions scientifiques et transparence
-- **Portée des résultats** : ce travail ne résout pas P ≟ NP et ne sépare pas NEXP de THR ∘ THR. Les accélérations mesurées sur les solveurs exacts exploitent des structures spécifiques (réseau PGCD, compression bilinéaire) sans abaisser la borne pire cas asymptotique des circuits denses arbitraires.
+- **Portée des résultats** : les accélérations mesurées sur les solveurs exacts exploitent des structures spécifiques (réseau PGCD, compression bilinéaire) sans abaisser la borne pire cas asymptotique des circuits denses arbitraires ni établir de séparation NEXP ⊈ THR ∘ THR.
 - **Reproductibilité intégrale** : l'ensemble des **17 scripts** (`src/`), des **13 fichiers JSON** (`results/`), du témoin exact `witnesses/atlas_n4.npz` et des **13 figures** (`figures/`) est archivé dans ce dossier et indexé dans [README.md](README.md).
 
 ### 6.2 Bibliographie

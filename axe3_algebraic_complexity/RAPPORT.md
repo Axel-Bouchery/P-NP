@@ -20,7 +20,7 @@ Ce rapport présente les résultats d'une campagne de recherche numérique et co
 ## Table des matières
 
 1. [Problème d'origine, contexte théorique et définitions formelles](#1-problème-dorigine-contexte-théorique-et-définitions-formelles)
-   - [1.1 La question fondatrice VP ≟ VNP, GCT et rang tensoriel](#11-la-question-fondatrice-vp--vnp-gct-et-rang-tensoriel)
+   - [1.1 Complexité déterminantale, GCT et rang tensoriel](#11-complexité-déterminantale-gct-et-rang-tensoriel)
    - [1.2 Définitions formelles : complexité déterminantale, rang tensoriel et Graphe de Flips](#12-définitions-formelles--complexité-déterminantale-rang-tensoriel-et-graphe-de-flips)
 2. [Méthodologie, architecture et protocoles de validation](#2-méthodologie-architecture-et-protocoles-de-validation)
 3. [Bilan synthétique : aboutissements et murs structurels](#3-bilan-synthétique--aboutissements-et-murs-structurels)
@@ -34,9 +34,9 @@ Ce rapport présente les résultats d'une campagne de recherche numérique et co
 
 ## 1. Problème d'origine, contexte théorique et définitions formelles
 
-### 1.1 La question fondatrice VP ≟ VNP, GCT et rang tensoriel
+### 1.1 Complexité déterminantale, GCT et rang tensoriel
 
-La question **VP ≟ VNP** (Valiant, 1979) est l'analogue algébrique de P ≟ NP : elle demande si la famille des polynômes permanents (`perm_n`) peut être calculée par des circuits arithmétiques de taille polynomiale — ce qui équivaut, à des facteurs quasi-polynomiaux près, à savoir si le permanent d'une matrice `n × n` peut s'exprimer comme le déterminant d'une matrice affine de taille polynomiale en n. La géométrie algébrique et la théorie des tenseurs (*Geometric Complexity Theory* et rang tensoriel) étudient la frontière entre complexité **exacte** et complexité **de bord** (fermeture d'orbite) pour le permanent et pour les tenseurs de multiplication matricielle rapide.
+En complexité algébrique (Valiant, 1979), l'expressivité relative du permanent (`perm_n`) vis-à-vis du déterminant et le coût bilinéaire de la multiplication matricielle se traduisent par des problèmes géométriques et combinatoires concrets. La géométrie algébrique et la théorie des tenseurs (*Geometric Complexity Theory* et rang tensoriel) étudient notamment la frontière entre complexité **exacte** et complexité **de bord** (fermeture d'orbite) pour le permanent `perm₃` et pour les tenseurs de multiplication matricielle rapide.
 
 ### 1.2 Définitions formelles : complexité déterminantale, rang tensoriel et Graphe de Flips
 
@@ -50,7 +50,7 @@ La question **VP ≟ VNP** (Valiant, 1979) est l'analogue algébrique de P ≟ N
 
 ```mermaid
 flowchart TD
-    Root["Question fondatrice : VP =? VNP (GCT perm_3 et MatMul)"]
+    Root["Complexite algebrique : GCT perm_3 et MatMul"]
     Root --> A3a["GCT perm_3 : Parseval-LM (k=7 exact, k=6 mur, piege SL_7)"]
     Root --> A3b["MatMul continu : Recuit L2/3, loi alpha, barriere Linf stricte"]
     Root --> A3c["MatMul discret : Graphe de Flips F2/F3/F5 (uint64 16.7M/s) + Gauss non destructif"]
@@ -76,7 +76,7 @@ Les **8 expériences (E16 à E23, 8 figures)** appliquent deux règles strictes 
 
 ### 3.2 Ce à quoi les expériences n'ont pas abouti : les deux murs structurels
 
-En toute transparence scientifique, aucune preuve de VP ≠ VNP, aucune représentation de bord de `perm₃` à `k = 6` (`dc̅(perm₃) ≟ 6`) et aucun nouveau record mondial de rang exact en multiplication matricielle (en particulier `R(⟨3, 3, 3⟩) < 23` sur ℝ/ℂ) n'ont été obtenus. Deux murs structurels complémentaires expliquent précisément cette frontière :
+Aucune représentation de bord de `perm₃` à `k = 6` (`dc̅(perm₃) ≟ 6`) ni amélioration des bornes de rang exact en multiplication matricielle (en particulier `R(⟨3, 3, 3⟩) < 23` sur ℝ/ℂ) n'a été obtenue. Deux murs structurels complémentaires expliquent cette frontière :
 
 | # | Mur structurel | Contexte | Manifestation quantitative mesurée |
 | :---: | :--- | :--- | :--- |
