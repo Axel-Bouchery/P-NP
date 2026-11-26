@@ -29,7 +29,7 @@ Après détermination par énumération projective exacte du spectre symétrique
 3. [Bilan synthétique : aboutissements et mur structurel](#3-bilan-synthétique--aboutissements-et-mur-structurel)
    - [3.1 Ce à quoi les expériences ont abouti](#31-ce-à-quoi-les-expériences-ont-abouti)
    - [3.2 Ce à quoi les expériences n'ont pas abouti : le mur de saturation de marge](#32-ce-à-quoi-les-expériences-nont-pas-abouti--le-mur-de-saturation-de-marge)
-4. [Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E11 à E15q)](#4-présentation-détaillée-des-expériences-buts-résultats-et-graphiques-expériences-e11-à-e15q)
+4. [Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E11 à E15s)](#4-présentation-détaillée-des-expériences-buts-résultats-et-graphiques-expériences-e11-à-e15s)
 5. [Conclusion générale et perspectives de recherche](#5-conclusion-générale-et-perspectives-de-recherche)
 6. [Mentions, reproductibilité et bibliographie](#6-mentions-reproductibilité-et-bibliographie)
 
@@ -64,11 +64,11 @@ flowchart TD
     Root --> A2a["Spectres symetriques exacts sur 8 modules composites (mod 6 a 35)"]
     Root --> A2b["Th. M1, M2, G1-G5, G3++, P1 : record mod 6 d=8 (88), separation non bornee (p_min-1)x"]
     Root --> A2c["Option A & U1 : loi 2(m-1), fermeture exacte THR_2 mod 6 (N=9 unique), MAJ/MOD_k"]
-    Root --> A2d["Th. U2-U4 & D1-D12 : OR_10 mod 6, 3-blocs exacts, 8p-7, Lucas D7-D8, Weyl D10-D11, BBR D12"]
+    Root --> A2d["Th. U2-U4 & D1-D14 : OR_10 mod 6, 3-blocs exacts, 8p-7, Lucas D7-D8, Weyl D10-D11, BBR D12, Rigidity D13, mod 10 <= 28 D14"]
     A2a -.-> M3["Mur : Saturation de marge BBR (d = Omega(sqrt(n)))"]
 ```
 
-Les **21 expériences (E11 à E15q, 20 figures)** combinent énumération projective exacte sur 8 modules composites (`mod 6, 10, 12, 14, 15, 21, 30, 35`), preuves analytiques formelles (dont les briques clés sont archivées en Lean 4 dans [lean/README.md](lean/README.md) et vérifiées par [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py)) et vérifications computationnelles 100 % exactes en arithmétique entière (`int64` / `uint64` / `uint64 × 2` 128-bits, force brute sur 2<sup>n</sup> entrées jusqu'à n = 20 et vérification algébrique CRT complète au-delà).
+Les **23 expériences (E11 à E15s, 22 figures)** combinent énumération projective exacte sur 8 modules composites (`mod 6, 10, 12, 14, 15, 21, 30, 35`), preuves analytiques formelles (dont les briques clés sont archivées en Lean 4 dans [lean/README.md](lean/README.md) et vérifiées par [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py)) et vérifications computationnelles 100 % exactes en arithmétique entière (`int64` / `uint64` / `uint64 × 2` 128-bits, force brute sur 2<sup>n</sup> entrées jusqu'à n = 20 et vérification algébrique CRT complète au-delà).
 
 Chaque expérience est étiquetée `[CONTRIBUTION ORIGINALE — NON RECENSÉE DANS LA LITTÉRATURE CONSULTÉE]` lorsqu'elle établit un théorème, une séparation ou une fermeture exhaustive non recensés dans les références consultées (BBR 1994, Tardos–Barrington 1998, Győri 2006, Lee 2015, Bhowmick–Lovett 2015, Sun et al. 2020).
 
@@ -112,7 +112,7 @@ En toute transparence scientifique, la conjecture asymptotique `d = Ω(√n)` de
 
 ---
 
-## 4. Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E11 à E15q)
+## 4. Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E11 à E15s)
 
 #### Expérience E11 — Spectre symétrique 100 % exact N<sub>sym</sub><sup>(6)</sup>(1..10) par canonisation projective
 - **But** : établir sans erreur ni biais d'échantillonnage le nombre maximal exact de variables N<sub>sym</sub>(d) atteignable par un polynôme symétrique modulo 6 de degré d = 1..10 pour OR<sub>n</sub>, ainsi que les degrés minimaux requis sur chaque canal CRT (𝔽₂ et 𝔽₃).
@@ -874,9 +874,9 @@ Cette étude apporte un corpus cohérent de trente théorèmes constructifs et s
 
 ### Perspectives de recherche ouvertes
 Trois prolongements ciblés découlent directement de ces travaux :
-1. **Resserrement de `8p − 7 → 4p − 2` sur `m = 2p` et frontière résiduelle post-D11 sur `m = pq`** : dépasser le mur `O(m^{3/2})` pour la conjecture de Lee en toute généralité sur `m = pq` se réduit désormais aux deux régimes résiduels rétrécis par le Théorème D11 (graphes signés très denses `ρ(G) ≫ m^{-1/2}` et polynômes modulaires adversariaux de haut rang à grands coefficients centrés sur la fréquence fondamentale `t = 1`), tandis que la généralisation des bi-tranches analytiques de Lucas (Théorèmes D7–D8) vise à refermer `18 ≤ N_gen^{(10)}(2, OR) ≤ 32` et `12 ≤ N_gen^{(10)}(2, THR₂) ≤ 33` (`≤ 27` si `G₅ ≠ K_n`).
+1. **Resserrement de `8p − 7 → 4p − 2` sur `m = 2p` et frontière résiduelle post-D13 sur `m = pq`** : dépasser le mur `O(m^{3/2})` pour la conjecture de Lee en toute généralité sur `m = pq` se réduit désormais aux graphes signés très denses de haute rigidité de Valiant (`ρ(G) ≫ m^{-1/2}`) et aux polynômes modulaires adversariaux à grands coefficients centrés sur `t = 1` (**Théorèmes D11 et D13**), tandis que le Théorème D14 resserre déjà inconditionnellement `mod 10` à **`18 ≤ N_gen^{(10)}(2, OR) ≤ 28`** (`1,556×`) et **`12 ≤ N_gen^{(10)}(2, THR₂) ≤ 29`** (`≤ 27` si `G₅ ≠ K_n`).
 2. **Conjecture asymptotique de BBR au-delà des régimes `k`-blocs et semi-symétrique** : le Théorème D12 résolvant `O(d^r)` en `k`-blocs et semi-symétrique (avec fermetures exactes `= 27` à `d = 3` et `= 62` à `d = 6` sur `mod 6`), l'étape suivante consiste à s'affranchir de l'hypothèse de symétrie sur les **deux** canaux simultanément pour `d ≥ 3`.
-3. **Compilation et extension complète en Lean 4 des Théorèmes D3–D12 et U3–U4** : une première formalisation structurée des briques clés (`G3++`, `G5`, `Lemme D3a`, `D4`, `D5`, `D6`, `D7`, `U3`, `D8`, `D9`, `D10`, `D11`, `D12`, `U4`) est archivée dans [lean/README.md](lean/README.md) avec son vérificateur arithmétique exact exécutable ([lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py)) ; il reste à la compiler sous Mathlib 4 (`lake build`) et à l'étendre aux certificats finis (`U1`, `U2`, fermeture `(1, 2)` mod 6).
+3. **Compilation et extension complète en Lean 4 des Théorèmes D3–D14 et U3–U4** : une première formalisation structurée des briques clés (`G3++`, `G5`, `Lemme D3a`, `D4`, `D5`, `D6`, `D7`, `U3`, `D8`, `D9`, `D10`, `D11`, `D12`, `D13`, `D14`, `U4`) est archivée dans [lean/README.md](lean/README.md) avec son vérificateur arithmétique exact exécutable ([lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py)) ; il reste à la compiler sous Mathlib 4 (`lake build`) et à l'étendre aux certificats finis (`U1`, `U2`, fermeture `(1, 2)` mod 6).
 
 ---
 
