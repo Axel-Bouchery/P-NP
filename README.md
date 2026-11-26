@@ -1,8 +1,6 @@
 ﻿# Complexité des circuits de basse profondeur, polynômes modulo un entier composite et complexité algébrique
 
-> **Mise au point scientifique** : Malgré le nom historique du dépôt (`P-NP`), ces travaux **ne portent pas directement sur $\mathbf{P \stackrel{?}{=} NP}$ ni sur $\mathbf{VP \stackrel{?}{=} VNP}$** et ne prétendent en aucun cas les résoudre. Ils se situent **tout en bas de la hiérarchie des circuits** (profondeur 2 : $\mathrm{THR} \circ \mathrm{THR}$ et polynômes multilinéaires de bas degré modulo un entier composite $m$, bien en dessous de $\mathsf{ACC}^0 \subseteq \mathsf{P}$) ainsi qu'en complexité algébrique concrète (complexité déterminantale de $\mathrm{perm}_3$ et rang de tenseurs de multiplication matricielle), sur des problèmes techniques délimités (paradigme de Williams, conjecture de Lee 2015, barrière de Barrington–Beigel–Rudich 1994, graphes de flips).
-
-Ce dépôt est organisé en **trois axes de recherche entièrement autonomes** rassemblant au total **82 scripts** Python/Numba/PyTorch (81 scripts de recherche + 1 vérificateur exact), **65 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)**, **43 figures**, un manuscrit LaTeX autonome (`paper/`) et un projet Lean 4 (`lean/`).
+Ce dépôt rassemble trois axes de recherche autonomes en complexité des circuits de basse profondeur ($\mathrm{THR} \circ \mathrm{THR}$, polynômes multilinéaires modulo un entier composite $m$) et en complexité algébrique concrète (complexité déterminantale de $\mathrm{perm}_3$, rang de tenseurs de multiplication matricielle). Il regroupe **82 scripts** Python/Numba/PyTorch (81 scripts de recherche + 1 vérificateur exact), **65 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)**, **43 figures**, un manuscrit LaTeX autonome (`paper/`) et un projet Lean 4 (`lean/`).
 
 ## Index des trois axes
 
