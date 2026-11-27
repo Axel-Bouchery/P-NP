@@ -11,7 +11,7 @@
 
 Ce rapport présente les résultats d'une campagne de recherche théorique et computationnelle consacrée à la **représentation faible de fonctions booléennes** ($\mathrm{OR}_n$, $\mathrm{THR}_{n,t}$, $\mathrm{MAJ}_n$, $\mathrm{MOD}_k$) par des polynômes multilinéaires de bas degré modulo un entier composite $m$ (problème de Barrington–Beigel–Rudich, 1994 ; Győri, 2006 / FCT 2007 ; Lee, 2015).
 
-Partant de la détermination exacte du spectre symétrique modulo $6$ jusqu'au degré $10$ puis de son extension à huit modules composites ($m \in \{6, 10, 12, 14, 15, 21, 30, 35\}$), la démarche développe un raisonnement continu articulé autour de trente-deux théorèmes constructifs et structurants (**Théorèmes M1, M2, G1 à G5, G3++, T1, T2, Q1, P1, U1 à U4 et D1 à D16**).
+Partant de la détermination exacte du spectre symétrique modulo $6$ jusqu'au degré $10$ puis de son extension à huit modules composites ($m \in \{6, 10, 12, 14, 15, 21, 30, 35\}$), la démarche développe un raisonnement continu articulé autour de trente-trois théorèmes constructifs et structurants (**Théorèmes M1, M2, G1 à G5, G3++, T1, T2, Q1, P1, U1 à U4 et D1 à D17**).
 
 Sur le versant constructif, la récolte de marge (**M2, G1**), la norme d'extension de corps (**G2, G4**) et le mécanisme purement additif d'omission de valeur (**G3**) portent le record modulo $6$ au degré $d = 8$ à **$n = 88$** variables (contre $80$ symétrique, $+10{,}0\,\%$), tandis que sa généralisation multi-valeurs (**G3++**) démontre la capacité exacte $A_p(d) = (p - 2)d$ sur tout corps premier $\mathbb{F}_p$, atteignant la borne de Chevalley–Wilson. Le **Théorème G5** établit une séparation non bornée $(p_{\min} - 1)\times$ dans le régime pré-asymptotique $d < p_{\min}$ (vérifiée à $\times 4 = +300\,\%$, $34 \to 136$ sur $\bmod 35$), et le **Théorème P1** prouve qu'en régime probabiliste tout polynôme symétrique s'effondre à une erreur de $100\,\%$ dès $n = m$ (pour $d < p_{\min}$) alors qu'une norme aléatoire non symétrique maintient une erreur $m^{-d}$ pour tout $n$.
 
@@ -30,7 +30,7 @@ Sur les semi-premiers généraux $m = pq$, les **Théorèmes D5, D9, D10, D11, D
 3. [Bilan synthétique : résultats établis et mur structurel](#3-bilan-synthétique--résultats-établis-et-mur-structurel)
    - [3.1 Synthèse des résultats établis](#31-synthèse-des-résultats-établis)
    - [3.2 Limites et mur de saturation de marge](#32-limites-et-mur-de-saturation-de-marge)
-4. [Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E11 à E15u)](#4-présentation-détaillée-des-expériences-buts-résultats-et-graphiques-expériences-e11-à-e15u)
+4. [Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E11 à E15v)](#4-présentation-détaillée-des-expériences-buts-résultats-et-graphiques-expériences-e11-à-e15v)
 5. [Conclusion générale et perspectives de recherche](#5-conclusion-générale-et-perspectives-de-recherche)
 6. [Mentions, reproductibilité et bibliographie](#6-mentions-reproductibilité-et-bibliographie)
 
@@ -62,11 +62,11 @@ flowchart TD
     Root --> A2a["Spectres symetriques exacts sur 8 modules composites (mod 6 a 35)"]
     Root --> A2b["Th. M1, M2, G1-G5, G3++, P1 : record mod 6 d=8 (88), separation non bornee (p_min-1)x"]
     Root --> A2c["Option A & U1 : loi 2(m-1), fermeture exacte THR_2 mod 6 (N=9 unique), MAJ/MOD_k"]
-    Root --> A2d["Th. U2-U4 & D1-D16 : OR_10 mod 6, 3-blocs exacts, 8p-7, Lucas D7-D8, Weyl D10-D11-D15 (m^2/3), BBR D12, Rigidity/Tail D13-D16, mod 10 <= 28 D14"]
+    Root --> A2d["Th. U2-U4 & D1-D17 : OR_10 mod 6, 3-blocs exacts, 8p-7, Lucas D7-D8, Weyl D10-D11-D15 (m^2/3), BBR D12, Rigidity/Tail/PF D13-D16-D17 (m^7/6), mod 10 <= 28 D14"]
     A2a -.-> M3["Mur : Saturation de marge BBR (d = Omega(sqrt(n)))"]
 ```
 
-Les **25 expériences (E11 à E15u, 24 figures)** combinent énumération projective exacte sur huit modules composites (`mod 6, 10, 12, 14, 15, 21, 30, 35`), démonstrations analytiques formelles (dont les briques clés sont archivées en Lean 4 dans [lean/README.md](lean/README.md) et vérifiées par [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py)) et vérifications computationnelles $100\,\%$ exactes en arithmétique entière (`int64` / `uint64` / `uint64 × 2` 128-bits, force brute sur $2^n$ entrées jusqu'à $n = 20$ et vérification algébrique CRT complète au-delà).
+Les **26 expériences (E11 à E15v, 25 figures)** combinent énumération projective exacte sur huit modules composites (`mod 6, 10, 12, 14, 15, 21, 30, 35`), démonstrations analytiques formelles (dont les briques clés sont archivées en Lean 4 dans [lean/README.md](lean/README.md) et vérifiées par [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py)) et vérifications computationnelles $100\,\%$ exactes en arithmétique entière (`int64` / `uint64` / `uint64 × 2` 128-bits, force brute sur $2^n$ entrées jusqu'à $n = 20$ et vérification algébrique CRT complète au-delà).
 
 ---
 
@@ -99,6 +99,7 @@ Les **25 expériences (E11 à E15u, 24 figures)** combinent énumération projec
 | **Théorème D14** (Escalier héréditaire de Lucas, **nouveau record $N_{\mathrm{gen}}^{(10)}(2, \mathrm{OR}) \le 28$** et chasses CEGAR $\mathbb{F}_2$-Gauss) | **Théorème + certificats exacts** | **D14.1** : escalier héréditaire exact sur $U_1(w_1) \pmod 5$ ($w_f \in \{0, 1, 3, 5, 7, 9, 11\} \Rightarrow |U_1| \le \{24, 23, 22, 19, 17, 15, 13\}$), tuant $n = 32, 31, 30$ ; **D14.2** : fermeture jointe $(U_0, U_1)$ à $n = 29$ ($0 / 1\,085$ et $0 / 7\,140$), prouvant inconditionnellement **$18 \le N_{\mathrm{gen}}^{(10)}(2, \mathrm{OR}) \le 28$** ($1{,}556\times$, vs $32$ en D6) et **$\mathrm{THR}_2 \le 29$** ; **D14.3** : chasses CEGAR exactes $190$-var ($n = 19 \pmod{10}$) et 4-blocs cubiques $2^{34}$ ($0 / 74\,028$ à $d = 3, n = 28 \pmod 6$, calibré à $0$ à $n = 27$) |
 | **Théorème D15** (Décomposition 5 bandes Warnke + $\sin^2$ : **$\Delta \lesssim m^{2/3}$** et densité **$\Omega(m^{-1/3})$**) | **Théorème analytique** | **D15.1** : lemme cosinus déphasé renforcé $\mathrm{dist}(\alpha + \delta, \pi\mathbb{Z})^2 \ge \frac{1}{4}\delta^2 + c(\alpha)\delta + \frac{1}{8}\alpha^2$ (min exact $\frac{5}{448}\pi^2$) ; **D15.2** : identité exacte $\sin^2$ indépendante des termes linéaires $b_j$ (vérifiée sur $9/9$ énumérations $3^n$) ; **D15.3** : différences typiques bornées de Warnke (2016) + croisement Bande 2,75 / Bande 3 en $T_3 = m/(K^{1/2}\Delta^{1/4})$ donnant **$n \le 64m$ jusqu'à $\Delta \lesssim m^{2/3}/(\ln m)^{4/3}$** et **$\rho(G) > c_2'/(m^{1/3}(\ln m)^{7/3})$** ($\forall n \ge 256m$) |
 | **Théorème D16** (Dichotomie spectrale de queue sur expanseurs denses $\rho = 1$ & exclusion dyadique sur grands coefficients modulaires) | **Théorème analytique** | **D16.1** : sur $A_{UW} \in \{-1, 0, +1\}^{n/2 \times n/2}$, soit Hanson–Wright tue $|S_{1/2}(t)| < 1/m$ dès $n = O(m\sqrt{\ln m / \rho})$ (vérifié sur aléatoire $\pm 1$, $\{0,1\}$, Hadamard $H_{128}/H_{256}$ et Paley $P_{197}$ jusqu'à $7{,}9 \times 10^{-33}$), soit $\|A_{UW} - L\|_F^2 < 16 m^2 \ln m / t^2$ à rang réel $O(\ln^2 m)$ ; **D16.2** : exclusion dyadique $|S_{1/2}(t)| \le \exp(-\frac{1}{4}\nu_{\mathrm{ind}}(G_k)(2^{k-1}/m)^2)$ éliminant les grands coefficients parcimonieux dès **$n = O(\Delta \ln m)$** (indépendant de $m$, certifié $4/4$ dont $n = 460 < m = 899$) |
+| **Théorème D17** (Annulation quadratique + linéaire sous repliement de paires et cassure **$O(m^{3/2}) \to O(m^{7/6}(\ln m)^{5/3})$**) | **Théorème analytique** | **D17.1** : annulation identique des termes quadratiques et linéaires de tout blowup $k$-blocs modulaire $\lambda_{\alpha\beta} \in \mathbb{Z}/m\mathbb{Z}$ ($12/12$ configurations vérifiées) ; **D17.2** : plancher de rigidité $|E(S)| > c_4 (n - k)^2 / (m^{1/3}(\ln m)^{7/3})$ via D15 ($k \cdot m^{2/3}$ fois plus fort que D13.1) et récupération biaisée $2{,}55\times$ vs $1/m$ à $m = 899$ ; **D17.3** : couplage avec D16.1 donnant **$n \le k + O(m^{7/6}(\ln m)^{5/3}) \ll m^{3/2}$** |
 
 ### 3.2 Limites et mur de saturation de marge
 
@@ -110,7 +111,7 @@ Les deux grandes conjectures asymptotiques demeurent ouvertes dans leur pleine g
 
 ---
 
-## 4. Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E11 à E15u)
+## 4. Présentation détaillée des expériences, buts, résultats et graphiques (Expériences E11 à E15v)
 
 #### Expérience E11 — Spectre symétrique 100 % exact N_sym^(6)(1..10) par canonisation projective
 
@@ -827,18 +828,36 @@ Les vérifications numériques confirment les deux volets. En Zone 1 ($m = 35$, 
 
 ---
 
+#### Expérience E15v — Annulation quadratique et linéaire par repliement de paires, plancher de rigidité super-linéaire et cassure de $O(m^{3/2})$ vers $O(m^{7/6}(\ln m)^{5/3})$ sur blowups $k$-blocs perturbés (Théorème D17)
+
+La dichotomie de D16.1 laissait en suspens la branche de bas rang réel approché $\|A_{UW} - L\|_F^2 < 16 m^2 \ln m$, qui ne donnait que $O(m^{3/2})$ via la rigidité de Valiant (D13.1). En combinant directement le **repliement de paires à poids constant (D13.2)** avec la **borne 5 bandes (D15)**, le **Théorème D17** ([theorem_d17_pairfolding_m76.py](src/theorem_d17_pairfolding_m76.py), [theorem_d17_pairfolding_m76.json](results/theorem_d17_pairfolding_m76.json)) casse strictement l'exposant $3/2$ jusqu'à **$7/6$** sur l'ensemble des blowups $k$-blocs modulaires perturbés $A = L + S$ :
+
+> **Théorème D17 (Annulation quadratique et linéaire sous repliement de paires et borne sous-$m^{3/2}$ en $O(m^{7/6}(\ln m)^{5/3})$).** Soit $P(x) = x^T (L + S) x + b^T x \pmod m$ représentant $\mathrm{OR}_n \pmod m$, où $L$ est un blowup $k$-blocs à poids de clusters $\lambda_{\alpha\beta} \in \mathbb{Z}/m\mathbb{Z}$ arbitraires et $S$ une perturbation signée.
+> 1. **Annulation exacte quadratique et linéaire (D17.1)** : Sous le repliement de paires intra-clusters $x_{u_r} = y_r$, $x_{v_r} = 1 - y_r$ ($n' \ge (n - k)/2$ paires), chaque interaction inter-blocs vérifie $\lambda_{\alpha\beta}(y_r + (1 - y_r))(y_s + (1 - y_s)) = \lambda_{\alpha\beta}$, ce qui annule identiquement les termes quadratiques **et** linéaires de $L$ pour ne laisser qu'une constante globale $c_0 \in \mathbb{Z}/m\mathbb{Z}$ (vérifié sur $12/12$ configurations aléatoires pour $m \in \{15, 35, 143, 323\}$).
+> 2. **Plancher de rigidité super-linéaire et borne $O(m^{7/6}(\ln m)^{5/3})$ (D17.2–D17.3)** : L'application du Théorème D15 au polynôme replié $Q(y)$ (avec orientation des paires $\tilde{b}_r \ge 0$ et mesure biaisée $\theta^* \in [1/4, 3/4]$ absorbant $c_0$, ou mesure uniforme dès $\sigma(Q) \ge m$) impose $|E(S)| > c_4 (n - k)^2 / (m^{1/3}(\ln m)^{7/3})$ pour tout $n \ge 512m + k$ — soit un gain de $k \cdot m^{2/3}/(\ln m)^{7/3}$ sur la rigidité de Valiant (D13.1). Couplé au plafond d'énergie $|E(S)| < 16 m^2 \ln m$ de la branche bas rang de D16.1, il vient la borne strictement sous-$m^{3/2}$ :
+>
+> $$
+> n \;\le\; k + O\!\bigl(m^{7/6}\,(\ln m)^{5/3}\bigr) \;\ll\; m^{3/2}.
+> $$
+
+Sur quatre blowups modulaires denses perturbés ($\rho \approx 1$, $m \in \{35, 143, 323, 899\}$, $k \in \{5..10\}$), le repliement effondre le degré maximal (jusqu'à $\Delta : 999 \to 14$ à $m = 899$) et l'orientation des paires couplée à $\theta^*$ récupère $\Pr_{\theta^*}[Q(y) \equiv 0 \pmod m] = 2{,}20\times$ ($m = 143$), $2{,}72\times$ ($m = 323$) et **$2{,}55\times$ ($m = 899$)** la référence $1/m$, alors que la mesure uniforme reste aveugle ($\Pr_{1/2} = 0{,}00000$ à $m = 899$).
+
+![Théorème D17 : Annulation quadratique + linéaire par repliement de paires et cassure O(m^{3/2}) -> O(m^{7/6})](figures/theorem_d17_pairfolding_m76.png)
+
+---
+
 ## 5. Conclusion générale et perspectives de recherche
 
-Au fil de ces vingt-cinq expériences liées entre elles, l'Axe II construit un corpus unifié de trente-deux théorèmes (**M1, M2, G1–G5, G3++, T1–T2, Q1, P1, U1–U4, D1–D16**), synthétisé dans le manuscrit LaTeX autonome [paper/weak_poly_composite.tex](paper/weak_poly_composite.tex) et accompagné d'une formalisation Lean 4 ([lean/README.md](lean/README.md)).
+Au fil de ces vingt-six expériences liées entre elles, l'Axe II construit un corpus unifié de trente-trois théorèmes (**M1, M2, G1–G5, G3++, T1–T2, Q1, P1, U1–U4, D1–D17**), synthétisé dans le manuscrit LaTeX autonome [paper/weak_poly_composite.tex](paper/weak_poly_composite.tex) et accompagné d'une formalisation Lean 4 ([lean/README.md](lean/README.md)).
 
-Trois perspectives ouvertes prolongent directement ce raisonnement. La première vise à resserrer l'écart résiduel $8p - 7 \to 4p - 2$ sur $m = 2p$ (déjà descendu à $18 \le N_{\mathrm{gen}}^{(10)}(2, \mathrm{OR}) \le 28$ en D14) et à franchir le mur $O(m^{3/2})$ sur les semi-premiers généraux $m = pq$, qui se réduit désormais aux graphes signés denses non expanseurs de rang réel approché $O(\ln^2 m)$ mais haute rigidité sur $\mathbb{F}_q$, et aux polynômes modulaires denses à grands coefficients centrés sur $t = 1$ (**Théorèmes D11, D13, D15 et D16**). La deuxième concerne la conjecture asymptotique de Barrington–Beigel–Rudich : le Théorème D12 réglant $O(d^r)$ en régimes $k$-blocs et semi-symétrique, l'étape décisive consiste à s'affranchir de la symétrie sur les **deux** canaux simultanément pour $d \ge 3$. Enfin, la troisième porte sur la compilation complète sous Mathlib 4 (`lake build`) de la formalisation Lean 4 des Théorèmes `G3++`, `G5`, `D3a` et `D4–D16` / `U3–U4` ([lean/README.md](lean/README.md), vérifiée par [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py)) et sur son extension aux certificats finis (`U1`, `U2`, fermeture $(1, 2) \pmod 6$).
+Trois perspectives ouvertes prolongent directement ce raisonnement. La première vise à resserrer l'écart résiduel $8p - 7 \to 4p - 2$ sur $m = 2p$ (déjà descendu à $18 \le N_{\mathrm{gen}}^{(10)}(2, \mathrm{OR}) \le 28$ en D14) et à étendre la borne sous-$m^{3/2}$ ($O(m^{7/6}(\ln m)^{5/3})$ en D17 sur blowups $k$-blocs perturbés) aux matrices générales de rang réel approché $O(\ln^2 m)$ sans structure de blocs et aux polynômes modulaires denses à grands coefficients centrés sur $t = 1$ (**Théorèmes D11, D13 et D15–D17**). La deuxième concerne la conjecture asymptotique de Barrington–Beigel–Rudich : le Théorème D12 réglant $O(d^r)$ en régimes $k$-blocs et semi-symétrique, l'étape décisive consiste à s'affranchir de la symétrie sur les **deux** canaux simultanément pour $d \ge 3$. Enfin, la troisième porte sur la compilation complète sous Mathlib 4 (`lake build`) de la formalisation Lean 4 des Théorèmes `G3++`, `G5`, `D3a` et `D4–D17` / `U3–U4` ([lean/README.md](lean/README.md), vérifiée par [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py)) et sur son extension aux certificats finis (`U1`, `U2`, fermeture $(1, 2) \pmod 6$).
 
 ---
 
 ## 6. Mentions, reproductibilité et bibliographie
 
 ### 6.1 Portée et reproductibilité
-Ce travail confirme le régime asymptotique $\Theta(d^r)$ de Barrington–Beigel–Rudich (1994) en régimes $k$-blocs et semi-symétrique (Théorème D12), les gains constructifs les plus forts intervenant en régime pré-asymptotique ($d < p_{\min}$) ou en degré quadratique ($d = 2$). L'ensemble des **47 scripts** ($46$ scripts de recherche dans `src/` + $1$ vérificateur exact `lean/verify_proof_steps_exact.py`), des **39 fichiers de résultats JSON** (`results/`), des **24 figures** (`figures/`), du manuscrit LaTeX autonome ([paper/weak_poly_composite.tex](paper/weak_poly_composite.tex)) et du projet Lean 4 ([lean/README.md](lean/README.md)) est archivé dans ce dossier et indexé dans [README.md](README.md).
+Ce travail confirme le régime asymptotique $\Theta(d^r)$ de Barrington–Beigel–Rudich (1994) en régimes $k$-blocs et semi-symétrique (Théorème D12), les gains constructifs les plus forts intervenant en régime pré-asymptotique ($d < p_{\min}$) ou en degré quadratique ($d = 2$). L'ensemble des **48 scripts** ($47$ scripts de recherche dans `src/` + $1$ vérificateur exact `lean/verify_proof_steps_exact.py`), des **40 fichiers de résultats JSON** (`results/`), des **25 figures** (`figures/`), du manuscrit LaTeX autonome ([paper/weak_poly_composite.tex](paper/weak_poly_composite.tex)) et du projet Lean 4 ([lean/README.md](lean/README.md)) est archivé dans ce dossier et indexé dans [README.md](README.md).
 
 ### 6.2 Bibliographie
 

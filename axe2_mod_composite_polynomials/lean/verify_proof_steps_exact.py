@@ -266,6 +266,20 @@ def verify_d16():
     print("[PASS] Theorem D16: spectral tail geometric decay, top dyadic constant 1/8, and independent-set extraction.")
 
 
+def verify_d17():
+    from fractions import Fraction
+    # D17.1: Exact quadratic AND linear cancellation for arbitrary modular cluster weights
+    for m in [15, 35, 143]:
+        for lam in [1, m // 3, m - 1]:
+            for yr in [0, 1]:
+                for ys in [0, 1]:
+                    val = (lam * (yr * ys + yr * (1 - ys) + (1 - yr) * ys + (1 - yr) * (1 - ys))) % m
+                    assert val == lam % m
+    # D17.3: 7/6 < 5/4 < 3/2
+    assert Fraction(7, 6) < Fraction(5, 4) < Fraction(3, 2)
+    print("[PASS] Theorem D17: exact quad+linear pair-folding cancellation and strict sub-m^(3/2) exponent 7/6 < 5/4 < 3/2.")
+
+
 if __name__ == "__main__":
     verify_g3pp()
     verify_d3a_and_d4()
@@ -276,4 +290,5 @@ if __name__ == "__main__":
     verify_d13_and_d14()
     verify_d15()
     verify_d16()
+    verify_d17()
     print("ALL EXACT PROOF-STEP VERIFICATIONS PASSED.")

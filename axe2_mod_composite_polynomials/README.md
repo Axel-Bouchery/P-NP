@@ -1,22 +1,22 @@
 # Axe II — Polynômes faibles modulo un entier composite m (OR<sub>n</sub>, THR<sub>n, t</sub>, MAJ<sub>n</sub>, MOD<sub>k</sub>)
 
-Ce dossier autonome rassemble **47 scripts** Python/Numba (46 scripts de recherche dans `src/` + 1 vérificateur exact `lean/verify_proof_steps_exact.py`), **39 fichiers de résultats JSON** (`results/`), **24 figures** (`figures/`), le manuscrit LaTeX autonome (`paper/`), le projet Lean 4 (`lean/`) et le rapport complet **[RAPPORT.md](RAPPORT.md)**.
+Ce dossier autonome rassemble **48 scripts** Python/Numba (47 scripts de recherche dans `src/` + 1 vérificateur exact `lean/verify_proof_steps_exact.py`), **40 fichiers de résultats JSON** (`results/`), **25 figures** (`figures/`), le manuscrit LaTeX autonome (`paper/`), le projet Lean 4 (`lean/`) et le rapport complet **[RAPPORT.md](RAPPORT.md)**.
 
 ## Documents et formalisation
 
-- **[RAPPORT.md](RAPPORT.md)** — Monographie complète de l'Axe II (Expériences E11 à E15u, 32 théorèmes `M1, M2, G1–G5, G3++, T1, T2, Q1, P1, U1–U4, D1–D16`, 24 figures et bibliographie dédiée).
-- **[paper/weak_poly_composite.tex](paper/weak_poly_composite.tex)** (avec [paper/references.bib](paper/references.bib)) — Manuscrit LaTeX autonome (anglais, format arXiv) synthétisant `G3++`, `G5`, `P1`, `D3–D16` et `U1–U4`.
-- **[lean/README.md](lean/README.md)** — Projet Lean 4 (`v4.16.0` + Mathlib 4) formalisant les briques clés (`G3++`, `G5`, `Lemme D3a`, `D4`, `D5`, `D6`, `D7`, `D8`, `D9`, `D10`, `D11`, `D12`, `D13`, `D14`, `D15`, `D16`, `U3`, `U4`), accompagné du vérificateur arithmétique exact exécutable [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py).
+- **[RAPPORT.md](RAPPORT.md)** — Monographie complète de l'Axe II (Expériences E11 à E15v, 33 théorèmes `M1, M2, G1–G5, G3++, T1, T2, Q1, P1, U1–U4, D1–D17`, 25 figures et bibliographie dédiée).
+- **[paper/weak_poly_composite.tex](paper/weak_poly_composite.tex)** (avec [paper/references.bib](paper/references.bib)) — Manuscrit LaTeX autonome (anglais, format arXiv) synthétisant `G3++`, `G5`, `P1`, `D3–D17` et `U1–U4`.
+- **[lean/README.md](lean/README.md)** — Projet Lean 4 (`v4.16.0` + Mathlib 4) formalisant les briques clés (`G3++`, `G5`, `Lemme D3a`, `D4`, `D5`, `D6`, `D7`, `D8`, `D9`, `D10`, `D11`, `D12`, `D13`, `D14`, `D15`, `D16`, `D17`, `U3`, `U4`), accompagné du vérificateur arithmétique exact exécutable [lean/verify_proof_steps_exact.py](lean/verify_proof_steps_exact.py).
 
 ## Arborescence du dossier
 
 ```text
 axe2_mod_composite_polynomials/
 ├── README.md                          # Carte et commandes d'exécution de l'Axe II
-├── RAPPORT.md                         # Monographie autonome (Expériences E11–E15u)
-├── src/                               # 46 scripts Python/Numba
-├── results/                           # 39 fichiers de résultats JSON
-├── figures/                           # 24 figures (.png)
+├── RAPPORT.md                         # Monographie autonome (Expériences E11–E15v)
+├── src/                               # 47 scripts Python/Numba
+├── results/                           # 40 fichiers de résultats JSON
+├── figures/                           # 25 figures (.png)
 ├── paper/                             # Manuscrit LaTeX autonome
 │   ├── weak_poly_composite.tex
 │   └── references.bib
@@ -25,7 +25,7 @@ axe2_mod_composite_polynomials/
     ├── lean-toolchain
     ├── lakefile.toml
     ├── WeakPolyComposite.lean
-    ├── WeakPolyComposite/             # 17 modules .lean (Basic, G3pp, G5, D4–D16, U4)
+    ├── WeakPolyComposite/             # 18 modules .lean (Basic, G3pp, G5, D4–D17, U4)
     └── verify_proof_steps_exact.py
 ```
 
@@ -59,6 +59,7 @@ axe2_mod_composite_polynomials/
 | [theorem_d14_mod10_le28_and_cegar.py](src/theorem_d14_mod10_le28_and_cegar.py) | **Théorème D14** — Escalier héréditaire de Lucas sur `𝔽₅` (`24 → 13`), fermeture jointe `(U₀, U₁)` à `n = 29` prouvant **`18 ≤ N_gen^{(10)}(2, OR) ≤ 28`** (`1,556×`) et **`THR₂ ≤ 29`**, et résistance CEGAR 4-blocs cubique `2³⁴` (`0 / 74 028` à `d = 3, n = 28`) | [theorem_d14_mod10_le28_and_cegar.json](results/theorem_d14_mod10_le28_and_cegar.json), [theorem_d14_mod10_le28_and_cegar.png](figures/theorem_d14_mod10_le28_and_cegar.png) |
 | [theorem_d15_five_band_m23.py](src/theorem_d15_five_band_m23.py) | **Théorème D15** — Décomposition 5 bandes (Warnke 2016 + lemme cosinus déphasé renforcé `(1/8) α²` + identité exacte `sin²` + croisement Bande 2,75 / Bande 3 en `T₃ = m/(K^{1/2} Δ^{1/4})`) : **`n ≤ 64m` inconditionnel jusqu'à `Δ ≲ m^{2/3}/(ln m)^{4/3}`** et densité forcée **`ρ(G) > c₂'/(m^{1/3}(ln m)^{7/3})`** (`∀ n ≥ 256m`) | [theorem_d15_five_band_m23.json](results/theorem_d15_five_band_m23.json), [theorem_d15_five_band_m23.png](figures/theorem_d15_five_band_m23.png) |
 | [theorem_d16_zone1_zone2_attack.py](src/theorem_d16_zone1_zone2_attack.py) | **Théorème D16** — Dichotomie spectrale de queue sur graphes signés denses (`ρ = 0,5..1,0` : Hadamard, Paley, aléatoires tués dès `n = O(m√(ln m / ρ))` ou approximation rang `O(ln² m)`) et exclusion dyadique sur polynômes modulaires à grands coefficients (`n = O(Δ ln m)` indépendant de `m`, certifié `4/4` dont `n = 460 < m = 899`) | [theorem_d16_zone1_zone2_attack.json](results/theorem_d16_zone1_zone2_attack.json), [theorem_d16_zone1_zone2_attack.png](figures/theorem_d16_zone1_zone2_attack.png) |
+| [theorem_d17_pairfolding_m76.py](src/theorem_d17_pairfolding_m76.py) | **Théorème D17** — Annulation exacte quadratique et linéaire des blowups `k`-blocs modulaires sous repliement de paires, plancher de rigidité `∣E(S)∣ > c₄(n−k)²/(m^{1/3}(ln m)^{7/3})` (`k·m^{2/3}` fois plus fort que D13.1) et cassure de `O(m^{3/2})` vers **`O(m^{7/6}(ln m)^{5/3})`** | [theorem_d17_pairfolding_m76.json](results/theorem_d17_pairfolding_m76.json), [theorem_d17_pairfolding_m76.png](figures/theorem_d17_pairfolding_m76.png) |
 
 ## Reproduire les calculs
 

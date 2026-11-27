@@ -1,0 +1,58 @@
+{
+  "theorem": "D17",
+  "elapsed_sec": 6.55,
+  "d17_1_exact_cancellation": {
+    "n_blowup_configs_verified": 12,
+    "all_strictly_constant": true
+  },
+  "d17_2_folded_benchmarks": [
+    {
+      "m": 35,
+      "n": 280,
+      "n_pairs": 140,
+      "k_clusters": 5,
+      "Delta_original_blowup": 279,
+      "Delta_folded_Q": 6,
+      "theta_star": 0.3636,
+      "pr_zero_folded_unif": 0.02833,
+      "pr_zero_folded_tilted": 0.02842,
+      "baseline_1_over_m": 0.02857
+    },
+    {
+      "m": 143,
+      "n": 560,
+      "n_pairs": 280,
+      "k_clusters": 7,
+      "Delta_original_blowup": 559,
+      "Delta_folded_Q": 10,
+      "theta_star": 0.59442,
+      "pr_zero_folded_unif": 0.00333,
+      "pr_zero_folded_tilted": 0.01542,
+      "baseline_1_over_m": 0.00699
+    },
+    {
+      "m": 323,
+      "n": 800,
+      "n_pairs": 400,
+      "k_clusters": 8,
+      "Delta_original_blowup": 799,
+      "Delta_folded_Q": 12,
+      "theta_star": 0.52895,
+      "pr_zero_folded_unif": 0.00883,
+      "pr_zero_folded_tilted": 0.00842,
+      "baseline_1_over_m": 0.0031
+    },
+    {
+      "m": 899,
+      "n": 1000,
+      "n_pairs": 500,
+      "k_clusters": 10,
+      "Delta_original_blowup": 999,
+      "Delta_folded_Q": 14,
+      "theta_star": 0.75,
+      "pr_zero_folded_unif": 0.0,
+      "pr_zero_folded_tilted": 0.00283,
+      "baseline_1_over_m": 0.00111
+    }
+  ]
+}

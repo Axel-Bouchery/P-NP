@@ -109,6 +109,7 @@ Theorem~\ref{thm:d13} (D13) & Semiprime rigidity & folding & $\mathcal{R}_{\F_q}
 Theorem~\ref{thm:d14} (D14) & $\OR_n \bmod 10$ tightening & $18 \le \Ngen^{(10)}(2, \OR) \le 28$ ($1.556\times$); $\THR_2 \le 29$ & Hereditary + Joint Lucas \\
 Theorem~\ref{thm:d15} (D15) & Five-band signed Weyl & $n \le 64m$ ($\Delta \lesssim m^{2/3}/(\ln m)^{4/3}$); $\rho > c_2'/(m^{1/3}(\ln m)^{7/3})$ & Warnke + $\sin^2$ + $T_3$ \\
 Theorem~\ref{thm:d16} (D16) & Dense tail \& dyadic mod $m$ & Dense expanders ($\rho=1$) at $O(m\sqrt{\ln m/\rho})$; large coeffs at $O(\Delta\ln m)$ & Hanson--Wright + dyadic \\
+Theorem~\ref{thm:d17} (D17) & Perturbed $k$-block blowups & Quad+lin cancel; $n \le k + O(m^{7/6}(\ln m)^{5/3}) \ll m^{3/2}$ & Pair-folding + D15 + D16 \\
 Theorem~\ref{thm:u1} (U1) & $\THR_{n,2}$ mod $6$, $d=2$ & $\Ngen^{(6)}(2, \THR_2) = 9$ (unique, $|\Aut|=20$) & Analytical + exhaustive enum. \\
 Theorem~\ref{thm:u2} (U2) & $\OR_n$ mod $6$, $d=2$ & Exact extinction of $V_0, W_{0,1}, W_{1,1}$ & Exhaustive enum.\ ($51.4\text{M}$) \\
 \bottomrule
@@ -784,6 +785,22 @@ Let $m \ge 4$ be a composite modulus and $P(x) = \sum_{i < j} a_{ij} x_i x_j + \
 \label{fig:d16}
 \end{figure}
 
+\begin{theorem}[Exact Quad+Linear Pair-Folding Cancellation and Sub-$m^{3/2}$ Bound $O(m^{7/6}(\ln m)^{5/3})$ --- Theorem D17]
+\label{thm:d17}
+Let $m \ge 4$ be a composite modulus and $P(x) = x^T(L + S)x + b^T x \pmod m$ represent $\OR_n \pmod m$, where $L$ is any $k$-block blowup with arbitrary modular cluster weights $\lambda_{\alpha\beta} \in \Z/m\Z$ and $S$ is a signed graph perturbation.
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Exact Quadratic and Linear Cancellation:} Under constant-weight pair-folding $x_{u_r} = y_r$, $x_{v_r} = 1 - y_r$ on $n' \ge (n - k)/2$ intra-cluster pairs, every cross-block interaction satisfies $\lambda_{\alpha\beta}(y_r + (1 - y_r))(y_s + (1 - y_s)) = \lambda_{\alpha\beta}$, cancelling both quadratic and linear terms of $L$ identically and leaving only a global constant $c_0 \in \Z/m\Z$.
+  \item \textbf{Super-Linear Rigidity Floor and Breaking $O(m^{3/2})$:} Applying Theorem~\ref{thm:d15} to the folded polynomial $Q(y)$ (with pair orientation $\tilde{b}_r \ge 0$ and tilted $\theta^* \in [1/4, 3/4]$, or $\theta = 1/2$ whenever $\sigma(Q) \ge m$) forces $|E(S)| > c_4 (n - k)^2 / (m^{1/3}(\ln m)^{7/3})$ for $n \ge 512m + k$---stronger than Valiant rigidity (Theorem~\ref{thm:d13}) by a factor $k m^{2/3}/(\ln m)^{7/3}$. Combining this floor with Theorem~\ref{thm:d16}'s low-rank energy cap $|E(S)| < 16 m^2 \ln m$ yields the strictly sub-$m^{3/2}$ bound $n \le k + O(m^{7/6}(\ln m)^{5/3})$.
+\end{enumerate}
+\end{theorem}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/theorem_d17_pairfolding_m76.png}
+\caption{Theorem~\ref{thm:d17}: breaking $O(m^{3/2}) \to O(m^{7/6})$ on perturbed $k$-block blowups and tilted zero-probability recovery on dense $\rho \approx 1$ modular blowups ($2.55\times$ baseline at $m = 899$, where uniform sampling gives $0$).}
+\label{fig:d17}
+\end{figure}
+
 %======================================================================
 \section{Exact Exhaustive Classifications Modulo $6$}
 \label{sec:exact6}
@@ -836,7 +853,7 @@ Three main open problems emerge directly from this work:
   \item \textbf{Tightening $8p - 7 \to 4p - 2$ on $m = 2p$:} Eliminating the factor-$2$ pairing loss on $U_1$ in Theorem~\ref{thm:d4} would close the gap between $4p - 2$ and $8p - 7$ (already tightened unconditionally on $\bmod 10$ to $18 \le \Ngen^{(10)}(2, \OR) \le 28$, ratio $1.556\times$, by Theorem~\ref{thm:d14}).
   \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorems~\ref{thm:d10}, \ref{thm:d11}, \ref{thm:d13}, \ref{thm:d15}, and~\ref{thm:d16} resolve the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$), unconditionally push signed-graph linearity $n \le 64m$ up to $\Delta \lesssim m^{2/3}/(\ln m)^{4/3}$ and global density up to $\rho(G) > c_2'/(m^{1/3}(\ln m)^{7/3})$, establish Valiant Boolean matrix rigidity, pair-folding on dense blowups, the spectral tail dichotomy on $\rho = 1$ expanders, and dyadic exclusion at $O(\Delta \ln m)$ for sparse large-coefficient quadratics, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on dense non-expander signed graphs with $O(\ln^2 m)$ real approximate rank but high $\F_q$-rigidity, and on dense adversarial modular quadratics with large coefficients at $t = 1$.
   \item \textbf{BBR asymptotics beyond semi-symmetric and $k$-block regimes:} Theorem~\ref{thm:d12} establishes $O(d^r)$ unconditionally for all $k$-block and semi-symmetric representations and closes $\Ngen^{(6)}(3; P_3\text{ sym}) = 27$ and $\Ngen^{(6)}(6; P_3\text{ sym}) = 62$ exactly; removing the symmetry hypothesis on \emph{both} channels simultaneously at $d \ge 3$ remains the central open problem of~\cite{BBR94}.
-  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:d11}, \ref{thm:d12}, \ref{thm:d13}, \ref{thm:d14}, \ref{thm:d15}, \ref{thm:d16}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
+  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:d11}, \ref{thm:d12}, \ref{thm:d13}, \ref{thm:d14}, \ref{thm:d15}, \ref{thm:d16}, \ref{thm:d17}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
 \end{enumerate}
 
 All scripts, JSON logs, and figures are archived in the public repository.
