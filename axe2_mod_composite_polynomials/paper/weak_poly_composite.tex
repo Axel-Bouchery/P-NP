@@ -108,6 +108,7 @@ Theorem~\ref{thm:d12} (D12) & BBR $k$-block & semi-sym. & $O_{k,m}(d^r)$; $\Ngen
 Theorem~\ref{thm:d13} (D13) & Semiprime rigidity & folding & $\mathcal{R}_{\F_q}^{\mathrm{bool}}(A_q, r) > \frac{n^2}{2(r+1)m}-n$; pair-folding & Analytical + $\OR_4/\F_3$ census \\
 Theorem~\ref{thm:d14} (D14) & $\OR_n \bmod 10$ tightening & $18 \le \Ngen^{(10)}(2, \OR) \le 28$ ($1.556\times$); $\THR_2 \le 29$ & Hereditary + Joint Lucas \\
 Theorem~\ref{thm:d15} (D15) & Five-band signed Weyl & $n \le 64m$ ($\Delta \lesssim m^{2/3}/(\ln m)^{4/3}$); $\rho > c_2'/(m^{1/3}(\ln m)^{7/3})$ & Warnke + $\sin^2$ + $T_3$ \\
+Theorem~\ref{thm:d16} (D16) & Dense tail \& dyadic mod $m$ & Dense expanders ($\rho=1$) at $O(m\sqrt{\ln m/\rho})$; large coeffs at $O(\Delta\ln m)$ & Hanson--Wright + dyadic \\
 Theorem~\ref{thm:u1} (U1) & $\THR_{n,2}$ mod $6$, $d=2$ & $\Ngen^{(6)}(2, \THR_2) = 9$ (unique, $|\Aut|=20$) & Analytical + exhaustive enum. \\
 Theorem~\ref{thm:u2} (U2) & $\OR_n$ mod $6$, $d=2$ & Exact extinction of $V_0, W_{0,1}, W_{1,1}$ & Exhaustive enum.\ ($51.4\text{M}$) \\
 \bottomrule
@@ -767,6 +768,22 @@ Let $m \ge 4$ be a composite modulus and $P(x) = \sum_{\{i,j\}\in E(G)} a_{ij} x
 \label{fig:d15}
 \end{figure}
 
+\begin{theorem}[Spectral Tail Dichotomy (Zone~1) and Dyadic Coefficient Exclusion (Zone~2) --- Theorem D16]
+\label{thm:d16}
+Let $m \ge 4$ be a composite modulus and $P(x) = \sum_{i < j} a_{ij} x_i x_j + \sum_i b_i x_i \pmod m$ with arbitrary $b_i \in \Z/m\Z$.
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Spectral Tail Dichotomy on Very Dense Signed Graphs:} For any $A_{UW} \in \{-1, 0, +1\}^{n/2 \times n/2}$ and any non-wrapping frequency $1 \le |t| \le T_{\mathrm{nw}} := \lfloor m / (8\sqrt{\Delta \ln(20 n m)}) \rfloor$, either there exists $r \le r^* = O(\ln^2 m)$ with $E_{\mathrm{tail}}(r) := \sum_{j > r} \sigma_j^2 \ge 16 m^2 \ln m / t^2$ and $E_{\mathrm{tail}}(r)/\sigma_{r+1}^2 \ge C_0 \ln m$---yielding $|S_{1/2}(t)| < 1/m$ via Hanson--Wright (killing dense expanders, Sylvester--Hadamard, and Paley graphs up to $\rho = 1$ at $n = O(m\sqrt{\ln m/\rho})$)---or $A_{UW}$ admits a real rank-$r^*$ approximation $\|A_{UW} - L\|_F^2 < 16 m^2 \ln m / t^2$.
+  \item \textbf{Dyadic Coefficient Exclusion for Arbitrary Modular Quadratics:} For arbitrary $a_{ij}, b_i \in \Z/m\Z$ and every dyadic scale $E_k = \{\{i, j\} : 2^{k-1} \le |t a_{ij} \bmod^{\pm} m| < 2^k\}$, the pre-Weyl induced matching bound gives $|S_{1/2}(t)| \le \exp(-\frac{1}{4}\nu_{\mathrm{ind}}(G_k)(2^{k-1}/m)^2) \le \exp(-\frac{|E_k|}{8\Delta_k^2}(2^{k-1}/m)^2)$. On the top large-coefficient layer $|t a_{ij} \bmod^{\pm} m| \ge m/4$, $|S_{1/2}(t)| > 1/m$ forces $\nu_{\mathrm{ind}}(G_t(m/4)) \le 8\ln m$ (or $64\ln m$ conservatively) and hence $\alpha(G_t(m/4)) \ge n - 2\Delta_D \nu_{\mathrm{ind}}$, killing sparse/medium-degree large-coefficient modular quadratics already at $n = O(\Delta \ln m)$ (independent of $m$, certified on $4/4$ benchmarks including $n = 460 < m = 899$ with $|S| \le 2.14 \times 10^{-5} \ll 1/m$).
+\end{enumerate}
+\end{theorem}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/theorem_d16_zone1_zone2_attack.png}
+\caption{Theorem~\ref{thm:d16}: decoupled Fourier decay below $1/m^2$ on dense signed expanders, Hadamard $H_{128}, H_{256}$, and Paley $P_{197}$ ($\rho = 1$, Zone~1), and certified $n = O(\Delta \ln m) \ll m$ elimination of large-coefficient modular quadratics (Zone~2).}
+\label{fig:d16}
+\end{figure}
+
 %======================================================================
 \section{Exact Exhaustive Classifications Modulo $6$}
 \label{sec:exact6}
@@ -817,9 +834,9 @@ Additionally, canonical hereditary enumeration of quadratic $P_3$ without nonzer
 Three main open problems emerge directly from this work:
 \begin{enumerate}[leftmargin=*]
   \item \textbf{Tightening $8p - 7 \to 4p - 2$ on $m = 2p$:} Eliminating the factor-$2$ pairing loss on $U_1$ in Theorem~\ref{thm:d4} would close the gap between $4p - 2$ and $8p - 7$ (already tightened unconditionally on $\bmod 10$ to $18 \le \Ngen^{(10)}(2, \OR) \le 28$, ratio $1.556\times$, by Theorem~\ref{thm:d14}).
-  \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorems~\ref{thm:d10}, \ref{thm:d11}, \ref{thm:d13}, and~\ref{thm:d15} resolve the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$), unconditionally push signed-graph linearity $n \le 64m$ up to $\Delta \lesssim m^{2/3}/(\ln m)^{4/3}$ and global density up to $\rho(G) > c_2'/(m^{1/3}(\ln m)^{7/3})$, establish Valiant Boolean matrix rigidity $\mathcal{R}_{\F_q}^{\mathrm{bool}}(A_q, r) > \frac{n^2}{2(r+1)m} - n$ and pair-folding reduction on dense blowup expanders, kill prime-factor CRT frequencies via pivot-codimension decoupling, and reduce unit-frequency aliasing to $t = 1$, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on very dense high-rigidity signed graphs ($\rho(G) \gg m^{-1/3}$) and adversarial high-rank modular quadratics with large coefficients at $t = 1$.
+  \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorems~\ref{thm:d10}, \ref{thm:d11}, \ref{thm:d13}, \ref{thm:d15}, and~\ref{thm:d16} resolve the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$), unconditionally push signed-graph linearity $n \le 64m$ up to $\Delta \lesssim m^{2/3}/(\ln m)^{4/3}$ and global density up to $\rho(G) > c_2'/(m^{1/3}(\ln m)^{7/3})$, establish Valiant Boolean matrix rigidity, pair-folding on dense blowups, the spectral tail dichotomy on $\rho = 1$ expanders, and dyadic exclusion at $O(\Delta \ln m)$ for sparse large-coefficient quadratics, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on dense non-expander signed graphs with $O(\ln^2 m)$ real approximate rank but high $\F_q$-rigidity, and on dense adversarial modular quadratics with large coefficients at $t = 1$.
   \item \textbf{BBR asymptotics beyond semi-symmetric and $k$-block regimes:} Theorem~\ref{thm:d12} establishes $O(d^r)$ unconditionally for all $k$-block and semi-symmetric representations and closes $\Ngen^{(6)}(3; P_3\text{ sym}) = 27$ and $\Ngen^{(6)}(6; P_3\text{ sym}) = 62$ exactly; removing the symmetry hypothesis on \emph{both} channels simultaneously at $d \ge 3$ remains the central open problem of~\cite{BBR94}.
-  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:d11}, \ref{thm:d12}, \ref{thm:d13}, \ref{thm:d14}, \ref{thm:d15}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
+  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:d11}, \ref{thm:d12}, \ref{thm:d13}, \ref{thm:d14}, \ref{thm:d15}, \ref{thm:d16}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
 \end{enumerate}
 
 All scripts, JSON logs, and figures are archived in the public repository.

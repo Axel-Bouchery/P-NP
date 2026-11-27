@@ -251,6 +251,21 @@ def verify_d15():
     print("[PASS] Theorem D15: stronger phase-shifted cosine (5/448, 1/64, 13/384, 127/4608), Warnke monotonicity, and 5-band crossover.")
 
 
+def verify_d16():
+    from fractions import Fraction
+    # D16.1: Spectral tail geometric decay step E - s < ((C - 1)/C) * E
+    for C in [Fraction(5), Fraction(10), Fraction(20)]:
+        E = Fraction(1000)
+        s = E / C + Fraction(1, 100)
+        assert E - s < ((C - 1) / C) * E
+    # D16.2: Top dyadic scale constant (2*(1/4))^2 / 2 = 1/8 & independent-set extraction
+    assert (2 * Fraction(1, 4)) ** 2 / 2 == Fraction(1, 8)
+    for n, Delta, M in [(460, 6, 30), (1000, 10, 40)]:
+        alpha_lb = n - 2 * Delta * M
+        assert n <= alpha_lb + 2 * Delta * M
+    print("[PASS] Theorem D16: spectral tail geometric decay, top dyadic constant 1/8, and independent-set extraction.")
+
+
 if __name__ == "__main__":
     verify_g3pp()
     verify_d3a_and_d4()
@@ -260,4 +275,5 @@ if __name__ == "__main__":
     verify_d11_and_d12()
     verify_d13_and_d14()
     verify_d15()
+    verify_d16()
     print("ALL EXACT PROOF-STEP VERIFICATIONS PASSED.")

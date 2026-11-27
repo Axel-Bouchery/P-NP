@@ -1,0 +1,156 @@
+{
+  "theorem": "D16",
+  "elapsed_sec": 5.79,
+  "zone1_dense_signed_spectral_tail": [
+    {
+      "label": "Rand +-1 (rho=1, 140x140)",
+      "shape": [
+        140,
+        140
+      ],
+      "m": 35,
+      "frob2_over_m2": 16.0,
+      "r_stab_raw": 70.21,
+      "best_tail_r": 4,
+      "best_tail_ratio": 39.04,
+      "max_phi": 3.539218019043472e-05,
+      "worst_t": 17,
+      "threshold_1_over_m2": 0.0008163265306122449,
+      "killed_below_1_over_m2": true
+    },
+    {
+      "label": "Rand 0/1 (rho=0.5, 140x140)",
+      "shape": [
+        140,
+        140
+      ],
+      "m": 35,
+      "frob2_over_m2": 7.999,
+      "r_stab_raw": 3.84,
+      "best_tail_r": 7,
+      "best_tail_ratio": 38.46,
+      "max_phi": 1.6106308085675723e-05,
+      "worst_t": 1,
+      "threshold_1_over_m2": 0.0008163265306122449,
+      "killed_below_1_over_m2": true
+    },
+    {
+      "label": "Hadamard H_128 (rho=1)",
+      "shape": [
+        128,
+        128
+      ],
+      "m": 35,
+      "frob2_over_m2": 13.375,
+      "r_stab_raw": 128.0,
+      "best_tail_r": 0,
+      "best_tail_ratio": 128.0,
+      "max_phi": 0.00020966274695146682,
+      "worst_t": 9,
+      "threshold_1_over_m2": 0.0008163265306122449,
+      "killed_below_1_over_m2": true
+    },
+    {
+      "label": "Hadamard H_256 (rho=1)",
+      "shape": [
+        256,
+        256
+      ],
+      "m": 35,
+      "frob2_over_m2": 53.499,
+      "r_stab_raw": 256.0,
+      "best_tail_r": 0,
+      "best_tail_ratio": 256.0,
+      "max_phi": 1.137333690607144e-16,
+      "worst_t": 17,
+      "threshold_1_over_m2": 0.0008163265306122449,
+      "killed_below_1_over_m2": true
+    },
+    {
+      "label": "Paley P_197 (rho=1)",
+      "shape": [
+        197,
+        197
+      ],
+      "m": 35,
+      "frob2_over_m2": 31.52,
+      "r_stab_raw": 196.0,
+      "best_tail_r": 0,
+      "best_tail_ratio": 196.0,
+      "max_phi": 7.906411065081512e-33,
+      "worst_t": 1,
+      "threshold_1_over_m2": 0.0008163265306122449,
+      "killed_below_1_over_m2": true
+    },
+    {
+      "label": "Rank-1 J_140 (control)",
+      "shape": [
+        140,
+        140
+      ],
+      "m": 35,
+      "frob2_over_m2": 16.0,
+      "r_stab_raw": 1.0,
+      "best_tail_r": 0,
+      "best_tail_ratio": 1.0,
+      "max_phi": 0.20240000000005198,
+      "worst_t": 7,
+      "threshold_1_over_m2": 0.0008163265306122449,
+      "killed_below_1_over_m2": false
+    }
+  ],
+  "zone2_dyadic_modular_exclusion": [
+    {
+      "m": 35,
+      "n": 160,
+      "n_over_m": 4.571,
+      "target_deg": 4,
+      "n_edges": 316,
+      "min_nu_ind_large": 34,
+      "certified_S_ub": 0.014264233908999256,
+      "target_1_over_m": 0.02857142857142857,
+      "certified_killed": true,
+      "pr_zero_emp": 0.02825,
+      "max_S_emp": 0.01634
+    },
+    {
+      "m": 143,
+      "n": 280,
+      "n_over_m": 1.958,
+      "target_deg": 6,
+      "n_edges": 837,
+      "min_nu_ind_large": 50,
+      "certified_S_ub": 0.0019304541362277093,
+      "target_1_over_m": 0.006993006993006993,
+      "certified_killed": true,
+      "pr_zero_emp": 0.00658,
+      "max_S_emp": 0.01573
+    },
+    {
+      "m": 323,
+      "n": 380,
+      "n_over_m": 1.176,
+      "target_deg": 6,
+      "n_edges": 1133,
+      "min_nu_ind_large": 72,
+      "certified_S_ub": 0.00012340980408667956,
+      "target_1_over_m": 0.0030959752321981426,
+      "certified_killed": true,
+      "pr_zero_emp": 0.0035,
+      "max_S_emp": 0.02181
+    },
+    {
+      "m": 899,
+      "n": 460,
+      "n_over_m": 0.512,
+      "target_deg": 6,
+      "n_edges": 1377,
+      "min_nu_ind_large": 86,
+      "certified_S_ub": 2.1445408316589164e-05,
+      "target_1_over_m": 0.0011123470522803114,
+      "certified_killed": true,
+      "pr_zero_emp": 0.00075,
+      "max_S_emp": 0.01352
+    }
+  ]
+}
