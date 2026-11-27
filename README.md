@@ -1,6 +1,6 @@
 ﻿# Complexité des circuits de basse profondeur, polynômes modulo un entier composite et complexité algébrique
 
-Ce dépôt rassemble trois axes de recherche autonomes en complexité des circuits de basse profondeur ($\mathrm{THR} \circ \mathrm{THR}$, polynômes multilinéaires modulo un entier composite $m$) et en complexité algébrique concrète (complexité déterminantale de $\mathrm{perm}_3$, rang de tenseurs de multiplication matricielle). Il regroupe **85 scripts** Python/Numba/PyTorch (84 scripts de recherche + 1 vérificateur exact), **68 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)**, **46 figures**, un manuscrit LaTeX autonome (`paper/`) et un projet Lean 4 (`lean/`).
+Ce dépôt rassemble trois axes de recherche autonomes en complexité des circuits de basse profondeur ($`\mathrm{THR} \circ \mathrm{THR}`$, polynômes multilinéaires modulo un entier composite $m$) et en complexité algébrique concrète (complexité déterminantale de $`\mathrm{perm}_3`$, rang de tenseurs de multiplication matricielle). Il regroupe **85 scripts** Python/Numba/PyTorch (84 scripts de recherche + 1 vérificateur exact), **68 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)**, **46 figures**, un manuscrit LaTeX autonome (`paper/`) et un projet Lean 4 (`lean/`).
 
 ## Index des trois axes
 
