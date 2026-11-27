@@ -1,13 +1,13 @@
 ﻿# Complexité des circuits de basse profondeur, polynômes modulo un entier composite et complexité algébrique
 
-Ce dépôt rassemble trois axes de recherche autonomes en complexité des circuits de basse profondeur ($\mathrm{THR} \circ \mathrm{THR}$, polynômes multilinéaires modulo un entier composite $m$) et en complexité algébrique concrète (complexité déterminantale de $\mathrm{perm}_3$, rang de tenseurs de multiplication matricielle). Il regroupe **82 scripts** Python/Numba/PyTorch (81 scripts de recherche + 1 vérificateur exact), **65 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)**, **43 figures**, un manuscrit LaTeX autonome (`paper/`) et un projet Lean 4 (`lean/`).
+Ce dépôt rassemble trois axes de recherche autonomes en complexité des circuits de basse profondeur ($\mathrm{THR} \circ \mathrm{THR}$, polynômes multilinéaires modulo un entier composite $m$) et en complexité algébrique concrète (complexité déterminantale de $\mathrm{perm}_3$, rang de tenseurs de multiplication matricielle). Il regroupe **83 scripts** Python/Numba/PyTorch (82 scripts de recherche + 1 vérificateur exact), **66 fichiers de résultats JSON**, **32 témoins algébriques (`.npz`)**, **44 figures**, un manuscrit LaTeX autonome (`paper/`) et un projet Lean 4 (`lean/`).
 
 ## Index des trois axes
 
 | Axe | Dossier | Contenu | Documentation |
 | :--- | :--- | :--- | :--- |
 | **Axe I** | **[axe1_thr2_williams/](axe1_thr2_williams/README.md)** | Paradigme de Williams, solveurs exacts `THR ∘ THR-SAT` (Théorèmes 1–3, v5 jusqu'à `n = 28`), Atlas exhaustif `n = 4`, MCSP, CAPP déterministe CUR & topologie de Huang (`17` scripts, `13` JSON, `1` `.npz`, `13` figures) | [README.md](axe1_thr2_williams/README.md) · [RAPPORT.md](axe1_thr2_williams/RAPPORT.md) |
-| **Axe II** | **[axe2_mod_composite_polynomials/](axe2_mod_composite_polynomials/README.md)** | Représentation faible modulo un entier composite `m` (`OR_n`, `THR_{n, t}`, `MAJ_n`, `MOD_k`) : 30 théorèmes (`M1–M2`, `G1–G5`, `G3++`, `T1–T2`, `Q1`, `P1`, `U1–U4`, `D1–D14`), manuscrit LaTeX et formalisation Lean 4 (`45` scripts, `37` JSON, `22` figures) | [README.md](axe2_mod_composite_polynomials/README.md) · [RAPPORT.md](axe2_mod_composite_polynomials/RAPPORT.md) · [paper/](axe2_mod_composite_polynomials/paper/weak_poly_composite.tex) · [lean/](axe2_mod_composite_polynomials/lean/README.md) |
+| **Axe II** | **[axe2_mod_composite_polynomials/](axe2_mod_composite_polynomials/README.md)** | Représentation faible modulo un entier composite `m` (`OR_n`, `THR_{n, t}`, `MAJ_n`, `MOD_k`) : 31 théorèmes (`M1–M2`, `G1–G5`, `G3++`, `T1–T2`, `Q1`, `P1`, `U1–U4`, `D1–D15`), manuscrit LaTeX et formalisation Lean 4 (`46` scripts, `38` JSON, `23` figures) | [README.md](axe2_mod_composite_polynomials/README.md) · [RAPPORT.md](axe2_mod_composite_polynomials/RAPPORT.md) · [paper/](axe2_mod_composite_polynomials/paper/weak_poly_composite.tex) · [lean/](axe2_mod_composite_polynomials/lean/README.md) |
 | **Axe III** | **[axe3_algebraic_complexity/](axe3_algebraic_complexity/README.md)** | GCT sur `perm₃` (Parseval-LM, piège `SL₇`) et tenseurs de multiplication matricielle (recuit `L_{2/3}`, loi `α`, barrière `L_∞`, Graphe de Flips `𝔽₃/𝔽₅` et `uint64` sur `𝔽₂` sur 16 formats) (`20` scripts, `15` JSON, `31` `.npz`, `8` figures) | [README.md](axe3_algebraic_complexity/README.md) · [RAPPORT.md](axe3_algebraic_complexity/RAPPORT.md) |
 
 ---
@@ -29,12 +29,12 @@ Ce dépôt rassemble trois axes de recherche autonomes en complexité des circui
 │
 ├── axe2_mod_composite_polynomials/        # Axe II — Polynômes faibles modulo m composite
 │   ├── README.md                          # Carte et commandes d'exécution de l'Axe II
-│   ├── RAPPORT.md                         # Monographie autonome (Expériences E11–E15s)
-│   ├── src/                               # 44 scripts Python/Numba
-│   ├── results/                           # 37 fichiers de résultats JSON
-│   ├── figures/                           # 22 figures (.png)
+│   ├── RAPPORT.md                         # Monographie autonome (Expériences E11–E15t)
+│   ├── src/                               # 45 scripts Python/Numba
+│   ├── results/                           # 38 fichiers de résultats JSON
+│   ├── figures/                           # 23 figures (.png)
 │   ├── paper/                             # Manuscrit LaTeX autonome (weak_poly_composite.tex, references.bib)
-│   └── lean/                              # Formalisation Lean 4 (16 .lean + verify_proof_steps_exact.py)
+│   └── lean/                              # Formalisation Lean 4 (17 .lean + verify_proof_steps_exact.py)
 │
 └── axe3_algebraic_complexity/             # Axe III — GCT sur perm₃ & Multiplication matricielle
     ├── README.md                          # Carte et commandes d'exécution de l'Axe III

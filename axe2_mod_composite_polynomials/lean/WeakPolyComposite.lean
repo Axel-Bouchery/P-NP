@@ -12,4 +12,5 @@ import WeakPolyComposite.TheoremD11
 import WeakPolyComposite.TheoremD12
 import WeakPolyComposite.TheoremD13
 import WeakPolyComposite.TheoremD14
+import WeakPolyComposite.TheoremD15
 import WeakPolyComposite.TheoremU4

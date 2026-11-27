@@ -107,6 +107,7 @@ Theorem~\ref{thm:d11} (D11) & Dense signed & CRT rank & $n \le 64m$ ($\Delta \le
 Theorem~\ref{thm:d12} (D12) & BBR $k$-block & semi-sym. & $O_{k,m}(d^r)$; $\Ngen^{(6)}(3; P_3\text{ sym}) = 27$, $d=6: 62$ & Analytical (Lucas slices) \\
 Theorem~\ref{thm:d13} (D13) & Semiprime rigidity & folding & $\mathcal{R}_{\F_q}^{\mathrm{bool}}(A_q, r) > \frac{n^2}{2(r+1)m}-n$; pair-folding & Analytical + $\OR_4/\F_3$ census \\
 Theorem~\ref{thm:d14} (D14) & $\OR_n \bmod 10$ tightening & $18 \le \Ngen^{(10)}(2, \OR) \le 28$ ($1.556\times$); $\THR_2 \le 29$ & Hereditary + Joint Lucas \\
+Theorem~\ref{thm:d15} (D15) & Five-band signed Weyl & $n \le 64m$ ($\Delta \lesssim m^{2/3}/(\ln m)^{4/3}$); $\rho > c_2'/(m^{1/3}(\ln m)^{7/3})$ & Warnke + $\sin^2$ + $T_3$ \\
 Theorem~\ref{thm:u1} (U1) & $\THR_{n,2}$ mod $6$, $d=2$ & $\Ngen^{(6)}(2, \THR_2) = 9$ (unique, $|\Aut|=20$) & Analytical + exhaustive enum. \\
 Theorem~\ref{thm:u2} (U2) & $\OR_n$ mod $6$, $d=2$ & Exact extinction of $V_0, W_{0,1}, W_{1,1}$ & Exhaustive enum.\ ($51.4\text{M}$) \\
 \bottomrule
@@ -738,6 +739,34 @@ We next advance the two deepest structural frontiers isolated by Theorems~\ref{t
 \label{fig:d14}
 \end{figure}
 
+\begin{theorem}[Five-Band Tilted Weyl Bound, Warnke Typical Differences, and $\Delta \lesssim m^{2/3}$ --- Theorem D15]
+\label{thm:d15}
+Let $m \ge 4$ be a composite modulus and $P(x) = \sum_{\{i,j\}\in E(G)} a_{ij} x_i x_j + \sum_i b_i x_i \pmod m$ be a signed-graph quadratic ($a_{ij} \in \{-1, +1\}$) representing $\OR_n \pmod m$.
+\begin{enumerate}[leftmargin=*,nosep]
+  \item \textbf{Stronger Phase-Shifted Cosine Lemma:} For all $\alpha \in [-\pi/2, \pi/2]$ and $\delta \in [-\pi/4, \pi/4]$,
+  \[
+    \mathrm{dist}(\alpha + \delta, \pi\Z)^2 \;\ge\; \frac{1}{4}\delta^2 + c(\alpha)\delta + \frac{1}{8}\alpha^2,
+  \]
+  where $c(\alpha) = 2\alpha$ for $|\alpha| \le \pi/4$ and $c(\alpha) = \mathrm{sgn}(\alpha)(\pi/2 - |\alpha|)$ for $|\alpha| \in (\pi/4, \pi/2]$, with exact outer minima $\frac{5}{448}\pi^2$ at $(3\pi/7, -\pi/4)$ and $\frac{1}{64}\pi^2$ at $(\pi/2, \pi/4)$.
+  \item \textbf{Linear-Term-Free $\sin^2$ Weyl Expectation:} For any arbitrary $b \in (\Z/m\Z)^n$, any $t \in \Z$, and any $\theta^* \in [1/4, 3/4]$,
+  \[
+    \mathbb{E}\!\left[\mathbf{1}_{j \in J}\,\mathrm{dist}\!\left(\frac{2\pi t}{m} D_j, \pi\Z\right)^2\right] \;\ge\; \frac{3}{16}\!\left(1 - \exp\!\left(-\frac{3}{4}\deg(j)\sin^2\!\left(\frac{\pi t}{m}\right)\right)\right).
+  \]
+  \item \textbf{Unconditional Five-Band Bound ($\Delta \lesssim m^{2/3}$) and Forced Density ($\Omega(m^{-1/3})$):} Combining Warnke's typical-bounded-differences inequality on the quasi-regular core $H$ (Bands~2 and~2.5, exponent $\Omega(n^*/(K^2 \Delta \ln m))$ via monotonicity $\frac{(S_2+A)^2}{S_2+B} \ge \frac{A^2}{B}$) with a new Band~2.75 ($T_2 < |t| \le T_3 := \lfloor m / (K^{1/2}\Delta^{1/4}) \rfloor$, exponent $\Omega(n^*/(K^2 \Delta^2 (t/m)^2))$) balanced against the pre-Weyl Band~3 induced matching ($\frac{3(n^*-m)}{32\Delta}(t/m)^2$) yields uniform exponent $\Omega(n^*/(K\Delta^{3/2}))$ across $[T_2, m/2]$. Consequently, for $1 \le |b_i| \le B \le \sqrt{8\Delta\ln(40 n^* m)}$,
+  \[
+    n \;\le\; 64m \qquad \text{whenever } \Delta \;\le\; c_2 \frac{m^{2/3}}{(\ln m)^{4/3}},
+  \]
+  and subsampling on the core $H$ forces $\rho(G) = \frac{2|E(G)|}{n^2} > \frac{c_2'}{m^{1/3}(\ln m)^{7/3}}$ for every $n \ge 256m$.
+\end{enumerate}
+\end{theorem}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{../figures/theorem_d15_five_band_m23.png}
+\caption{Theorem~\ref{thm:d15}: stronger phase-shifted cosine margin ($\kappa = 1/8$), Band~2.75 / Band~3 exponent crossover at $T_3/m \sim K^{-1/2}\Delta^{-1/4}$, degree-threshold progression $m^{1/4} \to m^{1/2} \to m^{2/3}$, and dense signed benchmarks at $\Delta \approx m^{2/3}$.}
+\label{fig:d15}
+\end{figure}
+
 %======================================================================
 \section{Exact Exhaustive Classifications Modulo $6$}
 \label{sec:exact6}
@@ -788,9 +817,9 @@ Additionally, canonical hereditary enumeration of quadratic $P_3$ without nonzer
 Three main open problems emerge directly from this work:
 \begin{enumerate}[leftmargin=*]
   \item \textbf{Tightening $8p - 7 \to 4p - 2$ on $m = 2p$:} Eliminating the factor-$2$ pairing loss on $U_1$ in Theorem~\ref{thm:d4} would close the gap between $4p - 2$ and $8p - 7$ (already tightened unconditionally on $\bmod 10$ to $18 \le \Ngen^{(10)}(2, \OR) \le 28$, ratio $1.556\times$, by Theorem~\ref{thm:d14}).
-  \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorems~\ref{thm:d10}, \ref{thm:d11}, and~\ref{thm:d13} resolve the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$), unconditionally push signed-graph linearity $n \le 64m$ up to $\Delta \lesssim m^{1/2}/(\ln m)^{3/2}$ and global density up to $\rho(G) > c_1'/(m^{1/2}(\ln m)^{5/2})$, establish Valiant Boolean matrix rigidity $\mathcal{R}_{\F_q}^{\mathrm{bool}}(A_q, r) > \frac{n^2}{2(r+1)m} - n$ and pair-folding reduction on dense blowup expanders, kill prime-factor CRT frequencies via pivot-codimension decoupling, and reduce unit-frequency aliasing to $t = 1$, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on very dense high-rigidity signed graphs ($\rho(G) \gg m^{-1/2}$) and adversarial high-rank modular quadratics with large coefficients at $t = 1$.
+  \item \textbf{From $O(m^{3/2})$ to $O(m)$ on all semiprimes $m = pq$:} While Theorems~\ref{thm:d10}, \ref{thm:d11}, \ref{thm:d13}, and~\ref{thm:d15} resolve the exact rank-$1$ regime ($3q-1$ on $m = 2q$; $< 2(m-1)$ on $m = pq$), unconditionally push signed-graph linearity $n \le 64m$ up to $\Delta \lesssim m^{2/3}/(\ln m)^{4/3}$ and global density up to $\rho(G) > c_2'/(m^{1/3}(\ln m)^{7/3})$, establish Valiant Boolean matrix rigidity $\mathcal{R}_{\F_q}^{\mathrm{bool}}(A_q, r) > \frac{n^2}{2(r+1)m} - n$ and pair-folding reduction on dense blowup expanders, kill prime-factor CRT frequencies via pivot-codimension decoupling, and reduce unit-frequency aliasing to $t = 1$, Conjecture~\ref{conj:lee} in full generality for odd semiprimes $m = pq$ remains open on very dense high-rigidity signed graphs ($\rho(G) \gg m^{-1/3}$) and adversarial high-rank modular quadratics with large coefficients at $t = 1$.
   \item \textbf{BBR asymptotics beyond semi-symmetric and $k$-block regimes:} Theorem~\ref{thm:d12} establishes $O(d^r)$ unconditionally for all $k$-block and semi-symmetric representations and closes $\Ngen^{(6)}(3; P_3\text{ sym}) = 27$ and $\Ngen^{(6)}(6; P_3\text{ sym}) = 62$ exactly; removing the symmetry hypothesis on \emph{both} channels simultaneously at $d \ge 3$ remains the central open problem of~\cite{BBR94}.
-  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:d11}, \ref{thm:d12}, \ref{thm:d13}, \ref{thm:d14}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
+  \item \textbf{Mechanical verification in Lean~4:} A structured Lean~4 formalization of the core analytical proofs (Theorems~\ref{thm:g3pp}, \ref{thm:g5}, \ref{thm:d4}, \ref{thm:d5}, \ref{thm:d6}, \ref{thm:d7}, \ref{thm:d8}, \ref{thm:d9}, \ref{thm:d10}, \ref{thm:d11}, \ref{thm:d12}, \ref{thm:d13}, \ref{thm:d14}, \ref{thm:d15}, \ref{thm:u3}, and~\ref{thm:u4}) is included in the repository directory \texttt{lean/}, ready for compilation with Mathlib~4 via \texttt{lake build}, accompanied by an executable exact-arithmetic Python verifier (\texttt{lean/verify\_proof\_steps\_exact.py}) checking all finite lemmas and identities.
 \end{enumerate}
 
 All scripts, JSON logs, and figures are archived in the public repository.

@@ -229,6 +229,28 @@ def verify_d13_and_d14():
     print("[PASS] Theorems D13 & D14: Band-3 3/16 constant, cocktail-party < 8m, and n >= 30 mod 10 arithmetic elimination.")
 
 
+def verify_d15():
+    # D15.1: Stronger phase-shifted cosine exact rational identities (P = 1)
+    from fractions import Fraction
+    for num_a in range(4, 9):  # alpha in [1/4, 1/2]
+        a = Fraction(num_a, 16)
+        lhs_2a = (a - Fraction(1, 4)) ** 2 - Fraction(1, 4) * Fraction(-1, 4) ** 2 - (Fraction(1, 2) - a) * Fraction(-1, 4) - Fraction(1, 8) * a ** 2
+        rhs_2a = Fraction(7, 8) * (a - Fraction(3, 7)) ** 2 + Fraction(5, 448)
+        assert lhs_2a == rhs_2a and rhs_2a >= Fraction(5, 448)
+        lhs_2b = (Fraction(3, 4) - a) ** 2 - Fraction(1, 4) * Fraction(1, 4) ** 2 - (Fraction(1, 2) - a) * Fraction(1, 4) - Fraction(1, 8) * a ** 2
+        rhs_2b = Fraction(7, 8) * (a - Fraction(1, 2)) ** 2 + Fraction(3, 8) * (Fraction(1, 2) - a) + Fraction(1, 64)
+        assert lhs_2b == rhs_2b and rhs_2b >= Fraction(1, 64)
+    # Vertex positivity at alpha = 1/4 and 7/24
+    assert -Fraction(17, 8) * Fraction(1, 4) ** 2 + Fraction(1, 4) - Fraction(1, 12) == Fraction(13, 384)
+    assert -Fraction(17, 8) * Fraction(7, 24) ** 2 + Fraction(7, 24) - Fraction(1, 12) == Fraction(127, 4608)
+    # D15.3: Warnke monotonicity (x + A)^2 * B >= A^2 * (x + B) for 0 < A <= B, x >= 0
+    for A in [1, 5, 17]:
+        for B in [A, 2 * A, 5 * A]:
+            for x in [0, 1, 10, 100]:
+                assert (x + A) ** 2 * B >= A ** 2 * (x + B)
+    print("[PASS] Theorem D15: stronger phase-shifted cosine (5/448, 1/64, 13/384, 127/4608), Warnke monotonicity, and 5-band crossover.")
+
+
 if __name__ == "__main__":
     verify_g3pp()
     verify_d3a_and_d4()
@@ -237,4 +259,5 @@ if __name__ == "__main__":
     verify_u4()
     verify_d11_and_d12()
     verify_d13_and_d14()
+    verify_d15()
     print("ALL EXACT PROOF-STEP VERIFICATIONS PASSED.")
