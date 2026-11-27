@@ -243,7 +243,7 @@ Nous en dérivons dans [det_capp_nystrom.py](src/det_capp_nystrom.py) un algorit
 
 ---
 
-#### Expérience E10 — Topologie de l'hypercube Q_n, spectre de Huang et rayon spectral frontière
+#### Expérience E10 — Topologie de l'hypercube $Q_n$, spectre de Huang et rayon spectral frontière
 
 En clôture de cet axe, une dernière piste consiste à quitter les méthodes algébriques et bilinéaires pour interroger la géométrie discrète de l'hypercube $Q_n$ : la matrice d'adjacence signée introduite par Huang (2019) pour démontrer la conjecture de sensibilité, ou le rayon spectral frontière $\lambda_{\mathrm{bd}}(f)$ du graphe des arêtes de basculement $B(f)_{x,y} = Q_{x,y}\,\mathbf{1}[f(x) \ne f(y)]$, fournissent-ils une mesure de complexité séparant $\mathrm{THR} \circ \mathrm{THR}$ des fonctions difficiles ?
 
